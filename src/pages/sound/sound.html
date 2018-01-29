@@ -1,0 +1,357 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>SOUND</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">We all have experience of some <i style="color:blue">sound</i>
+        involving activities; music from a loud speaker, a crying baby, teacher instructing
+        students and many more. <b style="color:crimson">Sound</b> <i style="color:blue">is a
+        form of a wave, which travels through an elastic medium from a vibrating body to a
+        listener</i>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">It is a <i style="color:blue">longitudinal wave</i>, meaning, the
+        wave profile and the vibration are in the same direction. Sound is produced and
+        transmitted by vibrating <i style="color:blue">matter</i>. It cannot be propagated in
+        vacuum or in the absence of matter. It is therefore classified as <i style=
+        "color:blue">mechanical wave,</i> since it always requires a mechanical medium for its
+        propagation.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The set up on the right can be used to prove the fact that material
+        medium is required for the propagation of sound. In the set up, an electric bell is
+        suspended inside an airtight jar. The jar is connected to a vacuum pump.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soun1.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The electric bell is then operated and set ringing. As air is pumped
+        out of the jar, it is observed that the sound of the bell gets fainter and fainter
+        though the hammer is still striking the bell. It gets to a point where no sound is
+        heard.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This is when all the air has been pumped out of the jar. The sound
+        is heard again when air is pumped into the jar. This shows that sound cannot be
+        propagated in a vacuum but requires a material. Its sources include bell, drum, loud
+        speaker, vibrating fork, etc.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">The Speed of Sound</b><br /></p>
+      
+        <p align="justify">Since sound is a wave, its <b style="color:crimson">speed</b> may be
+        calculated from the wave formula. In practice, the speed of sound varies greatly from
+        medium to medium depending on the density and elasticity of the medium in which it is
+        travelling.</p>
+      
+        <p align="left"><br /></p>
+      
+        <table border="1" cellspacing="1" width="100%" cellpadding="1">
+          <tr>
+            <th style="color: white; background-color: darkred">Medium</th>
+      
+            <th style="color: white; background-color: darkred">Speed</th>
+          </tr>
+      
+          <tr>
+            <td>Air</td>
+      
+            <td>330m/s</td>
+          </tr>
+      
+          <tr>
+            <td>Water</td>
+      
+            <td>1500m/s</td>
+          </tr>
+      
+          <tr>
+            <td>Steel</td>
+      
+            <td>5000m/s</td>
+          </tr>
+        </table>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">From the above table, it is obvious that the speed of sound is
+        larger in media with greater densities. Rise in air temperature increases the speed of
+        sound. For every 1oC rise in air temperature matches a 0.6m/s rise in the speed of
+        sound. Temperature change in liquids and solids does not affect the speed of sound
+        appreciably.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Characteristics of musical
+        note</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <i style="color:blue">Pitch</i>; it is a measure of how high or low a note (sound)
+            is.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <i style="color:blue">Loudness</i>; it is the sensation in the mind of an
+            individual listener, depending on the intensity of the sound. In other words, it is
+            the effect of the intensity of sound waves on the ear. Loudness, however, decreases
+            as the listener moves away from the source.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <i style="color:blue">Quality</i>; the quality of a note is the characteristics
+            that distinguish it from other notes of the same pitch and loudness played on a
+            different instrument. For example, the sound produced by different instruments in
+            an orchestra can be differentiated from each other, even though the sounds played
+            may have the same tone with equal intensity.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Reflection of Sound (Echoes)</b><br />
+      
+        <p align="justify"><b style="color:crimson">Echo</b>; this is a reflected sound from a
+        hard surface. Echoes are undesirable in big halls because they cause <i style=
+        "color:blue">interference</i>. Recording studios and concert auditoriums cover their
+        walls and ceiling s with soft perforated boards and not hard smooth materials.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This is to avoid reflection of sound waves or echoes, which may be
+        heard several times and cause the room to reverberate (echo) for a longtime. The soft
+        perforated board minimizes reflection by absorbing the sound waves quickly.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Echo has very useful applications such as determination of speed of
+        sound; measurement of the depth of the sea in echo sounding devices as shown in the
+        picture below, the exploration for crude oil and many more.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="211" height="240" src="http://speedapp.ididev.com/apps/img/soun2.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Refraction</b><br /></p>
+      
+        <p align="justify">Sound wave may also be refracted. Just like light, the speed of
+        sound changes as it travels from one medium into another of different density from the
+        former one.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Doppler Effect</b><br /></p>
+      
+        <p align="justify">You have probably heard the sound of a moving police siren. You will
+        notice that the pitch of the siren dropped abruptly as the vehicle passed. <i style=
+        "color:blue">The variation of the pitch heard from a moving source of sound is
+        called</i> <b style="color:crimson">doppler effect</b>. This variation in pitch is as a
+        result of changes in the vibrations that reach the ear per second (that is the
+        frequency sound).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="276" height="176" src="http://speedapp.ididev.com/apps/img/soun3.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Uses of Doppler Effect</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It is used to determine the depth of the sea<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is used to check the speed of moving vehicles by traffic policemen.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Bats use echoes to notice obstacles in their path
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">X &ndash; RAY</b><br />
+      
+        <p align="justify">This is an electromagnetic wave of high frequency, between 1018 to
+        1019 Hz. There are two types of x &ndash; ray. They are the <b style=
+        "color:crimson">soft</b> and <b style="color:crimson">hard</b> x &ndash; rays. The
+        properties of x &ndash; ray is listed below.<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It is not deflected by magnetic or electric field. That is, it is neutral.<br />
+      
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It travels in a straight line.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It may cause ionization in gases.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It can penetrate most materials.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is diffracted by crystals.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Causes fluorescence in some substances.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Has a short wave length<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Travels through vacuum (applies to all electromagnetic waves like radio waves)
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">PRODUCTION OF X &ndash; RAY</b><br />
+      
+        <p align="justify">They are produced by bombarding a metal target with high speed
+        electrons. The high speed electrons are produced by accelerating it through a high
+        potential difference. When the electrons hit the metal target, their velocity is
+        brought to zero (0). They give off their kinetic energy in the form of x &ndash;
+        ray.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="293" height="211" src="http://speedapp.ididev.com/apps/img/soun4.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">USES OF X &ndash; RAY</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It is used to detect bone fracture in human beings.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is used to check cracks and leakages in a machine.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Used for analyzing the crystal structure crystals.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is used to treat tumor.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is used to check hidden weapon in a baggage.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Soft x &ndash; ray is used for the treatment of skin diseases<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Hard x &ndash; rays are used for the treatment of deep cancer growth.<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">HAZARDS OF X &ndash; RAY</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Causes skin burns.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It deforms unborn baby when pregnant mother is exposed to it for long
+          periods.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Since x &ndash;ray can penetrate the body, it causes ionization (ions are
+          produced) which can change or destroy living cells.</li>
+        </ol><br />
+</ion-content>

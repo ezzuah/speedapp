@@ -1,0 +1,607 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+    <p align="center" style="color:black;font-size: 26px">
+        <b>ATOMIC STRUCTURE</b></p>
+      
+        <p>There are many materials around us. All these materials are termed matter because
+        they have mass and volume. By definition <b style="color: crimson">matter</b> is any
+        substance that has mass and occupies space. Examples are water, air, stone, wood
+        etc.</p><br />
+      
+        <p>All forms of matter are made up of tiny particles called atom. The atom is the
+        smallest divisible unit of an element that can take part in a chemical reaction. The
+        atom is said to be divisible in the sense that it can be broken down into its primary
+        components which are the electrons, protons and neutrons.</p><br />
+      
+        <p>The atom has a central nucleus which contains the protons and neutrons. The
+        electrons reside in orbits known as energy shells found around the nucleus. The proton
+        has a charge of +1, neutron has no charge and electron has a charge of -1. The number
+        of protons and electrons in an atom are equal hence, the atom as a whole is
+        neutral.</p><br />
+      
+        <p>However, the presence of the positively charged protons in the nucleus makes the
+        nucleus (of the atom) positively charged. The mass of a proton and neutron is 1u,
+        whereas that of an electron is 1/1840u which is negligible. It follows that the nucleus
+        bears almost the total mass of an atom. The picture below shows the lithium
+        atom.</p><br />
+        <img src="http://speedapp.ididev.com/apps/img/Atomic_Structure1.jpg" name="front_image" id="front_image" /><br />
+      
+        <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+          <tbody>
+            <tr>
+              <th style="background-color: brown; color: azure">Particle</th>
+      
+              <th style="background-color: brown; color: azure">Relative Mass (amu)</th>
+      
+              <th style="background-color: brown; color: azure">Charge</th>
+      
+              <th style="background-color: brown; color: azure">Location</th>
+            </tr>
+      
+            <tr>
+              <td><b>Proton</b></td>
+      
+              <td>1</td>
+      
+              <td>+1</td>
+      
+              <td>Nucleus of the atom</td>
+            </tr>
+      
+            <tr>
+              <td><b>Neutron</b></td>
+      
+              <td>1</td>
+      
+              <td>0</td>
+      
+              <td>Nucleus of the atom</td>
+            </tr>
+      
+            <tr>
+              <td><b>Electron</b></td>
+      
+              <td>1/1840</td>
+      
+              <td>-1</td>
+      
+              <td>Shells around the nucleus</td>
+            </tr>
+          </tbody>
+        </table><br />
+      
+        <p><b>Elements and Compounds</b></p>
+      
+        <p>Scientists have discovered over hundred different types of atoms and these atoms
+        make up the things we see around us. But the atoms making up a substance may be the
+        same or different. If atoms making up a substance are the same, then the substance is
+        an element. <b style="color: crimson">Elements</b> are fundamental substances made up
+        of only one kind of atoms and hence, they can not be broken down into other substances
+        by any chemical means.</p><br />
+      
+        <p>Since there are over hundred different types of atoms, it follows that there over
+        hundred different elements. Some of the elements discovered are Iron, lead, oxygen,
+        nitrogen, etc. Scientists use a short hand known as <b>chemical symbol</b> to represent
+        each element. For instance, oxygen is represented by O, Nitrogen by N chlorine by Cl,
+        and many more.</p><br />
+      
+        <p>When different elements combine chemically they form compounds. A <b style=
+        "color: crimson">compound</b> is a substance formed from the chemical combination of
+        two or more elements. Compounds have different properties (behaviour) from their
+        constituents. For example, Chlorine as an element is a poisonous gas, but it is a
+        component in table salt which is not poisonous. This confirms the fact that compounds
+        have different properties from their constituents.</p><br />
+      
+        <p><b>Atomic Number, Mass Number and Isotope</b></p>
+      
+        <p>Atoms of the same element have the same number of protons and atoms of different
+        elements have different numbers of protons. The number of protons in an atom is its
+        <b style="color: crimson">atomic number</b> and it is denoted by the letter <b style=
+        "color: crimson">Z</b>. The sum of the number of protons and neutrons in an atom is the
+        mass number of that atom (or element) and it is denoted by <b style=
+        "color: crimson">A</b>.</p><br />
+      
+        <p>The mass number of atoms of a particular element may vary because the neutron
+        numbers in atoms of a particular element may not be the same. Atoms that have the same
+        atomic number(number of protons) but different mass numbers are called <b style=
+        "color: crimson">isotopes</b>.</p><img src="http://speedapp.ididev.com/apps/img/isotopy.jpg" alt="no image found" name=
+        "front_image" id="front_image" /><br />
+      
+        <p>The picture above shows the three isotopes of hydrogen element. It is obvious that
+        isotopy is as a result of difference in neutron numbers. In a nut shell, the number of
+        protons determines the identity of an element and the mass number determines the
+        particular isotope of the element, if it has more than one.</p><br />
+      
+        <p>Scientists perform calculations which may involve the atomic mass of an atom.
+        However, it will be appropriate to represent an element with the average mass of its
+        various isotopes in calculations than to use the mass of just one of its isotopes. The
+        average mass of all the masses of the various isotopes of an element is the <b style=
+        "color: crimson">relative atomic mass</b> of the element. Relative atomic mass is
+        denoted by <b style="color: crimson">Ar</b>.</p><br />
+      
+        <p><b>Sample calculation of relative atomic mass</b></p>
+      
+        <p>Chlorine has two isotopes; they are chlorine-35 and chlorine-37 with the following
+        occurrences (amounts) 75% and 25% respectively. What is the relative atomic mass of
+        chlorine?</p>
+      
+        <p><b><u>Solution:</u></b></p>
+      
+        <p>The question tells us that any amount of chlorine that would be sampled, 75% of the
+        atoms are chlorine-35 and the remaining 25% is chlorine-37. The relative atomic mass
+        calculation will be:</p><img src="http://speedapp.ididev.com/apps/img/Atomic_Structure3.png" alt="no image found"
+        width="326" height="60" /><br />
+      
+        <p><b>Atomic Mass Unit (amu)</b></p>
+      
+        <p>It is appropriate to determine the masses of most substances such as cup, book,
+        bottle, etc in grams or kilograms. However, the gram and the kilogram scale are very
+        inappropriate for the atomic particle. For example, the mass of 1 hydrogen atom is 1.67
+        x 10<sup>-24</sup> grams. This is a small number and that a new mass unit is required
+        on the atomic level.</p><br />
+      
+        <p>Scientists have therefore defined a mass unit for the atomic particles and this is
+        the atomic mass unit. The <b style="color: crimson">atomic mass unit</b> is defined as
+        1/12th the mass of carbon-12 atom. The carbon-12 atom has 6 protons and six neutrons
+        therefore its mass on the amu scale is 12u. The atomic mass unit is denoted by the
+        letter <b style="color: crimson">u</b>.</p><br />
+      
+        <p><b>Electron Shell</b></p>
+      
+        <p>The path along which the electron moves is known as <b style=
+        "color: crimson">electron shell or orbit</b>. Each orbit can accommodate a certain
+        maximum number of electrons. The maximum number of electrons an orbit (shell) can
+        accommodate is given by the formula <b style="color: crimson">2n<sup>2</sup></b>. Where
+        n is an integer and denotes the shell number.</p><br />
+      
+        <p>The shells are assigned numbers 1, 2, 3, 4, 5, and named K, L, M, N, O,
+        respectively, as we move away from the nucleus. The outermost shell in an atom is
+        called the <b style="color: crimson">valence shell</b> and the electrons that occupy
+        that shell are the <b style="color: crimson">valence electrons</b> . The inner shell(s)
+        are called <b style="color: crimson">core shell(s)</b> and the electrons that occupy
+        them are the <b style="color: crimson">core electrons</b>.</p>
+      
+        <p><b>Summary on Electron Shell</b></p>
+      
+        <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+          <tbody>
+            <tr>
+              <th style="background-color: brown; color: azure">Shell Name</th>
+      
+              <th style="background-color: brown; color: azure">Shell Number</th>
+      
+              <th style="background-color: brown; color: azure">maximum Electrons</th>
+            </tr>
+      
+            <tr>
+              <td><b>K</b></td>
+      
+              <td>1</td>
+      
+              <td>2</td>
+            </tr>
+      
+            <tr>
+              <td><b>L</b></td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+            </tr>
+      
+            <tr>
+              <td><b>M</b></td>
+      
+              <td>3</td>
+      
+              <td>18</td>
+            </tr>
+      
+            <tr>
+              <td><b>N</b></td>
+      
+              <td>4</td>
+      
+              <td>32</td>
+            </tr>
+          </tbody>
+        </table><br />
+      
+        <p><b>Electron Configuration (Arrangements)</b></p>
+      
+        <p><b style="color: crimson">Electron Configuration</b> refers to the arrangements of
+        electrons in an atom. Shells that are closer to the nucleus are lower in energy and
+        electrons will occupy them before any other. For example, experiments have shown that
+        hydrogen has one electron and this electron occupies only the K shell. The other shells
+        like L, M, N and O are present in the hydrogen atom but they are empty.</p><br />
+      
+        <p>That is, K shell is of a lower energy than the L shell, and the L shell is of a
+        lower energy than the M shell and so on. In short, <i style="color: blue">the K shell
+        must be fully filled before the L, before the M, the N and so on</i>.</p><br />
+      
+        <p>The pictures below show the electronic configuration of helium, oxygen, neon and
+        chlorine atoms.</p><img src="http://speedapp.ididev.com/apps/img/He.jpg" alt="No imaage found" width="300" height=
+        "305" /> <img src="http://speedapp.ididev.com/apps/img/O.jpg" alt="No imaage found" width="300" height="305" />
+        <img src="http://speedapp.ididev.com/apps/img/Ne.jpg" alt="No imaage found" width="300" height="305" /> <img src=
+        "img/Cl.jpg" alt="No imaage found" width="300" height="305" />
+      
+        <p>The electronic configurations for helium and neon are referred to as the duplet and
+        octet structures respectively. These two configurations are the most stable electronic
+        arrangements because the outer shells are fully filled.</p><br />
+      
+        <p>The table below shows the atomic number, element name, chemical symbol and
+        electronic configurations for the first 20 elements.</p>
+      
+        <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+          <tbody>
+            <tr>
+              <th style="background-color: brown; color: azure">Atomic Number</th>
+      
+              <th style="background-color: brown; color: azure">Element Name</th>
+      
+              <th style="background-color: brown; color: azure">Chemical Symbol</th>
+      
+              <th style="background-color: brown; color: azure">K</th>
+      
+              <th style="background-color: brown; color: azure">L</th>
+      
+              <th style="background-color: brown; color: azure">M</th>
+      
+              <th style="background-color: brown; color: azure">N</th>
+            </tr>
+      
+            <tr>
+              <td>1</td>
+      
+              <td>Hydrogen</td>
+      
+              <td>H</td>
+      
+              <td>1</td>
+      
+              <td></td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>2</td>
+      
+              <td>Helium</td>
+      
+              <td>He</td>
+      
+              <td>2</td>
+      
+              <td></td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>3</td>
+      
+              <td>Lithium</td>
+      
+              <td>Li</td>
+      
+              <td>2</td>
+      
+              <td>1</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>4</td>
+      
+              <td>Beryllium</td>
+      
+              <td>Be</td>
+      
+              <td>2</td>
+      
+              <td>2</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>5</td>
+      
+              <td>Boron</td>
+      
+              <td>B</td>
+      
+              <td>2</td>
+      
+              <td>3</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>6</td>
+      
+              <td>Carbon</td>
+      
+              <td>C</td>
+      
+              <td>2</td>
+      
+              <td>4</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>7</td>
+      
+              <td>Nitrogen</td>
+      
+              <td>N</td>
+      
+              <td>2</td>
+      
+              <td>5</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>8</td>
+      
+              <td>Oxygen</td>
+      
+              <td>O</td>
+      
+              <td>2</td>
+      
+              <td>6</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>9</td>
+      
+              <td>Fluorine</td>
+      
+              <td>F</td>
+      
+              <td>2</td>
+      
+              <td>7</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>10</td>
+      
+              <td>Neon</td>
+      
+              <td>Ne</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td></td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>11</td>
+      
+              <td>Sodium</td>
+      
+              <td>Na</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>1</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>12</td>
+      
+              <td>Magnesium</td>
+      
+              <td>Mg</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>2</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>13</td>
+      
+              <td>Aluminum</td>
+      
+              <td>Al</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>3</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>14</td>
+      
+              <td>Silicon</td>
+      
+              <td>Si</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>4</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>15</td>
+      
+              <td>Phosphorus</td>
+      
+              <td>P</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>5</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>16</td>
+      
+              <td>Sulphur</td>
+      
+              <td>S</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>6</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>17</td>
+      
+              <td>Chlorine</td>
+      
+              <td>Cl</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>7</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>18</td>
+      
+              <td>Argon</td>
+      
+              <td>Ar</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>8</td>
+      
+              <td></td>
+            </tr>
+      
+            <tr>
+              <td>19</td>
+      
+              <td>Potassium</td>
+      
+              <td>K</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>8</td>
+      
+              <td>1</td>
+            </tr>
+      
+            <tr>
+              <td>20</td>
+      
+              <td>Calcium</td>
+      
+              <td>Ca</td>
+      
+              <td>2</td>
+      
+              <td>8</td>
+      
+              <td>8</td>
+      
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+
+</ion-content>

@@ -1,0 +1,488 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>FORCE</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">The role of forces in everyday life is a familiar one. Pushes and
+        pulls of all sorts. A horse pulls a wagon, a baby throws a rattle, a boy stretches a
+        spring and a motor raises an elevator. These are common examples of force involving
+        motion.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">However, the nonexistence of motion does not mean absence of force.
+        For example, a horse can exert a force on a block of heavy stone and yet will not move
+        the stone. This means that force can cause motion, but it is not <i style=
+        "color:blue">always</i> correlated with motion.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">What motion will be caused if a baby pushes on a wall? Forces can
+        <i style="color:blue">stop</i> motion as well. For example, a footballer brakes a
+        moving ball with his foot.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Forces can also cause <i style="color:blue">deformation</i> in some
+        situations. For example, if you hit a milk tin with a hammer. Right now, it is obvious
+        that force can cause motion, will try to cause motion, stop motion or deform a
+        body.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Therefore, <b style="color:crimson">FORCE</b> is defined as that
+        which <i style="color:blue">causes</i> or <i style="color:blue">tends</i> to cause a
+        <i style="color:blue">change</i> in a body&rsquo;s <i style="color:blue">state of
+        motion</i> or its <i style="color:blue">shape</i>. The SI unit of force is <b style=
+        "color:crimson">Newton</b> (1N = 1kgms<sup>-2</sup>)<b style=
+        "color:crimson">.</b><br /></p>
+      
+        <p align="justify">Mathematically, the force possessed by a body is given as,</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">F = ma;</b> Where F = force, m = mass of
+        the body and a = acceleration of the body.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+      
+        <p align="justify">A boy rolls a ball of mass 0.1kg on a level ground for it to gain an
+        acceleration of 8ms<sup>-2</sup>. Calculate he force applied.<br /></p>
+      
+        <p align="justify"><u>Solution<br /></u></p>
+      
+        <p align="justify">F = ma<br /></p>
+      
+        <p align="justify">m = 0.1kg; a = 8ms<sup>-2</sup>.<br /></p>
+      
+        <p align="justify">F = 0.1 x 8<br /></p>
+      
+        <p align="justify"><u>F = 0.8N</u></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Weight:</b> The <b style=
+        "color:crimson">weight</b> of a body is defined as the amount of gravitational pull on
+        the body. Weight is considered as force because it is expressed mathematically as
+        <b style="color:crimson">W = mg</b> and its unit is Newton. Where W = weight of the
+        body, m = mass of the body and g = acceleration due to gravity. This equation can be
+        compared with F = ma.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="center"><b>F</b> = m<b style="color:crimson">a</b><br />
+        <b>W</b> = m<b style="color:crimson">g</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The bold alphabets in the two equations are the only
+        differences.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Since g reduces as we move away from the centre of the earth, the
+        weight of a body is not a constant value. The value of g on the surface of the earth is
+        9.81ms<sup>-2</sup>. The weight of a body taken on a high land (as in mountain top)
+        will be lesser than one taken on a low land.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">In practice, no single force exists. Any applied force (action) has
+        an opposing force (reaction). In &lsquo;A&rsquo; (the figure on the next page), a ball
+        bounces back after hitting a wall. Note that the ball has mass and acceleration.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Meaning, it possesses some amount of force. It bounces back because
+        the wall exerts an equal but opposite force on the ball. In &lsquo;B<b style=
+        "color:crimson">&rsquo;</b>, similar action and reaction is experienced when a force
+        <b style="color:crimson">F</b> is applied to the block lying on the ground to cause a
+        relative sliding motion.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Here, the force of friction that exists between the floor and the
+        base of the block acts as the opposing force. If the force <b style=
+        "color:crimson">F</b> applied is not greater than the frictional force, the block will
+        not move.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Again, when you try to lift a bucket full of water, a downward force
+        (weight of bucket + that of water) acts as the reaction to the force you apply which
+        builds some sort of tension in your arm. Until the upward force you exert is greater
+        than the weight of the bucket and water, it will remain in its position. Friction in
+        liquids is termed <b style="color:crimson">viscosity.</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/fa.png" alt="" name="front_image" id=
+        "front_image" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Frictional Force in detail</b><br /></p>
+      
+        <p align="justify"><i style="color:blue">This is the opposing force to relative sliding
+        motion between two contacting surfaces</i>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">There are two types of friction. They are</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <b style="color:crimson">Static friction:</b> this is the force required just to
+            overcome friction to cause a stationary body to begin to move.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Kinematic or Dynamic friction:</b> this is the force
+            required to maintain (the motion of) a body in a uniform motion over the surface in
+            which it is in contact with. Value of kinematic friction is less than static
+            friction for a particular pair of surfaces in contact.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Laws of Friction</b><br />
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>The magnitude of the frictional force is dependent on the nature of the surfaces
+          in contact. That is whether smooth or rough. Rough surfaces increase the magnitude of
+          friction.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>For the same body in contact, the frictional force is independent on the area in
+          contact.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The frictional force acts in a direction opposite to the applied force.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The <b style="color:crimson">magnitude</b> of the frictional force is equal to
+          the <b style="color:crimson">normal reaction</b> between the two bodies multiplied by
+          a proportionality constant known as the <b style="color:crimson">coefficient of
+          friction</b> (U).
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>The figure below is an illustration of the fourth law of friction. The <b style=
+        "color:crimson">normal reaction (R)</b> is the perpendicular force the floor exerts on
+        the block which is equal to the weight of the block. If no external force is applied to
+        the block, then the only forces that will exist are the weight of the body and the
+        reaction of the floor as shown in case 1.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/fa2.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Friction will come to play if and only if a force is applied to the
+        block to move it as shown in case 2. The magnitude of the Frictional force</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">(<b>Fr</b>) is equal to <b>U x R</b>.<br /></p>
+      
+        <p align="justify">Since <b>R = W</b><br /></p>
+      
+        <p align="justify">it can be rewritten as:<br /></p>
+      
+        <p align="justify"><b>Fr = U x W.</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The coefficient of friction (U) depends on the smoothness of the
+        contacting surfaces. The smoother the surfaces in contact the lesser the value of the
+        coefficient of friction and hence, the lesser the frictional force and
+        vice&ndash;versa.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">From the above illustration, if<br />
+        <br />
+        <b>F &lt; or = Fr</b>, then the block will be at rest, it will only be in motion if
+        only<br />
+        <br />
+        <b>F &gt; Fr.</b><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Advantages of Friction</b><br /></p>
+      
+        <p align="justify">Friction between</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>The feet and the ground make walking possible.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The wheels of a vehicle and the road makes movement possible
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The foot of a ladder and the ground allows the ladder to lean on a wall without
+          slipping.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Enables the brakes of a vehicle to function properly.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>There are so many examples that can be given. Try to figure some of them out.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Disadvantages of friction</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It generates unnecessary heat in machines
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It reduces the efficiency of machines since some force is required to overcome
+          it.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It causes wear and tear.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">How to reduce friction</b><br />
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>By lubricating contacting surfaces.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Smoothing rough surfaces which are in contact through polishing.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>By the use of bearings and rollers
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><br />
+      
+        <p align="justify"><b style="color:crimson">Viscosity</b>: This is the internal
+        friction of a fluid. Viscosity of fluids <b style="color:crimson">decreases</b> with
+        <b style="color:crimson">increase</b> in <b style="color:crimson">temperature</b> and
+        vice&ndash;versa. Viscous fluids as compared to non&ndash;viscous fluids do not have
+        free flow. It is therefore expected that water should flow faster than condensed milk,
+        because water is less viscous. Viscosity also affects the motion of bodies in a
+        liquid.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">For example, a piece of stone will fall faster to the bottom of a
+        container containing water than one containing condensed milk.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Comparing the viscosity of two liquids</b>:
+        Put equal volumes of the two different liquids whose viscosities are to be compared in
+        two measuring cylinders as shown in the picture below.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/fa3.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Gently drop a metal ball into each cylinder and note the time it
+        takes each ball to get to the bottom of the cylinder. The liquid in which the ball gets
+        to the bottom faster is the less viscous.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Uses of viscosity</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Aircraft and ships move because of viscosity in air and water respectively.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Viscous fluids are used as lubricants. A more dense liquid serves as a good
+          lubricant than a less dense one.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Types of Forces</b><br />
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <b style="color:crimson">Centripetal force:</b> this is a force which draws a body
+            moving in a circular path towards the centre of rotation.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Centrifugal force:</b> this is a force which draws a body
+            moving in a circular path away from the centre of rotation.
+      
+            <p align="left"><br />
+            The figure below demonstrates centripetal and centrifugal forces.</p>
+      
+            <p align="justify"><img src="http://speedapp.ididev.com/apps/img/fa4.png" alt="" /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Frictional force:</b> this is the force that opposes
+            relative sliding motion between two surfaces in contact. Fluid friction is called
+            <b style="color:crimson">Viscosity</b> or <b style="color:crimson">Viscous
+            Drag</b>.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Tension:</b> this is a force in a stretched string or
+            spring.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Gravitational force:</b> this is the force of attraction
+            between any two bodies placed in a gravitational field.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Electrostatic force:</b> this is the force attraction or
+            repulsion between two charged bodies.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Electromagnetic force:</b> this is the magnetic force
+            built as a result of the motion of a charged body.
+      
+            <p align="left"><br /></p>
+          </li>
+        </ol>
+</ion-content>

@@ -1,0 +1,149 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>HYDROLOGICAL CYCLE</b></p><br />
+
+  <p align="justify">Water is essential to life. Without it, the <i style=
+  "color: blue">biosphere</i> would fail to exist. But the largest reservoir is the
+  collection of oceans, accounting for 97% of the Earth's water, which is toxic to humans
+  and many plants and animals. The next largest quantity (2%) is stored in solid form in
+  the ice caps and glaciers. How do we obtain fresh water resources then? Where does
+  drinkable water come from? To understand, we need to turn to the <b style=
+  "color: crimson">Hydrological</b> (water) <b style="color: crimson">Cycle</b>. Water
+  has many unique properties that allow it to be such a universal material.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">One special characteristic of water is its ability to change state
+  very easily under Earth conditions. It can be found readily on the planet in all of its
+  three forms, solid, liquid, and gas. These forms also play a great part in the
+  hydrological cycle. Now, exactly what is the hydrologic cycle? The hydrological cycle
+  describes the continuous movement of water on, above, and below the surface of the
+  Earth. Since the water cycle is truly a "cycle," there is no beginning or end.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The hydrologic cycle takes place in the <b style=
+  "color: crimson">hydrosphere</b>&mdash;this is the region containing all the water in
+  the atmosphere and on the surface of the earth. The <i style="color: blue">cycle</i> is
+  the movement of water through this hydrosphere. We can think of this cycle as the
+  <i style="color: blue">earth&rsquo;s water budget</i>. But note that in whatever
+  &lsquo;budget&rsquo; the water cycle is doing, there is always the same amount of water
+  on the surface of the earth.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/hydro1.jpg" alt="" name="front_image" width="628"
+  height="416" id="front_image" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">You can refer to the picture concurrently as you read about the
+  cycle. The sun, which drives the water cycle, heats water in the oceans. Some of it
+  evaporates as vapour into the air. Ice and snow can sublimate directly into water
+  vapor. Rising air currents take the vapor up into the atmosphere, along with water from
+  <i style="color: blue">evapotranspiration</i>, which is water transpired from plants
+  and evaporated from the soil. The vapor rises into the air where cooler temperatures
+  cause it to condense into clouds.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Air currents move clouds around the globe; cloud particles collide,
+  grow, and fall out of the sky as precipitation. Some precipitation falls as snow and
+  can accumulate as ice caps and glaciers, which can store frozen water for thousands of
+  years. Snow in warmer climates often melts, and the melted water flows overland. Most
+  precipitation falls back into the oceans or onto land, where, due to gravity, the
+  precipitation flows over the ground as <i style="color: blue">surface runoff</i>. A
+  portion of runoff enters rivers in valleys in the landscape, with stream flow moving
+  water towards the oceans. Runoff, and ground&ndash;water seepage, accumulate and are
+  stored as freshwater in <i style="color: blue">lakes</i>. Not all runoff flows into
+  rivers. Much of it soaks into the ground as <i style="color: blue">infiltration</i>.
+  Some water infiltrates deep into the ground and replenishes subsurface rocks, which
+  store huge amounts of freshwater for long periods of time. Some infiltration stays
+  close to the land surface and can seep back into surface&ndash;water bodies (and the
+  ocean) as <i style="color: blue">ground&ndash;water</i> discharge. Some ground water
+  finds openings in the land surface and emerges as freshwater <i style=
+  "color: blue">springs</i>. Over time, the water continues flowing, some to reenter the
+  ocean, where the water cycle renews itself.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The saying that one can live longer without food than without water
+  tells us how important water is and for that matter the hydrological cycle is to all
+  living things. Apart from individual use (e.g. 83% of the human circulatory system is
+  water; drinking, respiration, perspiration, and elimination of wastes), large amounts
+  of water are needed for most economic activities: agriculture and mining, food
+  processing, manufacturing (e.g., about 120,000 liters of water are used in the
+  production of an average automobile), and also in the generation of electricity even
+  here in Ghana.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">You can still think of more! The hydrological cycle is indeed a
+  functional prerequisite for all living organisms. Despite these established facts, the
+  hydrological cycle still gets polluted by man, leading to consequences which are
+  harmful to organisms and plants which live on or in these water bodies. The primary
+  sources of water pollution are generally grouped into two categories based on their
+  point of origin. <i style="color: blue">Point&ndash;source</i> pollution refers to
+  contaminants that enter a waterway through a discrete "point source".</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Examples of this category include discharges from a wastewater
+  treatment plant, outfalls from a factory, leaking underground tanks, etc. The second
+  primary category, non&ndash;point source pollution, refers to contamination that does
+  not originate from a single discrete source. Runoff water from an agricultural field,
+  or metals and hydrocarbons from an area with high impervious surfaces and vehicular
+  traffic are examples of non&ndash;point source pollution.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">For example in the early 1900s, before the massive use of chlorine,
+  pesticides, herbicides and the tens of thousands other chemicals that we are exposed to
+  today, the average person had a 1 in 50 chance of getting cancer. But today, 1 in 3 can
+  expect to get cancer in their lifetime. Pathogens in water bodies can produce diseases
+  in either human or animal hosts.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">With all the above in mind, you will bear with me that the little
+  water we have got on the earth should not be wasted but be conserved. Water
+  conservation refers to reducing use of fresh water, through technological or social
+  methods. What methods can you think of which will help conserve water in your home?
+  What about in a factory?</p>
+
+  <p align="left"><br /></p>
+</ion-content>

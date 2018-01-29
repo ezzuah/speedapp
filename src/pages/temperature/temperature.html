@@ -1,0 +1,476 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>TEMPERATURE</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">We know from experience that <i style="color:blue">heat</i> and
+        <i style="color:blue">temperature</i> are related. However, they are not the same. The
+        temperature of a burning match is much higher than an electric heater (reason: when a
+        paper comes into contact with a burning match, it will burn faster than when in contact
+        with a plugged electric heater). However, the burning match cannot warm a bucket full
+        of water but the heater can.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Therefore, <b style="color:crimson">heat</b> can be seen as the
+        amount of thermal energy a body contains, accepts or evolves. And <b style=
+        "color:crimson">temperature</b> <i style="color:blue">is a measure of the degree of
+        hotness or coldness of a substance</i>. When two bodies of different temperatures are
+        in contact, heat flows from the hotter body to the colder body.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Temperature Scales</b><br /></p>
+      
+        <p align="justify">There are many temperature scales (units) but we will narrow our
+        discussion to only two; which are the <i style="color:blue">degree Celsius</i>
+        (<sup>o</sup>C) and <i style="color:blue">degree Kelvin</i> (K).<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <b style="color:crimson">Degree Celsius/Centigrade</b>; this is a temperature scale
+            which has the freezing point and boiling points of water as its reference point.
+            The <b style="color:crimson">ice point</b> or <b style="color:crimson">lower fixed
+            point</b> (freezing point of water) is fixed at zero degrees Celsius
+            (0<sup>o</sup>C).
+      
+            <p align="justify">And the <b style="color:crimson">steam point</b> or <b style=
+            "color:crimson">upper fixed point</b> (boiling point of water) is fixed at hundred
+            degrees Celsius (100<sup>o</sup>C). The degrees (temperatures) between these two
+            fixed points are divided into hundred equal parts. From one degree to the next is a
+            temperature interval of one degree Celsius, 1<sup>o</sup>C.<br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Kelvin</b>; this is a temperature scale that has its
+            reference point at the absolute zero (&ndash;273K) of all substances. At that
+            temperature all the potential and kinetic energy contained in a substance have been
+            removed. The temperature interval between the Kelvin and the Celsius are the same.
+      
+            <p align="justify">For example, the freezing point of water is zero degrees
+            Celsius, 0<sup>o</sup>C which is equal to 273K. And the boiling point is hundred
+            degrees Celsius which is equal to 373K. Note that the temperature difference
+            between the freezing and boiling points of water in both the degree Celsius and the
+            Kelvin is 100 temperature units.</p>
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Thermal Expansion</b><br />
+      
+        <p align="justify">With few exceptions, substances (solid, liquid or gases) expand when
+        heated and contracts when cooled. When the temperature of substance is raised, its
+        thermal energy increases. The increase in thermal energy increases the amplitude of
+        vibrations of the atoms or molecules of the substance.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">As a result, the atoms and molecules move to equilibrium positions
+        slightly further apart than before, and the solid expands in all directions. When equal
+        volumes of gas, liquid and solid are heated, the gas expands more than the other two
+        and the liquid also expands than the solid.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Anomalous Expansion Of Water</b><br /></p>
+      
+        <p align="justify">Most substances expand as they are being heated. Water is an
+        exception of this general trend of heating and expansion. When water at a temperature
+        below 0<sup>o</sup>C is heated, it expands steadily until it gets to 0<sup>o</sup>C. It
+        begins to contract between the temperature ranges of 0<sup>o</sup>C to 4<sup>o</sup>C
+        and expands steadily again at temperatures greater than 4<sup>o</sup>C. This means that
+        water has it greatest density at 4<sup>o</sup>C.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Change Of State</b><br /></p>
+      
+        <p align="justify">Matter exists in three physical states, which are solid, liquid and
+        gas. One matter can change its normal physical state to the other depending on the
+        physical conditions it is subjected to.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Melting and Freezing</b><br /></p>
+      
+        <p align="justify">When sugar is heated to a certain temperature it melts or fuse. The
+        temperature at which a substance melts is the <b style="color:crimson">melting
+        point</b>. At the melting temperature, any heat applied to the sugar goes to break the
+        bonds holding its molecules in fixed positions causing it to melt (flow). It is after
+        all the sugar particles have been melted, when its temperature will begin to rise
+        again. When the melted sugar is cooled (heat is removed from it), its temperature will
+        be reducing until it gets to the melting point.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">At the melting point, the temperature remains constant and the sugar
+        solidifies. The melting point is the same as the <b style="color:crimson">freezing
+        point</b>. The freezing point is the temperature at which a substance changes state
+        from liquid to solid. This means that melting and freezing of a particular substance
+        occur at the same temperature (note that solids melt at that temperature whilst liquids
+        solidify at that same temperature). Another example is supplying heat to ice at
+        0<sup>o</sup>C will melt it whereas removing heat from water at 0<sup>o</sup>C will
+        solidify it. <b style="color:crimson">Impurities lower the freezing point of
+        liquids</b>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Boiling and Condensation</b><br /></p>
+      
+        <p align="justify">Using a similar rule of thought, we can come to the conclusion that
+        boiling and condensation occur at the same temperature. For example, liquid water boils
+        at 100<sup>o</sup>C when it is heated whilst at that same temperature, water vapour
+        will condense when heat is removed from it.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The following factors affect boiling point diversely<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>The presence of impurities increases the boiling point.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Reduced atmospheric pressure reduces the boiling point.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Less dense liquids have a lower boiling point than denser liquids.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Evaporation</b><br />
+      
+        <p align="justify">When some amount of robbing alcohol is placed in a shallow dish at
+        normal room temperature, you will notice that the level of the alcohol decreases in a
+        short time and the odor of alcohol become strong in the air around. We say the alcohol
+        has <b style="color:crimson">evaporated</b>. Evaporation is the process through which
+        liquid molecules absorbs heat from its surrounding and escape to the gaseous state.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Evaporation causes cooling effect. For example, when you dip your
+        finger in a robbing alcohol and allow air to blow over it, the finger feels cool. The
+        alcohol absorbs heat from the hand as it is evaporating; this makes your hand feel
+        cold. The human body employs evaporation to cool down. If you sweat on a hot sunny day,
+        the sweat takes some heat from your body as it evaporates and your body cools down.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The rate of evaporation is increased by<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Increasing the surface area of the liquid exposed to air.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Lowering the pressure on the liquid.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Increasing temperature.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Lower relative humidity of the surroundings.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Increased in wind velocity.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Sublimation</b><br />
+      
+        <p align="justify">Just as robbing alcohol, a piece of camphor left in the open air
+        becomes smaller and smaller until it disappears eventually. The molecules of the
+        camphor escape from the solid surface and go into the gaseous state. <b style=
+        "color:crimson">Sublimation</b> is the process through which a substance changes state
+        from the solid state to the gaseous state.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Differences between boiling and
+        evaporation</b><br /></p>
+      
+        <table border="1" cellspacing="1" cellpadding="1" width="100%">
+          <tr>
+            <th style="color: white; background-color: darkred">Boiling</th>
+      
+            <th style="color: white; background-color: darkred">Evaporation</th>
+          </tr>
+      
+          <tr>
+            <td>Takes place at boiling point only</td>
+      
+            <td>Takes place at all temperatures</td>
+          </tr>
+      
+          <tr>
+            <td>Does not cause cooling</td>
+      
+            <td>Causes cooling</td>
+          </tr>
+      
+          <tr>
+            <td>Does not increase with temperature</td>
+      
+            <td>Increases with an increase in temperature</td>
+          </tr>
+      
+          <tr>
+            <td>Takes place within the liquid</td>
+      
+            <td>Takes place at the liquid surface only</td>
+          </tr>
+        </table>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Types Thermometers</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Bimetallic thermometer.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Pyrometer.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>gas thermometer.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Thermocouples.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Liquid in glass thermometer.<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson"><img src="http://speedapp.ididev.com/apps/img/temp1.png" alt="" /> <img src=
+        "img/temp2.png" alt="" /></b> <img src="http://speedapp.ididev.com/apps/img/temp3.png" alt="" />
+      
+        <p align="left"><br />
+        <br /></p>
+      
+        <p align="justify"><b style="color:crimson">The Calibration Of A Liquid In Glass
+        Thermometer</b><br /></p>
+      
+        <p align="justify">To calibrate a liquid in glass thermometer, determine the lower and
+        upper fixed points. The lower fixed point can be determined by fixing the bulb of a
+        thermometer in melting ice for several minutes to obtain a constant reading on the
+        thermometer as shown in Figure ??.2 left and the upper fixed point is also determined
+        by fixing the thermometer in a stream of steam from boiling water to obtain a constant
+        reading (see figure ??.2 right). After determining the fixed points, the interval
+        between them is divided into hundred equal parts. Each division depicts one degree
+        Celsius (1<sup>o</sup>C).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/temp4.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/temp5.png" alt=
+        "" /></p>
+      
+        <p align="left"><br />
+        <br /></p>
+      
+        <p align="justify"><b style="color:crimson">Clinical Thermometer</b><br /></p>
+      
+        <p align="justify">This is an example of a liquid in glass thermometer. It is used
+        purposely to measure the body temperature of humans which is around 37<sup>o</sup>C for
+        a normal human being. Therefore, the temperature range of the clinical thermometer is
+        between 35 <sup>o</sup>C and 43<sup>o</sup>C.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The clinical thermometer has some special design features that make
+        it function perfectly.<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It consists of a <b style="color:crimson">fine bore</b> in which the mercury
+          level rise or fall depending on the temperature it is exposed to. The fine bore in
+          the thermometer ensures that the rise of mercury in the thermometer tube is
+          uniform.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>There is a constriction called <b style="color:crimson">kink</b> between the bulb
+          and the first temperature point. This kink prevents the mercury that has risen past
+          it from falling back to the bulb. The figure below is a magnified picture of a
+          kink.<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol><img width="208" height="189" src="http://speedapp.ididev.com/apps/img/temp6.png" alt="" />
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Properties Of A Thermometric
+        Liquid</b><br /></p>
+      
+        <p align="justify">It must:<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>expand uniformly with temperature.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>be visible.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>not wet glass (that is, must have low adhesive force).<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>be a good conductor of heat.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>have freezing and boiling points outside the temperature range we wish to
+          measure.
+      
+            <p align="left"></p>
+          </li>
+        </ol><br />
+      
+        <p align="justify"><b style="color:crimson">Why Water Is Not Used In
+        Thermometer</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It expands irregularly at certain temperature range (between 0<sup>o</sup>C and
+          4<sup>o</sup>C).<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It vapourises and condenses at certain temperatures.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It wets and clings to the glass tube.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The temperature range between its freezing and boiling points is very small.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Why Mercury Is Prefered To Alcohol As A Thermometric
+        Liquid</b><br />
+      
+        <table border="1" cellspacing="1" cellpadding="1" width="100%">
+          <tr>
+            <th style="color: white; background-color: darkred">Mercury</th>
+      
+            <th style="color: white; background-color: darkred">Alcohol</th>
+          </tr>
+      
+          <tr>
+            <td>It does not wet glass</td>
+      
+            <td>It wets glass</td>
+          </tr>
+      
+          <tr>
+            <td>It does not vapourise</td>
+      
+            <td>It vapourises</td>
+          </tr>
+      
+          <tr>
+            <td>It is a good conductor of heat</td>
+      
+            <td>It is a poor conductor of heat</td>
+          </tr>
+      
+          <tr>
+            <td>It is easily seen</td>
+      
+            <td>It has to be coloured before it is seen</td>
+          </tr>
+      
+          <tr>
+            <td>Its expansion is more uniform</td>
+      
+            <td>Its expansion is not much uniform</td>
+          </tr>
+        </table>
+</ion-content>

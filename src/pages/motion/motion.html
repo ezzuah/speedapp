@@ -1,0 +1,565 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>MOTION</b><br /></p>
+  
+    <p align="justify">If you leave your house or dormitory to the school&rsquo;s computer
+    lab, you have covered some distance. You may also leave the lab for a different class.
+    In each case, you are changing your location. During the time that you are making these
+    changes your body is in <i style="color:blue">motion</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Motion</b> is the change in position of a
+    body with respect to time. This branch of physics is called <i style=
+    "color:blue">kinematics</i> in that; problems pertaining to motions are solved without
+    considering the <i style="color:blue">forces</i> that are causing the motion<b style=
+    "color:crimson">.</b> The other branch that considers the forces causing the motion is
+    called <i style="color:blue">dynamics</i><b style="color:crimson">.</b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Types of Motion</b><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>
+        <b style="color:crimson">Linear Motion:</b> this is a motion in which the body
+        moves in a straight line.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Oscillatory or Simple Harmonic motion</b>: the body moves
+        to and fro, like the swinging pendulum.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Rotational motion:</b> this is a motion in which the body
+        spins on an axis. Example, rotation of a fan or the spinning wheels of a vehicle.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Circular motion</b>: this is a kind of motion in which the
+        body moves in a circular path.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Translational Motion:</b> this is a form of motion that
+        does not involve any form of rotation.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Random Motion:</b> this is a kind of motion in which the
+        body moves haphazardly. Like the motion of gas particles.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Below are some quantities that you should know and understand.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Displacement/Distance: displacement</b> is
+    the distance measured in a <i style="color:blue">specified</i> direction. Note that
+    <b style="color:crimson">distance</b> has no direction. For instance, Kofi walked 20m
+    today. Kofi can cover 20m distance but he may not change his position.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Reason: He can walk 10m away from his position and 10m back to his
+    original position. He has made 20m but he did not change his position. Therefore
+    displacement and distance have two different meanings in physics.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Velocity/Speed:</b> this is the distance
+    covered by a body in a unit time in a specified direction. Note that the difference
+    between velocity and speed is that velocity has direction whilst speed has not. Just
+    like the displacement&ndash;distance illustration above. The SI unit of velocity is
+    meter per second (m/s).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Mathematically, Velocity is given as,</p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>Velocity, v</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>s</b><br />
+          <hr style="font-weight: bolder" />
+          <b>t</b>
+        </td>
+      </tr>
+    </table>
+  
+    <p align="justify">Where v = velocity, s = distance travelled and t = time taken to
+    travel the distance s.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Acceleration:</b> Only under very unusual
+    circumstances can a body travel at constant speed. If we drive through town, we
+    continually stop for red traffic lights. When they change to green we start on our way
+    again.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Through this stopping and starting, we change our velocity at
+    different rates. In physics, the rate at which a body changes its velocity is known as
+    <b style="color:crimson">acceleration</b>. If a body is reducing its velocity we say it
+    is <i style="color:blue">decelerating or retarding</i> and if it is increasing it, it
+    is <i style="color:blue">accelerating</i>. The SI unit of acceleration is meter per
+    second squared (m/s2).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Mathematically, acceleration,</p>
+  
+    <p align="left"></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>Acceleration, a</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>v - u</b><br />
+          <hr style="font-weight: bolder" />
+          <b>t</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">Where v = final velocity, u = initial velocity and t = time.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Equations of a Uniform Motion in a straight
+    line</b><br /></p>
+  
+    <p align="justify">The quantitative or mathematical description of a uniform motion in
+    a straight line is simple. There are very few (five) variables that needs to be handled
+    always.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">These are, <b style="color:crimson">time (<i style=
+    "color:blue">t</i>)</b> taken by the body to cover a given <b style=
+    "color:crimson">distance (<i style="color:blue">s</i>),</b> the <b style=
+    "color:crimson">initial velocity (<i style="color:blue">u</i>)</b> of the body, the
+    <b style="color:crimson">final velocity (<i style="color:blue">v</i>)</b> of the body
+    and lastly the <b style="color:crimson">acceleration</b> or <b style=
+    "color:crimson">retardation (<i style="color:blue">a</i>)</b> to change its velocity
+    from <i style="color:blue">u</i> to <i style="color:blue">v</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Time and distance (displacement) are fundamental quantities whereas
+    velocity and acceleration are derived quantities.</p>
+  
+    <p align="left"></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>v</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td><b>u + at</b></td>
+  
+        <td>&rarr; (1)</td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>s</b></td>
+  
+        <td><b>= (</b></td>
+  
+        <td>
+          <b>u + v</b><br />
+          <hr style="font-weight: bolder" />
+          <b>2</b>
+        </td>
+  
+        <td>)<b>t</b></td>
+  
+        <td>&rarr; (2)</td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>s</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td><b>ut +</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr style="font-weight: bolder" />
+          <b>2</b>
+        </td>
+  
+        <td><b>at<sup>2</sup></b></td>
+  
+        <td>&rarr; (3)</td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>v<sup>2</sup></b></td>
+  
+        <td><b>=</b></td>
+  
+        <td><b>u<sup>2</sup> + 2as</b></td>
+  
+        <td>&rarr; (4)</td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center" cellpadding="1" cellspacing="1">
+      <tr>
+        <td><b>Average velocity, v<small>a</small></b></td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>u + v</b><br />
+          <hr style="font-weight: bolder" />
+          <b>2</b>
+        </td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>s</b><br />
+          <hr />
+          <b>t</b>
+        </td>
+  
+        <td>&rarr; (5)</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><b style="color:crimson">Example 1</b></p>
+  
+    <p align="justify">A body starts from rest and accelerates uniformly at the rate of
+    2ms<sup>-2</sup>. Find:<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol type="a">
+      <li>the distance travelled in 5 seconds.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>its velocity if it has travelled for 4 seconds.<br /></li>
+    </ol>
+  
+    <p align="justify"><u><b style="color:crimson">Solution</b></u> <b style=
+    "color:crimson"><u>to &lsquo;a&rsquo;</u></b> <u><br /></u></p>
+  
+    <p align="justify">In order to know which of the equations to use, identify the known
+    and unknown quantities from the question.<br />
+    <br />
+    Since the body started from rest u = 0 ms<sup>-1</sup>.<br />
+    <br />
+    Its acceleration, a = 2ms<sup>-2</sup> and<br />
+    <br />
+    t = 5 sec.<br />
+    <br />
+    The only unknown quantity is distance, s. The equation that links u, a, t and s is the
+    third equation above.</p>
+  
+    <p align="left"></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td><b>s</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td><b>ut +</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr style="font-weight: bolder" />
+          <b>2</b>
+        </td>
+  
+        <td><b>at<sup>2</sup></b></td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td>s</td>
+  
+        <td>=</td>
+  
+        <td>0 x 5 +</td>
+  
+        <td>
+          1<br />
+          <hr style="font-weight: bolder" />
+          2
+        </td>
+  
+        <td>x 2 x (5)<sup>2</sup></td>
+      </tr>
+    </table><br />
+    <u>s = 25m</u><br />
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b style="color:crimson">Solution to &lsquo;</b></u><b style=
+    "color:crimson"><u>b</u><u>&rsquo;</u></b> <u><br /></u></p>
+  
+    <p align="justify">Here, we have a = 2 ms<sup>-2</sup>, u = 0, t = 4 sec and v = ??</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">the equation linking a, u, t and v is equation (1),</p>
+  
+    <p align="left"><b>v = u + at.</b></p>
+  
+    <p align="left">v = 0 + 2 x 4 = 8ms<sup>-1</sup></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+  
+    <p align="justify">A body with velocity 8ms<sup>-1</sup> decelerates uniformly at the
+    rate of 1ms<sup>-2</sup>. Find the distance it will cover before it comes to
+    rest.<br /></p>
+  
+    <p align="justify"><u><b style="color:crimson">Solution</b><br /></u></p>
+  
+    <p align="justify">From the question u = 8ms<sup>-1</sup>,<br />
+    <br />
+    v = 0 ms<sup>-1</sup>,<br />
+    <br />
+    since the body is decelerating the value of &lsquo;a&rsquo; should be negated, a =
+    &ndash;1ms<sup>-2</sup><br />
+    <br />
+    and s = ??<br /></p>
+  
+    <p align="justify">Equation (4) links all the four quantities above.<br />
+    <br />
+    <b>v<sup>2</sup> = u<sup>2</sup> + 2as.</b><br />
+    <br />
+    0<sup>2</sup> = 8<sup>2</sup>+2 x (-1) x s<br />
+    <br />
+    0 = 64 - 2s<br />
+    <br />
+    2s = 64</p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>s =</td>
+  
+        <td>
+          64<br />
+          <hr />
+          2
+        </td>
+      </tr>
+    </table><br />
+    <u>s = 32m</u>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Velocity time graph</b><br /></p>
+  
+    <p align="justify">If a body is travelling with varying acceleration, the equations of
+    motion become a bit confusing and cumbersome. In such cases, the velocity&ndash;time
+    graph may proof very useful. This is a graph with velocity plotted on the vertical and
+    time on the horizontal coordinates.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 3</b><br /></p>
+  
+    <p align="justify">A body starts from rest, accelerates uniformly at the rate of
+    2ms<sup>-2</sup> for 10 seconds. It then maintains its velocity reached for 15 seconds
+    and then retards to rest at the rate of 1ms<sup>-1</sup>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>show the motion on a velocity&ndash;time graph.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>the total distance travelled by the body.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b style="color:crimson">Solution</b><br /></u></p>
+  
+    <p align="justify">The first stage of the motion is when the body accelerates for 10
+    seconds.<br /></p>
+  
+    <p align="justify">We can find the velocity of the body after 10 sec. from .</p>
+  
+    <p align="left"><b>v = u + at</b><br /></p>
+  
+    <p align="justify">v = 0 + 2 x 10 = 20ms<sup>-1</sup>. The graph for this stage is
+    shown below, <i style="color:blue">stage 1</i>.</p>
+  
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/mot1.png" alt="" /><br /></p>
+  
+    <p align="justify">For the second stage, the body maintains its velocity for 15
+    seconds. Adding this stage to the first gives the second graph, <i style=
+    "color:blue">stage 2</i>. Note: constant velocity means acceleration = 0</p>
+  
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/mot2.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Finally, the body decelerates to rest. To show this stage, we need
+    to know the time at which it came to rest. Using the same equation,</p>
+  
+    <p align="left"><b>v = u + at</b><br />
+    <br />
+    Note that v = 0 for this stage.<br /></p>
+  
+    <p align="justify">0 = 20 + (&ndash;1) x t;<br />
+    <br />
+    solving for t yields, t = 20 sec. This means that the body came to rest 20 seconds
+    after the second stage. Adding this to the two stages gives the complete graph for the
+    motion.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/mot3.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b style="color:crimson">Solution to
+    &lsquo;b&rsquo;</b><br /></u></p>
+  
+    <p align="justify">The total distance travelled can be calculated by finding the
+    <i style="color:blue">total area under the graph</i>. This can be done in two ways:
+    Firstly, by finding the area under each stage and summing the individual areas. The
+    second method is by considering the total graph as a parallelogram and finding the area
+    under it. Find the total distance and compare it to the answer below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/mot4.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>Area of parallelogram =</td>
+  
+        <td>
+          <small>1</small><br />
+          <hr />
+          <small>2</small>
+        </td>
+  
+        <td>(a + b) x h</td>
+      </tr>
+  
+      <tr>
+        <td>.</td>
+      </tr>
+    </table>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>Total distance =</td>
+  
+        <td>
+          <small>1</small><br />
+          <hr />
+          <small>2</small>
+        </td>
+  
+        <td>(15 + 45) x 20</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><u>s = 600m</u></p>
+</ion-content>

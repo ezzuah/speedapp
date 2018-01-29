@@ -1,0 +1,275 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>MIXTURES AND COMPOUNDS</b></p>
+  
+    <p align="justify">Most of the things around us are made up of one or more elements.
+    For example, water is made of Hydrogen and oxygen; carbon dioxide, carbon and oxygen;
+    table salt, sodium and chlorine, and many more. Depending on the way the constituent
+    elements are combined, the substance can be classified as <i style=
+    "color:blue">mixtures</i> or <i style="color:blue">compounds</i>. <b style=
+    "color:crimson">Mixture</b> is a substance formed from the physical combination of two
+    or more substances (elements or compounds). On the other hand, <b style=
+    "color:crimson">compound</b> is the substance formed from the chemical combination of
+    two or more elements.</p>
+  
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/mix_comp.jpg" alt="" name="front_image" width="777"
+    height="424" id="front_image" /><br /></p>
+  
+    <p align="justify">The most important thing to note is that, the elements combing
+    chemically to form a compound do not retain their individual chemical properties. For
+    example, oxygen as an element supports combustion. And it is present in both air and
+    water. Air also supports combustion but water does not. This means that air is a
+    mixture because the oxygen present in air has retained its chemical property and water
+    is a compound because the oxygen present in water has a different chemical property
+    from elemental oxygen.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Differences between mixtures and
+    compounds</b><br /></p>
+  
+    <table border="1" cellspacing="1" width="100%" cellpadding="1">
+      <tr>
+        <th style="background-color: darkred; color: white">Compounds</th>
+  
+        <th style="background-color: darkred; color: white">Mixtures</th>
+      </tr>
+  
+      <tr>
+        <td>They are separated by chemical means.</td>
+  
+        <td>They are separated by physical means.</td>
+      </tr>
+  
+      <tr>
+        <td>Their formation is accompanied by heat loss or gain.</td>
+  
+        <td>Their formation is not accompanied by heat loss or gain.</td>
+      </tr>
+  
+      <tr>
+        <td>They have constant mass ratio of their elements.</td>
+  
+        <td>They may have varying composition.</td>
+      </tr>
+  
+      <tr>
+        <td>They have entirely different properties from their constituents.</td>
+  
+        <td>The have the same properties as their constituent.</td>
+      </tr>
+  
+      <tr>
+        <td>They are products of a chemical combination.</td>
+  
+        <td>They are products of a physical combination.</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><b style="color:crimson">MIXTURES</b></p>
+  
+    <p align="justify">Mixtures are grouped into the three categories below.<br /></p>
+  
+    <p align="justify"><b style="color:crimson">Solid mixtures</b> are mixtures made up of
+    two or more solid substances. Examples are gari and sand particles, alloys like steel
+    (iron and carbon), brass (copper and zinc).<br /></p>
+  
+    <p align="justify"><b style="color:crimson">Liquid Mixtures</b> are mixtures which
+    contain two or more liquids. Examples are Chlorophyll, ethanol and water
+    mixture.<br /></p>
+  
+    <p align="justify"><b style="color:crimson">Gaseous mixtures</b> are mixtures which
+    contains two or more gases. Example is air.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Mixtures can also be classified as <b style=
+    "color:crimson">homogeneous</b> or <b style="color:crimson">heterogeneous</b> depending
+    on the number of phases they possess. <b style="color:crimson"><i style=
+    "color:blue">Phase</i></b> is any region of a mixture with a uniform set of properties.
+    For example, when palm oil and water is put together, the water phase is going to have
+    its own properties which will be different from the oil phase. It is possible to have a
+    liquid&ndash;liquid phase as in water and palm oil, liquid&ndash;solid phase as in
+    water and ice, Liquid&ndash;gas phase like the sea and the atmosphere, solid&ndash;gas
+    phase like your body and the air around. The boundary between two phases is <b style=
+    "color:crimson">interface</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Homogeneous mixtures</b>: These are
+    substances that have a single phase with uniform properties. Examples are salt
+    solution, sugar solution, air (oxygen, nitrogen, carbon &ndash;dioxide), alcohol and
+    water, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Heterogeneous mixtures</b>: These are
+    mixtures which have more than one phase. Example, palm oil and water; milk, made up of
+    a fat phase and a water phase; granite is another example of a heterogeneous mixture
+    because when it is crushed, you can pick out these three minerals, quartz, biotite and
+    feldspar. The different phases of a heterogeneous mixture are separated from each other
+    by definite boundaries called <b style="color:crimson">interfaces</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">SEPARATION OF MIXTURES</b><br /></p>
+  
+    <p align="justify">It becomes necessary, at times, to separate mixtures into their
+    original constituents. To this effect, there are various ways or methods that can be
+    used for the separation. The physical properties of the constituents determine method
+    to use. For example, difference in boiling points can be used in separating
+    liquid&ndash;liquid mixtures.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Distillation</b><br /></p>
+  
+    <p align="justify">This is a physical process used to separate the constituents of a
+    solution. The constituents of the solution must have a considerable difference in their
+    boiling points to make the separation possible. The solution (to be separated) is
+    heated until its temperature is between the boiling points of the two constituents. For
+    example, the boiling points of ethanol and water are 78<sup>o</sup>C and
+    100<sup>o</sup>C respectively. Therefore, at 85<sup>o</sup>C only ethanol will be
+    evaporating, leaving the water behind.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/mix_comp2.png" alt="" name="front_image" id=
+    "front_image" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The figure above is a laboratory set up for desalination of (removal
+    of salt from) water by distillation. Salt has a boiling point high above
+    100<sup>o</sup>C. Hence, the solution can be heated until the water starts boiling. The
+    vapour from the solution will rise up through the mouth of the flask and into the
+    condenser. The condenser consists of a small glass tube within a larger one. Cold water
+    flows through the space between the tubes, cooling the vapour in the inner tube to
+    condense it. The condensed water flows into the receiving flask. If the process goes on
+    for some time, all the water will be collected in the receiving flask.</p>
+  
+    <p align="left"></p>
+  
+    <p align="justify"><a href="">Watch video on Distillation</a><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Chromatography</b><br /></p>
+  
+    <p align="justify">This is also a physical separation process which is based on the
+    migrating powers of substances under capillary action. The first picture below is a
+    setup of a simple chromatography. A filter paper with an ink dot is dipped in a beaker
+    containing ethanol. The ethanol rises steadily under capillary action. As the alcohol
+    rises up the paper, dissolves the ink and separates it into its components. The second
+    and third pictures below show the initial and final stages of a chromatographic
+    separation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/mix_comp3.png" alt="" /></p>
+  
+    <p align="left"><br />
+    <br />
+    <img src="http://speedapp.ididev.com/apps/img/mix_comp4.jpg" alt="" width="215" height="180" /></p>
+  
+    <p align="justify"><a href="">Watch video on Chromatography</a></p>
+  
+    <p align="justify"><b style="color:crimson">Crystallization</b><br /></p>
+  
+    <p align="justify">When a solution is heated to evaporate greater amount of the
+    solvent, the solution then formed will contain more solute than it can hold at normal
+    circumstance. When this solution is cooled, crystals are formed from the solution. The
+    process of forming crystals from a <i style="color:blue">supersaturated</i> solution is
+    called <i style="color:blue">Crystallization.</i> A <b style=
+    "color:crimson">supersaturated</b> solution is a solution that contains more solute
+    than it can dissolve.</p>
+  
+    <p align="left"></p>
+  
+    <p align="justify"><a href="">Watch video on Crystallization</a><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Filtration</b><br /></p>
+  
+    <p align="justify">This is the process used to separate an insoluble solid from a
+    solid&ndash;liquid mixture using a filter paper.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Sieving</b><br /></p>
+  
+    <p align="justify">This is the process used to separate solid&ndash;solid mixture with
+    different particle sizes with a sieve.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Magnetisation</b><br /></p>
+  
+    <p align="justify">This is a physical process used to separate magnetic substances from
+    non&ndash;magnetic substances using a magnet.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Precipitation</b><br /></p>
+  
+    <p align="justify">This is a chemical separation process where a substance is added to
+    a solution which contains ionic substance for a reaction to take place to produce
+    insoluble particles which are later filtered off. For example, barium sulfate (BaSO4)
+    is insoluble in water; hence a solution containing barium ions (Ba2+) can be
+    precipitated by adding a soluble sulfate such as sulfuric acid. The sulfate ions
+    (SO<sub>4</sub><sup>2&ndash;</sup>) react with the Ba<sup>2+</sup> to form insoluble
+    BaSO<sub>4</sub> that falls as precipitates. The picture below shows a precipitation
+    process.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/mix_comp5.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Pure and Impure substances</b><br /></p>
+  
+    <p align="justify">Pure substances are made up of the same kind of atoms or molecules
+    whereas impure substances are made up of a mixture of atoms or molecules. All mixtures
+    are classified as chemically impure whereas individual elements or compounds are
+    chemically pure substances. Examples of pure substances are sodium element, distilled
+    water, ethanol (alcohol), etc. And examples of impure substances are sugar solution,
+    air, ethanol and water mixture, are.</p>
+  
+    <p align="left"></p>
+</ion-content>

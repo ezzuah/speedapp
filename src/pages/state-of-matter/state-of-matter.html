@@ -1,0 +1,68 @@
+
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>STATES OF MATTER</b></p><br />
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/states1.jpg" alt="" name="front_image" width="450"
+    height="195" id="front_image" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Physical and Chemical Changes</b><br /></p>
+  
+    <p align="justify">Change is any difference in either the physical or chemical property
+    of a substance. The physical properties of a substance include, color, density,
+    solubility, melting point, boiling point, hardness, liquid, solid or gas, taste, etc.
+    and the chemical properties are, acidity, oxidizing or reducing agents, metals or non
+    metals, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Physical Change</b>: it is any change in an
+    original substance that does not lead to the production of new substances. However,
+    there could be a temporary change in the physical properties of the substance. For
+    example, when candle wax is heated, it melts (solid to liquid, and the density will
+    decrease). On cooling, the original candle wax is obtained again. We notice that, there
+    have been a change, but the change did not result in the production of a new
+    substance.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Chemical Change</b>: this is any change in
+    an original substance which leads to the production of new substance(s). For example,
+    when nail is allowed to rust completely, the process can not be reversed to obtain the
+    original nail again.</p>
+  
+    <p align="left"></p>
+</ion-content>

@@ -1,0 +1,137 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+ <p align="center" style="color:black;font-size: 26px"><b>INDIGENOUS TECHNOLOGY</b></p>
+      
+      
+  <P style="word-wrap : break-word;">
+  <p align="justify"><p align="left"><br>
+  <p align="justify">Most of the things our grandparents did were based on science. But then, they never bothered about investigating the 
+      results of their actions. We shall discuss the scientific principles underlying some of their operations. <p align="left">
+  
+  
+  
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Grinding stone/Pot and Blenders</b>: Grinding stone (pots) were far in used, even now, before the introduction of 
+      blenders. They work on the same principle, <i style="color: blue">friction</i>. As the small grinding stone moves to and fro over the bigger one, with 
+      the grinding material in between them, friction is generated. The material wears bit by bit and that result in the grinding process. 
+      Most homes with modern kitchen nowadays use blenders. Blenders do not operate on friction. It has a sharp cutting edge at the base. 
+      A small induction motor is connected to the cutting edge. When it is plugged, the motor rotates the cutting edge which cuts the materials. 
+      The blender has an advantage of working fast and saves manual effort. However, it can not be used to grind materials like tiger nut which 
+      the stone can. So can you design a machine that will save time, manual effort and yet grind hard materials?<p align="left">
+  
+  
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Earthenware coolers and Refrigerators</b>: Earthenware cooler, simply known as cooler, is made from clay and has a pot&ndash;like 
+      shape. It is used to store and cool drinking water. The underlying principle is <i style="color: blue">evaporation</i>. The water kept in the cooler seeps through the 
+      tiny pores to the outer surface of the cooler. As the water on the outside evaporates, it absorbs <i style="color: blue">latent heat of vapourisation </i>(refer from <i style="color: blue">
+          Change of State, Heat</i>) from the cooler thereby reducing its temperature. The water in the cooler gets colder as the process continues. 
+          In the absence of a cooler, cooler&ndash;like bowl made from a good conducting material (metal) can be used to cool water in a similar way. 
+          This can be done by wetting a cloth of reasonable size. Wrap the cloth around the bowl. As water evaporates from the cloth surface it cools 
+          the bowl, and the cooling effect is eventually transferred to the water. Refrigerators work in a slightly complex cyclic manner. A sub cooled 
+          refrigerant (cooling liquid) is pumped through cooling tubes situated inside the refrigerator in a cyclic manner. The refrigerant absorbs heat 
+          from the cooling compartment and thus cools the compartment.<p align="left">
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Maize Drying</b>: Up to date, some farmers in the rural areas dry their maize under the roof of their kitchen. This maize 
+      are left on the cobs and hanged to wait for the next planting season. Smoke from fired firewood dries, and protects the maize from weevil and 
+      other pests attack. This process is a pure chemical process. Smoke contains a chemical known as formaldehyde which acts as pesticides and the 
+      heat acts as a dryer. This process works perfectly, but the question is what quantity of maize can be preserved this way? Foreign technology 
+      has improved upon these two processes&#8212;drying and pesticide application. Commercial dryers that can dry about 80tons or 80,000kg of maize 
+      in an hour have been built.  Chemicals that curb pest attack in the storage have been synthesized. Silos or warehouses for large storage 
+      of maize have also been built.<p align="left">
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Lantern and Electric Bulb</b>: Lanterns operate on capillary and combustion. The kerosene rises up the wick under capillary
+      action (as in chromatography). Burning of the fuel to give light is the combustion process. Combustion releases CO<sub>2</sub> into the atmosphere. The 
+      CO<sub>2</sub> aids green house effect or global warming. Meaning this method of lighting is not convenient. Besides the green house effect, the 
+      light produced in not bright. Electric bulbs also work on resistance of conductors. When conductors carry electric current, the generate heat. 
+      This heat generated heats the conductor until it glows to produce light. In fluorescent lamps, a gas at low pressure is used to produce bright 
+      light. Light produced under modern technology is much brighter and economical. <p align="left">
+  
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Separation of Kernel from Shell in Palm Kernel Extraction</b>>
+  
+  <br>
+  <p align="justify">Palm kernel extraction in villages is done by cracking the kernel with stone. The kernel must be separated from the shell 
+      before the actual extraction begins. Hand picking of the kernel from shell will slow their working rate so badly. So, extractors use a 
+      liquid separation process which involves flotation. This process begins with pouring the kernels and shells into a big pan filled with water. 
+      The materials (shell and kernel) sink to the bottom. Now, clay is added to the mixture with stirring gradually. As the amount clay added increases 
+      to a point, the shells float to the top. Can you explain why the shell is floating at this point? Reason: As the clay is being dissolved in the water, 
+      the density of the liquid (clay suspension) increases steadily until a point where the density of the suspension lies between that of the kernel and
+      the shell. At this point, the kernels are denser than the liquid phase, which is also denser than the shells. Hence the shell floats and the kernel 
+      sink. The shell can be scooped or decanted from the liquid surface. What substance do you think would be hygienic and cheap but still serve the 
+      same purpose as the clay? Have you considered salt?  Is there any other?<p align="left">
+  
+  
+  
+  <br>
+  <p align="justify"><b style="color:crimson">Why indigenous technology is not growing?</b>
+  
+  <br>
+  <p align="justify">The building block of technology is thinking. Unfortunately, <i style="color: blue">our education system does not give enough 
+          room for thinking</i>. Why is this assertion a fact? For example, in Ghana, a specific definition for <i style="color: blue">force</i> 
+          may run through all science text books and students are required to produce exactly that or else be punished. If students are given keywords 
+          and understanding around which they could weave their definitions, studying would not have been a &lsquo;chew&ndash;and&ndash;pour affair&rsquo;. 
+          As a result, the student who is able to memorise a lot is considered brilliant. <p align="left">
+  
+  
+  <br>
+  <p align="justify">This has gone a long way to affect our rate of innovation 
+          (when it comes to science, engineering, art, pharmacology, medicine, business, etc.). And the cause of this chew-and-poor
+  attitude is that teachers prepare students for examinations and not the challenges of life problems so most engineering graduates are unemployed or
+   employed in areas which are irrelevant to their course of study.<p align="left">
+  
+  
+  <br>
+  <p align="justify">Secondly, <i style="color: blue">research has never been a hallmark of the average Ghanaian</i> from time immemorial till now. Simple 
+      observations or questioning of some behaviour could have brought up some sort of innovation. For example, termites do not feed on the leaves of the 
+      teak tree and why is it so? Does the leave contain chemicals that can be use in the production of anti-termite products?<p align="left">
+  
+  <br>
+  <p align="justify">Another problem is that <i style="color: blue">Ghanaians do not believe in local technology</i>. For example, the Chemistry Department 
+      of the K.N.S.U.T. manufactured an indelible ink for elections, but the government by&ndash;passed this product and imported a similar one from India.  
+      <i style="color: blue">Fuller earth</i> (activated clay) used to remove red pigment in palm oil to produce vegetable oil is imported in large 
+      quantities by Unilever Ghana Ltd. The company has long over&ndash;looked similar local technology developed by the Chemical Engineering Department, 
+      K.N.U.S.T. in producing fuller earth from clay at Pankrono, a suburb of Kumasi.<p align="left">
+  
+  
+  <br>
+  <p align="justify">Even now, you will bear with me that there are so many problems that need immediate corrections. Look around the society, what do you 
+      think you can do in one area or another to improve it? Water crisis, energy, health, etc, etc<p align="left">
+  <br>
+
+</ion-content>

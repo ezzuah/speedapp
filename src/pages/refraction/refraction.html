@@ -1,0 +1,793 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+    <p align="center" style="color:black;font-size: 26px">
+      <b>REFRACTION</b></p>
+  
+    <p style="word-wrap : break-word;"></p>
+  
+    <p align="justify">We said in the earlier chapters of light, that <i style=
+    "color:blue">light travels in a straight line</i>. It does so, however, only if the
+    transmitting medium has a uniform <i style="color:blue">optical density</i> (<i style=
+    "color:blue">this is a property of transparent material that measures the speed of
+    light through it</i>).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">For example, when a beam of light traveling in air is incident on
+    the surface of water, part of the beam is reflected at the air&ndash;water interface or
+    boundary. However, because water is transparent, most of the light is transmitted
+    through it.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Since water has a higher optical density than air, the speed of
+    light is reduced as it enters the water. This change in speed causes light ray entering
+    water at an acute angle (angle less than 90o) to experience a change in direction
+    abruptly. This change in speed and direction of light rays is known as <i style=
+    "color:blue">refraction</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Therefore, <b style="color:crimson">refraction</b> <i style=
+    "color:blue">is a phenomenon caused by a change in the speed of light as it enters a
+    transparent medium with a different optical density from the one it was formerly
+    travelling in</i>. The wave front representation and a picture on refraction are shown
+    below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr1a.jpg" alt="" width="300" height="317" />
+    <img src="http://speedapp.ididev.com/apps/img/refr1b.jpg" alt="" width="217" height="274" /><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Laws of refraction</b><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>
+        <i style="color:blue">The incident ray, the reflected ray and the normal to the
+        refracting surface at the point of incident are all in the same plane</i>.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>The second law is known as <b style="color:crimson">Snell&rsquo;s law</b> and it
+      states that, <i style="color:blue">the ratio of the sine of the angle of incidence to
+      the sine of the angle of refraction is a constant for a given pair of media</i>. This
+      constant is called the <b style="color:crimson">refractive index</b> and it is
+      denoted by <b style="color:crimson">n</b> or <b style=
+      "color:crimson">&micro;</b>.<br />
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Mathematically, refractive index, n is expressed as:
+  
+    <table>
+      <tr>
+        <td><b>n</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b><i>sin i</i></b><br />
+          <hr />
+          <b><i>sin r</i></b>
+        </td>
+  
+        <td><b>=</b></td>
+  
+        <td><b>constant</b></td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Refractive index is a unique identity for various substances and
+    thus, it is used to ascertain the purity of a substance. One of the first tests made in
+    a food testing laboratory to verify if butter has been adulterated with margarine was
+    to measure the refractive index. <b style="color:crimson">Refractometer</b> is the
+    instrument used to measure refractive indices of substances.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Real and apparent depth</b><br /></p>
+  
+    <p align="justify">Swimming pools and ponds appear shallow than they really are. This
+    occurs because light coming from and object at the bottom of the pond is refracted away
+    from the normal.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr2.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The distance from the surface of the water to the point where the
+    object appears to be is the apparent depth (ha) and the actual depth of the pool is the
+    real depth (hr). The refractive index from water to air can be calculated as
+    follows.<br /></p>
+  
+    <table>
+      <tr>
+        <td><b>n</b></td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>hr</b><br />
+          <hr />
+          <b>ha</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><b style="color:crimson">Note:</b><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>The refractive index from air to water is not the same as from water to air. As
+      you can see in the figure below, the angle of incidence in &lsquo;a&rsquo; becomes
+      the angle of refraction in &lsquo;b&rsquo;. And these two angles are not equal
+      therefore n<sub>aw</sub> &ne; n<sub>wa</sub> where n<sub>aw</sub> = refractive index
+      from air to water and n<sub>wa</sub> = refractive index from water to air.
+  
+        <p align="left"><br />
+        <img width="261" height="116" src="http://speedapp.ididev.com/apps/img/refr3.png" alt="" /></p>
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>When light travels from a less dense medium like air and enters a denser medium
+      like water, it refracts (bends) towards the normal, but when it is from a denser
+      medium to a less dense medium, it refracts from the normal.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Critical angle and total internal
+    reflection</b><br /></p>
+  
+    <p align="justify">It is an established fact that, <i style="color:blue">a ray of light
+    which passes from a medium of higher optical density into one of lower optical density
+    bends from the normal</i>. What happens as the angle of incidence is increased
+    gradually?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In &lsquo;a&rsquo; of the picture below, the angle of incidence is
+    small and greater portion of the incident ray enters the air.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr4a.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">If the incidence angle is increased gradually, the refracted angle
+    also increases until a limiting angle is reached where the refracted angle is 90o as
+    shown in &lsquo;b&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr4b.png" alt="" /></p>
+  
+    <p align="left"><br />
+    <br /></p>
+  
+    <p align="justify">At this point, the refracted ray does not enter the air but rather
+    takes a path along the air&ndash;water interface. This limiting angle is called the
+    <i style="color:blue">critical angle</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The <b style="color:crimson">critical angle</b> of a medium is
+    <i style="color:blue">the angle of incidence in an optically dense medium, resulting in
+    an angle of refraction of 90o</i>. If the incidence angle is increased beyond the
+    critical angle, the rays are totally reflected back into the water as shown in
+    &lsquo;c&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr4c.png" alt="" /></p>
+  
+    <p align="left"><br />
+    <br /></p>
+  
+    <p align="justify">In such a situation we say <i style="color:blue">total internal
+    reflection</i> has occurred. <b style="color:crimson">Total internal reflection</b> is
+    a phenomenon where <i style="color:blue">light travelling from an optically denser
+    medium to a less dense medium is totally reflected back into the denser medium</i>. The
+    picture below is a practical experience of total internal reflection.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr5.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The two conditions that must be satisfied for <i style=
+    "color:blue">total internal reflection</i> to occur are:<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Light must travel from an optically denser medium to a less dense medium.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>The angle of incidence should be greater than the critical angle.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Mirage:</b> this is an optical illusion in which part of
+    the sky or a tall object appears to be reflected onto the ground in a hot day. In hot
+    sunny days, the ground gets hot and thus, heats up the few layers of air closer to the
+    ground to different extents.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr6_1.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This heated air becomes less dense than the few cold layers above.
+    When a ray of light travels from the sky or the tip of a tree towards the ground, it
+    will go through the different layers of air with different densities, the ray is
+    refracted gradually as it goes through the different layer until a point where a viewer
+    from afar sees the image of the sky or the tree as being reflected from a pool of water
+    some distance ahead on the ground.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">The conditions necessary for the formation
+    of a mirage are:</b><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Weather must be sunny<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Temperature of atmosphere should be high<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Smooth surface or tard road<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Presence of air layers
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Dispersion of Light</b><br />
+  
+    <p align="justify">Suppose a narrow beam of white light falls on a glass prism in a
+    dark room, the light which leaves the prism is separated into bands of different
+    colours with each gradually blending into the other as shown below. The order of the
+    colours is red, orange, yellow, green, blue, indigo and violet (taking the initials of
+    the colours in turns: <b style="color:crimson">ROYGBIV</b>).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr6.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">It is evident that white light is a <i style=
+    "color:blue">polychromatic light</i>. Light consisting of several colours is known as
+    <b style="color:crimson">polychromatic</b> <b style="color:crimson">light</b>; light
+    consisting of only one colour is known as <b style="color:crimson">monochromatic
+    light</b>. <b style="color:crimson">Dispersion of light</b> <i style="color:blue">is
+    the separation of a polychromatic light into its constituent colours</i>. It is evident
+    from the picture above that the angle of refraction for red light is not as great as
+    violet light, and that the angles of refraction for the other colours fall between
+    these two. Thus the refractive index of substances is not the same for light of
+    different colours.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Formation of Rainbow</b><br /></p>
+  
+    <p align="justify">Rainbows are formed based on refraction and total internal
+    reflection. When a ray of sunlight falls on a water droplet in the atmosphere, the ray
+    is first <i style="color:blue">refracted</i> and as a result dispersed.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The refracted monochromes are transmitted through the water. At this
+    point, the rays will be travelling from water to air, and since water is denser than
+    air the rays are <i style="color:blue">total internally reflected</i> at the
+    water&ndash;air boundary. The rays are refracted further as they pass out of the water
+    finally and the visibility of the colours is more enhanced.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">COLOURS</b><br /></p>
+  
+    <p align="justify">Colour is a property of light waves that reach the eye and detected
+    by it. For instance, all colours of light are part of the electromagnetic spectrum
+    including infra red (IR) and ultra violet (UV) rays.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">IR and UV are not detected by the eye because their wavelengths fall
+    outside the visible range of the eye, and hence they are invisible. <i style=
+    "color:blue">The colour of light is dependent on the wavelength of the radiation coming
+    from the source</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">On the other hand, objects absorb certain wavelengths of the light
+    incident upon them, and reflect others. Therefore, colour is not a property of objects
+    but rather of the light.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">For example, consider a piece of cloth which looks blue in sunlight.
+    When this cloth is held under red light in a dark room it appears black. <i style=
+    "color:blue">The colour of opaque objects depends upon the kind of light they are
+    capable of reflecting into the eye</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Red, green and blue are monochromatic lights and are termed as
+    <i style="color:blue">primary colours</i>. <b style="color:crimson">Primary colours</b>
+    <i style="color:blue">cannot be produced by mixing other colours of light</i>. The
+    mixing of primary colours produces polychromatic light which is also termed as
+    <i style="color:blue">secondary</i> <i style="color:blue">colours</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Secondary</b> colours are obtained by
+    mixing any of the primary colours. Also, when any two colours of light combine to
+    produce white light we say the colours are complementary colours. The pictures below
+    show the primary colours and their corresponding secondary colours that can be produced
+    by mixing them.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note that white light is produced from mixing all the primary
+    colours.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Primary and secondary colours</b><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr7a.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/refr7b.png" alt=
+    "" /> <img src="http://speedapp.ididev.com/apps/img/refr7c.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Complementary colours</b><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr8a.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/refr8b.png" alt=
+    "" /> <img src="http://speedapp.ididev.com/apps/img/refr8c.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">LENSES</b><br /></p>
+  
+    <p align="justify">Lenses can be made from almost any transparent substance that is
+    bounded by two nonparallel, curved surfaces or by one plane surface and one curved
+    surface. There are two types of lenses; they are the <b style=
+    "color:crimson">convex</b> or <b style="color:crimson">converging</b> and the <b style=
+    "color:crimson">concave</b> or <b style="color:crimson">diverging</b> <b style=
+    "color:crimson">lenses</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr9.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The only difference between the terms associated with curved mirrors
+    and lenses is the <b style="color:crimson">optical centre.</b> This is the centre of
+    the lens and it falls on the principal axis.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Below are the various types of lenses.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refr10a.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/refr10b.png" alt=
+    "" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Properties of image formed by a Concave
+    Lens</b><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr11.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Virtual.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Upright.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Diminished.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Formed in front of lens but before object.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Properties of images formed by a Convex Lens</b><br />
+  
+    <p align="justify"><i style="color:blue">Case 1; when object is placed between f and
+    lens</i><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr12.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Virtual.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Upright.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Enlarged.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Formed in front of lens but behind object.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color:blue">Case 2; when object is placed at f</i><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr13.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Image is formed at infinity
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color:blue">Case 3; when object is between f and
+    2f</i><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr14.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Real<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Inverted<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Enlarged<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Formed beyond 2f at the other side of the lens
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="justify"><i style="color:blue">Case 4; when object is placed at 2f</i><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr15.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Real<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Same size as object<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Inverted<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Formed at 2f on the other side of the lens<br />
+  
+        <p align="justify"></p>
+      </li>
+    </ol><br />
+  
+    <p align="justify"><i style="color:blue">Case 5; when object is placed beyond
+    2f</i><br />
+    <img src="http://speedapp.ididev.com/apps/img/refr16.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Real<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Diminished<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Inverted<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Formed between f and 2f behind the lens<br />
+  
+        <p align="justify"></p>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Lens Formula</b><br /></p>
+  
+    <p align="justify">This is a mathematical equation that can be used to find the
+    distance of the object or image from the lens and the focal length as well.</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>f</b>
+        </td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>u</b>
+        </td>
+  
+        <td><b>+</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>v</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">f = focal length, u and v are distances from the optical center to
+    the object and image respectively.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Worked Examples</b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+  
+    <p align="justify">An object is placed 15cm before a converging lens with a focal
+    length of 10cm. find the position of the object</p>
+  
+    <p align="left"></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>f</b>
+        </td>
+  
+        <td><b>=</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>u</b>
+        </td>
+  
+        <td><b>+</b></td>
+  
+        <td>
+          <b>1</b><br />
+          <hr />
+          <b>v</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">making v the subject of the equation yields;</p>
+  
+    <p align="left"></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>v</td>
+  
+        <td>=</td>
+  
+        <td>
+          uf<br />
+          <hr />
+          u - f
+        </td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td>v</td>
+  
+        <td>=</td>
+  
+        <td>
+          <i>15 x 10</i><br />
+          <hr />
+          <i>15 - 10</i>
+        </td>
+      </tr>
+    </table><br />
+  
+    <table style="text-align: center">
+      <tr>
+        <td>v</td>
+  
+        <td>=</td>
+  
+        <td>
+          <i>150</i><br />
+          <hr />
+          <i>5</i>
+        </td>
+      </tr>
+    </table><br />
+    <u>v = 30cm</u>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note; when the value of v is negative, it means that the<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Image is formed on the same side as the object.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>The image formed is virtual.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Magnification</b><br />
+  
+    <p align="justify">It is evident from the lens diagrams that, when an object is placed
+    at certain distances from the lens, the image formed is either enlarged, reduced or the
+    same size as the object. Magnification is a measure of the factor to which an image of
+    an object is enlarged or reduced. It is the ratio of image height to object height.
+    That is</p>
+  
+    <p align="left"><br /></p>
+  
+    <table style="text-align: center">
+      <tr>
+        <td>Magnification</td>
+  
+        <td>=</td>
+  
+        <td>
+          <i>image height</i><br />
+          <hr />
+          <i>object height</i>
+        </td>
+      </tr>
+    </table><br />
+
+</ion-content>

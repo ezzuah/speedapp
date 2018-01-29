@@ -1,0 +1,60 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>SOIL DEGRADATION</b></p>
+    <p align="justify">From our knowledge in soil formation, it is clear that soil formation starts with a bare rock surface. When the soil is fully formed, vegetation then colonises the area where the soil is formed.
+    <p align="left"> <br>
+    <p align="justify">After many years a state of balance (or equilibrium) is reached between the soil and vegetation, where there is virtually no change in both with time. This balance is known as the <i style="color:blue">climax</i> and it is the highest natural form of development that the environmental factors are capable of producing.
+    <p align="left"> <br>
+    <p align="justify">When the state of balance is reached, it tends to be stable in the course of time. The vegetation installed on the ground provides and ensures humus circulation. It protects the soil from erosion by playing the role of barrier (for example, protection from water and wind). Plants can also reduce erosion by binding the particles of the soil to their roots.
+    <p align="left"> <br>
+    <p align="justify"><i style="color:blue">Soils retrogression and degradation</i> are two regressive processes associated with the loss of equilibrium of a stable soil. <b style="color:crimson">Retrogression</b> refers to a phenomenon where soil goes back to pioneer conditions (such as bare ground). <b style="color:crimson">Degradation</b> is due to the replacement of the primitive vegetation (such as forest) by secondary vegetation (such as shrubs and grasses).
+    <p align="left"> <br>
+    <p align="justify">This replacement modifies the humus composition and amount, and affects soil balance. Retrogression and degradation are directly related to human activities and both leads to a loss in soil fertility. For example, burning of bushes releases volatile soil nutrients into the atmosphere. We shall now discuss the two major processes that destroy soil.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Soil erosion</b> is the removal of the top soil by wind or water. Erosion is the main factor for soil degradation.
+    <p align="left"> <br>
+    <p align="justify"><img  src="http://speedapp.ididev.com/apps/img/deg1.jpg" alt="" width="236" height="167" /> <img  src="http://speedapp.ididev.com/apps/img/deg2.jpg" alt="" width="150" height="168" /> <br>
+    <p align="justify">Erosion is strongly related to human activities. For example, roads which increase impermeable surfaces lead to streaming and runoffs which aids erosion. Agriculture also increases the risk of erosion through its disturbance of vegetation such as overgrazing of animals, clearing of vegetation, ploughing, etc. The pictures on the right show the types of erosions.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Leaching</b> refers to the washing of plant nutrients from the top soil to the underlying horizons by water. Leaching actually affects soil fertility. It is predominant in soil with coarse particles such as sand.
+    <p align="left"> <br>
+    <p align="justify">All soil management practices aim at one thing: to maintain the soil fertility and topography of the land. And that can be achieved by simply not leaving the land bare. If problem of erosion already exist, it can be fought by limiting runoff and rebuilding the vegetation. Leaching is fought by addition of organic matter to the soil and rebuilding the vegetation.
+    <p align="left"> <br>
+    <p align="justify">However, these techniques will never totally succeed to restore a soil (and the fauna and flora associated with the soil) that took more than 1000 years to build up. Therefore prevention of erosion and leaching is the best resort.
+    <p align="left"> <br>
+    <p align="justify">If the problem is with loss of soil nutrients, organic and inorganic fertilizers must be applied and avoid bad farming practices such as excessive irrigation and continuous cultivation of a piece of land.
+    <p align="left">
+    <p align="left"><br>
+</ion-content>

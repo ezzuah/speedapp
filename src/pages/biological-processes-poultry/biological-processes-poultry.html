@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>DIGESTION IN POULTRY</b></p>
+ 
+  <br />
+  <p align="justify">Since birds have no teeth to chew the food they take, slimy saliva helps in the swallowing of the food. The food goes through the 
+  <b style="color:crimson">oesophagus</b>down to the 
+  <b style="color:crimson">crop</b>. The crop stores the food taken. It also secrets 
+  <b style="color:crimson">liquid juices</b>on the food to make it moist and soft.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">From the crop, the food goes to the proventriculus (first part of the stomach). Digestive juices or enzymes are secreted on the food for digestion to proceed. After digestion in the proventriculus, the food enters the gizzard.
+  In the gizzard, small stones that were swallowed along with the food aid the grinding of any course food particle.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The digested food now enters the small intestines for absorption of food nutrients. The undigested residue of food is expelled through the cloaca. The pictures below show the digestive system of fowl.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/biop1.jpg" />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/biop2.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

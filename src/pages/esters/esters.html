@@ -1,0 +1,370 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>ESTERS (Alkylalkanoates)</b><br /></p>
+
+  <p align="justify">It was mentioned earlier under the reactions of alcohols that
+  <b style="color:crimson">esters</b> are formed from a reaction between a carboxylic
+  acid and an alcohol. Esters made from alcohols and organic acids of low molecular mass
+  are colourless liquids that have agreeable fruity ordour. Many of the odours in flowers
+  come from esters. Esters are therefore used in the preparation of perfumes and
+  synthetic flavors. Methyl acetate gives nail polish its odour. Esters can also be
+  formed when an inorganic acid reacts with an alcohol.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Nomenclature</b><br /></p>
+
+  <p align="justify">They are named by considering them as derivative of a carboxylic
+  acid (alkanoate) and alcohol (alkyl). The name is thus obtained by combining the
+  derivatives of the acid and alcohol. The alkyl group of the alcohol is <b style=
+  "color:crimson">named first</b>, followed by the alkanoate group from the acid. The
+  first example is an ester formed from methanol and propanoic acid.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Example</b><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/est1.png" alt="" /></p>
+
+  <p align="left"><br />
+  <img src="http://speedapp.ididev.com/apps/img/est2.png" alt="" /></p>
+
+  <p align="left"></p>
+
+  <p align="justify"><b style="color:crimson">Esterification</b><br /></p>
+
+  <p align="justify">This is a chemical reaction in which an ester is formed from a
+  reaction between alkanol (alcohol) and carboxylic acid in the presence of a
+  catalyst.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <p align="left"></p>
+
+  <table style="text-align: center">
+    <tr>
+      <td>CH<sub>3</sub>OH + CH<sub>3</sub>COOH</td>
+
+      <td>catalyst<br />
+      <img width="62" height="17" src="http://speedapp.ididev.com/apps/img/arrowdouble.png" alt="" /></td>
+
+      <td>CH<sub>3</sub>COOCH<sub>3</sub> +H<sub>2</sub>O</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">Preparation of Esters</b><br /></p>
+
+  <p align="justify">Let us use the preparation of <b style=
+  "color:crimson">Ethylethanoate</b> (CH<sub>2</sub>COOC<sub>2</sub>H<sub>5</sub>) to
+  represent the general procedure involved in the preparation of esters. Ethylethanoate
+  is formed from ethanoic acid and ethanol. About 10cm<sup>3</sup> of both ethanoic acid
+  and ethanol are mixed together in a 100cm3 flask. Drops of concentrated
+  tetraoxosulphate (VI) acid are added to the mixture in the flask. The mixture is then
+  heated for the reaction to proceed. The reaction proceeds according to the equation
+  below.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img width="581" height="54" src=
+  "img/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA2cAAABSCAYAAADQFKzmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFwwAABcMAYoCjmYAACfhSURBVHhe7V17yGZV9R5HC0cRb6mJpaUWEaUZmUKQFxAiIRkN04ymjLCbeMn+yKhJQ4kummhEQjli8aOEVOhKl5kuf4jlLYqJcpwyUUnzlpGjjut3nved9c369rf32Xufs9/znnPe58DHfPOdffZe+9l7r72etfZllfAZDgIbNoi8+c0iu+46/cHv+BsfIkAEiAARIAJEgAgQASJABAaPwKrB12ARKnD33VMihp/rrxfZskXkwQdFvvENkSOOEDnmGBGk4UMEiAARIAJEgAgQASJABIjAYBEgOet7091zj8j++4tceWVY0g9/eJqGBK3vrUn5iAARIAJEgAgQASJABIhAEAGSsz53jieeEDn8cJFPflLkuefCkj7zjMhHPjJNi2/4EAEiQASIABEgAkSACBABIjA4BEjO+txka9eKvPOdItu2pUl54oki+IYPESACRIAIEAEiQASIABEgAoNDgOSsr022aZPIIYeI/P3v6RLee6/IPvuI4Fs+RGAMCGzcKHL11SIf+IDISSdN912uXr3yB3/He6T72tc4BsbQ9qwDESACRIAIEIEFRIDkrK+NfvLJIldckS/dRRdNjVQ+RGCICGBZ7g03iCAK/NKXTh0UJ5wgcsEFIt/8psjtt08Pw3n6aZHt20Uef1zkvvtEfvnL6fuPf3z67WGHibzkJdOxgBNNudx3iL2BMhMBIkAEiAARWDgESM762OSIfB10kMijj+ZL98gjInvsIYKIAx8iMBQE0OcR9dptN5FjjxX5+tdFnnqqnfSPPSZyzTXT/NasEfngBxlRa4covyYCRIAIEAEiQARmjADJ2YwBbpQ99o0hAtD0OfNM7j1rih2/6xYBnDCK6NZ++4l86lPNHBIpEt9///RgnYMPnpaHU1D5EAEiQASIABEgAkSgZwiQnPWsQSbLrxA92Ly5uWR33DHdk8OlXM0x5JezRQB988ILRV72silpeuCB2ZanuaOcSy4R2Xvv6VLJJ5/splyWQgSIABEgAkSACBCBBARIzhJA6jQJ9scceaTICy+0KxYRAuTFhwj0DQFEy3BxOvaS/fnP85HurrtEjjpqesAI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ItAKAUR7sRz35JOnUS4sz33rW0XOOkvk8stFbr5Z5I47pssgK+eB4OLo6tJkuemm6QXu73vfNP0BB4isXj2NkiG/mihyTF6MgdAJtfjWvcQ0lh/fEwEiQASIQD8QiOl32kH9aKdFk6KX5GzRGsFbXxiVn/lMPhSXXLLiIt1QJhrGDUXGEPlIOYglX0h+QQQSEYCT4ZprRM49d0rYcIAHluy6P/g73iMd0ic4JxIlmIwB7765KgO972Thovup4DEdESACRKDHCNTpd4hNO6jHjTdi0UjO+tq4iJ7hnjLslUl9sF8H32Qs3dKjzN0iEOKd9QESqdViOiIwbwQwFnx7L7GXr+vTx+aNBcsnAkSACIwJgZB+px00plYeVl1IzvrcXtg3dsopaRI+/LDIcccl7TVLy5CpiAARIAJEgAgQASJABIgAEegSAZKzLtHOLQv7ZA4/XOTSS0W2bav/GseDI23kaPBcEZieCBABIkAEiAARIAJEgAgQgW4QIDnrBufmpeCC3P33x6kDIk8/vTKfBx8Uef/7p2lqLtNtLgC/JAJEgAgQASJABIgAESACRKALBEjOukC5bRkgXcccMz2BrtoLVp1CIPLHP4p8+tMihx46PSSBxKwtyvyeCBABIkAEiAARIAJEgAjMFQGSs7nCn1n4hg1TIoYjwvGD33FMOB8iQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkSACBABIkAEBo8Aydngm5AVIAJEgAgQASJABIgAESACRGAMCJCcjaEVWQciQASIABEgAkQgisDVV18tq1atktNOOy2atkmCWedv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" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Water molecule splits from the reactants (the circled H and OH forms
+  the water) and the required ethylethanoate is formed as a result of the reaction. The
+  ethylethanoate can be separated from the H<sub>2</sub>SO<sub>4</sub> and water by
+  distilling the mixture around 77<sup>o</sup>C. Remember that fats and oils are examples
+  of esters.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Uses of Esters</b><br /></p>
+
+  <p align="justify">They are used as solvents in quick&ndash;drying paints and
+  lacquers.<br /></p>
+
+  <p align="justify">They are also used as flavors or fragrance in food preparations and
+  cosmetics.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Difference between Neutralization and
+  Esterification</b><br /></p>
+
+  <table border="1" cellspacing="0" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Neutralization</th>
+
+      <th style="background-color: darkred; color: white">Esterification</th>
+    </tr>
+
+    <tr>
+      <td>Hydrogen ions and hydroxide ions combine to form water</td>
+
+      <td>Water is not formed from hydrogen and hydroxide ions.</td>
+    </tr>
+
+    <tr>
+      <td>No catalyst or heat is required</td>
+
+      <td>Heat and catalyst are required</td>
+    </tr>
+
+    <tr>
+      <td>Reaction is irreversible</td>
+
+      <td>Reaction is reversible</td>
+    </tr>
+
+    <tr>
+      <td>Reaction proceed at a faster rate</td>
+
+      <td>Reaction proceeds at a slower rate</td>
+    </tr>
+  </table><br />
+
+  <p align="justify">The only similarity is the water which is formed in both
+  reactions.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Fats and Oil</b><br /></p>
+
+  <p align="justify"><b style="color:crimson">Differences between Fats and
+  Oils</b><br /></p>
+
+  <table border="1" cellspacing="0" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Fats</th>
+
+      <th style="background-color: darkred; color: white">Oils</th>
+    </tr>
+
+    <tr>
+      <td>They are solids or semi&ndash;solids at room temperature</td>
+
+      <td>Oils are liquids at room temperature</td>
+    </tr>
+
+    <tr>
+      <td>They are saturated or almost saturated. This saturation makes them exist as
+      solids at room temperature.</td>
+
+      <td>They are unsaturated</td>
+    </tr>
+
+    <tr>
+      <td>Have relatively higher melting point</td>
+
+      <td>Have a relatively lower melting point</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">Uses of Fats and Oils</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Used for cooking<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Preparation of margarine, soaps, alcohol and drugs<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Manufacturing of glycerol, paints and candles
+
+      <p align="left"></p>
+    </li>
+  </ol><br />
+
+  <p align="justify"><b style="color:crimson">Soaps and Detergent</b><br /></p>
+
+  <p align="justify">Soaps and detergents are cleansing agents. Ordinary soaps are
+  sometimes referred to as <b style="color:crimson">soapy</b> <b style=
+  "color:crimson">detergents</b> whereas detergents such as washing powders are referred
+  to as <b style="color:crimson">soapless detergents.</b> In this lesson, we will refer
+  to <i style="color:blue">soapy detergents</i> as soaps and <i style=
+  "color:blue">soapless detergents</i> as detergents. From a chemical point of view,
+  soaps are metallic salts of a higher carboxylic acid. They are made by boiling oils or
+  fats with alkali solutions of NaOH or KOH. During the heating process, a chemical
+  reaction, saponification, takes place between the ester (fats or oil) and the base
+  (NaOH or KOH) which forms soap and glycerol. <b style=
+  "color:crimson">Saponification</b> is a chemical reaction between a hot concentrated
+  alkali and an ester to form soap and glycerol.</p>
+
+  <p align="left"><br />
+  <b style="color:crimson">Saponification:</b><br /></p>
+
+  <p align="justify">Fat/oil + Conc. Alkali <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> heat Soap + Glycerol</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">
+  (C<sub>17</sub>H<sub>35</sub>COO)<sub>3</sub>C<sub>3</sub>H<sub>5</sub> + 3NaOH
+  <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" />
+  3C<sub>17</sub>H<sub>35</sub>COONa + C<sub>3</sub>H<sub>5</sub>(OH)<sub>3</sub> +
+  Heat</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">From the above explanation, we realize that soap is made from oil
+  which is insoluble in water and a water&ndash;soluble base (alkali). In short, soap has
+  a water&ndash;insoluble part coming from the ester which is known as <b style=
+  "color:crimson">hydrophobic part</b> and water&ndash;soluble part coming from the
+  alkali, known as <b style="color:crimson">hydrophilic part</b>. When the alkali used is
+  NaOH, the soap formed is <b style="color:crimson">hard</b> and does not lather so
+  easily. Such soaps are called <b style="color:crimson">hard soap.</b> However, if the
+  alkali used is made from KOH, the soap formed is <b style="color:crimson">soft</b> and
+  lathers easily. Soaps formed from potassium hydroxide (KOH) are therefore referred to
+  as <b style="color:crimson">soft soaps</b>. Each kind of soaps has its own advantages
+  and hence serves better in different areas. Hard soaps are good for laundry purposes
+  due to their hard nature. And soft soaps are good for bathing. Examples of soap include
+  key soap, guardian, rexona, imperial leather, etc.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Detergents</b> are synthetic soaps. They
+  are sodium or potassium salts of a long chain organic tetraoxosulphate (IV) acid or
+  sulphonic acids. Their structure is similar to soaps. They have soluble and insoluble
+  parts just like soaps. They are made from sulphonic acid and an alkali. Examples of
+  detergents include omo, so klin, ariel, yazz, and proper washing powder.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Cleansing Action of Soaps and
+  Detergents</b><br /></p>
+
+  <p align="justify">All forms of stains are chemicals. These chemicals may be organic
+  (grease), inorganic (clay mud) or both. When soap is applied to the stain in the
+  presence of water, the soap breaks down into the soluble and insoluble parts through
+  lathering. The water&ndash;soluble parts attacks and dissolves inorganic stains whilst
+  the water&ndash;insoluble parts attacks the organic stains. Agitation by the hand or
+  washing machine removes the stains and leaves them suspend in the water as small
+  (colloidal) particles. Detergent acts just like soap. However, it has this advantage
+  over soap, it does not form scum in <b style="color:crimson">hard water</b>. Detergents
+  are not biodegradable, can not be broken down by the action of micro&ndash;organisms,
+  and that limits their uses somehow. Soaps are biodegradable.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Preparation of Soap by Saponification
+  (Alkaline Hydrolysis)</b><br /></p>
+
+  <p align="justify">Equal masses of groundnut oil and sodium hydroxide pellets are
+  taken, say 10g each. The pellets are dissolved in 40g of water (note: the mass of water
+  is four times that of pellets). Pour the oil and the alkali into a beaker. Heat and
+  stir the mixture gently until it boils for about 5 minutes. Add water when needed to
+  maintain the level of the mixture as it being heated. After the mixture has boiled for
+  5 minutes, allow it to cool a little. Add about 40g of saturated sodium chloride
+  solution (brine) and stir. The soap is not very soluble in the brine. The soap
+  therefore separates from the mixture and rises to the top as a solid layer. This
+  process of separating the soap from the mixture is called <b style=
+  "color:crimson">salting out</b>. Skim or filter the solid product, soap, and wash it
+  with some water. Place the soap between two filter papers and press to obtain solid
+  soap.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Improving the quality of indigenous
+  Soap</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ul>
+    <li>The quality of indigenous soaps can be improved through the following<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Addition of perfumes<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>The use of correct proportions of ingredients or to avoid the use of excess
+    alkali<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>By using refined reactants and refining the products as well
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ul><b style="color:crimson">Differences between Soaps and Detergents</b><br />
+
+  <table border="1" cellspacing="0" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Soaps</th>
+
+      <th style="background-color: darkred; color: white">Detergents</th>
+    </tr>
+
+    <tr>
+      <td>They are biodegradable</td>
+
+      <td>Non&ndash;biodegradable</td>
+    </tr>
+
+    <tr>
+      <td>Cause graying when used on white fabrics</td>
+
+      <td>Do not cause graying when used on white fabrics</td>
+    </tr>
+
+    <tr>
+      <td>Forms scum with hard water</td>
+
+      <td>Does not form scum</td>
+    </tr>
+
+    <tr>
+      <td>Made from fats and oils of long chain carboxylic acid and alkali</td>
+
+      <td>Made from sulphonic acid and alkali</td>
+    </tr>
+  </table><br />
+</ion-content>

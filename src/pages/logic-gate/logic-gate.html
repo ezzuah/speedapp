@@ -1,0 +1,476 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>LOGIC GATE</b></p><br />
+  
+    <p align="justify">Old&ndash;time radios used the <i style="color:blue">vacuum
+    tube</i>&#8213;small light bulb&ndash;sized electronic tube with glowing
+    filaments&mdash;to control the flow of electrons in a vacuum. The tube acted as a kind
+    of switch. The last computer to use this kind of tube employed 18,000 of them and was
+    weighing 30 tons (30,000Kg). The tubes developed faults very often and it took more
+    than 15 minutes to identify and replace a faulty tube.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The transistor changed all that. The first transistor developed was
+    one hundredth of a vacuum tube and was faster. In the early days, transistors were made
+    individually and were later connected into electronic circuits with the use of wires
+    and solders. Today, transistors are part of <i style="color:blue">integrated
+    circuits</i> (IC&rsquo;s)&#8213;an entire electronic circuit including wires all formed
+    on a single chip, the <i style="color:blue">microchip</i>. A microchip is a tiny piece
+    of silicon that contains millions of electronic circuit components which are mostly
+    transistors. As IC technology advances, the required physical volume for each
+    individual logic gate decreases and thus, digital devices of the same or smaller size
+    are capable of performing ever&ndash;more&ndash;complicated operations at
+    ever&ndash;increasing speeds.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Digital and Analogue Systems</b><br /></p>
+  
+    <p align="justify">The computer and other electronic devices may seem to be incredibly
+    complicated devices, but their underlying principle is simple. When you open any
+    electronic device (PC, calculator, radios, cell phones, etc.) what you see is mainly
+    electronic circuits. And what is the most basic statement that can be made about
+    electricity? Simply this: It can be either <i style="color:blue">turned on or turned
+    off</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In the two&ndash;state arrangements (on/off), the &lsquo;on&rsquo;
+    state may be represented as &lsquo;1&rsquo; digit and the &lsquo;off&rsquo; a
+    &lsquo;0&rsquo; digit. Note that the on/off mode does not necessarily mean turning the
+    device on or off manually. But rather, current flows or does not flow through a
+    specific circuit due to transistor arrangements. If current flows the transistor is
+    turned on and a &lsquo;1&rsquo; signal is sent and vice versa.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Since electronic devices operate on the on/off or 1/0 mode, they can
+    represent any number using the two digits, 0 and 1. This system of representation is
+    the <b style="color:crimson">binary system</b>. Each off (0) or on (1) is called a
+    <b style="color:crimson">bit</b>&mdash;short form for <i style="color:blue">binary
+    digit</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In turn, bits can be grouped to represent numbers, alphabets,
+    characters (punctuations) and many more. For example, the letter &lsquo;A&rsquo; could
+    correspond to the electronic signal &lsquo;01000001&rsquo; (that is,
+    off&ndash;on&ndash;off&ndash;off&ndash;off&ndash;off&ndash;off&ndash;on), the number
+    &lsquo;1&rsquo; to &lsquo;00110001&rsquo; and &lsquo;2&rsquo; to
+    &lsquo;00110010&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A combination of eight bits is called a <b style=
+    "color:crimson">byte</b>. <b style="color:crimson">Digital system</b> or data
+    specifically refers to an <i style="color:blue">electronic signal or information which
+    is in the binary state</i>. Hence their values are either &lsquo;0&rsquo; or
+    &lsquo;1&rsquo;. Note that the <i style="color:blue">binary system</i> stated above is
+    different from the <i style="color:blue">binary bases</i> (number base 2) in
+    mathematics. If it was number bases, how then would alphabets, punctuation and
+    characters be converted into base two?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Unlike digital data which is between 0 and 1, analogue data are
+    continuous. For example, the values for temperature, pressure, velocity and many other
+    physical quantities can fall within any range. Their data are forms of analogue data.
+    Examples of analogue devices are speedometer, thermometer, pressure sensors and mass
+    balance.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">LOGIC GATES</b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Logic gates</b> are elementary building
+    blocks of a <i style="color:blue">digital circuit</i>. It performs a <i style=
+    "color:blue">logical operation</i> on one or more <i style="color:blue">logic
+    inputs</i> and produces a <i style="color:blue">single logic output</i>. The transistor
+    makes up <i style="color:blue">logic gates</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">There are several types of gates designed to respond differently to
+    a particular patterns of electrical signals. Logic gates make up electronic circuits,
+    (Note, <i style="color:blue">however, that the gate is an electronic pathway and
+    comprises of a set of electronic components that perform a particular task in an
+    electronic system</i>).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The circuits make up a logical device like the computer&rsquo;s CPU.
+    Most logic gates have two inputs and one output. In logic gates the &lsquo;off&rsquo;
+    state of the binary system is expressed as low voltage (which is approximately 0 volts)
+    and the &lsquo;on&rsquo; state as high voltage (approximately +5 volts).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The table below shows the various ways to represent the on/off
+    states. The responds of a logic gate can be summarised on a <i style="color:blue">truth
+    table</i>. A <b style="color:crimson">truth table</b> is a table that describes the
+    behaviour of a logic gate and shows all the possible outputs for every possible
+    combination of inputs.</p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">On</th>
+  
+        <th style="color: white; background-color: darkred">Of</th>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>High</td>
+  
+        <td>Low</td>
+      </tr>
+  
+      <tr>
+        <td>+5 Vs</td>
+  
+        <td>0 V</td>
+      </tr>
+  
+      <tr>
+        <td>&nbsp;True&nbsp;</td>
+  
+        <td>False</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify"><b style="color:crimson">NOT Gate</b><br /></p>
+  
+    <p align="justify">The <i style="color:blue">NOT gate</i> is also known as an inverter.
+    The diagrams below are the transistor connection and circuit diagram, respectively, of
+    a NOT logic gate. Notice that it contains only one transistor.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys1.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">All logic gates contain an input and an output. This is shown by the
+    &lsquo;A&rsquo; (input) and &lsquo;B&rsquo; (output). In the NOT gate, an input of
+    value 1 will produce an output of value 0 and an input of 0 will produce an output of
+    1. The truth table of the NOT gate is shown on the left.</p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">A</th>
+  
+        <th style="color: white; background-color: darkred">B</th>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>1</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify"><b style="color:crimson">OR Gate</b><br /></p>
+  
+    <p align="justify">The <i style="color:blue">OR gate</i> gets its name from the fact
+    that it behaves after the fashion of the logical inclusive &lsquo;or&rsquo;. The output
+    is &lsquo;true&rsquo; if either or both of the inputs are &lsquo;true&rsquo;. If both
+    inputs are &lsquo;false&rsquo;, then the output is &lsquo;false&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys2.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">A</th>
+  
+        <th style="color: white; background-color: darkred">B</th>
+  
+        <th style="color: white; background-color: darkred">C</th>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>1</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>1</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>&nbsp;0&nbsp;</td>
+  
+        <td>0</td>
+  
+        <td>0</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify"><b style="color:crimson">AND Gate</b><br /></p>
+  
+    <p align="justify">The <i style="color:blue">AND gate</i> is made up of three
+    transistors as shown on the right. As its name implies, the output is
+    &lsquo;true&rsquo; only when both inputs are &lsquo;true&rsquo;. Otherwise, the output
+    is &lsquo;false&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys3.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">A</th>
+  
+        <th style="color: white; background-color: darkred">B</th>
+  
+        <th style="color: white; background-color: darkred">C</th>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>1</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>&nbsp;0&nbsp;</td>
+  
+        <td>0</td>
+  
+        <td>0</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify">The three gates discussed are the basic logic gates. Other gates can
+    be derived from them by combining some (not any) of them. For example, the NOR (which
+    is a short form for NOT OR), NAND (NOT AND) gate, XOR, etc. can be derived from the
+    three.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">NOR gate</b><br /></p>
+  
+    <p align="justify">The <i style="color:blue">NOR gate</i> is a combination of OR gate
+    followed by an inverter. It acts in the same manner as the logical operation
+    &lsquo;or&rsquo; followed by a negation. Its output is &lsquo;true&rsquo; if both
+    inputs are &lsquo;false&rsquo;. Otherwise, the output is &lsquo;false&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys4.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">Input 1</th>
+  
+        <th style="color: white; background-color: darkred">Input 2</th>
+  
+        <th style="color: white; background-color: darkred">Output</th>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>0</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+  
+        <td>0</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify"><b style="color:crimson">NAND gate</b><br /></p>
+  
+    <p align="justify">As said earlier, the <i style="color:blue">NAND gate</i> operates as
+    an AND gate followed by a NOT gate. It acts in the manner of the logical operation
+    &lsquo;and&rsquo; followed by negation. The output is &lsquo;false&rsquo; if both
+    inputs are &lsquo;true&rsquo;. Otherwise, the output is &lsquo;true&rsquo;. The circuit
+    diagram and truth table, respectively, for a NAND gate is shown on the right.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys5.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color: white; background-color: darkred">Input 1</th>
+  
+        <th style="color: white; background-color: darkred">Input 2</th>
+  
+        <th style="color: white; background-color: darkred">Output</th>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>0</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>0</td>
+  
+        <td>1</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>0</td>
+  
+        <td>1</td>
+      </tr>
+  
+      <tr>
+        <td>1</td>
+  
+        <td>1</td>
+  
+        <td>0</td>
+      </tr>
+    </table><br />
+    <br />
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Using combinations of logic gates, complex operations can be
+    performed. In theory, there is no limit to the number of gates that can be arrayed
+    together in a single device. But in practice, there is a limit to the number of gates
+    that can be packed into a given physical space. Arrays of logic gates are found in
+    digital integrated circuits (ICs). Prepare the truth table for the combination of gates
+    shown below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/esys6.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+</ion-content>

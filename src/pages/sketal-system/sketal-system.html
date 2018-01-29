@@ -1,0 +1,417 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>SKETAL SYSTEM</b></p>
+  <br />
+  <p align="justify">Without some kind of support, an organism would be little more than a jellylike mass. A complex organism without support will collapse from its weight. Thus, most complex organisms have a system for support called a 
+  <b style="color: crimson">skeletal system</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="319"
+         src="http://speedapp.ididev.com/apps/img/skel1.png"
+         width="211" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The human skeletal system has 
+  <i style="color:blue">206 bones and associated cartilage, tendons, and ligaments</i>. Because bone is rigid, it gives the body a framework, maintains its shape, and protects vital organs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Bones provide a place for muscles and supporting structures to attach, and, with the movable joints, form a system of levers upon which muscles can act to produce body movements. Bone also functions as a site for mineral storage
+  and blood cell formation.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Tendons</b>and 
+  <b style="color: crimson">ligaments</b>are strong bands of fibrous connective tissue that attach muscles to bones, and bones to bones, respectively. The human skeleton has two parts&mdash;
+  <i style="color:blue">axial</i>and 
+  <i style="color:blue">appendicular</i>skeleton.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Axial skeleton</b>
+    <br />
+  </p>
+  <p align="justify">This supports and protects the organs of the head, neck, and torso, and in humans it comprises the skull, ear ossicles, 
+  <i style="color:blue">hyoid</i>(U&ndash;shaped bone at the base of the tongue that supports the tongue) bone, vertebral column, and rib cage. The axial skeleton consists of the skull, vertebral column, sternum and ribs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The adult 
+  <b style="color: crimson">human skull</b>consists of eight bones which form the 
+  <i style="color:blue">cranium</i>(braincase) and 13 facial bones that support the eyes, nose, and jaws.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="217"
+         src="http://speedapp.ididev.com/apps/img/skel2.jpg"
+         width="278" />
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color: crimson">Vertebral column</b>
+    <br />
+  </p>
+  <p align="justify">The vertebral column (or spinal column) extends from the skull to the pelvis and is made up of 33 individual bones termed 
+  <b style="color: crimson">vertebrae</b>. The vertebrae are piled on top of each other but separated by intervertebral discs which act as a shock absorber. The spinal cord runs through these bones while spinal nerves emerge through spaces.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="251"
+         src="http://speedapp.ididev.com/apps/img/skel3.jpg"
+         width="189" />
+    <img alt=""
+         height="236"
+         src="http://speedapp.ididev.com/apps/img/skel4.jpg"
+         width="235" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Bony processes and spines project from the vertebrae for the attachment of muscles and ligaments. There are five recognized regions in mammals&mdash;cervical, thoracic, lumbar, sacral, and caudal. Humans have 
+  <i style="color:blue">seven</i>cervical, 
+  <i style="color:blue">twelve</i>thoracic, 
+  <i style="color:blue">five</i>lumbar, 
+  <i style="color:blue">five</i>(fused) sacral, and 
+  <i style="color:blue">four</i>coccygeal vertebrae.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Cervical</b>, as you can see here from the picture on the right, supports the neck and at the same time carries the skull. The 
+  <b style="color: crimson">Thoracic</b>vertebrae consist of the twelve pairs of ribs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In humans these twelve pairs of ribs form a strong but movable protective cage encompassing the heart, lungs and other internal organs. The ribs are long, flattened, and curved bones that form a protective cage for the heart,
+  lungs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Lumber</b>vertebrae bear much of the body's weight and provide attachments for abdominal muscles. The 
+  <b style="color: crimson">Sacrum</b>is located behind the pelvis. The sacrum fits between the two hipbones connecting the spine to the pelvis giving the skeleton strength.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="131"
+         src="http://speedapp.ididev.com/apps/img/skel5.png"
+         width="245" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The last lumbar vertebra moves with the sacrum. Immediately below the sacrum are five additional bones, fused together to form the Coccyx (tailbone) where tail muscles attach.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <i style="color:blue">atlas</i>and 
+  <i style="color:blue">axis</i>are the first and second bones of the vertebral column, respectively. The atlas supports the skull directly. The axis has a tooth&ndash;like projection referred to as the &lsquo;
+  <i style="color:blue">dens&rsquo;</i>(Latin for &lsquo;tooth&rsquo;) or 
+  <i style="color:blue">odontoid</i>process.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="145"
+         src="http://speedapp.ididev.com/apps/img/skel6.png"
+         width="194" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The dens provides a type of pivot and collar allowing the head and atlas to rotate around the dens. The thoracic vertebrae (left) are of larger sizes than cervical. They are having relatively large neural passageways where
+  spinal nerves connect the spinal cord. The rib cage is joined to the thoracic vertebrae.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Since the lumber vertebrae bear much of the body's weight the pedicles are longer and wider than those in the thoracic spine. The spinous projections are horizontal and more squared in shape. The neural passageways of the lumber
+  are relatively large.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="125"
+         src="http://speedapp.ididev.com/apps/img/skel7.png"
+         width="256" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color: crimson">Appendicular skeleton</b>
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">appendicular skeleton</b>consists of 126 bones in the human body which makes motion possible and protects the organs of digestion, excretion, and reproduction. The word appendicular refers to an 
+  <i style="color:blue">appendage</i>or anything attached to a major part. The appendicular skeleton consists of the bones within the 
+  <i style="color:blue">pectoral</i>(shoulder) and 
+  <i style="color:blue">pelvic</i>(hip) girdles and 
+  <i style="color:blue">their attached limbs</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">pectoral girdle</b>is the set of bones which connect the upper limb to the axial skeleton on each side. It consists of the clavicle clavicle and scapula scapula in humans. The scapula, which are quite visible at our back
+  are held in place only by the muscles of the arm and chest.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="294"
+         src="http://speedapp.ididev.com/apps/img/skel8.jpg"
+         width="175" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The scapular moves with the humerus. The humerus is much larger than its cavity making it very unstable. This results in easy 
+  <i style="color:blue">dislocation</i>of the head of humerus. Check from the picture below if you can make out the pectoral girdle.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The pelvis is the largest bony part of the human skeleton. There are three joints, thesymphysis pubis (SP), and two sacroiliac joints. A highly durable network of ligaments surrounds these joints giving them tremendous
+  strength.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="325"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/skel9.jpg"
+         width="361" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Their movement is restricted and they cannot move independently of each other. The 
+  <i style="color:blue">attached limbs</i>of the pectoral and pelvic girdles are the fore limbs and hind limbs respectively. From the picture on the right, the 
+  <b style="color: crimson">fore limb</b>is made up of humerus, radius and ulna, carpals, metacarpals and phalanges. The 
+  <b style="color: crimson">hind limb</b>is also made up of femur, tibia and fibula, tarsals, metatarsals and phalanges.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Joints</b>
+    <br />
+  </p>
+  <p align="justify">A 
+  <b style="color: crimson">joint</b>is the location at which two or more bones make contact. They are constructed to allow movement and provide mechanical support, and are classified 
+  <i style="color:blue">structurally</i>and 
+  <i style="color:blue">functionally</i>. 
+  <b style="color: crimson">Structural</b>classification is determined by how the bones connect to each other, while 
+  <b style="color: crimson">functional</b>classification is determined by the degree of movement between the articulating bones.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="222"
+         src="http://speedapp.ididev.com/apps/img/skel10.png"
+         width="168" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">One of the most flexible joints is the 
+  <b style="color: crimson">ball and socket joint</b>. In humans, this type of joint is found where the thighbone (femur) joins the hipbone (pelvis). The end of the femur fits into a depression in the pelvis. The femur can rotate as well as move
+  from front to back or side to side. Are there other ball and socket joints in the body?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Hinge joints</b>exist in many places within the human body, such as the knee. In a hinge joint, rotation is not possible&mdash;movement occurs in only one direction. The skull is connected to the spine by a 
+  <b style="color: crimson">pivot joint</b>(by atlas and axis) so that the head can turn as well as move up and down.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The vertebrae are linked by 
+  <b style="color: crimson">gliding joints</b>. In this joint, the bones move easily over one another in a back and forth manner. In adult humans, the individual 21 bones of the skull are held together by 
+  <b style="color: crimson">fixed joints.</b>In fixed joints, the bones are fused together and do not move. Can you point to any of the fixed joints on the picture of the skull (page 1)?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Muscles and the skeleton</b>
+    <br />
+  </p>
+  <p align="justify">Bones don't work alone&mdash;they need help from the muscles and joints. Muscles pull on the joints, allowing us to move. They also help the body perform other functions so we can grow and remain strong, such as chewing food and
+  then moving it through the digestive system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The human body has 
+  <i style="color:blue">more than 650 muscles</i>, which make up half of a person's body weight. Muscles are connected to bones by tough, cord&ndash;like tissues called 
+  <b style="color: crimson">tendons</b>, which allow the muscles to pull on bones.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">If you wiggle your fingers, you can see the tendons on the back of your hand move. Humans have three different kinds of muscle. First, 
+  <b style="color: crimson">Skeletal muscles</b>hold the skeleton together, give the body shape, and help it with everyday movements (they are known as voluntary muscles because you can control their movement).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">They tire easily and have to rest between workouts. Second, 
+  <b style="color: crimson">Smooth, or involuntary muscle</b>is the type we can't consciously control. They're controlled by the nervous system automatically. Examples of smooth muscles are the walls of the stomach and intestines, which help break
+  up food and move it through the digestive system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Cardiac muscle</b>also is found in the heart. Its rhythmic, powerful contractions force blood out of the heart as it beats.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Muscles move body parts by contracting and then relaxing. Your muscles can pull bones, but they can't push them back to their original position. So they work in pairs of 
+  <i style="color:blue">flexors</i>and 
+  <i style="color:blue">extensors</i>. The 
+  <b style="color: crimson">flexor</b>contracts to bend a limb at a joint. Then, when you've completed the movement, the flexor relaxes and the 
+  <b style="color: crimson">extensor</b>contracts to extend or straighten the limb at the same joint.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, the biceps muscle, in the front of the upper arm, is a flexor, and the triceps, at the back of the upper arm, is an extensor. When you bend at your elbow, the biceps contracts. Then the biceps relaxes and the
+  triceps contracts to straighten the elbow.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="294"
+         src="http://speedapp.ididev.com/apps/img/skel11.png"
+         width="223" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Bone marrow</b>
+    <br />
+  </p>
+  <p align="justify">Within the long bones in the body are 
+  <b style="color: crimson">two</b>types of bone marrow: 
+  <i style="color:blue">red marrow</i>and 
+  <i style="color:blue">yellow marrow</i>. The 
+  <b style="color: crimson">yellow</b>marrow has fatty connective tissue and fills the marrow cavity. During starvation, the body uses the fat in yellow marrow for energy. The 
+  <b style="color: crimson">red</b>marrow of some bones is an important site for blood cell production. Here all erythrocytes (red blood cells), platelets, and most leukocytes (white blood cells) form in adults.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="222"
+         src="http://speedapp.ididev.com/apps/img/skel12.jpg"
+         width="278" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">From the red marrow, erythrocytes, platelets, and leukocytes migrate to the blood to do their special tasks. Red blood cells carry oxygen and nutrients to the body tissues. Platelets help in blood clotting. White blood cells
+  help fight disease and infection (refer 
+  <i style="color:blue">Transport in Mammals</i>for details).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Problems of bones and joints</b>
+    <br />
+  </p>
+  <p align="justify">As strong as bones are, they can break. Muscles can weaken, and joints (as well as tendons, ligaments, and cartilage) can be damaged by injury or disease. The following are problems that can affect the bones, muscles, and
+  joints.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Arthritis</b>is a group of conditions where there is damage caused to the 
+  <b style="color: crimson">joints</b>of the body. Arthritis is the leading cause of disability in people over the age of 55. People who have arthritis experience swelling, warmth, pain, and often have trouble moving.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The most common form of arthritis, osteoarthritis occurs following trauma to the joint, following an infection of the joint or simply as a result of aging. Furthermore, there is emerging evidence that abnormal anatomy may
+  contribute to early development of osteoarthritis. People sometimes say that you will get arthritis if you crack your knuckles a lot, but this assertion has not been scientifically proven.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Fracture</b>occurs when a bone breaks; it may crack, snap, or shatter. After a bone fracture, new bone cells fill the gap and repair the break. Applying a strong plaster cast, which keeps the bone in the correct position
+  until it heals, is the usual treatment. If the fracture is complicated (like in a motor accident), metal pins and plates can be placed to better stabilize the fracture while the bone heals.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Osteoporosis</b>is characterized by bone tissue becoming brittle, thin, and spongy. Bones break easily, and the spine sometimes begins to crumble and collapse. The condition usually affects older people so they are
+  advised to stay clear of duties involving stress on bones.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Strains and sprains</b>Strains occur when a muscle or tendon is overstretched. Sprains are an overstretching or a partial tear of the ligaments. Strains usually happen when a person takes part in a strenuous activity when
+  the muscles haven't properly warmed up or the muscle is not used to the activity (such as a new sport or playing a familiar sport after a long break).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Sprains, on the other hand, are usually the result of an injury, such as twisting an ankle or knee. Both strains and sprains are common in teens because they're active and still growing.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Dislocations</b>are the separations of bone joints causing the bones to go out of proper alignment. These misalignments can be extremely painful and can cause an impairment of nerve or circulatory function below the area
+  affected.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">You must place these joints back into alignment as quickly as possible and consult a physician for proper 
+  <i style="color:blue">reduction</i>(setting of joint) and 
+  <i style="color:blue">rehabilitation</i>.</p>
+  <p align="left"></p>
+</ion-content>

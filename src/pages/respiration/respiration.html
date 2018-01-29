@@ -1,0 +1,275 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>RESPIRATION</b></p>
+  <br />
+  <p align="justify">&lsquo;Breathe in, breathe out&rsquo; was an exercise you may have partook when you were in the primary school. Do you remember what that exercise involved? Do you also know that each time you took part a process known as 
+  <i style="color:blue">breathing</i>took place? Breathing forms part of what biologists call respiration.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Respiration</b>refers to the exchange of oxygen and carbon dioxide between cells and the environment. Respiration may either be 
+  <i style="color:blue">internal</i>or 
+  <i style="color:blue">external</i>. For the sake of our discussion, let us first talk about external respiration.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="330"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/resp1.png"
+         width="330" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">External respiration</b>is when your body takes in the oxygen part of the air we inhale in exchange for the carbon dioxide and other harmful gases in the body. In mammals (humans) this is done using two large organs in the
+  body called 
+  <b style="color:crimson">lungs</b>, lying side by side in the chest area. The picture on the right shows this organ.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">When air enters through the nose or mouth, it is filtered by the 
+  <i style="color:blue">cilia</i>and 
+  <i style="color:blue">mucus</i>in the nostrils. The air is also moistened and warmed as it moves from the nose toward the lungs. The air passes to the 
+  <b style="color:crimson">pharynx</b>and then moves downward into the 
+  <b style="color:crimson">trachea</b>or windpipe. Air enters the larynx to the trachea through a small hole called the 
+  <b style="color:crimson">glottis</b>. The glottis is protected (covered) by a structure like a flap called the 
+  <b style="color:crimson">epiglottis.</b>
+  <br /></p>
+  <p align="justify">While breathing, the trachea is open but when a person swallows food, the epiglottis covers the glottis (entrance of trachea) so that the food goes down only into the esophagus. Have you ever choked from talking while
+  eating?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Well, this occurs when the epiglottis fails to close properly. Branching from the trachea are two large tubes called bronchi (sing., 
+  <b style="color:crimson">bronchus</b>). The bronchi branch into many smaller bronchial tubes which further branch into bronchioles within the lungs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Bronchioles</b>end as many small, moist sacs called 
+  <b style="color:crimson">alveoli</b>. These two pictures show all the various parts mentioned and explained above. From the picture you can see that the 
+  <b style="color:crimson">ribs</b>shelter the lungs and keep them safe. It also helps in the control of breathing. The 
+  <b style="color:crimson">diaphragm</b>is a large muscular sheet which separates the chest area from the abdomen.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The picture below shows an alveolus in a bronchiole. It has thin walls and a network of 
+  <i style="color:blue">blood capillaries</i>surrounding it. The exchange of the gases namely oxygen and carbon dioxide take place in the alveolus. The various groups of alveoli greatly increase the surface area of the lungs for gas exchange.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img height="207"
+         src="http://speedapp.ididev.com/apps/img/resp2.png"
+         width="315" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The movement of air into and out of our respiratory system is called 
+  <b style="color:crimson">breathing</b>. When we breathe the ribs, rib muscles, and the diaphragm play a major role. You may have once been engaged in that breathing exercise while young. Mostly the first part of that exercise, breathe in, is
+  termed as inspiration.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Simply put, 
+  <b style="color:crimson">inspiration</b>is the taking in of air. During inspiration, the 
+  <i style="color:blue">diaphragm moves down (contracts)</i>and the 
+  <i style="color:blue">ribs move up and out</i>. The pictures below show what happens during the process. Inspiration increases the size of the chest cavity and decreases the pressure inside. As a result, air from the atmosphere rushes into the
+  lungs.</p>
+  <p align="left"></p>
+  <p align="justify">
+    <img alt=""
+         height="230"
+         src="http://speedapp.ididev.com/apps/img/resp3.png"
+         width="271" />
+  </p>
+  <p align="left">
+    <br />
+    <br />
+  </p>
+  <p align="justify">When the lungs are full, an opposite set of movements, expiration, occurs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Expiration</b>is simply the expelling (or ejecting) of air. During this process, the 
+  <i style="color:blue">diaphragm moves up (relaxes)</i>and the 
+  <i style="color:blue">ribs move down and in</i>. This decreases the size of the chest cavity and increases the inside pressure. Air is then forced out of the lungs. The pictures below show what happens during expiration.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="230"
+         src="http://speedapp.ididev.com/apps/img/resp4.png"
+         width="271" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Internal Respiration</b>
+    <br />
+  </p>
+  <p align="justify">Respiration is said to be external when it involves the lungs and other organs which communicates with the external environment of the body. What then happens when internal respiration takes place? 
+  <b style="color:crimson">Internal respiration</b>happens when cells 
+  <i style="color:blue">break down glucose and release energy</i>from it. In most cells, this process occurs in the presence of oxygen. Respiration which 
+  <i style="color:blue">makes use of oxygen</i>and produces 
+  <i style="color:blue">much</i>energy is called 
+  <b style="color:crimson">aerobic respiration</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The process is represented chemically as follows:
+  <br /></p>
+  <table>
+    <tr>
+      <td>C
+      <sub>6</sub>H
+      <sub>12</sub>O
+      <sub>6</sub>+ 6O
+      <sub>2</sub></td>
+      <td>
+        <img alt=""
+             height="10"
+             src="http://speedapp.ididev.com/apps/img/arrow.png"
+             width="62" />
+      </td>
+      <td>6CO
+      <sub>2</sub>+ 6H
+      <sub>2</sub>O + Energy</td>
+    </tr>
+    <tr>
+      <td>Glucose</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+  <br />
+  <p align="justify">
+  <b style="color:crimson">Anaerobic respiration</b>is the type that 
+  <i style="color:blue">does not use oxygen</i>and produces 
+  <i style="color:blue">small</i>amount of energy. Anaerobic respiration produces this little amount of energy because during the process, glucose or the food material is not fully broken down. In humans, 
+  <b style="color:crimson">lactic acid</b>is the waste product formed after an anaerobic respiration but in plants, they are 
+  <b style="color:crimson">ethanol</b>(alcohol) and 
+  <b style="color:crimson">carbon dioxide</b>. This process in humans and plants, respectively, are represented chemically below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <table>
+    <tr>
+      <td>C
+      <sub>6</sub>H
+      <sub>12</sub>O
+      <sub>6</sub>+ 6O
+      <sub>2</sub></td>
+      <td>
+        <img alt=""
+             height="10"
+             src="http://speedapp.ididev.com/apps/img/arrow.png"
+             width="62" />
+      </td>
+      <td>2C
+      <sub>3</sub>H
+      <sub>6</sub>O
+      <sub>3</sub>+ Energy (humans)</td>
+    </tr>
+    <tr>
+      <td>Glucose</td>
+      <td></td>
+      <td>Lactic acid</td>
+    </tr>
+  </table>
+  <p align="left"
+     style="color: blue">Lactic acid fermentation</p>
+  <table>
+    <tr>
+      <td>C
+      <sub>6</sub>H
+      <sub>12</sub>O
+      <sub>6</sub>+ 6O
+      <sub>2</sub></td>
+      <td>
+        <img alt=""
+             height="10"
+             src="http://speedapp.ididev.com/apps/img/arrow.png"
+             width="62" />
+      </td>
+      <td>C
+      <sub>2</sub>H
+      <sub>5</sub>OH + CO
+      <sub>2</sub>+ Energy (plants)</td>
+    </tr>
+    <tr>
+      <td>Glucose</td>
+      <td></td>
+      <td>Ethanol</td>
+    </tr>
+  </table>
+  <p align="left"
+     style="color: blue">Alcohol fermentation</p>
+  <br />
+  <p align="justify">Many animals carry on anaerobic respiration at certain times. For example, during times of heavy physical activity, oxygen may not be supplied fast enough to the muscle cells for aerobic respiration to take place.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In this case, the muscle cells use anaerobic respiration. At those times the cells convert the glycogen in them into glucose which in turn is broken down to produce lactic acid and energy. (Note that the lactic acid formed
+  results in muscle fatigue).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Yeasts cells also undergo anaerobic respiration. In the baking industry, the yeast cells breakdown carbohydrates (glucose) in dough and causes it to rise. Yeast&rsquo;s other fermentation product, alcohol, makes it indispensable
+  in the brewing industry. It provides the alcohol content of these alcoholic beverages. Anaerobic respiration comes to play during the manufacture of cheese.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Artificial Respiration</b>
+    <br />
+  </p>
+  <p align="justify">Have you ever been to the beach or a swimming pool and seen or heard someone drown? Well, let&rsquo;s say this victim got rescued. Mostly such ones don&rsquo;t have the ability to breathe on their own soon after they are
+  rescued. Experienced people, mostly from the rescue team, help such ones to breath.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This process of restoring breathing by ventilating the lungs manually is referred to as 
+  <b style="color:crimson">artificial respiration</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

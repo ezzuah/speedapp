@@ -1,0 +1,329 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>PHYSICAL PROPERTIES OF MATTER</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify"><b style="color:crimson">Matter</b> is defined as any substance that
+        has <b style="color:crimson">mass</b> and <b style="color:crimson">occupies space</b>
+        (volume). Matter can be classified into three broad categories based on the strength of
+        the forces holding their particles together. These are solids, liquids and gases (refer
+        from bonding). Aside the three states of matter, we shall discuss other properties like
+        mass, weight, length density and many more which are common to all forms of matter.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Density</b><br /></p>
+      
+        <p align="justify">&lsquo;Stone is heavier than wood&rsquo; they say. This is not so
+        meaningful. A cubic meter of wood is heavier than a cubic centimeter of stone and the
+        other way round is also true.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">To make such statement meaningful, one must use equal volumes of
+        stone and wood for such comparism. The scientist uses <i style="color:blue">density</i>
+        for such comparisms. Density is defined as <i style="color:blue">the mass per unit
+        volume</i> of a substance.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="300" height="164" src="http://speedapp.ididev.com/apps/img/prop1.jpg" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">For example, the picture above shows two beakers. The one on the
+        left contains oil and the one on the right contains water. Even though the volumes of
+        both liquids are equal, the balance shows that their masses are not the same. Water has
+        more mass than corn oil. That is, water is denser than corn oil.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Density is expressed mathematically as: <b style=
+        "color:crimson">3</b></p>
+      
+        <table style="text-align: center">
+          <tr>
+            <td><b>Density, &rho; =</b></td>
+      
+            <td>
+              <b>mass</b><br />
+              <hr />
+              <b>volume</b>
+            </td>
+      
+            <td>&mdash;&rarr; (1)</td>
+          </tr>
+        </table><br />
+      
+        <p align="justify"><b style="color:crimson">How to determine the density of an
+        irregular solid using mass balance and a measuring cylinder</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Determine the mass and the volume of the solid as described in the previous
+          chapter.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Use the equation '1' above to calculate the density.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Relative density or Specific gravity</b> of a substance
+        is the density of the substance divided by the density of water which is
+        1g/cm<sup>3</sup> or 1kg /l. <b style="color:crimson">OR</b> Mass of <i style=
+        "color:blue">any</i> <i style="color:blue">volume</i> of a substance divided by Mass of
+        <i style="color:blue">equal volume</i> of water.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Mathematically</p>
+      
+        <table style="text-align: center">
+          <tr>
+            <td><b>Rel. Density</b></td>
+      
+            <td>=</td>
+      
+            <td>
+              <b>density of substance</b><br />
+              <hr />
+              <b>density of water<br /></b>
+            </td>
+      
+            <td>=</td>
+      
+            <td>
+              <b>mass of substance</b><br />
+              <hr />
+              <b>mass of equal volume of water<br /></b>
+            </td>
+          </tr>
+        </table><br />
+      
+        <p align="justify">If a substance has a relative density of 1.06, then its density is
+        1.06kg/l. Relative density is <b style="color:crimson">dimensionless</b> (that is, it
+        has no unit). The hydrometer is used to determine the relative density of liquids.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson"><img src="http://speedapp.ididev.com/apps/img/prop3a.png" alt="" />
+        <img src="http://speedapp.ididev.com/apps/img/prop3b.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/prop3c.png" alt="" /></b><br /></p>
+      
+        <p align="justify">In the picture above, the relative densities of two different
+        liquids, (a) and (b) are being determined with a hydrometer. The hydrometer floats
+        higher in (a) than in (b). this means that the liquid in (a) is denser than that in
+        (b). (c) is a picture of a labelled hydrometer.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Floatation</b><br /></p>
+      
+        <p align="justify">If a body is denser than a liquid, it sinks in it completely.
+        However, if the density of the body is lesser than that of the liquid in which it is
+        placed, the body will sink until the mass of the liquid displaced by the portion of the
+        body submerged under the liquid is equal to the mass of the body.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The principle of floatation states that <i style="color:blue">a
+        floating body displaces its own weight of the liquid in which it floats</i><b style=
+        "color:crimson">.</b> Objects denser than water, even though they sink readily, appear
+        to lose part of their weight when submerged.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Archimedes&rsquo; Principle</b><br /></p>
+      
+        <p align="justify">Archimedes noticed that liquids exert an upward force known as
+        <i style="color:blue">upthrust</i> on bodies that are dropped in them. The figure below
+        shows an overflow can which was filled with water to the spout.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="263" height="227" src="http://speedapp.ididev.com/apps/img/prop4.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">A stone with weight <b style="color:crimson">Ws</b> is dropped in
+        the overflow can. A catch bucket is used to collect the water that is <i style=
+        "color:blue">displaced</i> by the stone. Note that the volume of water collected in the
+        catch bucket is equal to the volume of the stone.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The magnitude of the upthrust the water exerts on the stone is equal
+        to the weight of the displaced water which is <b style="color:crimson">Ww.</b> Note
+        that the volume of stone and the displaced water are equal but their masses are
+        not.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Therefore, the stone will sink because its <b style=
+        "color:crimson">density</b> is greater than that of water. Archimedes&rsquo; principle
+        states that, <b style="color:crimson">a body immersed in a liquid, wholly or partly,
+        loses weight. The weight loss is equal to the weight of the liquid displaced by the
+        body. &nbsp;</b><br /></p>
+      
+        <p align="justify">The picture below shows two spring balances with threads tied to two
+        crowns. One crown is weighed in air and the other in water. The one weighed in water
+        losses weight which is equal to the upthrust exerted on it by the water.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="231" height="252" src="http://speedapp.ididev.com/apps/img/prop5.jpg" alt="" /></p>
+      
+        <p align="left"><br />
+        Finally, the condition for a body to float in a liquid is that <i style=
+        "color:blue">its weight should be less or equal to the upthrust exerted on it by the
+        liquid in which it is plunged</i>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Application of floatation</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Ships float because their average density is less than the density of water. In
+          other words, the weight of the volume displaced by the ship is greater than weight of
+          the ship.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The turbines of an aircraft displaces huge amount of air whose weight is greater
+          than the weight of the aircraft and this makes it buoyant.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The submarine sinks and floats because water is pumped in and out of its ballast
+          tanks respectively.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Helium filled balloons rises in air because their density is less than the
+          density of air.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Cohesion and Adhesion</b><br />
+      
+        <p align="justify">The force of attraction between particles of the same substance is
+        termed <b style="color:crimson">cohesion</b>. For example, if you have a drop of water
+        at your finger tip, and you lower it to the surface of a glass of water, cohesive
+        forces attracts the drop on your finger tip to the water in the glass.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Adhesion</b> is the force of <i style=
+        "color:blue">attraction between particles of different substances</i>. For example,
+        chewing gum sticks to shoe leather, glue sticks to wood and many more. When two
+        substances are in contact, both cohesion and adhesion exist at the contact surface.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">These forces determine the behaviour of the substances at the
+        contact surface. For example, when chalk and stone are scratched at the surface of a
+        black board, some of the chalk particles will adhere to the surface of the board but
+        stone will not.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This means that the adhesive force between the chalk and the board
+        is greater than the cohesive force in chalk. And the adhesive force between the stone
+        and the board is less than the cohesive force in stone.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Liquids which have strong cohesive forces do not wet surfaces of
+        substances (e.g. mercury) and those with weak cohesive forces wet the surfaces of
+        substances (ethanol). This property of matter is found in solids and liquids only.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Surface Tension</b><br /></p>
+      
+        <p align="justify">Have you ever poured a drink into a glass such that the surface of
+        the drink is higher than the rim of the glass? You will realize the drink does not over
+        flow the glass although its surface is slightly higher than the rim of the glass.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Needle or razor blade can also float in water if they are placed
+        carefully on the surface, even though they are seven times as dense as water. These
+        scenarios are clear demonstrations of <b style="color:crimson">surface tension</b> in
+        liquids. Surface tension <i style="color:blue">is the attraction of the surface
+        layer&ndash;molecules to themselves forming a thin covering over the
+        liquid</i><b style="color:crimson">.</b><br />
+        <img width="179" height="159" src="http://speedapp.ididev.com/apps/img/prop6.png" alt="" /><br /></p>
+      
+        <p align="justify">Surface tension holds a water strider on the water surface (left).
+        Soap bubbles form as a result of surface tension (middle). Water droplet rolls into
+        spherical shape due to surface tension (right). Umbrellas and rain coats are effective
+        because of surface tension. This property is found in only liquids.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Capillarity</b><br /></p>
+      
+        <p align="justify">This is the rise or fall of liquids in tubes with small inner
+        diameters. For example, water rises in a small capillary tube due to capillarity.
+        Capillarity depends on adhesion and surface tension. Adhesion of water causes the water
+        to creep up the glass walls. This will give the water a concave surface. Surface
+        tension then reduces the concaveness of the water surface by flattening the surface.
+        The flattening surface indicates the water level in the tube will rise. Repeated
+        creeping and flattening will eventually raise the water level in the tube. Kerosene
+        rises up the wick of a lantern through capillarity. This property is limited to liquids
+        only.</p>
+      
+        <p align="left"><br /></p>
+
+</ion-content>

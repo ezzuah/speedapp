@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="login_bg" >
+  <div align="center">
+      <img src="assets/imgs/avatar.png" width="200">
+  </div>
+  <form [formGroup]="login_form">
+    <ion-list >
+          
+
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input class="" type="text" formControlName="username"  [(ngModel)]="username" (ngModelChange)="username = $event.toLocaleLowerCase()"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input class="" type="password" formControlName="password"  [(ngModel)]="password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        <p align="center">
+            <button icon-left ion-button  color="secondary" outline [disabled]="!login_form.valid" (click)="login()">
+                <ion-icon name="log-in"></ion-icon> Login
+            </button>
+        </p>
+      </form>
+
+        <button ion-button color="dark" clear full (click)="forgotPassword()" >Forgot Your Password?</button>
+        
+        <button (click)="createAccount()" icon-left ion-button color="dark" clear full large><ion-icon name="person" ></ion-icon>Create Account</button>
+
+</ion-content>

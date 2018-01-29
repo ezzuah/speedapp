@@ -1,0 +1,325 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>SALTS</b></p>
+
+  <p align="justify">Salt is a substance formed when the hydrogen in an acid is replaced
+  by a cation. They consist of the negative ion of an acid and the positive ion of a
+  base. They are neither corrosive nor caustic.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Preparation of salts</b></p>
+
+  <p align="justify">Salts can be prepared in three ways<br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Neutralization reaction (reaction between an acid and a base).<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>By direct combination. Mostly, when a metal or metal oxide reacts with a
+    non&ndash;metal salts are formed. Example, when magnesium is burnt in chlorine gas,
+    magnesium chloride is formed.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Double decomposition reaction (that is, two soluble salts are used to obtain two
+    new salts where one is insoluble.), example, the reaction between aqueous solutions
+    of silver nitrate and sodium chloride (refer from page 3 of &lsquo;Mixtures,
+    compounds and Separation of Mixtures&rsquo;).
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol>AgNO<sub>3</sub> + NaCl <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" />
+  AgCl(insoluble) + NaNO<sub>3</sub>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Preparation of Zinc Sulphate
+  (ZnSO<sub>4</sub>):</b><br /></p>
+
+  <p align="justify">It is prepared from the direct combination of Zinc and sulfuric
+  acid. The reaction equation is written below.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Zn + H<sub>2</sub>SO<sub>4</sub> <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> ZnSO<sub>4</sub> + H<sub>2</sub></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Add excess zinc to dilute sulphuric acid in a beaker. The reacting
+  mixture will give effervescence, when the ceases, filter the excess zinc and heat the
+  solution (filtrate) to concentrate it. Allow the solution to cool after concentrating
+  it for crystals to form. Filter the crystals off and recrystalise. Filter of any
+  remaining liquid and dry the crystals on a filter paper. ZnSO<sub>4</sub> can also be
+  prepared from the reaction between zinc and copper sulphate solution.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Zinc sulphate is used to supply zinc in animal feed, fertilizers and
+  agricultural spray.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Preparation of lead (II) nitrate
+  [Pb(NO<sub>3</sub>)<sub>2</sub>]</b><br /></p>
+
+  <p align="justify">Lead (II) nitrate does not occur naturally, therefore, it can be
+  produced from Lead (II) nitrate which readily available as a mineral. Excess lead (II)
+  oxide is dissolved in aqueous nitric acid. The reaction proceeds according to the
+  equation below. Filter off the excess lead (II) oxide, concentrate the filtrate, allow
+  the concentrate to cool for crystals to form and filter off the crystals.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">PbO(s) + HNO<sub>3</sub> <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> Pb(NO<sub>3</sub>)<sub>2</sub> + H<sub>2</sub>O</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Uses:</b> it is use for the production of
+  lead paints (note that lead paints has been superseded by less toxic pigment such as
+  titanium oxide).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Warning</b>: Lead (II) nitrate is <b style=
+  "color:crimson">toxic</b>, an <b style="color:crimson">oxidising agent</b> and is
+  categorised as <b style="color:crimson">probably carcinogenic</b> (can cause cancer)
+  <b style="color:crimson">to humans</b> by the <b style="color:crimson">International
+  Agency for Research on Cancer</b>. Consequently, it must be handled and stored with the
+  appropriate safety precautions to prevent inhalation, ingestion and skin contact. Due
+  to its <b style="color:crimson">hazardous nature</b>, the limited applications of lead
+  (II) nitrate are under constant scrutiny.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Soluble and Insoluble Salts</b><br /></p>
+
+  <p align="justify">Some salts are soluble whilst others are not. The table below gives
+  a summary of soluble and no soluble salt.<br /></p>
+
+  <table width="100%" border="1" cellspacing="1">
+    <tr>
+      <th style="background-color: darkred; color: white">Salt</th>
+
+      <th style="background-color: darkred; color: white">Solubility in water</th>
+    </tr>
+
+    <tr>
+      <td>Carbonates</td>
+
+      <td>All are insoluble except sodium, potassium and ammonium carbonates.</td>
+    </tr>
+
+    <tr>
+      <td>Chlorides</td>
+
+      <td>All are soluble except silver and lead chlorides</td>
+    </tr>
+
+    <tr>
+      <td>Sulphates</td>
+
+      <td>All are soluble except barium and lead sulphates. Calcium sulphate is slightly
+      soluble</td>
+    </tr>
+
+    <tr>
+      <td>Nitrates</td>
+
+      <td>All are soluble</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">TYPES OF SALTS</b><br /></p>
+
+  <p align="justify"><b style="color:crimson">Normal Salt</b><br /></p>
+
+  <p align="justify">It is formed when all the replaceable hydrogen ion of an acid is
+  replaced by a cation. The reaction between a strong base and a strong acid always
+  produces normal salts. Examples of normal salts are NaCl, KNO<sub>3</sub>,
+  CaSO<sub>4</sub>, etc.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Acidic Salt</b><br /></p>
+
+  <p align="justify">This is a salt formed when only part of the replaceable hydrogen ion
+  of an acid is replaced. Acidic salts are acidic in solutions. They produce
+  H<sup>+</sup> ions and behave like an acid. An example of an acidic salt is
+  NaHCO<sub>3</sub>. NaHCO<sub>3</sub> can be formed by blowing CO<sub>2</sub> through
+  concentrated NaOH solution. A whitish precipitate of NaHCO<sub>3</sub> is formed.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">NaOH(aq) + CO<sub>2</sub>(g) <img src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" width=
+  "62" height="10" /> Na<sub>2</sub>CO<sub>3</sub> + H<sub>2</sub>O(l)</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Na<sub>2</sub>CO<sub>3</sub> + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)
+  <img src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" width="62" height="10" /> NaHCO<sub>3</sub>(s)</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The reaction is a two step reaction. That is
+  Na<sub>2</sub>CO<sub>3</sub> will be formed first. Further addition of CO<sub>2</sub>
+  will then lead to the formation of NaHCO<sub>3</sub></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Basic Salt</b><br /></p>
+
+  <p align="justify">This is formed when only part of the OH<sup>&ndash;</sup> ions of a
+  base is replaced. Basic salts behave like a base in aqueous solutions. Example of basic
+  salt is Mg(OH)Cl, Cu(OH)Cl.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Double Salt</b><br /></p>
+
+  <p align="justify">They are salts which contain two different cations, example,
+  KAl(SO<sub>4</sub>).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Sources of salts</b><br /></p>
+
+  <table border="1" cellspacing="1" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Salt</th>
+
+      <th style="background-color: darkred; color: white">Source</th>
+    </tr>
+
+    <tr>
+      <td>Sodium Chloride (NaCl)</td>
+
+      <td>Sea water</td>
+    </tr>
+
+    <tr>
+      <td>Calcium Trioxocarbonate (IV) (CaCO<sub>3</sub>)</td>
+
+      <td>Lime stone, chalk</td>
+    </tr>
+
+    <tr>
+      <td>Iron (II) sulphide (FeS)</td>
+
+      <td>Iron pyrite</td>
+    </tr>
+
+    <tr>
+      <td>Calcium Tetraoxosulphate (VI) (CaSO<sub>4</sub>)</td>
+
+      <td>Gypsum</td>
+    </tr>
+
+    <tr>
+      <td>Sodium Trioxonitrate (V) (NaNO<sub>3</sub>)</td>
+
+      <td>Saltpeter</td>
+    </tr>
+
+    <tr>
+      <td>Potassium chloride (KCl)</td>
+
+      <td>Rock salt</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">Uses of Salts</b><br /></p>
+
+  <table border="1" cellspacing="1" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Salt</th>
+
+      <th style="background-color: darkred; color: white">Uses</th>
+    </tr>
+
+    <tr>
+      <td>Sodium chloride</td>
+
+      <td>Food preservative</td>
+    </tr>
+
+    <tr>
+      <td>Sodium bihydrogen trioxocarbonate (NaHCO<sub>3</sub>)</td>
+
+      <td>Preparation of baking powder</td>
+    </tr>
+
+    <tr>
+      <td>Ammonium Tetraoxosulphate (VI) (NH4)2SO<sub>4</sub></td>
+
+      <td>Fertilizer manufacturing</td>
+    </tr>
+
+    <tr>
+      <td>Magnesium Tetraoxosulphate (IV)</td>
+
+      <td>Manufacture of medicines for stomach upset</td>
+    </tr>
+
+    <tr>
+      <td>Potassium chloride</td>
+
+      <td>Soap manufacturing</td>
+    </tr>
+
+    <tr>
+      <td>Ammonium chloride</td>
+
+      <td>manufacturing dry cells</td>
+    </tr>
+
+    <tr>
+      <td>Copper (II) Tetraoxosulphate (IV)</td>
+
+      <td>Manufacturing Used in dry cell</td>
+    </tr>
+  </table>
+</ion-content>

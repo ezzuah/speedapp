@@ -1,0 +1,392 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>PRESSURE</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">When you are hit with the edge of a ruler, it hurts more than the
+        flat side. This is so because, the surface area of the edge is smaller, therefore it
+        will exert a greater pressure than the flat side although the same magnitude of force
+        may be applied.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Similarly, a knife with a thin (sharp) cutting edge requires a
+        little force to cut an object. <b style="color:crimson">Pressure</b> is defined as the
+        force applied to a unit area perpendicularly. When the surfaces in contact are small,
+        you need a little force to apply a large pressure. The SI unit of pressure is <b style=
+        "color:crimson">Pascal</b> (1 Pa = 1 N/m<sup>2</sup>)</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Mathematically, pressure, <b style="color: crimson">P</b>, is
+        expressed as</p>
+      
+        <p align="left"></p>
+      
+        <table style="text-align: center">
+          <tr>
+            <td><b>P</b></td>
+      
+            <td><b>=</b></td>
+      
+            <td>
+              <b>F</b><br />
+              <hr />
+              <b>A</b>
+            </td>
+          </tr>
+        </table><br />
+      
+        <p align="justify">Where P = pressure; F = applied force and A = area</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Pressure in Liquids</b><br /></p>
+      
+        <p align="justify">What happens when your friend sits on your lap? Your thigh feels the
+        pressure his/her weight exerts. In a similar manner, if a body is submerged or buried
+        from the surface of a liquid, the (volume of) liquid above the body exerts a pressure
+        that corresponds to its weight.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The magnitude of pressure on the body depends on the density of the
+        liquid and how deep the body is buried below the liquid surface. Denser liquids exert
+        greater pressure, and on the part of depth, the deeper the body from the liquid surface
+        the greater the exerted pressure.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Let us find out how to calculate the pressure at any point (depth)
+        within a liquid. Consider a circular disk with a cross sectional area &lsquo;<b style=
+        "color:crimson">A</b>&rsquo; at a height &lsquo;<b style="color:crimson">h</b>&rsquo;
+        below the surface of a liquid with density &lsquo;&rsquo;. The pressure that the liquid
+        exerts on the disk can be calculated as follows.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="245" height="224" src="http://speedapp.ididev.com/apps/img/pres1.png" alt="" /></p>
+      
+        <p align="left"><br />
+        The volume of the liquid above the disk is given as;<br />
+        <br />
+        <b>v = A x h</b><br />
+        <br />
+        Making <i style="color:blue">mass</i> the subject in the <i style=
+        "color:blue">density</i> equation,<br />
+        <br />
+        Implies that <i style="color:blue">mass</i> = <i style="color:blue">Density x
+        volume</i><br />
+        <br />
+        <b>Mass = &rho; x A x h</b><br />
+        <br />
+        And therefore the weight (mass x acceleration due to gravity);<br />
+        <br />
+        <b>W = &rho; x A x h x g</b><br />
+        <br />
+        Where g = acceleration due to gravity<br />
+        <br />
+        The pressure on the disk, P;</p>
+      
+        <table style="text-align: center">
+          <tr>
+            <td><b>P</b></td>
+      
+            <td><b>=</b></td>
+      
+            <td>
+              <b>W</b><br />
+              <hr />
+              <b>A</b>
+            </td>
+      
+            <td><b>=</b></td>
+      
+            <td>
+              <b>&rho;Ahg</b><br />
+              <hr />
+              <b>A</b>
+            </td>
+          </tr>
+        </table><br />
+      
+        <table style="text-align: center">
+          <tr>
+            <td><b>&rArr; P</b></td>
+      
+            <td><b>=</b></td>
+      
+            <td><b>&rho;hg</b></td>
+          </tr>
+        </table><br />
+      
+        <p align="justify">The theory above can be substantiated by filling a barrel or any
+        suitable container with water as shown in the picture on the right. Three holes with
+        <i style="color:blue">equal diameters</i> are punched vertically on the barrel to make
+        the water flow out.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/pres21.jpg" alt="" width="258" height="240" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The flows of water from the barrel through the various holes will be
+        at different rates due to pressure differences at the various heights. The force with
+        which water flows through the hole closest to the base is proof that water at that
+        level is under greatest pressure.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This is so because of the pressure, the weight of the above water
+        (molecules) exert. Looking at the middle hole, the water (molecules) above that level
+        is not as much as the base hole.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Therefore it experiences a pressure lower than the base hole and
+        thus has a lower flow. The same rule of thought can be applied to the top hole. This
+        illustration confirms the fact that <i style="color:blue">pressure in liquids increases
+        with depth</i>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Characteristics of Pressure in a
+        liquid</b><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>The pressure in a liquid increases with depth.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The pressure at any point in the liquid acts equally at all directions
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The pressure at all points at the same <i style="color:blue">level</i> in a
+          liquid are equal.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Atmospheric Pressure</b><br />
+      
+        <p align="justify">The atmosphere around us is made up of air, dust paricles and water
+        moisture. All these substances have weight. Hence, they exert pressure on the surface
+        of the earth as well as all objects on its surface (even you).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The magnitude of this pressure measured at sea level is about
+        100,000 Pa. We know that pressure in a liquid increases with depth, consequently, we
+        should expect that atmospheric pressure will also increase or decrease with height. The
+        atmospheric pressure in a valley would be greater than that on a mountain top.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">PUMPS</b><br /></p>
+      
+        <p align="justify">A pump is a device that moves fluids (liquids or gases) and
+        fluidized solids (example, a mixture of rice husk and air) from one point to another.
+        Examples of pumps are, lift pump, force pump, vacuum pump, bicycle pump, centrifugal
+        pumps and many more.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">The Lift Pump</b><br /></p>
+      
+        <p align="justify">When the piston moves downward as shown in figure below, A, the
+        pressure in the pump increases, valve 1 closes and 2 opens. Water then flows through 2
+        to a collection point.</p>
+      
+        <p align="left"><img src="http://speedapp.ididev.com/apps/img/pres2a.png" alt="" /><br /></p>
+      
+        <p align="justify">When the piston moves up as in B, the pressure in the pump reduces
+        and water then flows from the source into the pump.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/pres2b.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">The Force Pump</b><br /></p>
+      
+        <p align="justify">When the piston moves up as shown in figure , A, the pressure in the
+        pumping chamber reduces, valve 2 closes and valve 1 opens. This causes water to flow
+        from the source into the pumping chamber.</p>
+      
+        <p align="left"><img src="http://speedapp.ididev.com/apps/img/pres3a.png" alt="" /><br /></p>
+      
+        <p align="justify">When it moves downward as in B, the pressure in the pumping chamber
+        increases, valve 1 closes and 2 opens. Water then flows through 2 to a collection
+        point.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/pres3b.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Note that for both the lift and force pumps, if the pressure in the
+        pumping chamber falls below the atmospheric pressure, water then flows into the chamber
+        until the pressure within the chamber equals the atmospheric pressure. Generally, all
+        flow processes are as a result of <i style="color:blue">differences</i> in some
+        physical property. For example, electric current flow as a result of differences in
+        electric potential, heat as a result of differences in temperature and fluids as a
+        result of pressure difference.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Car Braking System</b><br /></p>
+      
+        <p align="justify">The figure below shows a schematic diagram of a car braking system.
+        When the driver applies a force to the brake pedal, the force is transmitted through
+        the fluid. As the pedal pushes the brake fluid in the master cylinder, the fluid
+        pressure in both the master and slave cylinders are increased equally.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/pres4.png" alt="" /></p>
+      
+        <p align="left"><br />
+        <br /></p>
+      
+        <p align="justify">This increase in pressure will cause the slave cylinder to push the
+        brake shoe outward. When the brake shoe touches the wheel, the car stops. The return
+        spring brings the brake shoe back to its original position when the applied force is
+        taken off.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Pascal&rsquo;s Principle</b><br /></p>
+      
+        <p align="justify">Pascal noticed that fluids can be used to multiply the magnitude of
+        an applied force since fluid pressure acts equally in all directions within the fluid
+        (this is evident when you pump a football; the air exerts pressure on the walls of the
+        ball equally in all directions). Consider the figure on the right.<br /></p>
+      
+        <p align="justify">If a force F1 is applied to a piston acting perpendicularly on an
+        area A1. Then F1 will be transmitted through the fluid to a discharge point A2. If A2
+        is four times greater than A1 then, F1 will be increased by four folds, meaning F2 is
+        four times F1.</p>
+      
+        <p align="left"><img src="http://speedapp.ididev.com/apps/img/pres5.png" alt="" /><br /></p>
+      
+        <p align="justify">Since pressure acts equally in all directions within a fluid, it
+        follows that P1 = P2.</p>
+      
+        <table>
+          <tr>
+            <td>P1 =</td>
+      
+            <td>
+              F1<br />
+              <hr />
+              A1
+            </td>
+          </tr>
+        </table><br />
+        and
+      
+        <table>
+          <tr>
+            <td>P2 =</td>
+      
+            <td>
+              F2<br />
+              <hr />
+              A2
+            </td>
+          </tr>
+        </table><br />
+      
+        <p align="justify">Therefore equating P1 and P2 gives</p>
+      
+        <table>
+          <tr>
+            <td>
+              F1<br />
+              <hr />
+              A1
+            </td>
+      
+            <td>=</td>
+      
+            <td>
+              F2<br />
+              <hr />
+              A2
+            </td>
+          </tr>
+        </table><br />
+      
+        <table>
+          <tr>
+            <td>&rArr; F2 =</td>
+      
+            <td>
+              A2<br />
+              <hr />
+              A1
+            </td>
+      
+            <td>x F1</td>
+          </tr>
+        </table><br />
+      
+        <p align="justify">From the above deduction, it shows that<br />
+        <br />
+        F2 = 4F1 since A2/A1 = 4.<br />
+        <br />
+        A conclusion can be drawn that the greater the area at the discharge point, the greater
+        the generated force.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+</ion-content>

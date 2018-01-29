@@ -1,0 +1,137 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>SOIL PROFILE</b></p>
+    <br>
+    <p align="justify">Soil is both very easy and very difficult to &#39;see&#39;.&#160; In one sense it is visible almost everywhere, but simply looking at the land only shows us the top of the soil.&#160; What happens in the depth has a profound impact on the use we &ndash; or nature &ndash; can make of the soil.&#160;
+    <p align="left"> <br>
+    <p align="justify">Sometimes this deeper soil is exposed &ndash; in road cuts and building excavations &ndash; but usually these display a shattered, and literally convoluted, view.&#160; To really &#39;see&#39; a soil we need to dig a pit about a meter square and a couple of meters deep.
+    <p align="left"> <br>
+    <p align="justify">The vertical cross section through the soil which shows the various layers of the soil from the top to the underlying bedrock is known as <b style="color:crimson">soil profile</b>.
+    <p align="left"> <br>
+    <p align="justify"><img  src="http://speedapp.ididev.com/apps/img/prof1.jpg" alt="" width="226" height="299" />
+    <p align="left"><br>
+    <p align="justify">The different layers that appear in the profile are known as <b style="color:crimson">soil horizons</b>. Soil horizons can be identified by colour, texture, structure and the visible appearance of clay films as shown in the picture above. The topmost part or first layer of the profile is the <b style="color:crimson">A&ndash;horizon</b> or <b style="color:crimson">top soil</b>.
+    <p align="left"> <br>
+    <p align="justify"><img  src="http://speedapp.ididev.com/apps/img/prof2.jpg" alt="" width="300" height="339" />
+    <p align="left"><br>
+    <p align="justify">This region contains more organic matter than any other horizon and it is made up of the <b style="color:crimson">organic matter</b> and <b style="color:crimson">mineral material</b> regions. The entire A&ndash;horizon is also known as the <b style="color:crimson">region of eluviation.</b> Since nutrients and minerals <i style="color:blue">leach</i> (wash down by water) to the horizons below.
+    <p align="left"> <br>
+    <p align="justify">The <b style="color:crimson">B&ndash;horizon</b> or <b style="color:crimson">sub soil </b>is the layer after the A&ndash;horizon as you move down the profile. This region receives the leached nutrients and minerals from the A&ndash;horizon and for that matter it is called the <b style="color:crimson">region of</b> <b style="color:crimson">illuviation</b>.
+    <p align="left"> <br>
+    <p align="justify">The A&ndash;horizon and B&ndash;horizon combined is known as <b style="color:crimson">solum</b>. The last layer of the profile is the <b style="color:crimson">C&ndash;horizon</b> or <b style="color:crimson">bedrock</b>. This region is made up of rocks and it is from these rocks that the A and B horizons are formed.
+    <p align="left"> <br>
+    <p align="justify">In short, the C&ndash;horizons determines the physical and chemical properties of the A and B horizons. This region is made up of the <b style="color:crimson">weathered bedrock</b>, which is found first, followed by the <b style="color:crimson">bedrock</b>, which is the very last layer of the profile. The picture on the right shows a labelled profile.
+    <p align="left"> <br>
+    <p align="justify">The reason why it is so useful to have a good idea about each horizon is because different horizons have different properties. Some horizons will allow water to pass through easily and thus have a greater fluctuation in soil moisture; while some others would have lower porosities and thus have little fluctuations in soil moisture.
+    <p align="left"> <br>
+    <p align="justify">Since each of these properties has its own merits and demerits, the farmer must know the horizons in order to decide on the plant to grow. Some of the properties the farmer should look out for are discussed below.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Colour</b>: the colour of the soil gives a good idea about organic matter content and thus the soil fertility. A dark top soil signals high organic matter content. Such a soil has probably undergone little drainage, and that it is good to cultivate.
+    <p align="left"> <br>
+    <p align="justify">The opposite is true for light coloured soil. Note that when soil under go a lot of drainage the organic matter is washed away and this lightens (reduces) the dark colour of the soil.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Texture and Structure</b>: Soil texture refers to the proportions of clay, silt and sand present in a given sample of soil whereas soil structure refers to the (natural) arrangement of the soil particles &#8211; loose or compact.
+    <p align="left"> <br>
+    <p align="justify"><img  src="http://speedapp.ididev.com/apps/img/prof3.jpg" alt="" width="330" height="221" />
+    <p align="left"><br>
+    <p align="justify">These properties give good information about the ease or difficulty water and plant roots will penetrate the soil. For instance, soil with <i style="color:blue">small particle</i> sizes <i style="color:blue">(texture)</i> which are <i style="color:blue">compactly packed (structure)</i> makes little room for aeration (air movement), water movement and root penetration.
+    <p align="left"> <br>
+    <p align="justify">Such soils may be rich in nutrients yet they may not support plant growth. This is because the nutrients are not made accessible to plant roots due to the compact soil structure. The picture on the right shows some examples of soil structure. Soil structure can be modified by applying good agricultural practices.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Depth of Horizons</b>: knowledge about the depth of the various horizons is also important. A deep or thick layer top soil is good for the cultivation of deep rooted plants and vice versa.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Nature of parent rock</b>: various rocks have their own unique mineral composition. Hence, soils formed from different rocks will have varying composition of minerals such as calcium, manganese, potassium, zinc and many more.
+    <p align="left"> <br>
+    <p align="justify">Owing to this fact, a plant that requires great amounts of a certain mineral (e.g. calcium) should be cultivated on a soil formed from a rock rich in that mineral (limestone in the case of calcium).
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Types of Soil</b> <br>
+    <p align="justify">Soil particles are grouped according to their size into what are called <b style="color:crimson">soil separates</b> (clay, silt and sand).
+    <p align="left"> <br>
+      <b style="color:crimson">Sandy</b> <b style="color:crimson">soils</b> have a gritty texture, large particles, and are formed from weathered rocks such as limestone, quartz, granite, and shale. If sandy soil contains enough organic matter it is easy to cultivate. However, if it is prone to over&ndash;draining in rainy season, retaining nutrients may be a problem. <br>
+    <p align="justify"><b style="color:crimson">Silt</b>y <b style="color:crimson">soil</b> is considered to be among the most fertile of soils. It is usually composed of minerals (predominantly quartz) and fine organic particles. It has more nutrients than sandy soil, yet, it offers good drainage. When dry, it has rather a smooth texture and looks like dark sand. Its weak soil structure means that it is easy to work with when moist and it holds moisture well.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Clay</b> When clay soils are wet they are very sticky, lumpy and pliable (ductile or malleable). In dry state, they form rock&ndash;hard lump.
+    <p align="left"> <br>
+    <p align="justify">Clay soils are composed of very fine particles with few air spaces, thus they are hard to work and often drain poorly &ndash; they are also prone to water logging in the rainy seasons. Blue or grey clays have poor aeration and must be loosened in order to support healthy growth.
+    <p align="left"> <br>
+    <p align="justify">Red colour in clay soil indicates good aeration and a &quot;loose&quot; soil that drains well. As clay contains high nutrient levels plants grow well if drainage and aeration is adequate.
+    <p align="left"> <br>
+    <p align="justify"><b style="color:crimson">Loamy Soil</b> is considered to be the perfect soil. Loamy soils are a combination of roughly sand, silt, clay and adequate organic matter.
+    <p align="left"> <br>
+    <p align="justify">Loamy soils can range from easily workable fertile soils full of organic matter, to densely packed sod. Characteristically they drain well, retain moisture and are rich in nutrients, making them ideal for cultivation.
+    <p align="left"> <br>
+    <p align="justify">An easy way to help determine what type of soil you have is to simply feel it to determine the texture and thus what the primary makeup of the soil is. Grab some reasonable portion of the soil in your hands and wet the soil with water, working (rubbing) the moist soil with your hands.
+    <p align="left"> <br>
+    <p align="justify">The stickier it is, the more clay there is. The soapier the soil feels the higher the silt content. Grittiness is indicative of sand. The table below shows the particle sizes for the various separates of soil.
+    <p align="left"> <br>
+    <table border=1 cellspacing=1 width="100%" cellpadding="1">
+      
+        <th style="color: white; background-color: darkred">Name of soil separate</th>
+        <th style="color: white; background-color: darkred">Diameter limits (mm) USDA classification)</th>
+      <tr>
+        <td>Clay <br></td>
+        <td>less than 0.002 <br></td>
+      </tr>
+      <tr>
+        <td>Silt <br></td>
+        <td>0.002 &ndash; 0.05 <br></td>
+      </tr>
+      <tr>
+        <td>Very fine sand <br></td>
+        <td>0.05 &ndash; 0.10 <br></td>
+      </tr>
+      <tr>
+        <td>Fine sand <br></td>
+        <td>0.10 &ndash; 0.25 <br></td>
+      </tr>
+      <tr>
+        <td>Medium sand <br></td>
+        <td>0.25 &ndash; 0.50 <br></td>
+      </tr>
+      <tr>
+        <td>Coarse sand <br></td>
+        <td>0.50 &ndash; 1.00 <br></td>
+      </tr>
+      <tr>
+        <td>Very coarse sand <br></td>
+        <td>1.00 &ndash; 2.00 <br></td>
+      </tr>
+    </table>
+    <p align="justify"><b style="color:crimson">Soil Fertility and Productivity</b> <br>
+    <p align="justify">Soil fertility refers to the ability of a soil to provide enough water, air and nutrients to ensure normal plants growth, development and production. Whereas soil productivity is the combined effect of the fertility of a soil and soil management practices.
+    <p align="left"> <br>
+    <p align="justify">In this sense, it means a fertile soil will not necessarily be productive. Since a soil type such as clay may be rich in nutrients, however, its compact nature will not make these nutrients available to plants growing in it. And hence that soil is fertile but not productive. The efficiency of a soil is measured in terms of its productivity. That is the yield of crop per unit area of land.
+    <p align="left"> <br>
+</ion-content>

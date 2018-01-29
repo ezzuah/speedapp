@@ -1,0 +1,184 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>CEREALS</b></p>
+  <br />
+  <p align="justify">
+  <b style="color:crimson">Cereal</b>or 
+  <b style="color:crimson">grains</b>are mostly grasses cultivated for their edible grains or fruit seeds. Cereal grains are grown in greater quantities and provide more energy worldwide than any other type of crop; they are therefore staple crops.
+  They are also a rich source of carbohydrate. Examples are maize, millet, sorghum, wheat and rice.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Maize Production</b>
+    <br />
+  </p>
+  <p align="justify">The botanical name of maize is 
+  <b style="color:crimson">Zea mays.</b>The common varieties are Laposta, obaatanpa, Dobidi, Aburotia, Okomasa, Tamale yellow, SafitaAbelehi, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Environmental Requirements</b>: maize requires an annual rainfall distribution range of 750mm to 1500mm and a temperature range of 14oC to 30 
+  <sup>o</sup>C. A deep, well drained loamy soil with high amount of organic matter is ideal for maize production. The soil&rsquo;s pH may range from 5 &ndash; 7.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Method of Propagation</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Land Preparation:</b>The bush is cleared and burnt. Burning of the cleared weeds will provide the soil with wood ash which is rich in potassium and magnesium. However, it reduces the organic matter content of the soil and
+  some volatile soil nutrient will escape into the atmosphere. Burning also sterilizes the soil and kills soil pathogens.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Planting:</b>the planting of maize is done with the rains. Since the rainy season is divided into a major and minor, the planting season of maize is also divided into a major and a minor. Generally, the 
+  <b style="color:crimson">planting</b>is done from March to August. The planting distance is 90cm between rows and 60cm within rows.</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cer1.png" />
+    <br />
+  </p>
+  <p align="justify">Planting is done by putting two to three seeds per hole. Maize takes three to five days to germinate. Thinning is done after germination to reduce the number of plant per stand to one or two.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Post (after) planting operation</b>:</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Weed control</b>: weed control is very important. This can be done chemically, applying herbicides or weedicides, or mechanically by weeding with a cutlass or hoe.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Fertilizer application</b>: Inorganic 
+  <b style="color:crimson">fertilizer</b>can be applied two weeks after germination. If 
+  <b style="color:crimson">organic fertilizer</b>is used, it must be applied and allowed to decompose before plating. Organic manure used is cow dung, poultry litter or compost.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Diseases</b>
+  </p>
+  <p align="justify">Maize streak (virus)</p>
+  <p align="left">Maize smut (fungi) 
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cer2a.png" />
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cer3.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Pests</b>
+  </p>
+  <p align="left">Pink stalk borers</p>
+  <p align="left">Army worm</p>
+  <p align="left">weevil 
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cer4.png" />
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cer5.png" />
+    <br />
+  </p>
+  <p align="justify">Other pests of maize are rodents, grass cutter and locust.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Control Measures</b>
+    <br />
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>Use resistant varieties. 
+    <br />
+    <p align="justify"></p></li>
+    <li>Uproot and burn all affected plants. 
+    <br />
+    <p align="justify"></p></li>
+    <li>Spray crops with recommended chemicals. Example, insecticides, nematicide, etc. 
+    <br />
+    <p align="justify"></p></li>
+    <li>Ensure early planting and harvesting. 
+    <p align="left">
+      <br />
+    </p>
+    <p align="justify"></p></li>
+  </ol>
+  <b style="color:crimson">Harvesting</b>
+  <br />
+  <p align="justify">Maize can be harvested with a cutlass ( 
+  <b style="color:crimson">manual method</b>) on small farms. Combine harvested ( 
+  <b style="color:crimson">mechanical method</b>) are used on commercial farms. Late harvest must be avoided because this can lead to serious pest or fungal attack or grain rot.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Processing and Storage</b>
+    <br />
+  </p>
+  <p align="justify">The harvested maize is 
+  <b style="color:crimson">dehusked</b>(the husk or peels are removed), 
+  <b style="color:crimson">shelled</b>(the grain is removed from the cobs and the grains are 
+  <b style="color:crimson">dried</b>. The dried grains are treated with chemicals before storage. This is to prevent pest attack during storage.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Uses</b>
+    <br />
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>Use as food for man 
+    <br />
+    <p align="justify"></p></li>
+    <li>Use for feeding animals 
+    <br />
+    <p align="justify"></p></li>
+    <li>Use as industrial raw material. E.g. starch production, cerelac and brewing beer. 
+    <p align="left">
+      <br />
+    </p></li>
+  </ol>
+</ion-content>

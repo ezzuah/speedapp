@@ -1,0 +1,529 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+<p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>MOLE CONCEPT</b></p>
+
+  <p align="justify">The mole is a number like the dozen. We can say a dozen of eggs, a
+  dozen of oranges, a dozen of chlorine atoms etc. The mole is equal to 6.02 X
+  10<sup>23</sup> particles (atoms, ions or molecules). This number is what we call the
+  <b style="color: crimson">Avogadro's constant</b> and it is denoted by <b style=
+  "color: crimson">N<small>A</small></b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The mole is also in reference with the carbon-12 element. 12 grams
+  of carbon-12 element contains 6.02 X 10<sup>23</sup> atoms. This means that 1 mole of
+  any substance (elements or compounds) contains 6.02 X 10<sup>23</sup> particles. For
+  instance, 1 mole of water contains 6.02 X 10<sup>23</sup> of water molecules. The
+  <b style="color: crimson">mole</b> is the amount of a substance that contains as many
+  particles as there are in 12 grams of carbon-12 element (which is 6.02 X
+  10<sup>23</sup> particles). It is denoted by <b style="color: crimson">n</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The mass of 1 mole of a substance (atoms, ions or molecules) is
+  called the <b style="color: crimson">Molar mass</b>. It is denoted by <b style=
+  "color: crimson">M</b> and its unit is <b style="color: crimson">grams per
+  mole(g/mol)</b>. If the mass of 1 mole of carbon-12 is 12 grams, then sodium which has
+  an atomic mass of 23u will also have a molar mass of 23 grams. (Reason: the mass of one
+  atom of carbon-12 is 12u and the molar mass is 12 grams). If the mass of 1 atom of an
+  element is say 74 u, then its molar mass will be 74 g/mol.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 1</b><br /></p>
+
+  <p align="justify">Calculate the number of moles in 54g of water.<br /></p>
+
+  <p align="justify">[H = 1; O = 16]</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b><u>Solution</u></b><br />
+  Molar mass of water (Water contains 2 H atoms and 1 O atom).<br />
+  <br />
+  2 Hydrogen atoms:<br />
+  2 x Ar[H] = 2 x 1 =2<br />
+  <br />
+  1 Oxygen atom:<br />
+  1 x Ar[O] = 1 x 16 = 16<br />
+  <br />
+  Note: Ar is the average mass.<br />
+  <br /></p>
+
+  <p align="justify">Therefore, Molar mass of water = 2 + 16 = 18 g/mol<br /></p>
+
+  <p align="justify">Now, using ratio and proportion<br />
+  <br /></p>
+
+  <p align="justify">If 18g contains 1 mole of water molecules then,<br />
+  <br /></p>
+
+  <p align="justify"></p>
+
+  <table>
+    <tr>
+      <td>54 g will contain =</td>
+
+      <td>
+        54<br />
+        <hr />
+        18
+      </td>
+
+      <td>x 1</td>
+    </tr>
+  </table><br />
+  = 3 moles of water molecules<br />
+
+  <p align="justify"></p>
+
+  <p align="left"><br />
+  Note; 54g is the given mass of water, <i style="color:blue">m</i>.<br />
+  18g is the molar mass, <i style="color:blue">M</i>.<br />
+  Therefore the number of moles can be expressed as<br /></p>
+
+  <p align="justify"></p>
+
+  <table>
+    <tr>
+      <td><i style="font-size: 25px;">n</i> =</td>
+
+      <td>
+        <span style="font-size: 25px;">m</span>(mass of substance)<br />
+        <hr />
+        <span style="font-size: 25px;">M</span> (molar mass of substance)
+      </td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b>Example 2</b><br /></p>
+
+  <p align="justify">How many moles are in 10 grams of sodium hydroxide?<br /></p>
+
+  <p align="justify">[Na = 23, H = 1, O = 16]</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b><u>Solution</u></b><br />
+  Step1; write down the chemical formula of the substance and use it to calculate for the
+  molar mass.<br />
+  sodium hydroxide = NaOH<br />
+  <br />
+  molar mass of NaOH:<br />
+  Ar[Na] + Ar[O] + Ar[H]<br />
+  <br />
+  23 + 16 + 1 = 40<br />
+  <br />
+  Therefore the molar mass of NaOH is 40g/mol<br />
+  <br />
+  And</p>
+
+  <table>
+    <tr>
+      <td><i style="font-size: 25px;">n</i> =</td>
+
+      <td>
+        <span style="font-size: 25px;">m</span><br />
+        <hr />
+        <span style="font-size: 25px;">M</span>
+      </td>
+    </tr>
+  </table><br />
+
+  <table>
+    <tr>
+      <td>&rArr; <i style="color:blue">n</i> =</td>
+
+      <td>
+        10<br />
+        <hr />
+        40
+      </td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><i style="color:blue">n</i> = <u>0.25 moles</u><br /></p>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 3</b><br /></p>
+
+  <p align="justify">What mass of magnesium oxide contains 2.5 moles of it?<br /></p>
+
+  <p align="justify">[Mg = 24, O = 16]</p>
+
+  <p align="justify"><b><u>Solution</u></b><br />
+  <br />
+  Magnesium oxide = MgO<br />
+  <br />
+  molar mass of MgO = 24 + 16 = 40 g/mol<br />
+  <br />
+  And ,this implies that [m = n x M]<br />
+  <br />
+  m = 2.5 x 40 = 100<br />
+  <br />
+  the mass of MgO which will contain 2.5 moles = 100g<br /></p>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Mole Concept Applied to Concentraion</b><br /></p>
+
+  <p align="justify">Concentration can be expressed in a number of ways. Let us consider
+  the dissolution of cube sugar in water to form a uniform solution. The cubes could be
+  counted and dissolved to form the solution. The concentration in such a case can be
+  expressed as 5 cubes per a litre of water, 5 dozens of cubes per a litre of water or 5
+  moles of cubes per litre of water. If the concentration is in mole per a litre of
+  water, then such a concentration is called the <b style="color: crimson">molar
+  concentration</b> or <b style="color: crimson">molarity.</b> Molar concentration is
+  defined as the number of moles of solute dissolved in a litre of solvent.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The formula for molar concentration is given as:</p>
+
+  <table>
+    <tr>
+      <td><b>C<small>n</small></b></td>
+
+      <td>=</td>
+
+      <td>
+        <b>n</b><br />
+        <hr />
+        <b>V</b>
+      </td>
+
+      <td>; mol/l or mol/dm<sup>3</sup>or M</td>
+    </tr>
+  </table><br />
+
+  <p align="justify">Where <b>C<small>n</small></b> is the molar concentration,<br />
+  <br />
+  <b>n</b> is the number of mole dissolved in the solvent and<br />
+  <br />
+  <b>V</b> is the volume of solvent.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">There is another instance where the mass of the cubes is taken
+  before dissolving in water. The concentration is then expressed as grams per litre or
+  kilograms per litre. This kind of concentration is known as the <b style=
+  "color:crimson">mass concentration</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The formula for mass concentration<br />
+  <br /></p>
+
+  <table>
+    <tr>
+      <td><i style="font-size: 25px;">C<small>m</small></i> =</td>
+
+      <td>
+        <span style="font-size: 25px;">m</span>(mass of solute)<br />
+        <hr />
+        <span style="font-size: 25px;">V</span> (Volume of solvent)
+      </td>
+
+      <td>; grams/litre or grams/dm3</td>
+    </tr>
+  </table>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Where Cm is the mass concentration, m is the mass of solute
+  dissolved in the solvent and V is the volume of solvent.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Finally, concentration can also be expressed in percentages. For
+  example if 15 litres of ethanol is dissolved in 85 litres of water, then the percentage
+  by volume of ehtanol in the solution is 15%. Therefore the concentration can be written
+  as 15% <b>(v/v)</b>, (v/v) means volume per volume. Similarly, concentration can be
+  expressed as <b>(w/w)</b>, that is weight per weight. Another form of concentration is
+  <b>part per million</b> (ppm). If 1 mg of solute is dissolved in 1 kg of solvent, then
+  the concentration is obtained is 1 ppm. Note that 1,000,000 mg = 1000 g = 1 kg</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 4</b><br /></p>
+
+  <p align="justify">Express 0.75 moles/litre of NaCl solution in grams/litre.</p>
+
+  <p align="left"><br />
+  <b><u>Solution</u></b><br />
+  Na = 23, Cl = 35.5 ;<br />
+  <br />
+  this implies the Molar mass of NaCl = 23 + 35.5 = 58.5g/mol.<br />
+  <br />
+  If 1 mole NaCl has a mass of 58.5g then<br />
+  <br />
+  0.75 moles of NaCl has a mass of;<br />
+  <br /></p>
+
+  <table>
+    <tr>
+      <td>
+        0.75<br />
+        <hr />
+        1
+      </td>
+
+      <td>x 58.5 = 43.875g</td>
+    </tr>
+  </table><br />
+  <br />
+  Therefore 0.75 M expressed in g/l is 43.875g/l.<br />
+  <br />
+  Note that 43.875g of NaCl which is required to form 0.75 M solution.<br />
+  <br />
+
+  <p align="justify"><b>Example 5</b><br /></p>
+
+  <p align="justify">Express 243g/l of calcium sulphate in mol/dm<sup>3</sup>.</p>
+
+  <p align="left"><br />
+  <b><u>Solution</u></b><br />
+  <br />
+  Calcium = 40, S = 32, O = 16<br />
+  <br />
+  Molar mass of CaSO<sub>4</sub> = 40 + 32 + 4(16) = 136g/mol Therefore mole in 243g of
+  CaSO<sub>4</sub><br />
+  <br /></p>
+
+  <table>
+    <tr>
+      <td>=</td>
+
+      <td>
+        243<br />
+        <hr />
+        136
+      </td>
+
+      <td>x 1</td>
+    </tr>
+  </table><br />
+  <br />
+  = 1.79 moles<br />
+  <br />
+  Therefore 243g/l of CaSO<sub>4</sub> in mol/l is 1.79 mol/l
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 6</b><br /></p>
+
+  <p align="justify">Calculate the concentration in mol/l of a solution if 0.8 moles of a
+  salt is dissolved in 200cm<sup>3</sup> of water.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b><u>Solution</u></b><br /></p>
+
+  <table>
+    <tr>
+      <td>C<small>n =</small></td>
+
+      <td>
+        n<br />
+        <hr />
+        V
+      </td>
+    </tr>
+  </table><br />
+
+  <p align="justify">n =0.8 and</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">V = 200cm3<sup>3</sup> = 0.2 dm<sup>3</sup><br />
+  <br />
+  and 1000 cm<sup>3</sup> = 1dm<sup>3</sup></p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td>C<small>n</small> =</td>
+
+      <td>
+        0.8<br />
+        <hr />
+        0.2
+      </td>
+    </tr>
+  </table><br />
+  <br />
+  C<small>n</small> = 4 mol/dm3 or 4M.
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Mole concept applied to chemical reaction</b><br /></p>
+
+  <p align="justify">Let us consider the reaction between hydrogen and oxygen to form
+  water.<br /></p>
+
+  <p align="justify">H<sub>2</sub> + O<sub>2</sub> <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> H<sub>2</sub>O ;<br />
+  <br />
+  Note that the equation is not balanced.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The reactants in the picture below is made up of 10H<sub>2</sub> and
+  7O<sub>2</sub> and the products is 10 H<sub>2</sub>O and 2O<sub>2</sub>. Each oxygen
+  atom will combine with 2 hydrogen atoms to form water. It follows that the
+  7O<sub>2</sub> requires 14 H<sub>2</sub> to form 14 H<sub>2</sub>O. However, since
+  there are only 10H<sub>2</sub> present, only 5O2<sub>2</sub>will then react completely
+  with the 10 H<sub>2</sub>. Hydrogen is called the <b>limiting reactant</b> because its
+  quantity is not sufficient to react with all the 7O<sub>2</sub> molecules present.</p>
+
+  <p align="left"></p>
+
+ 
+    <table cellpadding="1" cellspacing="1" border="1" width="100%">
+      <tr>
+        <td><img src="http://speedapp.ididev.com/apps/img/moleb4.png" alt="" width="140" /></td>
+
+        <td><img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62" height="10" alt="" /></td>
+
+        <td><img src="http://speedapp.ididev.com/apps/img/moleafta.png" alt="" width="140" /></td>
+      </tr>
+
+      <tr>
+        <td><u>H<sub>2</sub></u></td>
+
+        <td><u>O<sub>2</sub></u></td>
+
+        <td><u>H<sub>2</sub>O</u></td>
+      </tr>
+
+      <tr>
+        <td>2 molecules</td>
+
+        <td>1 molecule</td>
+
+        <td>2 molecules</td>
+      </tr>
+
+      <tr>
+        <td>2 moles</td>
+
+        <td>1 mole</td>
+
+        <td>2 moles</td>
+      </tr>
+
+      <tr>
+        <td>1 mole</td>
+
+        <td>0.5 mole</td>
+
+        <td>1 mole</td>
+      </tr>
+    </table>
+  <br />
+
+  <p align="justify">It is clear from the above deduction that the balance equation
+  is</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">2H<sub>2</sub> + O<sub>2</sub> <img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62"
+  height="10" alt="" /> 2 H<sub>2</sub>O<br />
+  <br />
+  The equation is balanced.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">This means that, the ratio with which elements combine or the
+  coefficient written before elements in a balanced equation can be seen as the moles
+  required for complete reaction between the two elements where there will be no limiting
+  reactant.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 7</b><br /></p>
+
+  <p align="justify">How many moles of hydrogen will react completely with 0.2 moles of
+  nitrogen?<br />
+  <br /></p>
+
+  <p align="justify"><b><u>Solution</u></b></p>
+
+  <p align="justify">Step1. Write the chemical formulas and put them in a chemical
+  equation.<br />
+  <br />
+  Hydrogen = H<sub>2</sub> ; note that hydrogen is H<sub>2</sub> because it does not
+  exist a free H atom<br />
+  <br />
+  Nitrogen = N<sub>2</sub><br /></p>
+
+  <p align="justify">H<sub>2</sub> + N<sub>2</sub> <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> NH<sub>3</sub><br /></p>
+
+  <p align="justify">Step2. Balance the equation by writing the appropriate coefficient
+  before the elements.<br /></p>
+
+  <p align="justify">3H<sub>2</sub> + N<sub>2</sub> <img width="62" height="10" src=
+  "img/arrow.png" alt="" /> 2NH<sub>3</sub><br /></p>
+
+  <p align="justify">From the balance equation, 1 mole of N<sub>2</sub> will react with 3
+  moles of H<sub>2</sub><br /></p>
+
+  <p align="justify">Therefore 0.2 moles of N<sub>2</sub> will react with;</p>
+
+  <table>
+    <tr>
+      <td>=</td>
+
+      <td>
+        0.2<br />
+        <hr />
+        1
+      </td>
+
+      <td>x 3</td>
+    </tr>
+  </table>= <u>0.6 moles of H<sub>2</sub></u>
+
+  <p align="left"></p>
+</ion-content>

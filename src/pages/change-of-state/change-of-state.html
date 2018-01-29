@@ -1,0 +1,408 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>CHANGE OF STATE</b></p><br />
+  
+    <p align="justify">The molecular formula for ice block, liquid water and water vapour
+    is H<sub>2</sub>O. They all have the same molecular formula, although, they exist in
+    different physical states. What do you think might be causing this? The physical state
+    a substance assumes or may assume depends on the <i style="color:blue">temperature</i>
+    and <i style="color:blue">pressure</i> it is subjected to. We will narrow our
+    discursion on this topic to temperature only.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Melting and Freezing</b>: When sugar is
+    heated to a certain temperature it melts or fuse. The temperature at which a substance
+    melts is its <b style="color:crimson">melting point</b>. At the melting temperature,
+    any heat applied to the sugar goes in to break the bonds which are holding its
+    molecules in fixed positions, causing it to melt (flow). It is after all the sugar
+    particles have been melted, that its temperature will begin to rise again.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">When the melted sugar is cooled (heat is removed from it), its
+    temperature will be reducing until it gets to the melting point. At the melting point,
+    the temperature remains constant and the sugar solidifies. The melting point is the
+    same as the <i style="color:blue">freezing point</i>. <b style="color:crimson">Freezing
+    point</b> is the temperature at which a substance changes state from liquid to solid.
+    This means that melting and freezing of a particular substance occur at the same
+    temperature. An example is supplying heat to ice at 0<sup>o</sup>C will cause it to
+    melt and removing heat from water at that same 0<sup>o</sup>C will freeze it. The
+    presence of <i style="color:blue">impurities lowers the freezing point of
+    liquids</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Boiling and Condensation</b>: Using a
+    similar rule of thought for the <i style="color:blue">Melting and Freezing</i>, we can
+    come to the conclusion that boiling and condensation occur at the same temperature. For
+    example, liquid water boils at 100<sup>o</sup>C when it is heated whilst at that same
+    temperature, water vapour will condense when heat is removed from it.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The following factors affect boiling point diversely.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>The presence of impurities increases the boiling point.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Reduced atmospheric pressure reduces the boiling point.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Less dense liquids have a lower boiling point than denser liquids.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Evaporation</b>: When some amount of robbing alcohol is
+    placed in a shallow dish at normal room temperature, you will notice that the level of
+    the alcohol decreases in a short time and the odor of alcohol become strong in the air
+    around. We say the alcohol has <i style="color:blue">evaporated</i>.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Evaporation</b> is the process through
+    which liquid molecules absorbs heat from its surrounding and escape to the gaseous
+    state. Evaporation causes cooling effect. For example, when you dip your finger in a
+    robbing alcohol and allow air to blow over it, the finger feels cool. The alcohol
+    absorbs heat from the hand as it is evaporating; this makes your hand feel cold. The
+    human body employs evaporation to cool down. If you sweat on a hot sunny day, the sweat
+    takes some heat from your body as it evaporates and your body cools down.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The rate of evaporation is increased by the following.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Increasing the surface area of the liquid in contact with (or exposed to) air.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Lowering the pressure on the liquid.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Increasing the temperature of the liquid.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Lower the relative humidity of the surroundings.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>An increase in wind velocity increases the rate of evaporation.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Differences between boiling and evaporation</b><br />
+  
+    <table border="1" cellspacing="1" cellpadding="1" width="100%">
+      <tr>
+        <th style="color:white; background-color: darkred">Boiling</th>
+  
+        <th style="color:white; background-color: darkred">Evaporation</th>
+      </tr>
+  
+      <tr>
+        <td>Takes place at boiling point only</td>
+  
+        <td>Takes place at all temperatures</td>
+      </tr>
+  
+      <tr>
+        <td>Does not cause cooling</td>
+  
+        <td>Causes cooling</td>
+      </tr>
+  
+      <tr>
+        <td>Does not increase with temperature</td>
+  
+        <td>Increases with an increase in temperature</td>
+      </tr>
+  
+      <tr>
+        <td>Takes place within the liquid</td>
+  
+        <td>Takes place at the liquid surface only</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><b style="color:crimson">Sublimation</b>: Just like robbing alcohol,
+    a piece of camphor left in the open air becomes smaller and smaller until it disappears
+    eventually. The molecules of the camphor escape from the solid surface and go into the
+    gaseous state. <b style="color:crimson">Sublimation</b> is the process through which a
+    substance changes state from the solid state to the gaseous state.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson"><u>Sensible and latent
+    hea</u></b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Sensible Heat</b> This is the heat energy
+    that changes the temperature of a substance without changing its state when added or
+    removed. For example, the temperature of water at 20<sup>o</sup>C will rise if heat is
+    applied to it. This heat applied to the water at that temperature is sensible heat.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Heat Capacity</b> This is <i style=
+    "color:blue">the heat energy required to raise the temperature of a substance through a
+    temperature difference of 1<sup>o</sup>C</i>. Heat capacity tells very little about the
+    thermal properties of a substance. For example, the energy required to raise the
+    temperature of 2g of aluminum through 1<sup>o</sup>C is different from that required to
+    raise the temperature of 3g of aluminum or 4g of copper through that same
+    1<sup>o</sup>C temperature range.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">For the bases of comparism, equal mass or weight of the substances
+    must be used. Scientist therefore defined <i style="color:blue">specific heat
+    capacity</i> which is a better quantity for comparism. <b style="color:crimson">The
+    specific heat capacity</b> of a substance is the energy required to raise the
+    temperature of a <b style="color:crimson">unit mass</b> (1 Kg) of that substance
+    through 1<sup>o</sup>C or 1K. The amount of sensible heat added or removed from a body
+    can be calculated from the formula below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Q = m x c x (T2&ndash;T1)</b><br /></p>
+  
+    <p align="justify">Where Q = heat added, m = mass of substance, T1 = initial
+    temperature and T2 = final temperature</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Calculations on sensible heat</b><br /></p>
+  
+    <p align="justify"><b>Example 1</b><br /></p>
+  
+    <p align="justify">Calculate the heat required to raise the temperature of 6kg of water
+    from 25<sup>o</sup>C to 35<sup>o</sup>C. Given that the specific heat capacity of water
+    is 4.2 KJ/Kg<sup>o</sup>C.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="justify"><b>Q = m x c x (T2&ndash;T1)</b><br /></p>
+  
+    <p align="justify">Where Q = heat required,<br />
+    <br />
+    m = mass of substance,<br />
+    <br />
+    T1 = initial temperature and<br />
+    <br />
+    T2 = final temperature</p>
+  
+    <p align="justify">Q = 6 x 4.2 x (35 &ndash; 25)</p>
+  
+    <p align="justify"><u>Q = 252 KJ of heat</u></p>
+  
+    <p align="left"><u><br /></u></p>
+  
+    <p align="justify"><b>Example 2</b><br /></p>
+  
+    <p align="justify">Find the mass of a block of copper that will require energy of 3200J
+    to raise its temperature through 8K. Take the specific heat capacity of copper as
+    400J/Kg.K.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="justify">Q = m x c x T</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>m =</td>
+  
+        <td>
+          Q<br />
+          <hr />
+          c x T
+        </td>
+      </tr>
+    </table>
+  
+    <p align="left"><br /></p>
+  
+    <table>
+      <tr>
+        <td>m =</td>
+  
+        <td>
+          3200<br />
+          <hr />
+          400 x 8
+        </td>
+      </tr>
+    </table>
+  
+    <p align="justify"><u>m = 1Kg</u></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Latent Heat</b>; this is the heat energy
+    that <i style="color:blue">does not change the temperature</i> of a substance but
+    rather, changes its physical state when it is added or removed. If heat is added to
+    liquid water at a temperature of 100<sup>o</sup>C, the temperature of the liquid does
+    not change. However, the water molecules absorb the energy added and as a result, they
+    evaporate or move from liquid state to gaseous state. There are two forms of latent
+    heats and they are:</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>
+        <b style="color:crimson">Latent Heat of Fusion</b>; this is the energy required to
+        change the state of a substance from solid to liquid state at its <i style=
+        "color:blue">normal melting point</i>. The <b style="color:crimson">specific latent
+        heat</b> <b style="color:crimson">of fusion</b> of a substance is the energy
+        required to change the state of 1kg of that substance from solid to liquid at its
+        normal melting point.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Latent Heat of Vapourisation</b>; this is the heat
+        required to change the state of a substance from liquid to gas at its <i style=
+        "color:blue">normal boiling point</i>. The <b style="color:crimson">specific latent
+        heat</b> <b style="color:crimson">of</b> <b style="color:crimson">Vapourisation</b>
+        of a substance is the energy required to change the state of 1kg of that substance
+        from liquid to gas at its normal boiling point.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Note that the heat required to melt a substance is the same as the heat required
+    to solidify it. For example, if 5g of solid water (ice) will need a heat of 21J to melt
+    it completely then, a heat of 21J should be taken away from water at a temperature of
+    0<sup>o</sup>C to solidify it. In simple words, latent heat of fusion is the same for
+    both <i style="color:blue">freezing</i> and <i style="color:blue">melting</i>. The only
+    difference being that, heat is added during melting whilst it is removed during
+    solidification.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Similarly, latent heat of vapourisation of a substance is the same
+    for both vapourising and condensing. Heat is added during vapourising whereas it is
+    removed during condensation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Calculations on latent heat</b><br /></p>
+  
+    <p align="justify"><b>Example 3</b><br /></p>
+  
+    <p align="justify">Calculate the latent heat of fusion (energy required to melt) 10Kg
+    of ice at 0<sup>o</sup>C. Given that the specific latent heat (energy required to melt
+    1Kg) of ice is 336KJ/Kg.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="justify"><b>Q = m x L;</b><br />
+    <br />
+    where L = specific latent heat</p>
+  
+    <p align="justify">Q = 10 x 336</p>
+  
+    <p align="justify"><u>Q = 3360KJ</u></p>
+  
+    <p align="left"><u><br /></u></p>
+  
+    <p align="justify"><b>Example 4</b><br /></p>
+  
+    <p align="justify">Calculate the energy that should be removed from 8Kg of water vapour
+    at 100<sup>o</sup>C to condense it to liquid water.<br />
+    <br />
+    [L = 2.26 x 103 Kg/K]</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="justify">Q = m x L</p>
+  
+    <p align="justify">Q = 8 x 2260</p>
+  
+    <p align="justify"><u>Q = 17,840 KJ</u></p>
+  
+    <p align="left"><u><br /></u><br /></p>
+</ion-content>

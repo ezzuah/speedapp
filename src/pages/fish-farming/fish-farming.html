@@ -1,0 +1,1043 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>FISH FARMING</b></p>
+  <p align="justify">Fish farming also known as 
+  <b style="color:crimson">aquaculture</b>is the rearing and managing of water animals and plants in a confined area. Fish farming comes with a lot of benefits. It provides the society with food and employment. It also helps to utilize land
+  efficiently &mdash; swampy lands that can not be used for projects like building construction or growing of certain crops can be used for fish farming.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Site Selection for Fish Farming</b>
+    <br />
+  </p>
+  <p align="justify">The first factor to consider when selecting a site for a fish farm is the 
+  <b style="color:crimson">topography</b>of the land. A region with a gentle slope will be appropriate for fish farming. This will allow the supply of water (
+  <i style="color:blue">in</i>and 
+  <i style="color:blue">out</i>of the pond) under gravity.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In that case, the extra cost that would have been incurred by purchasing water pumps to pump water in and out of the pond will be eliminated. 
+  <b style="color:crimson">Quality</b>water should be available at all times.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">quality</b>of water is determined by the amount of 
+  <b style="color:crimson">dissolved</b>
+  <b style="color:crimson">oxygen</b>and its 
+  <b style="color:crimson">pH</b>. The ideal pH range for the survival of most fishes is between 
+  <b style="color:crimson">6.5</b>and 
+  <b style="color:crimson">9.0</b>. The amount of dissolved oxygen is affected by the temperature within the pond. Higher temperatures reduce the amount of dissolved oxygen, so lower temperature should be maintained by planting trees around the
+  pond.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The temperature range should be between 15
+  <sup>o</sup>C to 32
+  <sup>o</sup>C. In order not to waste water, the 
+  <b style="color:crimson">soil</b>for fish farming should 
+  <b style="color:crimson">retain</b>a lot of water. The soil should be rich in nutrients to support the life of 
+  <i style="color:blue">Phytoplanktons</i>&#8213; aquatic plants that undergo photosynthesis &mdash; which serve as food for the fishes in the pond.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The soil should be one that will keep the turbidity of the water low. Turbid water (water that contains suspended particles like clay, silt and organic matter) prevents sun rays from reaching phytoplanktons that are at the base
+  of the pond, thereby preventing photosynthesis. This can result in the death of these plants and thus affect fishes adversely.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Pond Construction</b>
+    <br />
+  </p>
+  <p align="justify">The site for the pond must first be cleared, marked out and dug. The dug soil is used to form a heap around the pond. The pond must have a shallow and a deeper side. The base of the pond must slope gently from the shallow to the
+  deeper side.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A trench known as 
+  <b style="color:crimson">harvesting trough</b>is created at the base of the deeper side of the pond. This will trap all the fishes for easy harvest when the water in the pond is drained. The inlet water source must be at the shallow part of the
+  pond and the outlet at the deeper part. An overflow pipe must be placed at the deeper part of the pond. This will regulate the amount of water in the pond. When the water level rises above the overflow pipe, it drains out automatically. The inlet,
+  outlet and overflow pipes should be covered with a wire netting (sieve). 
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">The 
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">diagram 
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">on the next page 
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">shows the cross sectional are
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">a 
+  <font color="#000000"
+        face=""
+        size="3"
+        style="background-color: #FFFFFF">of a fish pond.</font></font></font></font></font></font></p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <img alt=""
+                     src="http://speedapp.ididev.com/apps/img/fis1.png" />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <b style="color:crimson">Stocking a Pond</b>
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">This refers to supplying fingerling (young fishes) into the pond. In Ghana, fingerlings can be obtained from Fisheries division of the Ministry of Agriculture. If the fingerlings are going to be
+                    transported over a long distance, they should be starved 24hrs.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">This will reduce feacal contamination of water during transportation. The temperature of the transporting water should be equivalent to that of the pond. The pond must be filled several days
+                    before stocking.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">This is to improve the water quality. The fishes should be allowed to swim into the pond and not to be thrown into. The pond should be stocked with the right number of fish (that is, the number
+                    of fishes per a unit area). The number of fishes that will occupy a unit area will depend on their type.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <b style="color:crimson">Pond Maintenance Practices</b>
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">Since keeping and raising fishes is our primary aim, the first and foremost practice is to ensure that the inlet and outlet nets are in place at all times to prevent the fishes from escaping. The
+                    water level of the pond must be checked regular and top up must be done if the need arises. Cracks on walls must be checked and repaired.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">Feeding must be done2&ndash;3 three times each day. Poultry droppings, cow dung and/or compost should be added weekly to increase fertility of the pond. Plants that grow on the surface of the
+                    pond must be removed to allow sun rays to enter the pond and also increase the amount of dissolved oxygen.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">Animals like frog, crab turtle, etc. must be destroyed. Finally, the pond should be limed &#8213; addition of calcium and magnesium salts or oxides &mdash; to reduce the acidity of the pond and
+                    also increase the mineral (calcium and magnesium) concentrations.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">The main pests of fishes are the 
+              <b style="color:crimson">leech</b>and 
+              <b style="color:crimson">tapeworm</b>. Leech can be prevented by liming. Ensuring good pond sanitation can also control both leech and tapeworm. Disease may be controlled by the use of resistant breeds, introducing antibiotics in feed,
+              draining and disinfecting the pond.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <b style="color:crimson">Harvesting</b>
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">Harvesting can be done by draining all the water in the pond to trap the fishes in the harvesting trough or 
+              <b style="color:crimson">catch basin</b>. When the fishes are trapped, fishing net or basket can be used to catch the fishes.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">The 
+              <b style="color:crimson">hook and line</b>shown on the right is used to harvest a pond. A piece of bread or worm is fixed on the hook as bait and dropped in the pond. If the hook (bait) is dropped in the pond, the float prevents it
+              from falling to the base and it also signals the farmer when the fish is trapped. The lead shot makes the hook sinks to a reasonable depth.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <img alt=""
+                     height="244"
+                     src="http://speedapp.ididev.com/apps/img/fis2.jpg"
+                     width="280" />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">When the fish is trapped, it tries to move away with the hook. This will cause the float to sink some how. At this point, the hook is drawn from the pond with the fish on it.</font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <img alt=""
+                     height="206"
+                     src="http://speedapp.ididev.com/apps/img/fis3.jpg"
+                     width="349" />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <font color="#000000"
+          face=""
+          size="3"
+          style="background-color: #FFFFFF">
+      <font color="#000000"
+            face=""
+            size="3"
+            style="background-color: #FFFFFF">
+        <font color="#000000"
+              face=""
+              size="3"
+              style="background-color: #FFFFFF">
+          <font color="#000000"
+                face=""
+                size="3"
+                style="background-color: #FFFFFF">
+            <font color="#000000"
+                  face=""
+                  size="3"
+                  style="background-color: #FFFFFF">
+              <font color="#000000"
+                    face=""
+                    size="3"
+                    style="background-color: #FFFFFF">
+                <br />
+              </font>
+            </font>
+          </font>
+        </font>
+      </font>
+    </font>
+  </p>
+</ion-content>

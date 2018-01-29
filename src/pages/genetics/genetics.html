@@ -1,0 +1,260 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>GENETICS</b></p>
+  <br />
+  <p align="justify">One common&ndash;sense observation which people have known for many years is that living things inherit traits from their parents. Getting to know why this was so took quite some time. But now it is clear that genes are what
+  carry our traits through generations. This was all made possible, first, by Gregor Johann Mendel, a German&ndash;Czech Augustinian monk and scientist who studied the nature of inheritance in plants.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The importance of Mendel's work did not gain wide understanding until the 1890s, after his death, when other scientists discovered his research. Scientists then determined which molecules in the cell were responsible for
+  inheritance namely the genes. The long, ropey DNA that makes up genes is rolled within chromosomes inside the nucleus of a cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="359"
+         src="http://speedapp.ididev.com/apps/img/gene1.jpg"
+         width="231" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The adjective 
+  <i style="color:blue">genetic</i>was derived from the Greek word 
+  <i style="color:blue">genesis</i>meaning "origin". 
+  <b style="color:crimson;">Genetics</b>is the science of heredity and variation in living organisms. Let us first consider briefly the work of Mendel.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mendel had studied how 
+  <i style="color:blue">pea plants</i>inherited the two variant forms of easy&ndash;to&ndash;see traits. These included 
+  <b style="color:crimson">flower color</b>(white or purple) and the 
+  <b style="color:crimson">texture</b>of the peas (smooth or wrinkled). Mendel counted many generations of pea plant offspring and learned that these characteristics were passed on to the next generation in orderly, predictable ratios. When he
+  cross&ndash;bred purple&ndash;flowered pea plants with white&ndash;flowered ones, the next generation had 
+  <i style="color:blue">only</i>purple flowers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">But directions for making white flowers were hidden somewhere in the peas of that generation, because when those purple&ndash;flowered plants were bred to each other, some of their offspring had white flowers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">What's more, the second&ndash;generation plants displayed the colors in a predictable pattern. On average, 
+  <i style="color:blue">75 percent</i>of the second&ndash;generation plants had purple flowers and 
+  <i style="color:blue;">25 percent</i>of the plants had white flowers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Those same ratios persisted, and were reproduced when the experiment was repeated many times over. Trying to solve the mystery of the missing color blooms, Mendel imagined that the reproductive cells of his pea plants might
+  contain discrete "factors," each of which specified a particular trait, such as white flowers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mendel reasoned that the factors, whatever they were, must be physical material because they passed from parent to offspring in an orderly way. Many years later, other scientists named Mendel's &ldquo;factors&rdquo; genes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Scientists quickly discovered that Mendel's rules of inheritance applied not just to peas, but also to all plants, animals, and people. This discovery of a rule for inheritance was momentous. It revealed that that a common,
+  general principle governed the growth and development of all life on Earth.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mendel observed that the flowers of each pea plant were either purple or white &ndash; and never an intermediate between the two colors. These different, distinct versions of the same gene are called 
+  <b style="color:crimson">alleles</b>. So in the case of pea plants, each organism has two alleles of gene for colour (purple or white), and the plants inherit one allele from each parent. Many organisms, including humans, have this pattern of
+  inheritance. Organisms with two copies of the same allele are called homozygou, while organisms with two different alleles are 
+  <b style="color:crimson">heterozygous</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The set of alleles for a given organism is called its genotype, while the observable trait the organism has is called its phenotype. When organisms are heterozygous, often one allele is called dominant as its qualities dominate
+  the phenotype of the organism, while the other allele is called recessive as its qualities recede and are not observed.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">When pair of an organism reproduces sexually, their offspring randomly inherit one of the two alleles from each parent. These observations of inheritance and the segregation of alleles are collectively known as Mendel's first
+  law or the 
+  <b style="color:crimson">Law of Segregation</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Organisms have thousands of genes. In sexually reproducing organisms like humans, assortments of these genes are generally independent of each other. This means that the inheritance of an allele for yellow or green pea color is
+  unrelated to the inheritance of alleles for white or purple flowers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This phenomenon, known as Mendel's second law or the 
+  <b style="color:crimson">Law of Independent Assortment</b>, means that the alleles of different genes get shuffled between parents to form offspring with many different combinations.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mendel&rsquo;s 
+  <i style="color:blue">third law</i>is the 
+  <b style="color: crimson">Law of Dominance</b>. As noted earlier, one allele mostly dominates the phenotype of an organism making the other recessive. The dominant gene is written with a 
+  <i style="color: blue">capital letter</i>while the recessive is in a 
+  <i style="color: blue">small letter</i>. How practical is this? A couple did the pairings below so that they could know the likely phenotypes of 
+  <i style="color: blue">tallness</i>of a baby they were expecting. Consider carefully the diagram below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">
+      <img alt=""
+           height="95"
+           src="http://speedapp.ididev.com/apps/img/gene2.png"
+           width="190" />
+      <img alt=""
+           height="95"
+           src="http://speedapp.ididev.com/apps/img/gene3.png"
+           width="190" />
+      <img alt=""
+           height="95"
+           src="http://speedapp.ididev.com/apps/img/gene4.png"
+           width="190" />
+    </b>
+  </p>
+  <p align="justify">Diagram A is coloured so that it will be easy to discern how the pairing was done. In A, one&rsquo;s alleles for tallness are both dominant but the other have both to be recessive.
+  <br /></p>
+  <p align="justify">Be mindful of the fact that the dominant allele makes up an organism, so in this case the couple might expect all their children to be tall but still have a recessive gene for dwarfness. How can you explain the rest of the
+  illustration (B and C) if those were a different couple?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Sex determination</b>
+    <br />
+  </p>
+  <p align="justify">Sex-determination system is found in humans and most other mammals. In this system, females have two of the same kind of sex chromosome (XX), and are called the 
+  <i style="color:blue">homogametic sex</i>. Males have two distinct sex chromosomes (XY), and are called the 
+  <i style="color:blue">heterogametic sex</i>. Some species (including most mammals) have a gene or genes on the Y chromosome that determine maleness.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In the case of humans, a single gene on the Y chromosome acts as a signal to set the developmental pathway towards maleness. Other mammals use several genes on the Y chromosome for that same purpose. Not all male&ndash;specific
+  genes are located on the Y chromosome. In all a couple may expect up to 50% both in having males as well as females.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Advancement in science today has led to a large array of technology namely hybridization, cloning and tissue culture, genetic engineering, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson;">Hybridization</b>is the crossing of different varieties of plants or even their species, routinely, to produce plants with desirable traits. But 
+  <b style="color:crimson">tissue culture</b>is the growth of a tissue in an artificial liquid culture medium.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Tissue culture has led to the commercial production of millions of identical seedlings in a limited amount of space. Since the shoots are identical, adult plants that develop from them are called 
+  <b style="color: crimson">clones</b>because they have the same traits like twins. Sometimes in plants and animals, 
+  <b style="color: crimson">selective breeding</b>is done.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is when strong, fertile and high&ndash;immune system organisms are selected and bred to produce the best and required traits in the bred organism. 
+  <b style="color:crimson">Genetic engineering</b>is the use of technology to alter the genome (ordering of genes) of viruses, bacteria and other cells for medical or industrial purposes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Genetic engineering has the capability of altering the genotype of unicellular organisms and the genotype of plants and animals, including ourselves. For example specie of a goat has been genetically engineered to produce
+  antithrombin III (biotechnology product), which is secreted in her milk.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Sickle&ndash;Cell Anaemia</b>is a disease which mostly affects black people and is heritable. The haemoglobin of affected people is abnormal because the red blood cells are sickle shaped (instead of disc&ndash;shaped) and
+  for that matter cannot take in much oxygen. The sickle cells also have trouble passing freely through the blood vessels and form clog depriving the body cells of oxygen.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In this case, the person might die. A person with the disease is homozygous recessive for the haemoglobin gene (SS). A person completely without the disease is a homozygous dominant for the haemoglobin gene (AA). A carrier is
+  the one who is heterozygous of the haemoglobin gene (AS). How is it heritable? For instance, if both parents are AS (carriers), they should expect to have a ratio of 1:2:1 (one AA, two AS and one SS) of every baby they are expecting.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Variation</b>is the differences in individuals of the same species. Even within members of some families who are supposed to share common genetic traits, there are differences. At other times also, the environment in which
+  we find ourselves makes us different.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example a bird which was taken day&ndash;old from her mother&rsquo;s nest can&rsquo;t cry exactly like those of her species if she were to be exposed to an entirely new environment with different birds. So it is with plants,
+  other animals and even humans.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Psychologists call this 
+  <i style="color:blue">nature</i>(genetic make&ndash;up) versus 
+  <i style="color:blue">nurture</i>(environment). 
+  <b style="color:crimson">Continuous variation</b>in a population is what basically runs through all the members in the population. Example the height, skin colour, hair texture of West Africans is considered a continuous variation.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">On the other hand, a discontinuous variation shows a limited number of individuals in the population who exhibit some particular traits making them different from the majority. Example albinism, baldness, colour blindness,
+  etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Mutation</b>Occasionally, there is a kind of error in a gene's DNA sequence. This mistake&mdash; which can be a change, gap, or duplication&mdash;is called a mutation. Consider the sentence THE CAT ATE THE RAT. If the
+  letter C is deleted from the sentence and the reading frame is shifted forward, we have &lsquo;THE ATA TET HER AT&rsquo;, which doesn&rsquo;t make sense because part of the &lsquo;code&rsquo; has been eliminated.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mutation can have an impact on the phenotype of an organism, especially if they occur within the protein coding sequence of a gene. Error rates are usually very low&mdash;1 error in every 10&ndash;100&nbsp;million. Many
+  mutations have little effect on an organism's phenotype, health, and reproductive fitness.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Mutations that do have an effect are often 
+  <i style="color:blue">deleterious</i>(harmful to living things), but occasionally mutations are beneficial Mutation may be inherited when the genes involved are the gametes but may not when the individual body cells are involved.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Evolution</b>is the process of change in all forms of life over generations. It began with the 1859 publication of Charles Darwin's On the Origin of Species. An organism inherits features (called 
+  <i style="color:blue">traits</i>) from its parents through genes. Changes (called mutations) in these genes can produce a new trait in the offspring of an organism.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">If a new trait makes these offspring better suited to their environment, they will be more successful at surviving and reproducing. This process is called natural selection, and it causes useful traits to become more common.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Over many generations, a population can acquire so many new traits that it becomes a new species.
+  <br /></p>
+  <p align="justify">Based on these, most people believe humans and every form of life evolved from a much more simple state to their present form. Evolutionary biologists (people who study about how and why evolution occurs) even claim that our
+  entire earth was not created but evolved but that is wrong.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

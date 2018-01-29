@@ -1,0 +1,200 @@
+
+<ion-header>
+  <ion-navbar color="speedapp">
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>SOIL FORMATION</b></p>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Soil science</b> deals with soil as a natural resource on the surface of the earth including <i style="color:blue">soil formation, classification and mapping</i>. Not neglecting the <i style="color:blue">physical, chemical, biological</i> and <i style="color:blue">fertility properties</i>. The relation of these properties to land use and management is also considered.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Soil And Soil Formation</b> <br/>
+    <p align="justify">Soil is defined as a natural body of loose, unconsolidated organic and inorganic (mineral) material found on the surface of the earth. 
+      
+      We can conveniently think of soil formation by starting with a bare rock surface &ndash; in fact we often see such bare rocks on the mountains.&#160;
+    <p align="left"> <br/>
+    <p align="justify">The rock breaks down, through weathering, forming the inorganic material, while simple plants soon colonize the area, adding organic matter.&#160; Over time, as weathering progresses and the vegetation gets more complex a fully formed soil is seen at the area. Since rocks are major component in soil formation, the study of the types and properties of rocks can not be ignored.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Rocks</b> <br/>
+    <p align="justify">Rocks are classified into three main groups and these are:
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Igneous rocks </b>are rocks formed when magma or lava from volcanic eruption cools down and solidifies. 
+      
+      Igneous rocks are heavy, hard; they are crystalline in some sort and not stratified (layers). They contain no fossil remains. Examples are granite, 
+      diorite and basalt.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Metamorphic rock</b> is the result of the transformation of a pre&ndash;existing rock mineral such as sedimentary rock, igneous rock or another older metamorphic rock. They are formed through<i style="color:blue"> </i>a process called <i style="color:blue">metamorphism</i>, which means &quot;change in form &quot;.
+    <p align="left"> <br/>
+    <p align="justify">The minerals are subjected to heat and pressure (temperatures greater than 150 to 200 &#176;C and pressures of 1500 bars) causing profound physical and/or chemical change. Some examples of metamorphic rocks are gneiss, slate, marble and schist.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Sedimentary rocks </b>are formed from deposits of other weathered rocks that have been subjected to high pressure. They are stratified (layers), relatively soft and may contain fossil.
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil1.png" alt=""/> <img src="http://speedapp.ididev.com/apps/img/soil2.jpg" alt="" width="174" height="137"/> <img src="http://speedapp.ididev.com/apps/img/soil3.jpg" alt="" width="222" height="137" />
+    <p align="left"><br/>
+      <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Weathering of rocks</b> <br/>
+    <p align="justify">The break down or disintegration of rocks to form soil is termed <b style="color:rgb(16, 172, 94)">weathering</b> and this is the first stage
+      
+      in soil formation. The three types of weathering are <i style="color:blue">physical, chemical and biological weathering</i>
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Physical/Mechanical Weathering</b> <br/>
+    <p align="justify">This is the mechanical disintegration of rocks without changing their chemical property. Breaking a large rock into smaller units can be thought of as physical weathering. Factors that aid physical weathering are temperature, wind, water, ice, pressure and living organisms.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Thermal weathering</b> occurs in areas like the deserts, where temperature are high during the day and falls low at night. As the rock heats up and expands by day, and cools and contracts by night, stress is often exerted on the outer layers. The stress causes the peeling off of the outer layers of rocks in thin sheets. Thermal expansion is enhanced by the presence of moisture.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Water</b>: If water (generally from powerful waves) rushes into cracks in rock surfaces rapidly, small volumes of air are trapped at the bottom of the crack.
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil4.jpg" alt="" width="213" height="145" />
+    <p align="left"> <br/>
+    <p align="justify">When the wave retreats, the trapped air is suddenly released with explosive force. Explosive release of highly pressurised air breaks away rock fragments and widens the crack. The picture on the right is an example of water weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Wind:</b> When wind blows, it carries particles (sand and small stones) along. When these particles move over a rock surface, they knock off small particles from the surface thereby causing weathering. Here, the photo shows
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil5.jpg" alt="" width="180" height="121" />
+    <p align="left"><br/>
+    <p align="justify">some pits that have been eroded into the rock by sandblasting.&#160; Along with the physical weathering (the sandblasting), chemical weathering has taken place as the rock shows some signs of solution weathering as well.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Ice:</b> Freeze induced weathering action occurs mainly in environments where there is a lot of moisture, and temperatures frequently fluctuate above and below freezing point. An example of rock which is susceptible to frost (ice) action is sandstone &ndash; it has many pore spaces for the growth of ice crystals.
+    <p align="left"> <br/>
+    <p align="justify">Water collected in the pores freezes when the temperature falls below 0oC. When water freezes, its volume increases by 9%. The ice formed strains the walls of the pores (because its volume has increased) causing the pores to deepen and widen. When the ice melts, the water flows deeper into the pore. When the temperature drops below 0oC the water freezes again and the ice enlarges the pores further. Repeated freezing&ndash;melting action weakens and disintegrates the rock.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Pressure:</b> Intrusive igneous rocks (e.g. granite) are formed deep beneath the earth&#39;s surface. These rocks are under tremendous pressure because of overlying rocks and other materials. When erosion removes the overlying rocks and materials, these intrusive rocks are exposed and the pressure on them is released.
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil6.jpg" alt="" width="200" height="134" />
+    <p align="left"><br/>
+    <p align="justify">The outer parts of the rocks then tend to expand. The expansion sets up stresses which cause fractures (cracking) parallel to the rock surface. Over time, sheets of rock break away from the exposed rocks along the fractures. The picture on the previous page is an example pressure weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Living Organisms:</b> the activities of living organisms may contribute to mechanical weathering. Example, mining, walking and daily construction works of human societies contributes to physical weathering of rocks. Burrowing organisms like earth worm and insects also aid physical weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Biological Weathering</b> <br/>
+    <p align="justify">This is the disintegration of rocks aided by the activities of living organisms, both plants and animals. Organisms like bacteria, fungi, mosses, algae and lichen secrets chemicals on the rocks on which they live.
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil7.jpg" alt="" width="153" height="186" /> <img src="http://speedapp.ididev.com/apps/img/soil11.jpg" alt="" width="152" height="223" />
+    <p align="justify">These chemicals attack the rock minerals and causes weathering. The first picture in the pictures above shows a weathered rock by the activity of lichen and the second by a tree growing on a rock. The passage of plants roots through cracks may cause further weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Chemical Weathering</b> <br/>
+    <p align="justify">This is the process by which the composition of rock minerals is altered by the addition or removal of elements, often leading to a &#39;break down&#39; in its form. Any form of chemical weathering may fall under any of the six chemical processes listed below.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Hydrolysis:</b> this is the decomposition and reaction with water. It is common in the major 
+      
+      rock&ndash;forming silicate minerals. The water split into H<sup>+</sup> and OH<sup>-</sup> ions. For example <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil8.png" alt="" />
+    <p align="left"> 
+      
+      <!--
+    
+    <p align="justify">Mg<sub>2</sub>SiO<sub>4</sub> &#160;&#160;&#160; +&#160;&#160;&#160;&#160;&#160;&#160;&#160; 4H+   +   4OH &ndash; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;       &#160;&#160; 2Mg<sub>2</sub>+    +   4OH &ndash;   +   H<sub>4</sub>SiO<sub>4</sub><p align="left">
+    
+    
+    
+    --> 
+      
+      <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Carbonation</b>: Carbonation occurs in rocks which contain calcium carbonate, example limestone. When rainwater combines with carbon dioxide in the atmosphere, it forms a weak carbonic acid. 
+      
+      
+      
+      The acid formed reacts with calcium carbonate (limestone) and forms calcium bicarbonate which is soluble in water. This process speeds up with a decrease in temperature. The picture below shows the effect of carbonation on the surface of limestone. <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil9.jpg" alt="" width="200" height="158" />
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Dissolution/Solution</b>: when slightly acidic water falls on certain rock minerals, they dissolve them resulting in solution weathering. Atmospheric oxides such as nitrogen oxide and sulphur oxide dissolve in rainwater forming acids.
+    <p align="left"> <br/>
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/soil10.jpg" alt="" width="212" height="190" />
+    <p align="left"><br/>
+    <p align="justify">These acids can lower the pH of rainwater to 4.5 or even 3.0. When such acidic rainwater falls on a rock, it dissolves it resulting in solution weathering. The picture on the right is an example of solution weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Hydration</b>: this is a form of chemical weathering that involves the addition of water in the form of 
+      
+      H<sup>+</sup> and OH<sup>-</sup> ions to atoms and molecules of rock minerals. When rock minerals take up water, they increase in volume and may become soft as well. This creates physical stresses within the rock and result in weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Carbonation:</b> Carbonation occurs in rocks which contain <i style="color:blue">calcium carbonate</i>, example limestone. When rainwater combines with carbon dioxide in the atmosphere, it forms a <i style="color:blue">weak carbonic acid</i>.
+    <p align="left"> <br/>
+    <p align="justify">The acid formed reacts with calcium carbonate (limestone) and forms <i style="color:blue">calcium bicarbonate</i> which is soluble in water. This process 
+      
+      speeds up with a decrease in temperature. The picture below shows the effect of carbonation on the surface of limestone.
+    <p align="left"> <br/>
+    <p align="justify">The reactions are as follows:
+    <p align="left"> <br/>
+    <p align="justify"> CO<sub>2</sub> + H<sub>2</sub>O <img  width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt=""/> H<sub>2</sub>CO<sub>3</sub> (occurs in the atmosphere)
+    <p align="justify">(carbon dioxide + water <img  width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt=""/> carbonic acid)
+    <p align="left"> <br/>
+    <p align="justify">H<sub>2</sub>CO<sub>3</sub> + CaCO<sub>3</sub> Ca(HCO<sub>3</sub>)<sub>2</sub> (occurs on the surface of rocks)
+    <p align="justify">(carbonic acid + calcium carbonate <img  width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt=""/> calcium bicarbonate)
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Oxidation:</b> rainwater dissolves atmospheric oxygen. When this oxygen&ndash;containing water is collected in grooves or furrows on rock surfaces, the oxygen reacts with metallic minerals present in the rock.
+    <p align="left"> <br/>
+    <p align="justify">A common example is the formation of the rusty brown oxides of iron on the surface of iron&ndash;containing rocks as shown in the picture on the right. &#160;In short, <b style="color:rgb(16, 172, 94)">oxidation </b>is bonding of oxygen to metallic elements of rock minerals which are dissolved in surface water.&#160;
+    <p align="left"> 
+      
+      <!-- =====================================================
+    
+        spaces
+    
+    &#160;&#160;&#160; +&#160;&#160;&#160;&#160;&#160;&#160; 
+    
+    
+    
+    --> 
+      
+      <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Reduction</b>: this is the reverse of oxidation. In this case, oxygen is removed from the rock mineral rather than adding. This removal also leads to the formation of new minerals which are susceptible to stress.
+    <p align="left"> <br/>
+    <p align="justify">All these three forms of weathering go hand in hand. For example, cracks exploited by physical weathering will increase the surface area exposed to chemical action. The materials left over after the rock breaks down combines with organic material to form soil.
+    <p align="left"> <br/>
+    <p align="justify">The mineral content of the soil is determined by the parent material. Thus a soil derived from a single rock type can often be deficient in one or more minerals, while a soil weathered from a mix of rock types often makes more fertile soil.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Factors that affect soil formation</b> <br/>
+    <p align="justify">All that we discussed earlier in this lesson was the processes that go on before a sample of soil is formed. However, there are other factors which have influence on these processes and this will in turn affect the rate at which soil is formed and the type of soil formed.
+    <p align="left"> <br/>
+    <p align="justify">The factors are; the type of <i style="color:blue">parent rock material, climate, topography, living organisms, time and human influence.</i> For example, regions with humid climates with seasonal rainfall allow much greater accumulation of vegetation debris (remains) and humus layer. Dissolved rock minerals in these areas may combine with the debris to form stable clay minerals.&#160;Whereas regions with hot climates provide little water &ndash; and does not enhance chemical weathering &ndash; which allows the growth of little vegetation. &#160; Consequently, such regions often do not develop true soils.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Parent Rock Material:</b> the minerals that result from weathering processes depend directly on the nature of the original rock minerals and hence the type of underlying bedrock.&#160; Therefore, rock&ndash;type (parent material) exercises a major control over the kind of soil that forms.&#160;Soils formed from granite are rich in minerals and resistant to erosion. Soils derived from sandstone are porous, susceptible to erosion and not rich in minerals.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Climate:</b> it is second only in importance to parent material as a controlling factor in soil formation.&#160; The climate controls weathering and soil formation directly through the amount of rainfall and the temperature.
+    <p align="left"> <br/>
+    <p align="justify">And indirectly through the kind of vegetation that can cover the land. It also determines the extent at which microbial activity can proceed. For example, in a cold region where all available soil water has been turned into ice, little or no microbial and chemical activity may proceed. This can then affect the type of soil formed.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Topography or Relief:</b> this refers to the shape or nature of the land surface, that is, either flatland or sloppy. Soil formed on a well sloped area, mountain side, is carried away by erosion, exposing the underneath rocks for weathering.
+    <p align="left"> <br/>
+    <p align="justify">This facilitates the rate at which weathering proceeds. Again, soils on mountain tops are shallow, have little organic matter and are more of sandy soil whereas those around the feet of the mountain are deep and rich in organic matter. Topography affects drainage, which will also affect weathering since some optimum amount of water is required for weathering.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Living Organisms:</b> the degree to which biological processes, chiefly involving vegetation and microorganisms, contribute to soil formation is worth to note.&#160; Living plants take up certain elements (as essential <i style="color:blue">nutrients</i>).
+    <p align="left"> <br/>
+    <p align="justify">These nutrients are transformed into other important nutrients and are returned to the surface soil when the plant sheds its leaves or dies.&#160; Animals living in (or burrowing into) the soil may also play an important role.
+    <p align="left"> <br/>
+    <p align="justify">The excreta of animals serve as organic matter in the soil. Earthworms also rework the soil by burrowing (digging) and passing the soil through their intestinal tracts.&#160;This activity grinds and improves the soil formed. Activities of man such as mining, clearing of vegetation, application of fertilizers and other chemicals also affect weathering and the type of soil formed.
+    <p align="left"> <br/>
+    <p align="justify"><b style="color:rgb(16, 172, 94)">Time:</b> weathering rates are slow, the longer a rock unit has been exposed, the more likely it is to be weathered into fine soil particles. The period required for complete weathering also depends on the type of rock, the climate and activities of living organisms.
+    <p align="left"> <br/>
+    <p align="justify">In summary, many complex and constant physical, chemical and biological processes are going on at the same time to aid soil formation.
+    <p align="left"> <br/>
+    
+    
+</ion-content>

@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>GROWTH IN MAMMALS</b></p>
+  <br />
+  <p align="justify">We learnt in the previous lesson the reproductive systems of the female and male human. It was also established that at one time these two come together in an act known as 
+  <i style="color:blue">intercourse</i>. It is during the intercourse when 
+  <i style="color:blue">fertilization</i>occurs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Although millions of sperm cells are ejected from the male only one is able to enter the female&rsquo;s egg. The picture below shows how fertilization occurs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="251"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/growthM1.jpg"
+         width="329" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A 
+  <b style="color: crimson">zygote</b>is formed when the sperm nucleus fuses with the egg nucleus. After fertilization, an envelope is formed which does not allow any other sperm to enter. It is also after fertilization that the zygote undergoes
+  cell division without growth, termed as 
+  <i style="color:blue">cleavage</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">At this time, the uterine wall becomes thick and allows implantation to occur. 
+  <b style="color: crimson">Implantation</b>is the term used when the zygote firmly attaches itself to the wall of the uterus.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Below is a picture from when an ovulated egg is fertilized to when it is implanted. The zygote then develops into an 
+  <b style="color: crimson">embryo</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="254"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/growthM2.jpg"
+         width="352" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">After sometime when the various organs of the embryo are formed it then comes to be called a 
+  <b style="color: crimson">foetus</b>. From implantation we realize that the embryo (later to become foetus) is attached to the uterine wall.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Placenta</b>is the organ which connects the uterine wall to the embryo and allows the latter to acquire 
+  <i style="color:blue">nutrients</i>and 
+  <i style="color:blue">oxygen</i>and also rid it of 
+  <i style="color:blue">wastes</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">umbilical cord</b>acts as a tube connecting the foetus to the placenta, through which blood vessels (arteries and veins) pass. The mother carries needed materials to the foetus through the 
+  <i style="color:blue">umbilical vein</i>while the foetus passes its wastes (urea and CO2) through the 
+  <i style="color:blue">umbilical artery</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">During this time that the foetus is developing, the mother must visit the hospital regularly for their health to be checked. Nutritious food must be eaten always. The mother should 
+  <i style="color:blue">avoid</i>smoking and use of hard drugs and/ or alcohol which could kill or deform the foetus. After some months, usually nine, the foetus is fully developed and healthy. The foetus then rotates so that its head is pointed
+  toward the cervix.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="249"
+         src="http://speedapp.ididev.com/apps/img/growthM3.jpg"
+         width="380" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Labor</b>then follows. The 
+  <i style="color:blue">uterine contractions</i>which the expecting mother experiences at this time may take longer than those she used to have during the course of the foetus&rsquo; development.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Finally at 
+  <b style="color: crimson">birth</b>, the uterine walls contract so that the foetus (baby) is expelled. Some few days after birth, mostly in males, the 
+  <i style="color:blue">foreskin</i>of the penis is removed using a sharp cutting instrument like blade.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This act is called 
+  <b style="color: crimson">circumcision.</b>Sometimes, however, females are also circumcised. In this case, the 
+  <i style="color:blue">clitoris</i>is removed or cut. Although those who do these believe that the circumcised male has been prevented from getting genital cancer and also will have easy penetration during intercourse, it could lead to excessive
+  bleeding and infections if instruments used are not properly sterilized.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The pain that comes with it sometimes leads to the death of some babies. Circumcision in females makes the victim insensitive to the passion during sexual intercourse, could lead to infections, and could most likely result in
+  death. 
+  <i style="color:blue">Female genital mutilation</i>is the term given to female circumcision because of its gross negative impacts.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Most couple&rsquo;s dream of having babies do not come true may be, because they encountered problems and complications with their reproductive systems. Five of these problems are discussed below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Impotence</b>which affects men is a major problem here in Ghana. The impotent man 
+  <i style="color:blue">cannot</i>have an erect penis for intercourse to take place. The problem may either be 
+  <i style="color:blue">physiological</i>(biological functioning) or 
+  <i style="color:blue">psychological</i>(mental or emotional).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Low Sperm Count</b>is a term used when sperms are not as strong and many as possible to make it alive to the ovum and fertilize it. In other words, all sperm cells die leaving none to fertilize the egg.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="179"
+         src="http://speedapp.ididev.com/apps/img/growthM4.png"
+         width="149" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Fibroid</b>happens when tumors develop in the uterus so that it is no more active or functioning. This is to say because of these developing or already developed tumors fertilization cannot occur in the uterus. The
+  picture on the right shows the effect of fibroid on the womb.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Sterility</b>is the state of being unable to produce offspring; in a woman it is an 
+  <i style="color:blue">inability to conceive</i>; in a man it is an 
+  <i style="color:blue">inability to impregnate.</i></p>
+  <p align="left"></p>
+</ion-content>

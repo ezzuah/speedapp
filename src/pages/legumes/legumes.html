@@ -1,0 +1,218 @@
+<!--
+  Generated template for the LegumesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>LEGUMES</b></p>
+  <p align="justify">A legume is a plant whose edible part is a simple dry fruit that develops from a simple 
+  <b style="color:crimson">carpel</b>and usually 
+  <b style="color:crimson">dehisces</b>(opens along a seam) on two sides as shown in the picture below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Well&ndash;known legumes include alfalfa, peas (cowpea, pigeon pea), beans (soya beans, bambara beans) and peanuts. They are noteworthy for their ability to fix atmospheric nitrogen in the soil for plants use.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Their capability of 
+  <i style="color:blue">increasing the soil&rsquo;s nitrogen content</i>in the form of soluble nitrates reduces fertilizer costs of farmers and gardeners who grow legumes. This follows that legumes can be used in crop rotation to replenish soil that
+  has been depleted of nitrogen.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Legume seed and foliage have comparatively higher protein content than non&ndash;legume material; this is due to the additional nitrogen that legumes receive through nitrogen&ndash;fixation symbiosis (the relation between two
+  different species of organisms that are interdependent; each gains benefit from the other). This high protein content makes them desirable crops in agriculture.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Groundnut Production</b>
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">groundnut</b>or 
+  <b style="color:crimson">peanut</b>( 
+  <i style="color:blue">Arachis hypogaea</i>) is a species belonging to the legume family. It is an annual herbaceous plant growing to 30 to 50 cm. The flower of the 
+  <i style="color:blue">Arachis hypogaea</i>is borne above ground and after it withers.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The stalk elongates, bends down, and forces the ovary underground. When the seed is mature, the seed coat (mesocarp) changes color from white to a reddish brown. The entire plant, including most of the roots, is removed from the
+  soil during harvesting. The fruits have wrinkled shells that are constricted between the two to three seeds.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The mature seeds resemble other legume seeds, such as beans, but they have paper&ndash;thin seed coats, as opposed to the usual, hard legume seed coats. Its varieties includes runner or creeping group, Spanish group, Virginia
+  group, Valencia group, Tennessee Red and Tennessee White groups.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Environmental Requirements</b>
+    <br />
+  </p>
+  <p align="justify">Peanuts grow best in light, sandy loam soil with high organic matter content. They require five months of warm weather, and an annual rainfall of 500 to 1000 mm or the equivalent in irrigation water distributed evenly.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Land Preparation and Planting</b>
+    <br />
+  </p>
+  <p align="justify">The land must be cleared first. Groundnuts may be planted on ridges or flat beds. Planting on ridges is preferred, since it makes harvesting easier. Planting distance is 60cm between rows and 20cm between plants. The number of
+  seeds per hole is 1 to 2. Planting is done to meet the beginning of the rains.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Post planting Operations</b>
+    <br />
+  </p>
+  <p align="justify">The most important post planting operation is weed control. Since groundnut is a legume, it does not require nitrogen fertilizer. Phosphorus and potassium fertilizers may be applied. Also, because the fruit is borne underground,
+  earthing&ndash;up is required for good fruit formation.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Diseases and Control</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Rosette</b>: Rosette disease is highly variable, depending on the varieties or cultivar of affected. This variability can complicate diagnosis. Some of the more recognizable symptoms include rapid elongation of young
+  leaves, followed by clustering of small branches.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="171"
+         src="http://speedapp.ididev.com/apps/img/leg1.jpg"
+         width="175" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Leaves in the clustered branches are small, distorted, and may have a conspicuous red pigmentation, although red pigmentation is not a consistent symptom. When all of the above symptoms are present, diagnosis is relatively
+  straightforward. However, a diseased plant may exhibit few of these symptoms, especially in the early stages of the disease.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">By the time symptoms are severe and recognizable, the disease is likely to have already spread to neighboring plants. Some symptoms, such as leaf coloration, may be subtle and can be mistaken for symptoms of a nutrient
+  deficiency, especially in the early stages of the disease. Rosette in rose plant [Picture]. Affected plants must be removed from the field and destroyed.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Leaf spot</b>: Leaf spot is caused by fungi. Many of the leaf spot fungi have a similar life cycle. They form spores which are spread effectively by wind.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/leg2.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">If water falls on leaves with some of the spores collected on the surface, the spore germinates and penetrates the leaf causing infection. In a few days to several weeks, small spots appear on the leaves depending on
+  temperature.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">As the fungus grows, the spots enlarge. Since many of the leaf spot fungi develop from old infected leaves, one cultural method of reducing the severity of leaf spots is to destroy all infected and old leaves under the tree. In
+  order to be effective, the proper fungicide must be applied as prevention before the fungus spore is disseminated to the leaf. The picture shows leaf spot in rose plant.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Rust</b>: Rust us caused by fungi. The initial symptom is a yellow discolouration on the undersides of leaves on the onset of the disease. The small lesions gradually increase in size and become brown in color.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/leg3.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The lesions are slightly raised and consist of small pustules (like blisters), with a small hole on top where the spores emerge. The pustules become plentiful and eventually coalesce to form larger pustules that break open,
+  releasing masses of spores. During pod formation, the disease spreads rapidly. Lesions may develop on petioles, pods, and stems but are most abundant on leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Pests of Groundnut</b>
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/leg4.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="153"
+         src="http://speedapp.ididev.com/apps/img/leg5.jpg"
+         width="182" />
+    <br />
+  </p>
+  <p align="justify">Squirrels dig out and chew the planted groundnut. They chew matured groundnut which is about to be harvested as well. Other pest of groundnut is the aphid and grasshopper.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Harvesting</b>
+    <br />
+  </p>
+  <p align="justify">The pods ripe 120 to 150 days after the seeds are planted. If the crop is harvested too early, the pods will be unripe. If they are harvested late, the pods will snap off at the stalk, and will remain in the soil. It is
+  harvested by carefully digging out the pods.</p>
+  <p align="left">
+    <br />
+    <b style="color:crimson">Processing</b>
+    <br />
+  </p>
+  <p align="justify">The pods are dried for 2 or 3 days and the nuts are pulled out afterwards. The nuts are dried further for about a week. Peanuts are particularly susceptible to contamination during storage. Poor storage of peanuts can lead to an
+  infection by the mold fungus 
+  <i style="color:blue">Aspergillus</i>, releasing the toxic substance aflatoxin which is known to be carcinogenic (can cause cancer).</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

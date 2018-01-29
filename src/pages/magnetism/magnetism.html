@@ -1,0 +1,284 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>MAGNETISM</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">We know from certain elementary school activities that magnets do
+    not attract materials like wood, stone, plastics, etc. These materials are called
+    <i style="color:blue">non&ndash;magnetic</i> <i style="color:blue">materials</i>. On
+    the contrary, magnets attract certain metals like iron, steel, and many more.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This second class of materials is called <i style=
+    "color:blue">magnetic materials</i>. This information is enough for a layman and a
+    pupil but not a senior high school student. We shall increase our knowledge about
+    magnets at this level.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Physicist noticed that magnet attracts some substances strongly.
+    These substances are called <b style="color:crimson">ferromagnetic substances.</b>
+    Example of a ferromagnetic material is iron, steel, nickel, cobalt and some alloys like
+    <i style="color:blue">alnico</i> and <i style="color:blue">permalloy</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">There is another group of substances that are repelled feebly by a
+    magnet and they are referred to as <b style="color:crimson">diamagnetic substance.</b>
+    The third is a group of substances that are feebly attracted by a magnet and they are
+    referred to as <b style="color:crimson">paramagnetic substance.</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">If a ferromagnetic material is brought closer to a magnetic
+    gradually, it gets to a point where the magnet begins to exert an attractive force on
+    the material. This region is within the magnetic field of the magnetic.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Magnetic field</b> is a region around a
+    magnet where magnetic force is exerted. The line along which a magnetic force acts is
+    the <b style="color:crimson">magnetic line of force</b>. Magnetic lines of forces move
+    from the North Pole to the South Pole.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="283" height="137" src="http://speedapp.ididev.com/apps/img/mag1.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Magnetisation of magnetic material</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color:blue">Single touch method</i><b style=
+    "color:crimson">;</b> in this method, the material to be magnetized is stroked with one
+    pole of a permanent magnet from one end to the other several times in the same
+    direction. The figure on the right illustrates the single touch method.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="336" height="152" src="http://speedapp.ididev.com/apps/img/mag2.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color:blue">Double touch method</i><b style=
+    "color:crimson">;</b> in this method, the material to be magnetized is stroked with
+    unlike poles of two magnets from the middle to opposite ends simultaneously. The figure
+    below illustrates the double touch method.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="406" height="148" src="http://speedapp.ididev.com/apps/img/mag3.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color:blue">Electrical Method</i><b style=
+    "color:crimson">;</b> in this method, the material to be magnetized is inserted into a
+    solenoid (long helically wound coil). The solenoid is connected to an electrical power
+    source. The current from the source is switched on and off several times. As the
+    current is switched on and off, it magnetizes the material. The various poles of the
+    magnet are indicated in the diagram below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="333" height="183" src="http://speedapp.ididev.com/apps/img/mag4.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Demagnetisation</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This is the opposite of magnetization. It is the process through
+    which a magnet losses its magnetism.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>The magnet is placed in a solenoid connected to an ac source. The set up is done
+      such that the solenoid has its axis facing east and west. After a few seconds, the
+      magnet is removed from the solenoid and taken far away.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>By heating the magnet until it is red hot and then placed with it poles facing
+      eats and west while it is cooling.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Dropping or hammering it repeatedly; or arranging them disorderly during storage
+      will weaken the magnetism in the magnet.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Temporal and permanent magnetism</b>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">If a ferromagnetic, material like an iron rod, is in contact with a
+    bar magnet, the material behaves like a magnet by attracting pieces of magnetic
+    materials. If the magnet is taken away, the material looses its magnetism.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This kind of induced magnetism is referred to as <b style=
+    "color:crimson">temporal magnetism.</b> Temporal magnets are easy to make. Likewise,
+    they loose their magnetism easily. Materials that can be magnetised temporarily are
+    called soft magnets.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Example is iron. Materials that can not be magnetised temporarily
+    are called hard magnets. Hard magnets are difficult to magnetise but ones magnetised,
+    it is hard for them to loose their magnetism. Example of a hard magnet is steel.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">The earth&rsquo;s magnetic field</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The earth behaves as if it has a small bar magnetic inclined at a
+    small angle to its axis as shown in the figure on the right. A suspended bar magnet
+    align its self with the earth&lsquo;s magnetic. One of the pole points to the northern
+    hemisphere and it is the <b style="color:crimson">North Seeking Pole</b> or simply the
+    <b style="color:crimson">North Pole.</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="270" height="261" src="http://speedapp.ididev.com/apps/img/mag5.jpg" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The other pole points to the southern hemisphere and it is called
+    the <b style="color:crimson">South Seeking Pole</b> or simply the <b style=
+    "color:crimson">South Pole.</b> This magnetic property of the earth is used by sailors,
+    surveyors and pilots to find their way around using a compass.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Uses of magnets</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Magnets are used in loudspeakers, compasses, magnetic lift,
+    telephone receivers, power generators, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electromagnetism</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Michael Faraday discovered that when a metallic conductor is moved
+    across a magnetic field, an emf is induced in the conductor. Similarly, when a metallic
+    conductor is carrying electric current, a magnetic field is built around the
+    conductor.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="140" height="147" src="http://speedapp.ididev.com/apps/img/mag6.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Because of this interdependence of the electric and magnetic fields,
+    it makes sense to consider them as a single coherent entity &ndash; <i style=
+    "color:blue">electromagnetism</i>. Nonetheless, <b style=
+    "color:crimson">electromagnetism</b> usually refers to <i style="color:blue">the
+    magnetic effect produced around a conductor as a result of the current flowing through
+    it</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The <b style="color:crimson">right hand grip rule</b> provides
+    information about the directions of the flowing current and the magnetic field around a
+    conductor carrying a current. It states that, <i style="color:blue">imagine one grips a
+    conductor, like pulling on a rope, such that the thumb points in the direction of the
+    current flow, then the other fingers will point in the direction of the magnetic field
+    around the conductor</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Examples of devices that operate on the principle of electromagnetic
+    induction are the power generators, induction motors and power transformers.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A transformer that increases the voltage of an a.c. source is called
+    a <b style="color:crimson">step&ndash;up transformer.</b> <i style=
+    "color:blue">Step&ndash;up transformers have greater number of turns in the secondary
+    coil than in the primary coil</i>. Transformers that reduce voltage are called
+    <b style="color:crimson">step&ndash;down transformer.</b> <i style=
+    "color:blue">Step&ndash;down&rsquo;s have greater number of turns in the primary coil
+    than in the secondary coil</i>. Refer from transformer diagrams above.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Electromagnets are used in generators, induction motors and
+    transformers. They also have similar uses as magnets.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+</ion-content>

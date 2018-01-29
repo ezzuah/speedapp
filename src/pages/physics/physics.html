@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="searchTopics($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  </ion-toolbar>
+  
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of topics" >
+    <ion-item (click)="dynamicLink(item)" > 
+      <ion-thumbnail item-start>
+        <img src="{{item.icon}}">
+      </ion-thumbnail>
+        <h2>{{item.topic}}</h2>
+        <p>{{item.tip}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+          <button (click)="bookmarkTopic(item)" ion-button color="primary">
+            <ion-icon name="bookmark"></ion-icon>
+            Bookmark
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-list>
+</ion-content>

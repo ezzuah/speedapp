@@ -1,0 +1,181 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>STEM AND TUBERS</b></p>
+  <br />
+  <p align="justify">Tuberous plants are those with their storage organs embedded in the earth crust. There are two types of tubers namely 
+  <b style="color:crimson">stem tubers</b>or 
+  <b style="color:crimson">true tubers</b>and 
+  <b style="color:crimson">root tubers</b>. Root tubers have internal and external cell structures of a typical root. Examples are cassava and sweet potato. Stem tubers have internal and external cell structures of a stem. Examples are the yam and
+  cocoyam.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">CASSAVA PRODUCTION</b>
+    <br />
+  </p>
+  <p align="justify">The cassava root is long and tapered. It has a firm homogeneous flesh encased in a detachable rind, about 1 mm thick, rough and brown on the outside. The cassava plant gives the highest yield of food energy per cultivated area
+  per day among crop plants, except possibly for sugarcane.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Cassava roots are very rich in starch, and contain significant amounts of calcium (50 mg/100g), phosphorus (40 mg/100g) and vitamin C (25 mg/100g). However, they are poor in protein and other nutrients. In contrast, cassava
+  leaves are good source of protein, despite the cyanide content. Varieties cultivated in Ghana include Bankye brode, Ankra, Kongo battalion, Gold coast hybrid and Katawia.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Environmental Requirements</b>
+    <br />
+  </p>
+  <p align="justify">It requires an annual rainfall distribution range of 1000mm to 1500mm through out the year for good growth. A temperature range of 25
+  <sup>o</sup>C to 30
+  <sup>o</sup>C is ideal. Because it is a root tuber, a well drained sandy&ndash;loam soil with high organic matter content is the best soil type for good yield.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Land Preparation and Planting</b>
+    <br />
+  </p>
+  <p align="justify">The land is first cleared. Burning is not a good practice in land clearing, because it makes some nutrients escape into the atmosphere in the form of gases. Weeding and ploughing the land together with the weeds is better.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The weeds will decompose and thus increase the organic matter content of the soil. The planting is done to meet the beginning of the rain and the spacing is between 80cm x 80cm to 100 x 100cm depending on the variety.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Post Planting Operation</b>
+    <br />
+  </p>
+  <p align="justify">The most important post planting operation is weed control. Cassava can thrive on soil with very low fertility. But then, small amount of fertilizer will be required for better plant performance.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Diseases</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Cassava mosaic</b>: This is a viral disease.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="133"
+         src="http://speedapp.ididev.com/apps/img/stem1.jpg"
+         width="161" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Anthracnose</b>: 
+  <b style="color:crimson">anthracnose</b>is general terms for a large number of different plant diseases, characterised by broadly similar symptoms including the appearance of small areas of dead tissue, which grow slowly, often over a period of
+  years.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="133"
+         src="http://speedapp.ididev.com/apps/img/stem2.png"
+         width="139" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Some are of only minor consequence, but others are ultimately lethal, and of major economic importance in agriculture. Different anthracnoses are caused by a wide range of organisms, including fungi, bacteria, mycoplasmas and
+  viruses. Anthracnose can be spread by weather and animals.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This makes areas that have a slight amount of anthracnose hazardous. Some anthracnoses are treatable with fungicides or bactericides, but many are not; often the only treatment available is to destroy the infected plant to
+  prevent the disease from spreading to other plants. The picture shows the symptoms of anthracnose in rose plant.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Leaf spot</b>: refer from 
+  <i style="color:blue">Legumes</i>&mdash; Diseases and Control.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Pest</b>
+    <br />
+  </p>
+  <p align="justify">The pests of cassava include grasshoppers, rodents, grass cutters, termites, mites, mealy bugs and patridges.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Harvesting</b>
+    <br />
+  </p>
+  <p align="justify">The time of maturity of cassava will be affected by environmental factors like soil type and fertility, rainfall and variety cultivated. However, it ranges from six months to eight months. Harvesting is done by first cutting the
+  stem at about 40cm from the ground and pulling to bring out the tubers. Hoe or cutlass may be used to loosen the soil around the tubers before lifting, especially if the ground is hard.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Toxicity and Processing</b>
+    <br />
+  </p>
+  <p align="justify">It might interest you to know that cassava (leaves and tubers) contains 
+  <i style="color:blue">cyanogenic glucosides</i>. These are converted to 
+  <i style="color:blue">cyanide</i>(very toxic chemical; 40g of cyanide from pure cassava is sufficient to kill a cow) in the presence of a naturally occurring enzyme in cassava called 
+  <i style="color:blue">linamarase</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Cassava varieties are often categorised as either "
+  <i style="color:blue">sweet</i>" or "
+  <i style="color:blue">bitter</i>", signifying the absence or presence of toxic cyanogenic glucosides. The so&ndash;called "
+  <b style="color:crimson">sweet</b>" cultivars can produce as little as 20 milligrams of cyanide (CN&ndash;) per kilogram of fresh roots, while "
+  <b style="color:crimson">bitter</b>" ones may produce more than 50 times as much. Cassavas grown during drought are especially high in these toxins.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">An Australian plant chemist has developed a simple method to reduce the cyanide content of cassava flour (doe). The method involves mixing the flour with water into a thick paste. Allow the paste to stand in the shade for five
+  hours in a thin layer spread over a porous material (basket).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A different enzyme in the flour will break the cyanogenic glucosides into hydrogen cyanide (HCN). The HCN escapes into the atmosphere, reducing the amount of poison by 80%. The flour becomes safe for consumption right
+  afterwards.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

@@ -1,0 +1,72 @@
+
+<ion-header>
+
+    <ion-navbar color="speedapp" hideBackButton="true">
+      <ion-title>{{test_subject}} {{test_year}} </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+      <div align="right" style="font-size:20px;padding:10px">
+          <span>{{ time.getHours() }}</span>:
+          <span>{{ time.getMinutes() }}</span>:
+          <span>{{ time.getSeconds() }}</span>
+        </div>
+  
+      <div *ngIf="passage" [innerHTML]="passage" padding></div>
+      <ion-list *ngFor="let item of test; let i = index">
+          <ion-item text-wrap  padding no-lines>
+            <h2 *ngIf="test_subject=='English'">{{item.Question_Title}}</h2>
+            <br *ngIf="test_subject=='English'">
+          <span style="float:left;font-size:16px">{{i + 1}}. </span> <h2 [innerHTML]="item.Ask"></h2>
+  
+          <span><img *ngIf="item.maths_img!=null" src='http://testplay.ididev.com/apps/img/maths_imgs/{{item.maths_img}}'></span> 
+          </ion-item>
+          <ion-input  type="hidden" [(ngModel)]="item.Quest_ID"></ion-input>
+          <ion-input  type="hidden" [(ngModel)]="item.Answer_Letter"></ion-input>
+          <ion-input  type="hidden" [(ngModel)]="item.Ans"></ion-input>
+  
+          <form [formGroup]="regis_form">
+          <ion-list radio-group formControlName="uanswer"  [(ngModel)]="test['uanswer'+i]">
+          <ion-item >
+  
+              
+          
+              <ion-label>A. <span text-wrap [innerHTML]="item.Alt_Ans_1"></span></ion-label>
+              <ion-radio value="A" ></ion-radio>
+            </ion-item>
+  
+            <ion-item >
+                <ion-label>B. <span text-wrap [innerHTML]="item.Alt_Ans_2"></span></ion-label>
+                <ion-radio value="B"></ion-radio>
+              </ion-item>
+  
+              <ion-item>
+                  <ion-label>C. <span text-wrap [innerHTML]="item.Alt_Ans_3"></span></ion-label>
+                  <ion-radio value="C"></ion-radio>
+                </ion-item>
+  
+                <ion-item >
+                    <ion-label>D. <span text-wrap [innerHTML]="item.Alt_Ans_4"></span></ion-label>
+                    <ion-radio value="D"></ion-radio>
+                  </ion-item>
+  
+                  <ion-item >
+                      <ion-label>E. <span text-wrap [innerHTML]="item.Alt_Ans_5"></span></ion-label>
+                      <ion-radio value="E"></ion-radio>
+                    </ion-item>
+                  
+                    </ion-list>
+            </form>
+            
+          </ion-list>
+          <button ion-button icon-left ion-button full large (click)="submit_test()" [disabled]="!regis_form.valid">
+              <ion-icon  name="send"></ion-icon> Submit Test
+          </button>
+          <br>
+          
+          
+  </ion-content>
+  

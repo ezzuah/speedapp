@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+          <ion-title></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="toggleSearchbar()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar">
+      <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+      [showCancelButton]="shouldShowCancel"
+      (ionCancel)="onCancel($event)"
+      placeholder="Word Definitions">
+    </ion-searchbar>
+    </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+</ion-content>

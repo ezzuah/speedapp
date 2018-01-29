@@ -1,0 +1,184 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+          <ion-title></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="toggleSearchbar()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar">
+      <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+      [showCancelButton]="shouldShowCancel"
+      (ionCancel)="onCancel($event)"
+      placeholder="Word Definitions">
+    </ion-searchbar>
+    </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px"><b>VEGETABLES</b></p>
+
+
+  <p align="justify">The definition of the word <i style="color:blue">vegetable</i> is
+  traditional rather than scientific. Therefore the usage of the word vegetable is
+  somewhat arbitrary and subjective, as determined by individual cultural customs.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Generally speaking, an herbaceous plant or plant part which is
+  regularly eaten as unsweetened or salted food by humans is considered to be a
+  vegetable. Mushrooms, though belonging to the biological kingdom Fungi, are also
+  generally considered to be vegetables.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Nuts, seeds, grains, herbs, spices and culinary fruits are usually
+  not considered to be vegetables, even though all of them are edible parts of plants. In
+  general, vegetables are regarded by cooks as being suitable for <i style=
+  "color:blue">salted</i> <i style="color:blue">dishes</i>, rather than <i style=
+  "color:blue">sweet dishes</i>. Vegetables might be eaten raw or cooked.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">TOMATO PRODUCTION</b><br /></p>
+
+  <p align="justify">The <b style="color:crimson">tomato</b> (<i style=
+  "color:blue">Solanum lycopersicum</i>) is an herbaceous, usually sprawling plant,
+  similar to its close cousins, chili pepper and eggplant. It is a perennial, but often
+  grown as an annual.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">It grows, reaching to 1 to 3m in height, with a weak, woody stem
+  that often vines over other plants. The tomato is grown worldwide for its edible
+  fruits, with thousands of cultivars (varieties) having varying fruit types, and optimum
+  growth in differing growing conditions.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The most widely grown commercial tomatoes tend to be in the
+  5&ndash;6&nbsp;cm diameter range. Most cultivars produce red fruit; but a number of
+  cultivars with yellow, orange, pink, purple, green, or white fruit are also available.
+  Multicolored and striped fruit can also be quite striking.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Environmental Requirement</b><br /></p>
+
+  <p align="justify">Tomato does well in a well drained sandy loam soil rich in organic
+  matter content. They require an annual rainfall of 7000 to 1200 mm distributed evenly.
+  The optimum temperature range is between 14oC to 30oC.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Land Preparation and Planting</b><br /></p>
+
+  <p align="justify">The land must be cleared first. Tomato may be planted on ridges or
+  flat beds. Planting distance is ranges from 80 x 80 to 100 x 100 depending on variety
+  planted. The number of seeds per hole is 1 to 2. Planting is done to meet the beginning
+  of the rains.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Post Planting Operations</b><br /></p>
+
+  <p align="justify">Weed must be controlled to avoid competition for nutrients plants
+  and weeds. Since tomatoes are sprawling plants, stakes must be provided to give them
+  upright posture and prevent fruits from touching the ground. Fertilizer may be applied
+  twice, that is, before planting and at flowering stage.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Diseases and Control</b><br /></p>
+
+  <p align="justify"><b style="color:crimson">Tobacco mosaic virus</b>: It can be a
+  serious disease of tomatoes. There are several strains of the virus, some of which are
+  generally known as tomato mosaic.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/veg1.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Severely affected plants are stunted, yields may be reduced by as
+  much as 25 per cent and affected fruit may be unmarketable. Leaves of affected plants
+  turn light and dark green or yellowish&ndash;green.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Green and yellowish&ndash;red mottling or rings appear on the fruit
+  with sunken dark brown spots [Picture]. Internal browning of fruit can occur as well.
+  Tobacco mosaic is well noted for being highly infectious. For example, it has been
+  shown to persist in tomato root debris at a depth of 120 cm for at least two years.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The virus is easily spread when infected and healthy plants are
+  handled together. This virus can easily be carried into the crop on clothing, tools and
+  stakes. Tobacco mosaic is difficult to control. If a range of control measures is
+  carried out effectively, the incidence of mosaic in crops should be significantly
+  reduced.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Altenaria</b><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/veg2.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Tomato curly top</b>: The disease is caused
+  by virus&#8213;<i style="color:blue">Beet Curly Top Virus</i>. Leaves of infested
+  plants are dwarfed, crinkled, rolled inward, and cupped upward.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/veg3.jpg" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Veins on the underside of leaves usually have a purple
+  discoloration, may be roughened, and often produce swellings or spine&ndash;like
+  outgrowths. Roots are stunted. Young infected seedlings mat die. This disease is
+  transmitted (vectored) from infected to healthy plants by a small insect called the
+  beet leafhopper.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">There are no chemicals available for controlling the virus, but
+  several cultural practices can help reduce or eliminate infections. Although varieties
+  that are resistance to curly top are not known, farmers may benefit from trying to
+  identify cultivars that are somewhat tolerant of the virus. Good sanitation practices,
+  such as weed and insect control, are also essential in limiting the occurrence of the
+  disease.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Pests of Tomato</b><br /></p>
+
+  <p align="justify">Some common tomato pests are worms (cutworm and hornworm), aphids,
+  whiteflies, flea beetles and mite.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/veg4.jpg" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+</ion-content>

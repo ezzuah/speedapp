@@ -1,0 +1,873 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>ELECTRICITY</b></p>
+  
+    <p align="justify">The slight crackling sound that is heard when a dry hair is brushed
+    and the tendencies of thin sheets of paper to resist separation are examples of the
+    phenomenon of <i style="color:blue">electrification</i>. <b style=
+    "color:crimson">Electrification</b> is the process of producing an electric charge on
+    an object. Charged objects may attract small bits of cork, papers, or other lightweight
+    materials.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Since the electric charge is confined to the object, it is said to
+    be <i style="color:blue">electrostatic charge</i>. <b style=
+    "color:crimson">Electrostatics</b> <i style="color:blue">is electric charge at rest or
+    static electricity</i>. The <b style="color:crimson">law of electrostatics</b> states
+    that like charges repel each other and unlike charges attracts each other.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Static electricity is usually produced by friction between two
+    surfaces in intimate contact. On the other hand, if an electric charge is in motion
+    <b style="color:crimson">current electricity</b> is produced. A solid material that
+    allows the flow of <i style="color:blue">electric current</i> through it is known as a
+    <b style="color:crimson">conductor</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A substance whose aqueous solution conducts electric current is
+    known as <b style="color:crimson">electrolyte</b>. Examples of Electrolytes are salts,
+    acids and bases. Materials that do not allow the flow of electricity through them are
+    known as <b style="color:crimson">insulators</b>. Examples of insulators are glass,
+    plastics, etc. Our discursion will be limited to the second type of electricity,
+    <i style="color:blue">current electricity</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Current Electricity</b><br /></p>
+  
+    <p align="justify">Electric current is generated from different forms of energy. The
+    common sources are the <b style="color:crimson">cells</b> (<i style="color:blue">solar
+    and electrochemical</i>) and generators.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electrochemical Cell</b> <i style=
+    "color:blue">(simply called cell)</i>; this is a device that transforms chemical energy
+    into electrical energy. Electrochemical cells produce electricity through chemical
+    reactions. During the reaction, electric current is produced as a result of the
+    movement of charged bodies (electrons and ions) within the cell. There are two types of
+    Electrochemical cells. They are:<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Primary cells; not rechargeable. Examples are watch batteries, Sunwat battery,
+      etc.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Secondary cells; are rechargeable. Examples are car battery, cell phone
+      batteries, etc.<br />
+  
+        <p align="justify"></p>
+      </li>
+    </ol><br />
+  
+    <p align="justify"><b style="color:crimson">Generators</b><br /></p>
+  
+    <p align="justify">This is a device that converts mechanical energy into electrical
+    energy. It operates on the fact that when a conductor is moved across a magnetic field,
+    electric potential is induced.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This induced potential causes electric current (current for short)
+    to flow in the conductor, only if it is a part of a closed circuit.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note that current flows in closed circuits only. The major
+    components of the generator are a <i style="color:blue">field magnetic</i> to produce
+    the required magnetic field; and a <i style="color:blue">conductor</i> (armature) to
+    conduct the generated current to an external circuit.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A shaft is connected to the armature to give it the required
+    movement in the magnetic field by rotation. Hydroelectric, nuclear reactors, wind and
+    thermal electric plants employ the use of generators produce electrical energy.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="248" height="220" src="http://speedapp.ididev.com/apps/img/ecg1.jpg" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Under <b style="color:crimson">hydroelectric power</b> generation,
+    water is allowed to fall from a height (dam) onto a turbine. A shaft connects the
+    turbine to an armature which is placed in a magnetic field. The weight of the falling
+    water turns the turbine. The armature rotates as a result of that to generate
+    electricity.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Nuclear reactors and thermal plants</b>
+    provide heat to boil water. Steam under high pressure is produced from the boiling
+    water. This is used to turn a turbine which is connected to an armature through a
+    shaft, just like the hydroelectric.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Wind power</b> generation is much like the
+    hydro. Here, wind is used to turn the turbine instead of water. The processes
+    thereafter are the same as the hydro power generation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Solar cells</b><br /></p>
+  
+    <p align="justify">This is a device that converts radiant energy from the sun into
+    electrical energy. It is made up of a glass tube with a vacuum created in it. The
+    surface of the glass tube is coated with a photosensitive material.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">When light rays from the sun falls on the photosensitive material,
+    electrons in the material absorbs certain amount of energy from the sun rays. They then
+    jump off from the surface of the material unto the collector. This movement of
+    electrons closes the circuit. And hence, current flows through the circuit.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electric current</b><br /></p>
+  
+    <p align="justify">When two bodies, one positively charged and another negatively
+    charged are joined with a conductor (copper wire), electric current will flow from the
+    positive body to the negative. The electric current constitutes a flow of charged
+    bodies in a conductor.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electric current</b> is then defined as
+    <i style="color:blue">the</i> <i style="color:blue">rate of flow of electrical charge
+    pass a given point in a conductor</i>. The SI unit of electric charge is <b style=
+    "color:crimson">coulombs</b>. If the time rate for the charge(s) to flow is measured in
+    seconds, then, electric current is given as <b style="color:crimson">C/s</b>, coulombs
+    per second. The SI unit of electric current is the <b style="color:crimson">Ampere
+    (A)</b>.</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>Mathematically <b>I</b> =</td>
+  
+        <td>
+          <b>Q<br /></b>
+          <hr />
+          <b>t</b>
+        </td>
+  
+        <td>;</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">where I = electric current,<br />
+    <br />
+    Q = quantity of charge and<br />
+    <br />
+    t = time</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">From the above equation, it follows that the quantity of charge that
+    will flow within a time, t seconds, can be found as:<br />
+    <br />
+    <b>Q = I x t</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electric Circuit</b><br /></p>
+  
+    <p align="justify">An electrical circuit should consist of a power source (cell),
+    switch, load (capacitor, resistor, etc) and a conductor to connect all those devices.
+    No current flows through the circuit when it is opened as shown in figure on the next
+    page, (a). If the circuit is closed as shown in (b), current begins to flow through the
+    circuit. The <i style="color:blue">switch</i> is used to brake or close a circuit.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/ecg2.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/ecg2a.png" alt=
+    "" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Series and Parallel
+    Connections</b><br /></p>
+  
+    <p align="justify">Electrical devices may be connected in either series or parallel.
+    The diagrams be shows the effect of a particular connection on a device.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Cells in series</b><br /></p>
+  
+    <p align="justify"><i style="color:blue">In series connection, a single connection path
+    is provided for current conduction</i>. If cells are connected in series, the effective
+    voltage of the group is equal to the sum of the voltages across the terminals of
+    individual cells.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="269" height="227" src="http://speedapp.ididev.com/apps/img/ecg3.png" alt="" /></p>
+  
+    <p align="left"><br />
+    Vt = 1.5 + 1.5 + 1.5 + 1.5 = 6V<br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Cells in parallel</b><br /></p>
+  
+    <p align="justify"><i style="color:blue">In parallel connection, two connection paths
+    are provided for current conduction</i>. If cells are connected in parallel, the
+    effective voltage of the group is equal to the voltage of one cell. Thus, the total
+    voltage, Vt, of the group of cells is 1.5V. However, the life span of the cells is
+    equal to the sum of the life span of each cell in the connection. In this example, the
+    life span of the cells will triple.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/ecg4.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Resistors in series</b><br /></p>
+  
+    <p align="justify">When resistors are connected in series, the total resistance offered
+    by the group is the sum of the resistance of the individual resistors in the group.
+    Therefore, the total resistance (Rt) of the three resistors is given below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="285" height="131" src="http://speedapp.ididev.com/apps/img/ecg5.png" alt="" /></p>
+  
+    <p align="left"><br />
+    Rt = 2 + 2 + 2 = 6&#8486;<br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Resistors in parallel</b><br /></p>
+  
+    <p align="justify">When resistors are connected in parallel, the total resistance (Rt)
+    offered by the group is given as:</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="316" height="88" src="http://speedapp.ididev.com/apps/img/ecg6.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <table>
+      <tr>
+        <td>
+          1<br />
+          <hr />
+          Rt
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          1<br />
+          <hr />
+          2
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          2
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          2
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          3<br />
+          <hr />
+          2
+        </td>
+  
+        <td>;</td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><b style="color:crimson">Ohms Law</b><br /></p>
+  
+    <p align="justify">The German physicist, Georg Simon Ohm, proposed a theory which now
+    known as the Ohm&rsquo;s law. The law states that, <i style="color:blue">the current
+    passing through a metallic conductor at constant temperature is proportional to the
+    potential difference (Voltage) across its terminals (ends)</i>.<br /></p>
+  
+    <p align="justify">From the figure below, if a potential difference V is connected
+    across the ends of a wire at point 1 and 2. And a current I flows through the circuit,
+    then, Ohm&rsquo;s law can be written as:<br /></p>
+  
+    <p align="justify"><img width="193" height="117" src="http://speedapp.ididev.com/apps/img/ecg7.png" alt="" /></p>
+  
+    <p align="justify"><b>V &prop; I;<br />
+    <br /></b> replacing '<b>&prop;</b>' with '<b>=</b><br />
+    <br />
+    it follows that V = = KI;<br />
+    <br />
+    where K = proportionality constant.</p>
+  
+    <p align="left"><br />
+    But K = R which is the resistance in the circuit and a constant. This implies
+    that<br />
+    <br />
+    <b><u>V = IR</u></b><br />
+    <br />
+    This equation is the <b>Ohm&rsquo;s Law</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>WORKED EXAMPLES</b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+  
+    <p align="justify">A potential difference of 12volts is applied across a circuit.<br />
+    <br />
+    (a) What is the current in the circuit if the resistance is 30&#8486;?<br />
+    <br />
+    (b) What is the current in the circuit if the resistance is doubled?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution<br /></u></p>
+  
+    <p align="justify"></p>
+  
+    <ol type="a">
+      <li>V = IR; solving for I
+  
+        <p align="justify"></p>
+  
+        <table>
+          <tr>
+            <td>I =</td>
+  
+            <td>
+              V<br />
+              <hr />
+              R
+            </td>
+          </tr>
+        </table>
+  
+        <table>
+          <tr>
+            <td>I =</td>
+  
+            <td>
+              12<br />
+              <hr />
+              30
+            </td>
+          </tr>
+        </table><u><br />
+        I = 0.4 amps.</u><br />
+        <br />
+        <br />
+      </li>
+  
+      <li>If the resistance is doubled, we should expect the current to reduce.
+  
+        <p align="left"></p>
+  
+        <table>
+          <tr>
+            <td>I =</td>
+  
+            <td>
+              12<br />
+              <hr />
+              60
+            </td>
+          </tr>
+        </table><u><br />
+        I = 0.2 amps</u>
+      </li>
+    </ol>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/ecg8.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/ecg9.png" alt=
+    "" /></p>
+  
+    <p align="justify">(a) Effective resistance in (i).</p>
+  
+    <p align="left">(b) Effective resistance in (ii).</p>
+  
+    <p align="left">(c) Current in (i)</p>
+  
+    <p align="left">(d) Current in (ii)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b><u>Solution</u></b></p>
+  
+    <p align="justify">(a) The resistors in (i) are connected in parallel therefore the
+    effective resistance is given as</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>
+          1<br />
+          <hr />
+          Rt
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          1<br />
+          <hr />
+          R<small>1</small>
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          R<small>2</small>
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          R<small>3</small>
+        </td>
+  
+        <td>;</td>
+      </tr>
+    </table><br />
+  
+    <table>
+      <tr>
+        <td>
+          1<br />
+          <hr />
+          Rt
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          1<br />
+          <hr />
+          50
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          50
+        </td>
+  
+        <td>+</td>
+  
+        <td>
+          1<br />
+          <hr />
+          50
+        </td>
+  
+        <td>;</td>
+      </tr>
+    </table><br />
+  
+    <table>
+      <tr>
+        <td>
+          1<br />
+          <hr />
+          Rt
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          3<br />
+          <hr />
+          50
+        </td>
+      </tr>
+    </table><br />
+    <u>R<small>t</small> = 16.7 &#8486;.</u>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">(b) The resistors in (ii) are connected in series, therefore the
+    effective resistance is<br /></p>
+  
+    <p align="justify">R<small>t</small> = R<small>1</small> + R<small>2</small> +
+    R<small>3</small><br /></p>
+  
+    <p align="justify">&rArr; R<small>t</small> = 50 + 50 + 50<br /></p>
+  
+    <p align="justify">Rt = 150</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">(c) The current in (i)</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>I =</td>
+  
+        <td>
+          V<br />
+          <hr />
+          R<small>t</small>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>.</td>
+      </tr>
+  
+      <tr>
+        <td>&rArr; I =</td>
+  
+        <td>
+          24<br />
+          <hr />
+          16
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><u>I = 1.4 amps.</u></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">(d) The current in (ii)</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>I =</td>
+  
+        <td>
+          V<br />
+          <hr />
+          R<small>t</small>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>.</td>
+      </tr>
+  
+      <tr>
+        <td>&rArr; I =</td>
+  
+        <td>
+          24<br />
+          <hr />
+          150
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify"><u>I = 0.16 amp</u></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Dc</b>; this is an electric current that
+    flows in one direction only.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electrolysis</b>; this is the process of
+    passing electric current through an electrolyte or a fused ionic compound and it is
+    accompanied by a chemical change. The current flow in electrolysis is opposite to that
+    of an electrochemical cell.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In electrochemical cell, the cell generates electricity, but in
+    electrolysis, electricity is passed to the <b style="color:crimson">electrolytic
+    cell</b>. Electrolytic cell has the same setup as a simple cell. You can view the
+    Daniel cell <b style="color:crimson">figure 16.2</b> as an example of an electrolytic
+    cell.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Electrode</b>; this is a metal plate in
+    contact with the electrolyte through which electric current passes through to or from
+    the electrolyte.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">ELECTRICAL POWER</b><br /></p>
+  
+    <p align="justify">This is the rate at which electrical energy is generated or
+    dissipated. It is given as<br /></p>
+  
+    <p align="justify"><b>P = Current (I) x Voltage (V)</b></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 3</b><br /></p>
+  
+    <p align="justify">An electric heater is rated 1200W and 240V. What is the current it
+    will draw from a 240 volts supply.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="left">P = IV ; therefore</p>
+  
+    <table>
+      <tr>
+        <td>&rArr; I =</td>
+  
+        <td>
+          P<br />
+          <hr />
+          V
+        </td>
+      </tr>
+  
+      <tr>
+        <td>&rArr; I =</td>
+  
+        <td>
+          1200<br />
+          <hr />
+          240
+        </td>
+      </tr>
+    </table><u>I = 5 amp.</u>
+  
+    <p align="left"><br />
+    <br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="justify"><b style="color:crimson">TRANSFORMER</b><br /></p>
+  
+    <p align="justify">This is a device for changing an alternating voltage from a lower
+    potential to a higher potential or vice&ndash;versa.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="289" height="156" src="http://speedapp.ididev.com/apps/img/ecg10.png" alt="" />
+    <img width="289" height="156" src="http://speedapp.ididev.com/apps/img/ecg11.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In principle, the transformer consists of two coils; the primary and
+    the secondary coils which are electrically insulated from each other and wound on the
+    same iron core.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Electric energy is transferred from the primary coil to the
+    secondary by means of the magnetic flux which is set up in the core iron when an
+    alternating current is applied to the primary coil.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The emf induced in the secondary coil depends on the applied a.c
+    current and the number of turns (wounds) in both the primary and secondary coils.</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td>
+          <b>secondary emf (Vs)</b><br />
+          <hr />
+          <b>primary emf (Vp)</b>
+        </td>
+  
+        <td>=</td>
+  
+        <td>
+          <b>secondary turns (ts)</b><br />
+          <hr />
+          <b>primary turns (tp)</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">A transformer that increases the voltage of an ac source is called a
+    <b style="color:crimson">step&ndash;up transformer.</b> Step&ndash;up transformers have
+    greater number of turns in the secondary coil than in the primary coil. A diagram of a
+    step&ndash;up transformer is shown in figure 16.4 a.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A transformer that reduces voltage is called a <b style=
+    "color:crimson">step&ndash;down transformer.</b> Step&ndash;down transformers have
+    greater number of turns in the primary coil than in the secondary coil. A diagram of a
+    step&ndash;down transformer is shown in figure 16.4 b.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Household Electricity Supply</b><br /></p>
+  
+    <p align="justify">In areas where electricity from a power station is available, it is
+    brought to the house by means of thick electrical cables <b style=
+    "color:crimson">called mains electricity</b>. The electricity is distributed around the
+    house to sockets and electrical appliances are connected to the supply of electricity
+    by pushing plugs into the sockets.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The supply is 240 volts alternating current in most countries.
+    Because the mains electricity is alternating, none of its terminal can be viewed as
+    positive or negative. Therefore, the terminals are viewed as <b style=
+    "color:crimson">live</b> and <b style="color:crimson">neutral</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The neutral wire is connected to earth at the power station and it
+    is at a zero (0) voltage. The live wire is at 240 volts and it <b style=
+    "color:crimson">should never be touched under any circumstance.</b><br /></p>
+  
+    <p align="justify">If a person touches it accidentally, the voltage from the power
+    supply will push a current through him to earth. The current will be larger if his
+    clothes or body is damp and the effect can be <b style="color:crimson">fatal.</b> This
+    effect is called an <b style="color:crimson">electric shock.</b><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Switches</b><br /></p>
+  
+    <p align="justify">A switch is a device that connects or brakes an electrical circuit.
+    A switch in mains circuit is connected so as to disconnect the live terminal of the
+    mains from the appliance when switched off.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="273" height="143" src="http://speedapp.ididev.com/apps/img/ecg12.png" alt="" /><br />
+    (a)<br />
+    <br />
+    <img width="273" height="143" src="http://speedapp.ididev.com/apps/img/ecg13.png" alt="" /><br />
+    (b)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">From figure &lsquo;a&rsquo; above, when the switch is broken; the
+    bulb is not part of the live terminal. This makes it safe to change or work on the
+    bulb. In b, the bulb becomes part of the live terminal and this makes it dangerous to
+    work on the bulb. It is therefore appropriate to connect switches as shown in figure
+    &lsquo;a&rsquo;.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Fuse</b><br /></p>
+  
+    <p align="justify">When electric current flows in a conductor it generates heat. The
+    heat generated depends on the quantity of current flowing in the conductor. Beyond
+    certain current loads, the heat generated melts the conductor.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This principle is used in fuse to protect electrical gadgets from
+    being damage by high electric current. The fuse consists of a thin wire which is made
+    up of metal alloy. When large current that can damage appliances is passed through it,
+    it melts and thus the circuit gets broken. This prevents the large current from getting
+    to the appliance and damaging it.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Earthing</b><br /></p>
+  
+    <p align="justify">Sometimes the live wire can touch the metal frame (outer case) for
+    an appliance such as an electric kettle. This will make the metal be at a potential of
+    240 volts. Anyone touching the metal will receive a shock.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">To avoid this, the metal frame is connected to earth by an extra
+    wire. This extra wire is connected to the metal frame of the appliance and through the
+    plugs and to the earth underneath the house. The connection from the plug to earth may
+    be through a metallic rod driven into the ground underneath the house.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">If the metal part of the appliance is accidentally touches the live,
+    a large current is driven to earth and melts the fuse. This cuts off the supply and no
+    one receives a shock.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Wiring of Main Plugs</b><br /></p>
+  
+    <p align="justify">Plugs vary widely from country to country, but there is a degree of
+    standardisation in colour coding nowadays. The international coding system is shown in
+    figure 16.6</p>
+  
+    <p align="left"></p>
+</ion-content>

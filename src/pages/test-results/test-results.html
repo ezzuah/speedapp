@@ -1,0 +1,46 @@
+
+<ion-header>
+
+    <ion-navbar color="speedapp">
+      <ion-title>Test Results</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    
+      <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4">
+          <tr>
+            <td  colspan="2"><div align="center"><strong><h4>{{test_year}} {{test_subject}} Test Results</h4></strong></div></td>
+          </tr>
+          <tr>
+            <td width="646">&nbsp;</td>
+            <td width="646"><div align="right" class="highlights">
+              <div align="center"><strong>{{total}}/{{total_questions}}</strong></div>
+            </div></td>
+          </tr>
+          <tr>
+            <td colspan="2" bgcolor="#FFFFFF"><div id="score_div"></div></td>
+          </tr>
+          <tr>
+            <td ><div align="center"><strong><h5>Your Answers</h5></strong></div></td>
+            <td align="center"><div align="center" class="highlights">
+              <div align="left"><h5 align="center">Correct Answers</h5></div>
+            </div></td>
+          </tr>
+          <tr *ngFor="let item of results; let i = index">
+            <td valign="top"><strong>{{i + 1}}.</strong> {{item.uanswer}} 
+              <img *ngIf="item.status=='right'" src="assets/imgs/correct.png"  width="20" height="20" /> {{status}}
+              <img *ngIf="item.status=='wrong'" src="assets/imgs/wrong.png"  width="15" height="15" />
+              
+            </td>
+            <td>{{item.answer}}. {{item.main_answer}}</td>
+          </tr>
+      <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+        </table>
+  
+  </ion-content>
+  

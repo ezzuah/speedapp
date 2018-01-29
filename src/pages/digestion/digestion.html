@@ -1,0 +1,184 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+          <ion-title></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="toggleSearchbar()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar">
+      <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+      [showCancelButton]="shouldShowCancel"
+      (ionCancel)="onCancel($event)"
+      placeholder="Word Definitions">
+    </ion-searchbar>
+    </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px"><b>DIGESTION IN MAMMALS</b></p>
+
+
+  <p align="justify">Sometimes we eat mainly because our bellies are light. <i style=
+  "color:blue">When a diet contains adequate amounts of all the necessary nutrients
+  required for healthy growth and activity then that diet is balanced</i>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Some of these nutrients are proteins, carbohydrates, fats, vitamins,
+  mineral salts, etc. After eating, the food is <i style="color:blue">digested</i> before
+  it can serve all those useful purposes. <b style="color:crimson"><i style=
+  "color:blue">Digestion</i></b> deals with how food is converted into absorbable
+  substances by our mammalian body. Just take a careful look at the picture below.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/dig1.jpg" alt="" name="front_image" id=
+  "front_image" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The food we eat is taken in (<b style="color:crimson">ingested</b>)
+  through the <b style="color:crimson">mouth</b>, or oral cavity. The major function of
+  the mouth is to physically digest the food.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">That is, our teeth grind and tear the food into chunks or balls
+  small enough to be swallowed. Besides this, the food is being moistened by the
+  <b style="color:crimson">saliva</b> produced by the three pairs of <b style=
+  "color:crimson">salivary glands</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The saliva contains <b style="color:crimson"><i style=
+  "color:blue">mucin</i></b> which makes the food slippery so that it can be swallowed
+  easily. Saliva also contains an enzyme called <b style="color:crimson">salivary
+  amylase</b> which begins the chemical digestion of food, especially starch.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">From the mouth, the moistened, slippery and slightly digested food
+  passes through the <b style="color:crimson">pharynx</b> (throat) and into a long tube
+  called the <b style="color:crimson">esophagus</b> ( also oesophagus). As the esophagus
+  transports the food, it also adds a chemical called <i style="color:blue">mucus</i> to
+  it thereby facilitating the digestion process.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Food is moved at this point and at other parts of the digestive
+  system by a series of muscle contractions and relaxations called <b style=
+  "color:crimson">peristalsis.</b> The food next moves to the stomach. The <b style=
+  "color:crimson">stomach</b> is a thick&ndash;walled, J&ndash;shaped organ that lies on
+  the left side of the body beneath the diaphragm.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The stomach is a continuation of the esophagus above and the
+  duodenum below. The stomach stores food and can expand to accommodate large amounts of
+  it. In fact, protein digestion starts in the stomach.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img width="290" height="199" src="http://speedapp.ididev.com/apps/img/dig2.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Gastric glands</b> form the lining in the
+  stomach wall. Gastric glands secretes a fluid called <b style="color:crimson">gastric
+  juice</b> into the stomach.Gastric juice contains hydrochloric acid (HCl) and a protein
+  called <b style="color:crimson">pepsinogen</b>. The HCl gives gastric juice a pH
+  between one and two.This pH level changes the pepsinogen into an enzyme called
+  <b style="color:crimson">pepsin</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Pepsin then converts proteins into amino acids. By the time this
+  phase of digestion is completed, food in the stomach is now an acidic liquid called
+  <b style="color:crimson">chyme</b>. The chyme then goes into the small intestine.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The first part of the small intestine is the <b style=
+  "color:crimson">duodenum</b> where the food passes into the jejenum. From the <b style=
+  "color:crimson">jejenum</b>, the food passes into the last and longest portion of the
+  small intestine called the <b style="color:crimson">ileum</b>.Note that the pancreas
+  and gall bladder, though, are not part of the alimentary canal but are crutial to the
+  digestion process.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/dig3.jpg" alt="" name="front_image" width="373"
+  height="254" id="front_image" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The <b style="color:crimson">pancreas</b> releases (secretes)
+  several enzymes: <b style="color:crimson">Lipase</b> which breaks fat molecules into
+  fatty acids and glycerol. <b style="color:crimson">Pancreatic amylase</b> changes
+  starch to maltose (a white crystalline sugar formed during the digestion of starch) and
+  <b style="color:crimson">trypsin</b> which breaks down undigested proteins in the
+  stomach.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The <b style="color:crimson">bile</b> is a greenish substance
+  produced by the liver. The <b style="color:crimson">gall bladder</b> is an organ which
+  stores bile. The bile contains <b style="color:crimson">bile salts</b> which breaks up
+  fats in the intestine. This process of fat breakdown is called <b style=
+  "color:crimson">fat emulsification</b>. Note that bile is not an enzyme.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">At this point, fingerlike projections on the intestinal lining of
+  the small intestine called <b style="color:crimson">villi</b>absorbs glucose and amino
+  acids into the <i style="color:blue">circulatory system</i> while the fats are absorbed
+  into the <i style="color:blue">lymphatic system</i> (see <i style=
+  "color:blue">Transport in Mammals</i>).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">This means that in the small intestine, all complex food substances
+  are converted into simpler forms. Undigested material and water are passed from the
+  small intestine to the <b style="color:crimson">large intestine</b>, or <b style=
+  "color:crimson">colon</b>.</p>
+
+  <p align="left"><br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/dig4.jpg" alt="" name="front_image" width="467" height="330" id=
+  "front_image" /><br /></p>
+
+  <p align="justify">The large intestine is divided into three sections the <b style=
+  "color:crimson">ascending</b>, <b style="color:crimson">transverse</b> and <b style=
+  "color:crimson">descending</b> colons (refer from picture on page one).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><i style="color:blue">No digestion takes place in the large
+  intestine</i>. The major function of the large intestine is to <i style=
+  "color:blue">absorb</i> the water from the undigestible or undigested materials. This
+  causes the waste matter to become a solid. Solid waste called <b style=
+  "color:crimson">feces</b> is stored in the <b style="color:crimson">rectum</b> and is
+  <i style="color:blue">egested</i> ( eliminated from the body) through the <b style=
+  "color:crimson">anus</b>.</p>
+
+</ion-content>

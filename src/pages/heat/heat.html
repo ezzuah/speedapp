@@ -1,0 +1,240 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>HEAT</b></p>
+  
+    <p align="justify">Before the middle of the nineteenth century, heat was thought to be
+    an invisible, weightless substance called <i style="color:blue">caloric</i>. After many
+    careful experiments from James Prescott Joule, he noticed that <b style=
+    "color:crimson">heat</b> <i style="color:blue">is a form of energy</i>. The SI unit of
+    heat is the Joule (J).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">When two bodies of different temperatures are brought into contact,
+    energy flows from the hotter body to the colder body until their temperatures are
+    equal. Simply put, heat flows from a region of higher temperature to a region of lower
+    temperature.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Sources of heat energy</b><br /></p>
+  
+    <p align="justify">Since heat is a form of energy, most of our sources of heat are
+    examples of energy transformation (conversion of other forms of energy) into heat. The
+    most important ones are:</p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Solar energy; heat from the sun.
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Nuclear energy; heat generated from nuclear reactions.
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Geothermal energy; heat within the earth crust, such as molten lava from
+      volcanoes.
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Friction; heat generated from resistance against sliding.
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Exothermic chemical reaction; this is the heat generated from chemical reaction.
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Burning of fuels; this is also a form of chemical reaction known as combustion.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol><b style="color:crimson">Thermal expansion</b><br />
+  
+    <p align="justify">With few exceptions, substances (solid, liquid or gases) expand when
+    heated and contracts when cooled. When the temperature of substance is raised, its
+    thermal energy increases. The increase in thermal energy increases the amplitude of
+    vibrations of the atoms or molecules of the substance.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">As a result, the atoms and molecules move to equilibrium positions
+    slightly further apart than before, and the solid expands in all directions. When equal
+    volumes of gas, liquid and solid are heated, the gas expands more than the other two
+    and the liquid also expands than the solid.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Anomalous Expansion of Water</b><br /></p>
+  
+    <p align="justify">Most substances expand as they are being heated. Water is an
+    exception of this general trend of heating and expansion. When water at a temperature
+    below 0<sup>o</sup>C is heated, it expands steadily until it gets to 0<sup>o</sup>C. It
+    begins to contract between the temperature ranges from 0<sup>o</sup>C to 4<sup>o</sup>C
+    and expands steadily again at temperatures greater than 4<sup>o</sup>C. In that sense,
+    water has its highest density at 4<sup>o</sup>C.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Heat Transfer</b></p>
+  
+    <p align="justify">There are three modes of heat transfer. They are:<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>
+        <b style="color:crimson">Conduction</b> is a mode of heat transfer where heat is
+        passed on from one particle to the other without any movement of the
+        particles.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Convection</b> is a mode of heat transfer where the heated
+        particle of a substance moves to a different position within the substance. This
+        mode of heat transfer is found in fluids (liquid and gases). The cooling system of
+        an engine, ventilation of room, refrigeration, sea and land breezes works on the
+        principle of convection currents.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>
+        <b style="color:crimson">Radiation</b> is a mode of heat transfer that does not
+        require any material medium.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>The picture below shows the three modes of heat transfer. The water gets heated
+    through convection. As the water in contact with the base of the saucepan gets warm it
+    expands. When the water expands, its volume increases but its weight remains the same.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/heat1.jpg" alt="" width="302" height="200" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Meaning its density has decreased, therefore it rises. Cold water
+    replaces the risen warm water. This movement of the water molecules results in uniform
+    temperature distribution in the water. The handle of the saucepan gets hot through
+    conduction and your hands feel the heat through radiation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Land and Sea Breezes</b><br /></p>
+  
+    <p align="justify">During the day, the land gets warmer than the sea. Therefore, the
+    air that gets in contact with the ground gets warm and then rises. Cold air from the
+    sea comes to land to replace the rising warm air whilst air from the high atmosphere
+    comes to replace the cold air that moved to the land. This movement of warm and cold
+    air forms <b style="color:crimson">Sea Breeze.</b><br />
+    <img src="http://speedapp.ididev.com/apps/img/heat2.jpg" width="392" height="365" alt="" /><br />
+    (a) Sea breeze<br /></p>
+  
+    <p align="justify"><b style="color:crimson">Land Breeze</b> occurs at night. At night,
+    the land is not heated by the sun; hence it cools down faster than the sea. The air in
+    contact with the sea gets warmer and then rises.</p>
+  
+    <p align="left"><br />
+    <img src="http://speedapp.ididev.com/apps/img/heat3.jpg" alt="" width="412" height="355" /><br />
+    (b) Land Breeze<br />
+    <br /></p>
+  
+    <p align="justify">Cold air from the land moves in to take the place of the risen warm
+    air whilst air from the high atmosphere replaces the cold air that moved to the sea.
+    This movement also forms land breeze.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">The Thermos Flask</b><br /></p>
+  
+    <p align="justify">The thermos flask is designed to maintain the temperature of its
+    constituents. Heat losses by all the three modes of heat transfer are reduced to a
+    possible minimum level.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Heat losses by<br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Radiation is prevented by the silvered surface of the glass, because shiny
+      surfaces reflect greater part of the heat it receives.<br />
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Conduction and convection which require a material medium is reduced by the
+      vacuum.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Note that bright surfaces or objects reflects greater amount of radiant heat that
+    comes to them than a dark surface. That is why you feel the radiant heat of the sun
+    more when you are in a dark shirt than you would when you are in a brighter one.
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color: crimson">An Experiment to show that dark surfaces
+    absorb radiant heat more than bright surfaces</b></p>
+  
+    <p align="justify">Candle wax is used to hold two corks to dark and bright metallic
+    surfaces respectively so that they adhere. A candle is lighted and placed between the
+    two surfaces as shown the in figureS below.<br />
+    <img alt="" src="http://speedapp.ididev.com/apps/img/heat4.png" /> <img alt="" src="http://speedapp.ididev.com/apps/img/heat5.png" /><br />
+    <br />
+    (a). The distance between the lighted candle and the two surfaces must be equal. The
+    cork on the dark surface falls first because the dark surface absorbs radiant heat
+    better and causes the wax to melt.</p>
+</ion-content>

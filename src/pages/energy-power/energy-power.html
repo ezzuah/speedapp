@@ -1,0 +1,536 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+          <ion-title></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="toggleSearchbar()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar">
+      <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+      [showCancelButton]="shouldShowCancel"
+      (ionCancel)="onCancel($event)"
+      placeholder="Word Definitions">
+    </ion-searchbar>
+    </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+      <p align="center" style="color:black;font-size: 26px"><b>WORK, ENERGY AND POWER</b></p>
+
+    
+      <p style="word-wrap : break-word;"></p>
+    
+      <p align="justify">In everyday language we use the word <i style="color:blue">work</i>
+      to describe any muscular or mental effort we expend in any activity. In physics, the
+      word <i style="color:blue">work</i> has a different meaning. If a force acts on a body
+      and moves through a distance, then we say work has been done in the scientific
+      sense.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">It follows that, if you carry a 100kg load on your shoulder without
+      moving, then no work has been done. You only exerted an upward force to counteract the
+      downward force the weight of the body exerts.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Work</b> is defined as the product of force
+      and distance and the SI unit is the <b style="color:crimson">Joule</b> (J). Work is
+      measured by two factors:<br /></p>
+    
+      <p align="justify"></p>
+    
+      <ol>
+        <li>The magnitude of the applied force and<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>The distance the load is moved through by the applied force.
+    
+          <p align="left"><br /></p>
+    
+          <p align="justify"></p>
+        </li>
+      </ol>Mathematically, Work is defined as:<br />
+    
+      <p align="justify"><b>W = Fs</b>;</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">where F = applied force and s = distance moved through by body.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+    
+      <p align="justify">Calculate the work done by pushing a body through a distance of 8m
+      by applying a force of 16N. Neglect friction.<br /></p>
+    
+      <p align="justify"><u>Solution<br /></u></p>
+    
+      <p align="justify">W = Fs W = 16 x 8<br /></p>
+    
+      <p align="justify"><u>W = 128J</u></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+    
+      <p align="justify">Calculate the minimum force F that should be applied to raise the
+      80N block.<br /></p>
+    
+      <p align="justify"><img src="img/work1.png" alt="" /></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><u>Solution<br /></u></p>
+    
+      <p align="justify">Work on the load = Fs = 80 x 2 = 160J<br /></p>
+    
+      <p align="justify">Similarly work to be done = Fs;<br />
+      <br />
+      And that should at least equal the work on the load (160J)<br /></p>
+    
+      <p align="justify">160 = F x 4.1</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>&rArr; F</td>
+    
+          <td>=</td>
+    
+          <td>
+            160<br />
+            <hr />
+            4.1
+          </td>
+        </tr>
+      </table><br />
+    
+      <p align="justify"><u>F = 39.02N</u></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">From the above example, we note that the weight of the block is 80N.
+      However, a force of 39N could lift it. This shows that when the force required to do
+      some amount of work is greater than what can be applied, increase in distance or point
+      of application of the force can be use to compensate the difference between the
+      forces.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Energy</b><br /></p>
+    
+      <p align="justify">This is defined as the ability to do work. Energy has units just as
+      work which is the Joule.<br /></p>
+    
+      <p align="justify"></p>
+    
+      <ol>
+        <li>Kinetic energy; this is the energy possessed by a moving body.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Potential energy; this is the energy possessed by a body by virtue of its
+        height.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Thermal energy; energy associated with heat generation or transfer.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Sound energy; this is in the form of vibrations from a sound source example loud
+        speaker.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Nuclear energy; the energy associated with the fusion (uniting) or fission
+        (splitting) of atomic nucleus.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Electrical energy; this is the energy generated from electrical sources.<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>Light energy; energy given off by a luminous body.
+    
+          <p align="left"><br /></p>
+    
+          <p align="justify"></p>
+        </li>
+      </ol><b style="color:crimson">Transformation Of Energy</b><br />
+    
+      <p align="justify">The total energy of the earth is constant. This means that energy
+      can not be created or destroyed but it is transformed into other forms. For example,
+      electrical energy that comes from Akosombo into our PC&rsquo;s is converted into sound,
+      heat and light energies. The principle of <b style="color:crimson">conservation of
+      energy</b> states that <b style="color:crimson">the total energy of a system remains
+      constant.</b></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Mechanical Energy</b><br /></p>
+    
+      <p align="justify">This is in two forms. They are <i style="color:blue">Kinetic</i> and
+      <i style="color:blue">Potential energy.</i><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Kinetic;</b> this is the <i style=
+      "color:blue">energy</i> possessed by a body by virtue of its motion. It is defined
+      mathematically as;<br />
+      <br /></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td><b>K. E</b></td>
+    
+          <td><b>=</b></td>
+    
+          <td>
+            <b>1</b><br />
+            <hr />
+            <b>2</b>
+          </td>
+    
+          <td><b>mv<sup>2</sup></b></td>
+        </tr>
+      </table><br />
+      where m = mass and v = velocity
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">The greater the speed and/or mass of a body the greater its kinetic
+      energy. This can be seen practically by analyzing these scenarios. It is obvious that
+      the damage that will be caused by a heavy truck that runs into a wall will be greater
+      than that which will be caused by a lighter vehicle traveling at the same speed.
+      Likewise, the damage that will be caused by two different vehicles with the same masses
+      but travelling with different speeds will not be the same.</p>
+    
+      <p align="left"></p>
+    
+      <p align="justify">Note that the damage that will be caused by a moving body is
+      proportional to its kinetic energy.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Example 3</b><br /></p>
+    
+      <p align="justify">A ball of mass 2kg is rolled on the ground with a speed of 3.5m/s.
+      Calculate the kinetic energy of the body.<br /></p>
+    
+      <p align="justify"><u>Solution<br /></u></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td><b>K. E</b></td>
+    
+          <td><b>=</b></td>
+    
+          <td>
+            <b>1</b><br />
+            <hr />
+            <b>2</b>
+          </td>
+    
+          <td><b>mv<sup>2</sup></b></td>
+        </tr>
+      </table><br />
+      M = 2kg and v = 3.5m/s<br />
+      <br />
+    
+      <table style="text-align: center">
+        <tr>
+          <td>K. E</td>
+    
+          <td>=</td>
+    
+          <td>
+            1<br />
+            <hr />
+            2
+          </td>
+    
+          <td>x 2 x (3.5)<sup>2</sup></td>
+        </tr>
+      </table><br />
+      <u>&rArr; K. E = 12.25J</u>
+    
+      <p align="justify"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Example 4</b><br /></p>
+    
+      <p align="justify">A bullet of mass 20g travels with a speed of 720km/h. Calculate the
+      kinetic energy of the body.<br /></p>
+    
+      <p align="justify"><u>Solution<br /></u></p>
+    
+      <p align="justify">m = 100g, converting to SI unit<br />
+      <br />
+      1000g &equiv; 1Kg then;<br /></p>
+    
+      <p align="justify">100g = 0.1kg (just divide each side by ten)</p>
+    
+      <p align="justify">v = 720km/h, converting to SI unit<br />
+      <br />
+      1km &equiv; 1000m then,<br />
+      <br />
+      720km = 1000 x 720m (multiply each side by 720)<br />
+      <br />
+      And 3600sec &equiv; 1hr; therefore</p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>km/hr into m/s</td>
+    
+          <td>=</td>
+    
+          <td>
+            1000 x 720<br />
+            <hr />
+            3600
+          </td>
+        </tr>
+      </table><br />
+    
+      <p align="justify">v = 200m/s</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>K. E</td>
+    
+          <td>=</td>
+    
+          <td>
+            1<br />
+            <hr />
+            2
+          </td>
+    
+          <td>x 0.1 x (200)<sup>2</sup></td>
+        </tr>
+      </table><br />
+      <u>K.E = 200J</u><br />
+    
+      <p align="justify"></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Potential energy:</b> This is the energy
+      possessed by a body by virtue of its height.<br /></p>
+    
+      <p align="justify">Potential energy is given as<b style="color:crimson">,</b><br /></p>
+    
+      <p align="justify"><b>P.E. = mgh</b><br /></p>
+    
+      <p align="justify">Where m = mass, g = acceleration due to gravity and h = height.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">Note that the sum of the potential energy and the kinetic energy of
+      a body which is not acted upon by any external force is a constant.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">For example, if a body falls from a shelf 2m from the ground and its
+      mass is 2kg. Let us find the potential energy before it fell and the kinetic energy
+      just before it hit the ground.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">P.E. = mgh = 2 x 9.8 x 2 = 39.2 J; and its</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>K. E</td>
+    
+          <td>=</td>
+    
+          <td>
+            1<br />
+            <hr />
+            2
+          </td>
+    
+          <td>x 2 x (0)<sup>2</sup></td>
+    
+          <td>= 0J</td>
+        </tr>
+      </table><br />
+    
+      <p align="justify">The sum of P.E. and K.E. = 39.2 + 0 = 39.2J<br /></p>
+    
+      <p align="justify">Now the K.E. before it fell, the initial velocity was zero (0m/s)
+      and it falls through a height of 2m. The final velocity can be calculated using the
+      equation below.<br /></p>
+    
+      <p align="justify">V<sup>2</sup> =U<sup>2</sup> + 2as, because the fall is under
+      gravity<br /></p>
+    
+      <p align="justify">&rArr; a = g<br /></p>
+    
+      <p align="justify">and also the distance s = the height h.<br /></p>
+    
+      <p align="justify">Therefore, V<sup>2</sup> = U<sup>2</sup> + 2gh<br /></p>
+    
+      <p align="justify">V<sup>2</sup> = (0)<sup>2</sup> + 2 x 9.8 x 2<br /></p>
+    
+      <p align="justify">V<sup>2</sup> = 39.2</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>K. E</td>
+    
+          <td>=</td>
+    
+          <td>
+            1<br />
+            <hr />
+            2
+          </td>
+    
+          <td>x 2 x (39.2)<sup>2</sup></td>
+    
+          <td>= 0J</td>
+        </tr>
+      </table><br />
+      note that 39.2 was not squared because that is v<sup>2</sup><br />
+    
+      <p align="justify">K. E. = 39.2J;<br /></p>
+    
+      <p align="justify">the P.E. = mgh = 2 x 9.8 x 0 = 0J<br /></p>
+    
+      <p align="justify">The sum of P.E. and K.E. = 0 + 39.2 = 39.2J<br /></p>
+    
+      <p align="justify">The above calculation has proved that the Total Mechanical energy of
+      a body = K.E. + P.E.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">POWER</b><br /></p>
+    
+      <p align="justify">This is defined as the rate at which work is done. The SI unit is
+      Watt (J/s).</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">Mathematically, it is given as</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td><b>P</b></td>
+    
+          <td>=</td>
+    
+          <td>
+            <b>Work Done</b><br />
+            <hr />
+            <b>time</b>
+          </td>
+        </tr>
+      </table><br />
+    
+      <p align="justify">Let us analyse this practical scenario. Two 15N weight blocks can be
+      carried to a distance of 4m in these two ways.<br /></p>
+    
+      <p align="justify"></p>
+    
+      <ol>
+        <li>A force of 30N will be applied to carry both blocks at the same time to the 4m
+        destination. In which case the work done W = 30N x 4m = 120J<br />
+    
+          <p align="justify"></p>
+        </li>
+    
+        <li>A force of 15N will be applied to carry a single block at a time. In which case
+        the distance to be covered by the blocks will be 4m for each block and it will amount
+        to 8m for both. Therefore the work done in this case W = 15N x 8m = 120J.
+    
+          <p align="left"><br /></p>
+    
+          <p align="justify"></p>
+        </li>
+      </ol>It is obvious that the time that will be used in case 1 will be less than that
+      used in case 2. Therefore, the <i style="color:blue">power</i> or <i style=
+      "color:blue">rate of doing the work</i> in case 1 will be higher than case 2.
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Example 5</b><br /></p>
+    
+      <p align="justify">A body of mass 3kg was acted upon by a force of 6N and moved the
+      body through a distance of 9 meters in 3 seconds. Calculate the power consumed during
+      the process.</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td><b>P</b></td>
+    
+          <td>=</td>
+    
+          <td>
+            <b>Work Done</b><br />
+            <hr />
+            <b>time</b>
+          </td>
+        </tr>
+      </table><br />
+    
+      <p align="justify">and work done = 6 x 9 = 54J</p>
+    
+      <p align="left"></p>
+    
+      <table style="text-align: center">
+        <tr>
+          <td>&rArr; P</td>
+    
+          <td>=</td>
+    
+          <td>
+            54<br />
+            <hr />
+            3
+          </td>
+        </tr>
+      </table><br />
+    
+      <p align="justify"><u>Power = 18W</u></p>
+    
+      <p align="left"></p>
+
+</ion-content>

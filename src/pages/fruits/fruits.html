@@ -1,0 +1,199 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>FRUITS</b></p>
+  <p align="justify">The term 
+  <b style="color:crimson">fruit</b>has many different meanings depending on context. In botany, a fruit is the ripened ovary&mdash;together with seeds&mdash;of a flowering plant. Many foods are botanically fruit but are treated as vegetables in
+  cooking.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These include cucumber, tomato, peas, beans, corn, eggplant, sweet pepper, etc. In the culinary (cuisine) sense, a fruit is usually any sweet tasting plant product associated with seed(s), a vegetable is any less sweet plant
+  product, and a nut any hard, oily, and shelled plant product.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Citrus Production</b>
+    <br />
+  </p>
+  <p align="justify">This is any of the numerous tropical evergreen trees of the genus Citrus species. Citrus are usually thorny and are widely cultivated for their juicy edible fruits. Examples are the sweet orange (Citrus sinensis), sour orange
+  (Citrus aurantium), tangerine (
+  <i style="color:blue">Citrus reticulata</i>), grape (Citrus paradisi), lemon (Citrus limon), lime (Citrus aurantifolia) and shaddock (Citrus grandis).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Environmental (Soil and Climatic) Requirements</b>
+    <br />
+  </p>
+  <p align="justify">Citrus grow well in a deep well drained loamy soil with high organic matter. The temperature range for good growth and productivity is between 14
+  <sup>o</sup>C to 37
+  <sup>o</sup>C with the optimum being 28
+  <sup>o</sup>C. An annual rainfall between 1000 to 1500mm which is distributed evenly over the year is also required.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Planting</b>
+    <br />
+  </p>
+  <p align="justify">All vegetation on the land must be cleared. Since wind has adverse effect on citrus plants, few trees must be left around the land boundary to serve as wind&ndash;break. Planting can be done by seeds, budding or grafting.
+  Planting is mostly done to meet the beginning of the rains. Plant spacing during planting depends on the type of citrus&mdash;spacing for orange is 6m x 8m.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Post Planting Operations</b>
+    <br />
+  </p>
+  <p align="justify">Regular weeding is essential for better plant growth. Weeds can be cleared to a distance of about 2 metres radius from the base of the plant (that is ring weeding). Dead and malformed branches must be pruned (cut off).
+  Fertilizers should be applied at regular intervals.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The interval for fertilizer application will depend on the age of the plant, soil fertility and nature. This is so, because, nutrients leach faster in some soils than others and thus application interval may vary.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Diseases and Control in Citrus</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Scab</b>: It is caused by fungus. Only young tissues are affected by citrus scab. Leaves are most susceptible to infection just as they emerge from the bud. By the time they have reached their full size, they are
+  immune.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/fru1.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Fruit remain susceptible for about three months after petal fall. The main symptom is small, greyish&ndash;brown corky scabs which develop on the wigs, young leaves and fruit.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Green mould</b>: It is caused by fungus. A rapid breakdown of fruit punctured or bruised during harvesting and packing operations. The fungus enters the fruit only through wounds. A white mold that later turns green is
+  seen growing on the skin [Picture].</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/fru2.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The decayed fruit becomes soft and shrinks in size. Losses from green mold can be reduced by preventing injury during harvest and transit. The fruit is treated in the packing shed with a fungicide solution.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Tristeza: It is caused by virus.</b>The virus infects most types of citrus and it is transmitted by certain aphids. The symptoms produced depend upon the variety, environmental conditions, and the virus strain. One of the
+  strains is the stem pitting strains.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">It causes limbs of trees to become brittle, form deep pits on the underside of bark, and a roping appearance of the trunk that results in a decline of the tree. Although the tree doesn't die, there is reduced set, size and
+  quality of fruit.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/fru3.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The virus can cause a decline or death of the tree. Control efforts are mainly directed toward keeping infected plants by quarantine measures. Should these measures fail, a proposed alternative control is cross&ndash;protection
+  of trees with mild strains of the virus and/or alternative rootstocks which may tolerate the disease.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Gummosis</b>or 
+  <b style="color:crimson">Phytophthora Foot Rot:</b>This is one of the more important pathogens of citrus. It primarily infects the roots and the trunk [Picture].</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/fru4.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Infection of the trunk results in a dark, water&ndash;soaked areas, often with profuse exudation (ooze out) of a dark resin from the lesion. The dead bark frequently fall off the wood in vertical strips. If the lesion encircles
+  the trunk, girdling occurs, leading to the death of the tree.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Trees with the bud union&#8213;budding joint&mdash;beneath or close to the soil and trees in poorly drained locations are especially susceptible to infection. Phytophthora foot rot can be prevented through the use of resistant
+  sour orange rootstock, budded 4 to 6 inches high, and planting at the proper depth in well&ndash;drained soil.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Trunks should be treated with a recommended fungicide and they should be inspected for bark damage or gumming if there has been fire ant activity. Pruning and sprout removal are best done only in dry weather. Trunk injuries must
+  be avoided. Trunk lesions can be treated with fungicides. Severely damaged or unproductive trees should be removed from the orchard.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Pest of Citrus</b>
+    <br />
+  </p>
+  <p align="justify">The mistletoe is a parasitic plant that grows on the bark of citrus and other tree and sucks prepared starch from the phloem.
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         height="290"
+         src="http://speedapp.ididev.com/apps/img/fru6.jpg"
+         width="220" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="122"
+         src="http://speedapp.ididev.com/apps/img/fru8.jpg"
+         width="282" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

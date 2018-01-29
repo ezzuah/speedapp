@@ -1,0 +1,266 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>ECOSYSTEM</b></p>
+  <br />
+  <p align="justify">Every organism does not live alone but rather lives in a unit belonging to the same species. Organisms within an area and belonging to the same species are known as a 
+  <b style="color:crimson">population</b>. A 
+  <b style="color:crimson">community</b>is a group of populations living in the same area.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <i style="color:blue">structure</i>of a community is based on all the organisms living together. Within a community, living things interact with members of their own species and with other species, and they also interact with their
+  environment.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Many communities with the same major life forms make up a 
+  <b style="color:crimson">biome</b>. Similar biomes exist in areas where the geography and climate are similar, such as aquatic, desert, forest, terrestrial, etc. Interaction of a community with its environment is an 
+  <i style="color:blue">ecological system</i>, or 
+  <b style="color:crimson">ecosystem</b>. In other words, an ecosystem contains a community of populations and also the nonliving environment.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Ecologists study the interactions of organisms with each other and with the physical environment. All of our study about ecosystems will be limited to the 
+  <b style="color:crimson">biosphere</b>&mdash; those portions of the entire earth&rsquo;s surface where living things exist (ranging from the deserts, through the rainforests and even deep into the oceans, 
+  <i style="color:blue">see picture below</i>).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A 
+  <b>habitat</b>is where an organism lives and reproduces in its environment. The 
+  <b style="color:crimson">ecological niche</b>of an organism is the role it plays in its community, including its habitat and its interactions with other organisms.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Living things interact with other living things in an ecosystem and as a result, many relationships exist among them. These relationships are called 
+  <b style="color:crimson">biotic</b>, or living, factors.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">One of these relationships is the 
+  <i style="color:blue">feeding levels.</i>Energy enters an ecosystem as sunlight. This solar energy can be directly used by grasses, trees, etc. By photosynthesis, these 
+  <i style="color:blue">autotrophs</i>trap light energy (sunlight) and use it to make sugars and other chemical compounds.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Because only autotrophs can trap and change light energy into chemical, all other organisms depend on them. They are called the 
+  <b style="color:crimson">producers</b>because they make up the first 
+  <i style="color:blue">feeding level</i>. In order for an ecosystem to function, this energy must pass from producers to consumers. A 
+  <b style="color:crimson">consumer</b>is one which feeds on a producer.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <i style="color:blue">First&ndash;order</i>(primary) 
+  <i style="color:blue">consumers</i>are 
+  <b style="color:crimson">herbivores</b>because they are plant eaters. Examples are cow, deer, zebra, frog, etc. These herbivores make up the second feeding level in ecosystem.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Consumers which feed on other consumers are called 
+  <b style="color:crimson">carnivores</b>, or meat eaters. A mouse is a herbivore preyed on by a snake. Therefore, a snake is a carnivore and a 
+  <i style="color:blue">second&ndash;order</i>(secondary) 
+  <i style="color:blue">consumer</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="440"
+         src="http://speedapp.ididev.com/apps/img/eco1.jpg"
+         width="301" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">An owl which eats the snake is a 
+  <i style="color:blue">third&ndash;order</i>(tertiary) 
+  <i style="color:blue">consumer</i>. From the picture, what are 
+  <i style="color:blue">quaternary consumers</i>? Bacteria and fungi of decay are 
+  <b style="color:crimson">decomposers</b>that break down dead organic matter, including animal wastes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In both fresh and salt water, the 
+  <b style="color:crimson">phytoplankton</b>are organisms that undergo photosynthesis and are the producers. 
+  <b style="color:crimson">Zooplankton</b>are the animals which feed on the phytoplankton. This transfer of energy from organism to organism forms a series called 
+  <i style="color:blue">food chain</i>
+  <b style="color:crimson">.</b>
+  <br /></p>
+  <p align="justify">A 
+  <b style="color:crimson">food chain</b>represents 
+  <i style="color:blue">one</i>possible route for the transfer of materials and energy through an ecosystem (picture above).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">But many other routes exist. In an ecosystem, many species are found at each feeding level, and one species does not always feed on the same species. For example a snake may also eat a lizard or toad; an owl may directly feed on
+  a mouse. In addition, some animals are 
+  <b style="color:crimson">omnivores</b>, or both plant and animal eaters. Humans are omnivores. All possible feeding relationships in an ecosystem make up a 
+  <b style="color:crimson">food web</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are other biotic factors. One is symbiosis. The definition of 
+  <b style="color:crimson">symbiosis</b>is in flux and the term has been applied to a wide range of biological interactions. The symbiotic relationship may be categorized as being mutualistic, parasitic, or commensal in nature.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Symbiotic relationships included those associations in which one organisms lives on another (ectosymbiosis, such as mistletoe), or where one partner lives inside another (endosymbiosis).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Symbiotic relationships may be either 
+  <i style="color:blue">obligate</i>, i.e., necessary to the survival of at least one of the organisms involved, or 
+  <i style="color:blue">facultative</i>, where the relationship is beneficial but not essential to survival of the organisms.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">From the picture below, a red&ndash;billed oxpecker enjoys a symbiotic relationship with an impala in the African savanna. The oxpecker feed on ticks and other skin parasites that the impala wants to rid of. Which type of
+  symbiotic relationship is depicted in the picture?
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         height="166"
+         src="http://speedapp.ididev.com/apps/img/eco2.png"
+         width="165" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Commensalism</b>is a kind of symbiotic relationship between two organisms where one benefits and the other is not significantly harmed or helped, like a bird living in a tree.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Mutualism</b>can be thought of as a form of "biological barter" in which species trade among themselves resources (for example carbohydrates or inorganic compounds) or services such as gamete, offspring dispersal, or
+  protection from predators. In this case, both individuals derive a fitness benefit, for example increased survivorship.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="171"
+         src="http://speedapp.ididev.com/apps/img/eco3.jpg"
+         width="193" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The picture above on mutualism shows that tiny fig wasps reproduce inside unripe figs. These wasps and fig trees are "obligate mutualists," meaning that they cannot reproduce without each other. The fig (fruit) serves as
+  protection for the eggs of the wasps while the wasps help in 
+  <i style="color:blue">pollinating</i>the figs. If there is similar interactions within the 
+  <i style="color:blue">same specie</i>s are known as 
+  <i style="color:blue">co&ndash;operation</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Saprophytism,</b>as a botanical term, is now considered obsolete (out of use). Plants that were once considered saprophytes, such as non&ndash;photosynthetic orchids and monotropes, are now known to be parasites on fungi.
+  These species are now termed 
+  <i style="color:blue">myco&ndash;heterotrophs.</i></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The term 
+  <b style="color:crimson">Detritivores (</b>used in place of saprophytes) refers to organisms that obtain nutrients by consuming 
+  <i style="color:blue">detritus</i>(decomposing organic matter). By doing so, they contribute to decomposition and the nutrient cycles. Detritivores are often eaten by consumers. Scavengers, like vultures, are typically not thought to be
+  detritivores, as they generally consume larger quantities of organic matter.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="174"
+         src="http://speedapp.ididev.com/apps/img/eco4.jpg"
+         width="197" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">An 
+  <b style="color:crimson">epiphyte</b>is any plant that does not normally root in the soil but grows upon another living plant while remaining independent of it except for support.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="164"
+         src="http://speedapp.ididev.com/apps/img/eco5.jpg"
+         width="196" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Note that this is different from 
+  <i style="color:blue">parasitism</i>. This is because an epiphyte manufactures its own food through photosynthesis just like other plants but obtains its moisture from the air or from moisture&ndash;laden pockets of the host plant, rather than
+  from the soil.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Epiphytes may grow upon the trunk, branches, or leaves of the host plant, sometimes so thickly as to damage the original plant by crowding out its leaves. They are most abundant in the moist tropics. They are known as 
+  <i style="color:blue">air plants</i>because they have no attachment to the ground or other obvious nutrient source. Some examples are orchids, ferns, and some members of the pineapple family (picture above).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Parasitism</b>is the type of relationship in which one organism (parasite) is completely dependent on a host organism; the host is usually harmed. If a host has too many parasites, it might die. The parasite, however, does
+  not benefit from the death of the host because death of host results in the death of the parasite.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, louse, tick, etc are 
+  <i style="color:blue">external</i>(ecto) parasites of humans and animals. Worms (round, tape, liver fluke, etc.) are also 
+  <i style="color:blue">internal</i>(endo) parasites.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Predation</b>is the hunting, killing and feeding of one organism by another. Can you list some animals considered as predators?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In addition to the biotic factors of the environment, an ecosystem also is influenced by 
+  <b style="color:crimson">abiotic</b>factors. These factors are the physical aspects of the surroundings. Abiotic factors can control the reproduction, feeding, growth, metabolism, etc&mdash;thus affecting a community. Some abiotic factors are 
+  <i style="color:blue">medium</i>(where an organism lives either on land or in water), water, soil, light, temperature, wind, humidity, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

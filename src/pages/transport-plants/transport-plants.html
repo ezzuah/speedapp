@@ -1,0 +1,198 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>TRANSPORT IN PLANTS</b></p>
+  <br />
+  <p align="justify">Each cell is itself a living thing. A cell has a boundary which separates it from neighboring cells or its environment (refer notes on 
+  <i style="color:blue">Cell</i>). This boundary is called plasma membrane, or cell membrane.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">One of its functions is to hold the cellular contents together within its boundary. Besides this, the cell membrane also acts as a &lsquo;gatekeeper&rsquo; of a cell through which materials enter and leave. It is important that
+  only 
+  <i style="color:blue">certain</i>materials pass through the cell membrane.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Only those materials which must be exchanged with the environment should be transported in and out of it. A membrane, such as the cell membrane, which allows only certain materials to pass through it, is called a semi permeable
+  membrane.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are basically 
+  <i style="color:blue">two</i>ways by which these materials enter and leave a cell&mdash;
+  <i style="color:blue">diffusion</i>and 
+  <i style="color:blue">osmosis</i>. The permeability of the cell membrane allows diffusion and osmosis to occur. Passage of the particles into or out of cells is caused by their kinetic energy and random motion. This type of passage in which the
+  cell has no active role in the movement of the particles is called 
+  <b style="color:crimson">passive transport</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Diffusion</b>
+    <br />
+  </p>
+  <p align="justify">Close the doors and windows of your room. Spray a little of 
+  <i style="color:blue">Raid</i>insecticide in the corner of your room. You will realize that after some several minutes, you can smell the scent of the insecticide in every part of the room. In this case, we say diffusion has taken place. How?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Diffusion</b>is the movement of molecules from a region of higher molecular concentration to a region of lower molecular concentration until the molecules are dispersed evenly.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The individual molecules of the insecticide have been evenly distributed from where there was the spray (higher concentration) to where there wasn&rsquo;t (low concentration). Diffusion mostly takes place in gases. In this same
+  way, oxygen and other materials enter the cell so that the molecules are evenly distributed inside and outside the cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">After this balance&mdash;called 
+  <b style="color:crimson">dynamic equilibrium&mdash;</b>is reached, the number of molecules entering and leaving the cell is equal. By diffusion, oxygen and carbon dioxide enter and exit cells. Consider what happens in the lungs. After breathing
+  in, the concentration of oxygen in the alveoli is higher than that in the blood; therefore, oxygen diffuses into the blood.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Osmosis</b>
+    <br />
+  </p>
+  <p align="justify">Water is important to living systems. Water makes up a great part of an organism&rsquo;s mass (70% or more) and is a major part of each cell&rsquo;s environment. Movement of water into and out of cells is so common that it is
+  given a special name&mdash;osmosis.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Osmosis</b>is the diffusion of water through a semi&ndash;permeable membrane. Did you know our human body uses osmosis when reabsorbing water in the kidneys? Like diffusion, osmosis is the random movement of only 
+  <b style="color:crimson">
+    <i style="color:blue">water molecules</i>
+  </b>resulting in a state of balance.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Let me illustrate. The water in a red blood cell is in dynamic equilibrium with the water in the bloodstream. However, if the cell is removed from the blood and placed in pure water, equilibrium is destroyed. Why?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is because, the blood cell contains many substances including water, but the water the cell is in is composed entirely of water molecules. This is to say, the concentration of water inside the cell is less than the
+  concentration of water outside it.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">As a result, more molecules enter the cell than leave it. Water entering the red blood cell causes it to swell. It will continue to swell even more if equilibrium is not reached. Much water may enter the cell till it bursts.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Note that a solution that causes a cell to swell, or even burst, due to an intake of water is called 
+  <b style="color:crimson">
+  <i style="color:blue">hypo</i>tonic solution.</b>Therefore, it is important that cells be in osmotic balance with their environment. 
+  <b style="color:crimson">Osmotic balance</b>occurs when the amount of water entering and leaving the cell is equal. What if the red blood cell is put in a highly concentrated salt solution?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">What is likely to happen? Water molecules would leave the cells faster than they would enter. Such loss of water in a cell causes the contents in the cell to shrink, a process called 
+  <b style="color:crimson">plasmolysis</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Note also that a solution that causes cells to shrink due to loss of water is called a 
+  <b style="color:crimson">
+  <i style="color:blue">hyper</i>tonic solution</b>. What effect would prolonged plasmolysis (loss of water) have on a cell?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">With the meanings of hypotonic and hypertonic solutions at the back of our minds, we can explain an 
+  <b style="color:crimson">
+  <i style="color:blue">iso</i>tonic solution</b>as one where the level of concentration in a cell is the same as that which surrounds it (cell neither gains nor loses water).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">What will happen to a cell in an isotonic solution? When a plant cell is placed in a hypotonic solution, the cytoplasm expands as the large central vacuoles gains water and pushes against the cell wall (but does not burst since
+  the cell wall will not allow it).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This 
+  <i style="color:blue">swelling of a plant cell</i>in a hypotonic solution creates 
+  <b style="color:crimson">turgor pressure</b>and the cell is said to be in a state of 
+  <b style="color:crimson">turgidity</b>. Turgidity in plant cells is important to maintain the plant&rsquo;s erect position. But if you forget to water your plants, they wilt due to decreased turgor pressure.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Passive transport does not account for passage of all particles across the cell membrane. In order for the cell to take in or rid itself of more of some particles, the cell must expend energy to counteract the kinetic energy of
+  the particles. This type of transport is called 
+  <b style="color:crimson">active transport.</b>
+  <br /></p>
+  <p align="justify">You can see active transport as a modified form of osmosis. A cell can rid itself of harmful particles by active transport. The cells of the kidney are an example. By active transport, 
+  <i style="color:blue">energy from these cells maintains</i>a greater concentration of the waste materials outside the kidney than inside it.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Active transport may also work to bring extra particles into the cell. For example, root cells of plants 
+  <i style="color:blue">bring in and retain</i>needed mineral ions from the soil. There are more ions in the root cells than in the soil, but ions continue to enter the cells by active transport.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The use of energy prevents them from diffusing out of the cells. The 
+  <b style="color:crimson">Xylem</b>transports water and dissolved materials while the 
+  <b style="color:crimson">phloem</b>transports food. Apart from being in leaves, the xylem and phloem are also located in roots and stems.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="346"
+         src="http://speedapp.ididev.com/apps/img/tntplant1.jpg"
+         width="377" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Oxygen and carbon dioxide are directly exchanged with the environment through the 
+  <b style="color:crimson">stomata</b>. Water enters the xylem of the leave by 
+  <i style="color:blue">cohesion</i>and 
+  <i style="color:blue">adhesion&mdash;</i>water molecules cling to one another and adhere to the walls of the xylem tissues.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Especially during the day when photosynthesis is on&ndash;going, some of the water transported into the leaves evaporate through the stomata. This loss of water by evaporation through the stomata is called 
+  <b style="color:crimson">transpiration</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">As water molecules leave, other water molecules from the xylem of the leaf replace them. In this way, it helps the plant to have access to water all the time. Excess water is also released at the edge of the leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is most often seen on leaves in early mornings. It also helps the plant to take in mineral salt from the soil through the roots, then the stems to the leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

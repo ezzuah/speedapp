@@ -1,0 +1,200 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>EQUILIBRIUM AND STABILITY</b></p>
+      
+        <p align="justify">Is it possible to tie a string to the middle part of a wooden rod,
+        lift it and still have the rod in its horizontal position? What is your reason if your
+        answer is yes? In the picture below, the string is tied to a specific section of the
+        rod such that the mass of the part labeled &lsquo;a&rsquo; equals the mass of the
+        &lsquo;b&rsquo; part.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="176" height="151" src="http://speedapp.ididev.com/apps/img/cent1.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This section of the rod coincides with the <i style=
+        "color:blue">centre of mass</i> of the rod. The <b style="color:crimson">centre of
+        mass</b> of an object is a point within it where all its mass may be considered to be
+        concentrated.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The centre of mass of a body does not necessarily lie in the exact
+        centre or middle part of it. It lies at a point where the mass of the body on one half
+        (side) equals the mass on the other. For instance, we can tell from simple experience
+        that the centre of gravity of the rod below will not lie in the middle because the
+        masses of the side &lsquo;a&rsquo; and &lsquo;b&rsquo; are not equal.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="179" height="56" src="http://speedapp.ididev.com/apps/img/cent2.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Centre of gravity</b>, this is a point in a
+        body where all of its weight appears to act. The centre of mass and gravity of an
+        object are at the same point. However, the centre of gravity acts downward whereas
+        centre of mass has no direction. The centre of gravity of regular object can be
+        determined as shown in the figure below.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/cent3a.png" alt="" /> &zwj; &zwj; &zwj;<img src=
+        "img/cent3b.png" alt="" /> &zwj; &zwj; &zwj; &zwj;<img src="http://speedapp.ididev.com/apps/img/cent3c.png" alt=
+        "" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">How to determine the centre of gravity of
+        an irregular object</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The centre of gravity of an irregular object like a cardboard can be
+        determined using a plumb line. Three small holes are punched in three different points
+        as shown in figure on the right. First we suspend the cardboard on a nail at point
+        &lsquo;A&rsquo;.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="155" height="158" src="http://speedapp.ididev.com/apps/img/cent4.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">A plumb line is tied to the nail. When the plumb line comes to rest,
+        it will pass through the centre of gravity of the object. A line is drawn on the
+        cardboard along the string of the plumb line. The process is repeated for points
+        &lsquo;B&rsquo; and &lsquo;C&rsquo;. The centre of gravity lies at the point where all
+        the three lines meet.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Stability of objects</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">A body is said to be stable if a vertical line drawn through its
+        centre of gravity falls through its base. It is not easy to topple a stable body or the
+        force required to topple a stable body is greater than one required to topple an
+        unstable body.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><i style="color:blue">The position of the centre of gravity of a
+        body determines how stable a body is.</i></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/cent5a.png" alt="" /> &zwj; &zwj; &zwj; <img src=
+        "img/cent5b.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The figure above shows the same brick in two different positions.
+        Both bricks are stable. However, the degree of their stability differs. The force
+        required to raise the brick from lying to standing as shown in &rsquo;A&rsquo; is
+        greater than the force required to change its position from standing to lying.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><i style="color:blue">In simple words, the lower the centre of
+        gravity of a body, the more stable that body is.</i> Also, the stability of an object
+        can be increased by increasing the length of the base and lowering the centre of
+        gravity. A bus is loaded under the passenger seat and not on top of it, because that
+        will lower the centre of gravity and make the bus more stable.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">States of equilibrium</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <b style="color:crimson">Stable equilibrium</b>; an object is said to be in stable
+            equilibrium if, when a small force is applied to displace it slightly, the object
+            returns to its original position.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Unstable equilibrium</b>; an object is said to be in an
+            unstable equilibrium if, when a small force is applied to displace it slightly, the
+            object moves away from its original position.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Neutral equilibrium</b>; an object is said to be in an
+            unstable equilibrium if, when a small force is applied to displace it slightly, the
+            objects moves but maintains its new position.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>The figure below shows the three states of equilibrium.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/cent6.jpg" alt="" width="467" height="156" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">When a lifting force is applied to a body through its centre of
+        gravity the body balances. But, if the force is applied to a point outside the centre
+        of gravity, the body unbalances.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/cent7.png" alt="" /> &zwj; &zwj; &zwj; <img src=
+        "img/cent7a.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+</ion-content>

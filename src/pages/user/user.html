@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+    </ion-navbar>
+        <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="default_switch">
+          <ion-segment-button value="account">
+            Account
+          </ion-segment-button>
+          <ion-segment-button value="scores">
+            Scores
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+      <div [ngSwitch]="default_switch">
+          <ion-list *ngSwitchCase="'account'">
+              <div class="user_bg">
+      <div align="center">
+        <br padding>
+          <img *ngIf="user_photo=='http://speedapp.ididev.com/apps/user_photos/null'" src="assets/imgs/avatar.png" width="120" (click)="change_photo()">
+          <img style="border-radius: 50%" *ngIf="user_photo!='http://speedapp.ididev.com/apps/user_photos/null'" src="{{user_photo}}" width="120" (click)="change_photo()">
+          
+          <h3 style="color:black; text-transform:capitalize">{{fname}} {{lname}}</h3>
+      </div>
+      </div>
+      <div id="strip_1" class="strip">
+        High Score
+        <br>
+        {{highest}}
+      </div>
+      <div id="strip_2"  class="strip">
+        Low Score
+        <br>
+        {{lowest}}
+      </div>
+      <div id="strip_3" class="strip">
+        Total Score
+        <br>
+        {{total_score}}
+      </div>
+
+      <ion-list>
+        <ion-list-header>
+          Account Info
+        </ion-list-header>
+        <ion-item><ion-icon color="primary"  name="school" item-left></ion-icon><span style="text-transform:capitalize">{{school}}</span></ion-item>
+        <ion-item><ion-icon  color="primary" name="person" item-left></ion-icon>{{username}}</ion-item>
+        <ion-item (click)="goto_password_change()"><ion-icon color="speedapp"  name="lock" item-left></ion-icon>Change Password</ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-list-header *ngIf="scoresheet!='null'">
+          Previous Tests
+        </ion-list-header>
+        <ion-item *ngFor="let item of scoresheet | slice:0:3">
+          <ion-icon color="light"  name="document" item-left></ion-icon>{{item.subject}}
+          <ion-badge item-end>{{item.score}}</ion-badge>
+        </ion-item>
+      </ion-list>
+
+      
+          </ion-list>
+        
+          <ion-list *ngSwitchCase="'scores'">
+            <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4">
+              <tr>
+                <td>Total Score:</td>
+                <td><div align="center">Highest Score: {{highest}}</div></td>
+                <td><div align="right">Lowest Score: {{lowest}}</div></td>
+              </tr>
+              <tr>
+                <td width="208"><div align="center" class="whitetext"><strong>Score</strong></div></td>
+                <td width="450"><div align="center" class="whitetext"><strong>Subject</strong></div></td>
+                <td width="327"><div align="center" class="whitetext"><strong>Test Date</strong></div></td>
+              </tr>
+              <tr *ngFor="let item of scoresheet">
+                <td width="33%"><div align="center">{{item.score}}</div></td>
+                <td><div align="center">{{item.subject}}</div></td>
+                <td><div align="center">{{item.testdate}}</div></td>
+              </tr>
+            </table>
+         
+          </ion-list>
+
+        </div>
+        </ion-content>

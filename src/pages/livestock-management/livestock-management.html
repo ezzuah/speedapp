@@ -1,0 +1,236 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>LIVESTOCK MANAGEMENT</b></p>
+<p align="justify">In order for the animals to remain healthy and productive, some management practices should not be overlooked. Right after birth, the young animal is allowed to suckling the mother&rsquo;s milk until their stomach is grown enough
+to digest solid food. The milk produced by the mother in the first 4 to 5 days after birth is known as 
+<b style="color:crimson">colostrums</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Colostrum contain high amount of proteins, anti&ndash;bodies, minerals and vitamins. These nutrients make the young animal build resistance to diseases and infections, and grow quickly. After suckling the mother&rsquo;s milk for
+some months, the young animal is 
+<b style="color:crimson">weaned.</b></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Weaning is the process of preventing or stopping the young animal from suckling the mother&rsquo;s milk. Weaning can be done 
+<b style="color:crimson">naturally</b>, that is, the animal suckles the mother until it is old enough to take solid food. The period for natural weaning depends on the kind of livestock.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Cattle for example will be weaned naturally between 6 to 8 months after birth. 
+<b style="color:crimson">Artificial weaning</b>involves separating the young animal and the mother so as the young animal does not have access to breast&ndash;milk. Isolated young animals are fed with warm milk, concentrates, hay and silage.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Husbandry practices</b>
+  <br />
+</p>
+<p align="justify">These are routine practices that enhance productivity in livestock. Examples are castration, deworming, dehorning and identification.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Castration</b>: This is the process of 
+<b style="color:crimson">removing</b>or making the testes (testicles) of a male animal dysfunction. When the testes are removed through a surgical operation it is known as 
+<b style="color:crimson">open castration</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Since surgical operations can result in health complications, some basic hygiene and professional procedures must be followed. First of all, the animal is placed on its back to enable easy access to the scrotum.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The scrotum is then washed with an antiseptic (alcohol) and wiped clean. A clean sharp blade or knife is used to open each half of the scrotum and the testes are pulled out. The 
+<b style="color:crimson">spermatic</b>cord connecting the testes is cut, treated with iodine and tied.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This is to prevent excessive bleeding or secondary infections and also to heal the cut quickly. Another type of castration is the 
+<b style="color:crimson">closed castration</b>. Here, the testes are not removed.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">A 
+<b style="color:crimson">burdizzo</b>is used to press the spermatic cord to break its link. The hand must be used to locate the spermatic cord before pressing with the burdizzo.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       height="149"
+       src="http://speedapp.ididev.com/apps/img/rprac1.jpg"
+       width="250" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">When the spermatic cord is broken then the animal can not discharge any sperm and that will prevent it from mating. Pressing each of the spermatic cord separately ensures a high castration success.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The advantage of close castration over open castration is that it does not result in bleeding and secondary infections. However, with open castration, you are sure that the spermatic cord has been cut. The general advantages of
+castration are:</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>The castrate (castrated animal) grows faster. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>Unwanted breeds are castrated to help manage or follow a breeding programme. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>Meat of castrated animals tastes better. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>It removes offensive odour in some farm animals. For example, the strong odour of billy goats. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Dehorning</b>: This is the removal of horn in livestock which have horns. Dehorning reduces harm caused by animals, it makes them easy to handle and prevents animals from hurting other animals. 
+<p align="left">
+  <br />
+</p>
+<p align="justify">Dehorning may be done by sawing off the horns of the animals or by burning the horn buds at the early stages of the animal&rsquo;s life.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Docking</b>: This is the cutting of the tail of a ruminant to a small size. It makes mating in female animals easier and quicker.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Marking and Identification of Livestock</b>: at times, it becomes necessary to have records on individual animal &#8213; such as parental lineage, especially, when following a breeding programme.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This can be done successfully by adopting ordered marking for identifying individual animals. Some of the methods of marking and identification are listed below.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">Branding:</b>It is the act of making permanent, desired inscriptions on farm animal by burning the animal with a hot metal (branding iron). 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Ear notching:</b>These are coded cuts made on the ear of a farm animal for identification. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Ear tagging:</b>Plastic or metallic tags with identification information (mostly numbers) are clipped into the ear of the animal. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Tattooing:</b>Here, needles are used to make a required mark in the inner ear of the animal. Dyes are applied to the needle wounds to make them visible even after they have healed. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<img alt=""
+     src="http://speedapp.ididev.com/apps/img/rprac4.png" />
+<br />Branding
+<br />
+<br />
+<img alt=""
+     height="167"
+     src="http://speedapp.ididev.com/apps/img/rprac5.jpg"
+     width="204" />
+<br />Ear notching
+<br />
+<br />
+<img alt=""
+     height="165"
+     src="http://speedapp.ididev.com/apps/img/rprac6.jpg"
+     width="156" />
+<br />Ear tagging
+<br /></p>
+<p align="justify">
+  <b style="color:crimson">FEEDING</b>
+  <br />
+</p>
+<p align="justify">Grass and legumes are the main food for ruminants. Ruminants may have this pasture through 
+<i style="color:blue">hay, silage and/or grazing</i>. 
+<b style="color:crimson">Hay</b>is dry forage (grass and legumes) and 
+<b style="color:crimson">silage</b>is fresh green forage which is partially fermented.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Both hay and silage are kept for future use, especially in the dry season when forage is scarce. When ruminants feed directly from the field we say they are 
+<b style="color:crimson">grazing</b>. There are different systems of grazing below are a few.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">Continuous grazing</b>: under this of grazing, the animals remain on the same pasture for a very long period. This system is common under the extensive system of management. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Rotational grazing:</b>It is also known as paddocking. This system is similar to the run system in poultry. The pasture is divided into sections (between 6 t0 8) by a fence. A section is known as paddock. The animals are
+  allowed to graze on one paddock for a period of time whereas the others undergo fallowing. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Zero grazing</b>: Here, the animals are not allowed to graze. Rather, they are kept in a confinement and fed with hay, silage or freshly cut forage. The cut forage is tied into small bundle and hanged in their pen. 
+  <p align="left">
+    <br />
+  </p></li>
+</ol></ion-content>

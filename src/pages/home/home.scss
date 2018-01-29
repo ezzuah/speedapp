@@ -1,3 +1,36 @@
-page-home {
+.subject{
+    width:48%;
+    height:30%;
+    max-height:400px;
+    margin:1%;
+    float: left;
+    border-radius: 4px;
+    font-size: 25px;
+    font-family:Roboto;
+    color:#2C3E50
+}
+
+
+.front_img{
+    width:40%;
+}
+
+.bgimg{
+    background-color: #FDFEFE,
+
+}
+
+* {
+    font-family: Roboto;
+}
+
+@media only screen and (min-width:640px){
+
+    .front_img{
+    width:30%;
+    }
+    .subject{
+    height:60%;
+    }
 
 }

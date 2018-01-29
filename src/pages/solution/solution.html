@@ -1,0 +1,258 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>SOLUTIONS</b></p>
+
+  <p align="justify">A solution is homogeneous mixture of two or more substances. It
+  consists of a solute (dissolved material) and a solvent (dissolving material). A
+  solution can be a gas (example air), liquid (example sea water) or solid (example
+  steel). Humidity is a solution which consists of a gas phase (air), being the solvent
+  and a liquid phase (water), being the solute.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">When crystals are first dropped in a solvent, many particles may
+  leave the crystal surface and go into solution (dissolve). As the number of solute
+  particles in the solution increases, some of the dissolved particles will return to the
+  surface of the crystal. With time, the number of particles leaving the surface will
+  equal the number returning. This point is called <b style="color: crimson">solution
+  equilibrium.</b> A solution in which undissolved particles are in equilibrium with the
+  dissolved particles is called a <b style="color: crimson">saturated solution.</b> A
+  solution containing an amount of solute less than the saturated solution is known as
+  <b style="color: crimson">unsaturated solution</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The maximum amount of solute that will dissolve in 100cm<sup>3</sup>
+  of a solvent at a specific temperature is the <b style="color: crimson">solubility of
+  the solute</b> at that temperature. For example, a maximum of 64.2 grams of Nickel (II)
+  Chloride will dissolve in 100cm<sup>3</sup> of water at 20<sup>o</sup>C. The amount of
+  solute that will dissolve to form a saturated solution depends on the temperature of
+  the solution. The greater the temperature, the greater the amount of solute required to
+  saturate a solution. For example, when sugar is being added to water to form sugar
+  solution, it gets to a point where the sugar will not dissolve any longer, but will
+  rather settle at the bottom of the container.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">If the sugar solution is heated, the settled sugar will begin to
+  dissolve. If the hot solution is cooled, an unstable solution is formed&mdash;it
+  contains more solute than a saturated solution will normally hold. Such a solution is
+  called a <b style="color: crimson">supersaturated solution.</b> Supersaturated solution
+  is said to be unstable because the slightest disturbance (like shaking or the presence
+  even a small particle) will make crystals fall out of the solution.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Preparation of solution (standard)</b><br /></p>
+
+  <p align="justify"><b style="color: crimson">Standard solution</b> is a solution whose
+  concentration is accurately known.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">To prepare molar solutions (a solution with its concentration in
+  moles/litre) first calculate the mass of the required number of moles of the solute in
+  grams. Weigh the solute accurately with top&ndash;pan balance. Dissolve the weighed
+  solute in a small amount of distilled water placed in a beaker. The formed solution in
+  the beaker is then transferred into a volumetric flask. More distilled water is added
+  to the solution to make it to the required volume.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">If the concentration is given in mass per volume (e.g.
+  grams/dm<sup>3</sup>) then, the solute is weighed accurately and dissolved in the
+  required volume of water as explained above.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example</b><br /></p>
+
+  <p align="justify">Outline clearly how you will prepare a 500cm<sup>3</sup> of 0.1M
+  NaOH solution.<br /></p>
+
+  <p align="justify">[relative atomic masses are: Na = 23, O = 16 and H = 1]</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><u><b>Solution</b></u><br /></p>
+
+  <p align="justify">Molar mass of NaOH = 23 + 16 + 1<br /></p>
+
+  <p align="justify">= 40 g/mol</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <table>
+    <tr>
+      <td>Concentration, C =</td>
+
+      <td>
+        <i>moles(n)</i><br />
+        <hr />
+        <i>Volume(dm<sup>3</sup>)</i>
+      </td>
+    </tr>
+  </table><br />
+  <br />
+
+  <table>
+    <tr>
+      <td>however, n =</td>
+
+      <td>
+        <i>mass(n)</i><br />
+        <hr />
+        <i>Molar mass(M)</i>
+      </td>
+    </tr>
+  </table><br />
+
+  <p align="justify">It follows that concentration can be written as;<br /></p>
+
+  <table>
+    <tr>
+      <td>Concentration, C =</td>
+
+      <td>
+        <i>&nbsp;&nbsp;&nbsp;&nbsp;m</i><br />
+        <hr />
+        <i>M x V</i>
+      </td>
+    </tr>
+  </table><br />
+
+  <p align="justify">Where m = mass of solute needed (grams)<br /></p>
+
+  <p align="justify">M = molar mass of salt (g/mol)<br /></p>
+
+  <p align="justify">V = volume of solution (dm<sup>3</sup>)</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The mass can then be expressed as</p>
+
+  <p align="left"><i>m = C x M x V</i><br /></p>
+
+  <p align="justify">Therefore the mass of NaOH required<br />
+  <br />
+  = 0.1 x 40 x 0.5<br /></p>
+
+  <p align="justify">= 2.0 g<br />
+  <br />
+  <i style="color: blue">Note that the volume of the solution should be in litres or
+  dm<sup>3</sup> and 500cm<sup>3</sup> = 0.5 dm<sup>3</sup> = 0.5 litre.</i></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">A top&ndash;pan balance is used to weigh 2.0g of the salt
+  transferred into a 50cm<sup>3</sup> beaker. Reasonable amount of distilled water is
+  poured into to the beaker to dissolve the salt. The solution is then transferred into a
+  500cm<sup>3</sup> volumetric flask with the help of a funnel. The flask is shaken and
+  more distilled water is added till it gets to the 500ml graduated mark.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Dilution of solution</b><br /></p>
+
+  <p align="justify">This is the process where water is added to a concentrated solution
+  to reduce its concentration.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">If a tablespoon full of sugar is dissolved in water filled to
+  half&ndash;way of a cup, some concentration of the sugar solution has been formed. If
+  more water is added to this solution, a new concentration has been formed. However, the
+  amount of sugar in both solutions is the same. This means that, it is the volume that
+  changes during dilution and this will in turn change the concentration of the solution.
+  Note that the quantity of solute (in moles or grams) does not change when diluting a
+  solution. This implies that:<br />
+  <br />
+  n<sub>(initial)</sub> = n<sub>(final)</sub>.<br /></p>
+
+  <p align="justify">Remember that <i>n = C x V</i><br /></p>
+
+  <p align="justify">Since n is constant in dilutions, it follows that
+  C<sub>(initial)</sub> x V<sub>(initial)</sub> = C<sub>(final)</sub> x
+  V<sub>(final)</sub></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example</b><br /></p>
+
+  <p align="justify">If the prepared solution above is to be diluted to 1 dm<sup>3</sup>
+  what will be the final concentration?</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b><u>Solution</u></b><br /></p>
+
+  <p align="justify">C<small>1</small> = 0.1 M; &nbsp; &nbsp; &nbsp; V<small>1</small> =
+  0.5 dm<sup>3</sup>; &nbsp; &nbsp; &nbsp; C<small>2</small> =?? ; &nbsp; &nbsp;
+  &nbsp;V<small>2</small> = 1 dm<sup>3</sup></p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td>C<small>2</small> can be expressed as: =</td>
+
+      <td>
+        <i>C<small>1</small> x V<small>1</small></i><br />
+        <hr />
+        <i>&nbsp; &nbsp;V<small>2</small></i>
+      </td>
+    </tr>
+  </table><br />
+
+  <table>
+    <tr>
+      <td>C<small>2</small> =</td>
+
+      <td>
+        <i>0.1 x 0.5</i><br />
+        <hr />
+        <i>&nbsp; &nbsp;1</i>
+      </td>
+    </tr>
+  </table>
+
+  <p align="justify">Therefore, C<small>2</small> = 0.05M</p>
+
+  <p align="left"></p>
+</ion-content>

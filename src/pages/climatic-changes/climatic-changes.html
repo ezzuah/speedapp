@@ -1,0 +1,255 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>ATMOSPHERE AND CLIMATE CHANGE</b></p><br />
+  
+    <p align="justify">Whenever you hear the word &lsquo;atmosphere&rsquo; what meaning do
+    you give to it? You may understand the &lsquo;sphere&rsquo; but what about the other?
+    The word was coined from the Greek &lsquo;<i style="color:blue">atmos&rsquo;</i>
+    (meaning vapour) <i style="color:blue">sphaira</i> (sphere).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">By definition, an <b style="color:crimson">atmosphere</b> is a layer
+    of gases that may surround a material body of sufficient mass, by the <i style=
+    "color:blue">gravity</i> of the body, and are retained for a longer duration if gravity
+    is high and the atmosphere's temperature is low.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">We are going to learn, in this topic, about the atmosphere and the
+    changes we experience in our climate. The earth's atmosphere contains oxygen used by
+    most organisms for respiration and carbon dioxide used by plants and algae for
+    photosynthesis. It also protects living organisms from genetic damage by the
+    sun&rsquo;s ultraviolet radiation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Its current composition is the product of billions of years of
+    biochemical modification by living organisms. The atmosphere consists, from the ground
+    up, of the troposphere (which includes the planetary boundary layer or peplosphere as
+    lowest layer), stratosphere, mesosphere, ionosphere (or thermosphere), exosphere and
+    the magnetosphere. Each of the layers has a different <b style=
+    "color:crimson"><i style="color:blue">lapse rate</i></b> (the rate of change in
+    temperature with height).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The <b style="color:crimson">troposphere</b> begins at the Earth's
+    surface. This is to means three quarters of the atmosphere lies within the troposphere,
+    and the depth of this layer varies between 17&nbsp;km at the equator and 7&nbsp;km at
+    the poles.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">This layer acts as a source of heat resulting from absorption of
+    visible sunlight. The temperature <i style="color:blue">decreases</i> with height in
+    the troposphere, and so the air is well mixed in this region. Weather phenomena such as
+    thunderstorms and clouds occur in this layer.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">About 6 to 10 to 17 kilometers above the Earth, a new region called
+    the stratosphere begins. The <b style="color:crimson">stratosphere</b> (Latin:
+    <i style="color:blue">stratum</i>, layer) as its meaning denotes contains the "ozone
+    layer". It is heated from above (absorption of solar ultraviolet radiation by oxygen
+    and ozone) and temperature increases with altitude. At about 50 kilometers, temperature
+    begins to</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/clim1.jpg" alt="" width="380" height="242" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">decrease with altitude again and the mesosphere begins. The
+    K&aacute;rm&aacute;n line, located within the <b style="color:crimson">thermosphere</b>
+    at an altitude of 100&nbsp;km, is commonly used to define the boundary between the
+    Earth's atmosphere and outer space.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">However, the <b style="color:crimson">exosphere</b> can extend from
+    500 up to 10,000&nbsp;km above the surface, where it interacts with the planet's
+    <b style="color:crimson">magnetosphere</b>. Both the stratosphere and the troposphere
+    have important direct and indirect effects on the well&ndash;being of humankind.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">In this century, it has become increasingly clear that humans are
+    influencing the chemical composition of the troposphere and stratosphere in ways that
+    can impact conditions at the Earth's surface. Some of the most challenging
+    environmental issues of our time have arisen &mdash;ozone layer depletion and green
+    house effect.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Ozone depletion describes</b> a slow,
+    steady decline of about 4 percent per decade in the total amount of ozone in Earth's
+    stratosphere since the late 1970s; and a much larger, but seasonal, decrease in
+    stratospheric ozone over Earth's Polar Regions during the same period commonly referred
+    to as the <b style="color:crimson">ozone hole</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The main source of these depleting agents is chlorofluorocarbon
+    (CFC) compounds. CFCs and other contributory substances are commonly referred to as
+    <b style="color:crimson">ozone&ndash;depleting substances</b> (<b style=
+    "color:crimson">ODS</b>).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Since the ozone layer prevents most harmful ultraviolet light from
+    passing through the Earth's atmosphere, observed and projected decreases in ozone have
+    generated worldwide concern leading to adoption of the <i style="color:blue">Montreal
+    Protocol banning the production of CFCs as well as related ozone depleting chemicals
+    such as carbon tetrachloride and trichloroethane</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">It is suspected that a variety of biological consequences such as
+    increases in skin cancer, damage to plants, and reduction of plankton populations in
+    the oceans may result from the increased ultraviolet exposure due to ozone
+    depletion.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Global warming</b> is the increase in the
+    average measured temperature of the Earth's near&ndash;surface air and oceans since the
+    mid&ndash;20th century, and its projected continuation.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">So far the <i style="color:blue">scientific consensus</i> is that
+    the increase in atmospheric greenhouse gases is due to human activity caused and this
+    began since the start of the industrial era (beginning in the mid 1700s).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Human activity since the industrial revolution has increased the
+    concentration of various gases, leading to increased radiative forcing from
+    CO<sub>2</sub>, methane, ozone, CFCs and nitrous oxide. The present atmospheric
+    concentration of CO<sub>2</sub> is about 385 parts per million (ppm) by volume. Future
+    CO<sub>2</sub> levels are expected to rise due to ongoing burning of <i style=
+    "color:blue">fossil fuels</i> and land&ndash;use change.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Fossil fuels</b> are fuels consisting of
+    high content of carbon. Increasing global temperature is expected to cause sea levels
+    to rise, an increase in the intensity of extreme weather events, and significant
+    changes to the amount and pattern of <i style="color:blue">precipitation</i> (e.g.
+    raining, snowing, etc), likely leading to an expanse of tropical areas and increased
+    pace of desertification.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Other expected effects of global warming include changes in
+    agricultural yields, modifications of trade routes, glacier retreat or melting of ice
+    (glaciated) areas which means a worldwide sea level rise, mass species extinctions and
+    increases in the ranges of disease vectors.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Because of this, most national governments have signed and signed
+    the <i style="color:blue">Kyoto Protocol</i> aimed at reducing greenhouse gas
+    emissions, but there is ongoing political and public debate worldwide regarding what,
+    if any, action should be taken to reduce or reverse future warming or to adapt to its
+    expected consequences. Can you think of something?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Human emissions of sulphur and nitrogen compounds react in the
+    atmosphere to produce acids. These acids are absorbed to form clouds and later the
+    clouds fall as rain. But the composition of the clouds was acids so the rain is called
+    an <b style="color:crimson">acid rain</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Acid rain also comprises of any other form of precipitation that is
+    unusually acidic e.g. fog, mist, dew, snow, etc. the principal causes, as stated, are
+    from human sources, such as electricity generation, factories, and motor vehicles. Coal
+    power plants are one of the most polluting.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The gases can be carried hundreds of kilometers in the atmosphere
+    before they are converted to acids and deposited. In the past, factories had short
+    funnels to let out smoke, but this caused many problems locally; thus, factories now
+    have taller smoke funnels. However, dispersal from these taller stacks causes
+    pollutants to be carried farther, causing widespread ecological damage.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Acid rain has been shown to have adverse impacts on forests,
+    freshwaters and soils, killing insect and aquatic life forms as well as causing damage
+    to buildings and having impacts on human health.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Places such as much of South Asia (Indonesia, Malaysia and
+    Thailand), Western part of South Africa, Southern India and Sri Lanka and even West
+    Africa (countries like Ghana, Togo and Nigeria) could all be prone to acidic rainfall
+    in the future. What is the way forward?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">A <b style="color:crimson">wet scrubber</b> has been invented for
+    use by coal&ndash;burning power plants. A wet scrubber is basically a reaction tower
+    equipped with a fan that extracts hot smoke stack gases from a power plant into the
+    tower.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Lime or limestone in suspension form is also injected into the tower
+    to mix with the stack gases and combine with the sulphur dioxide present.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The calcium carbonate of the limestone produces pH&ndash;neutral
+    calcium sulphate that is physically removed from the scrubber. That is, the scrubber
+    turns sulphur pollution into industrial sulphates. Also automobiles which reduce
+    emissions of nitrogen oxides should be purchased. What more do you think can be
+    done?</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+
+</ion-content>

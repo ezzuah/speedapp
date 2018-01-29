@@ -1,0 +1,282 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>ENDOCRINE SYSTEM</b></p>
+  <br />
+  <p align="justify">Kofi wakes up in the morning. He notices a change: slight growth of hair on his upper lip and chin. He is experiencing normal signs of puberty brought on by an increase in 
+  <i style="color:blue">sex hormones</i>. Sex hormones are produced by the gonads which are part of the endocrine system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/endo1.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">endocrine</b>
+  <b style="color:crimson">system</b>consists of glands that release their secretions directly into the blood. The endocrine glands do not transport their secretions through 
+  <b style="color:crimson">ducts</b>(passages or tubes) and are therefore considered 
+  <i style="color:blue">ductless.</i>The opposite is the 
+  <i style="color:blue">exocrine</i>
+  <i style="color:blue">glands</i>because they have ducts and secrete their products into these ducts for transport.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example the salivary glands send saliva into the mouth by way of the salivary ducts. Therefore, the salivary gland is considered as an exocrine gland. While the CNS (central nervous system) uses neurotransmitters in carrying
+  messages, the endocrine system, on the other hand, uses hormones.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Hormones</b>are chemical messengers that influence the metabolism of the cell either by regulating the production of a particular protein or by activating an enzyme. The picture above shows some various glands and where
+  they are located in the body.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Thyroid gland</b>On the trachea in the neck region of humans is a small, butterfly shaped structure called the thyroid gland. This gland secretes a hormone called thyroxine into the blood stream. Thyroxine 
+  <i style="color:blue">speeds up the rate of metabolism in the cells of the body.</i></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="312"
+         src="http://speedapp.ididev.com/apps/img/endo2.jpg"
+         width="177" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Too little of it decreases the metabolic rate and sometimes causes 
+  <b style="color:crimson">obesity</b>, an overweight condition. Also, too little of it during early childhood can cause 
+  <b style="color:crimson">cretinism</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In this case, the child develops into a malformed, mentally retarded dwarf called 
+  <b style="color:crimson">cretin</b>. Cretinism can be avoided by supplying thyroxine during childhood. A disease related to the thyroid gland is goiter.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Goiter</b>is an 
+  <i style="color:blue">enlargement of the thyroid gland itself</i>and results in an increase in the size of the entire throat and neck. Thyroid glands become enlarged because of a lack of iodine in the diet. Adding iodine and iodated salt to our
+  food could prevent goiter.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Parathyroid gland</b>is, in humans, embedded inside the thyroid gland when viewed from behind (see picture). Its hormone, 
+  <b style="color:crimson">parathormone</b>is the key hormone of calcium homeostasis. Calcitonin and parathormone are antagonists: the former lowers and the latter raises blood calcium.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Together, they can fine&ndash;tune the calcium levels available to neurons, muscles and heart&ndash;cells for their normal function.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Adrenal gland</b>On top of each kidney is a small 
+  <b style="color:crimson">adrenal gland</b>. The outer part of this gland is the 
+  <b style="color:crimson">adrenal cortex</b>and the inner part is the 
+  <b style="color:crimson">adrenal medulla</b>. They both differ in structure and in function. The adrenal medulla mainly produces the 
+  <b style="color:crimson">adrenaline</b>OR 
+  <b style="color:crimson">epinephrine.</b>
+  <br /></p>
+  <p align="justify">Adrenaline has many effects which include increasing heart beat rate and blood pressure, increasing the level of sugar in the blood, causing metabolism to occur more rapidly, etc.
+  <br /></p>
+  <p align="justify">Adrenaline causes a person to respond to stress and be ready for any type of activity. A person can however live without an adrenal medulla because these reactions can also be caused by the nervous system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Unlike the adrenal medulla, the adrenal cortex is crucial to life. It secretes 
+  <b style="color:crimson">aldosterone</b>which controls salt level in the blood by regulating the kidney&rsquo;s absorption of sodium and potassium ions.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">It also secretes 
+  <b style="color:crimson">cortisol</b>which causes fats and proteins to be changed to glucose and helps keep the proper level of sugar in the blood. Cortisol and 
+  <b style="color:crimson">cortisone</b>prevent inflammation. The adrenal cortex also secretes sex hormones in very small amounts.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The majority of these hormones are androgens (male sex hormones). However, some estrogens, female sex hormones, are also produced.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Pituitary gland</b>Located at the base of the brain is a tiny, three lobed structure called the pituitary gland. The two major lobes (out of the three) are known as the 
+  <b style="color:crimson">anterior</b>pituitary and the 
+  <b style="color:crimson">posterior</b>pituitary.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The pituitary gland is under the control of hormones from the hypothalamus (a part of the brain near the pituitary). Let&rsquo;s first talk about the anterior pituitary (you can refer to the picture below).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/endo3.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Three of the anterior pituitary hormones control the menstrual cycle in females. They are 
+  <b style="color:crimson">follicle&ndash;stimulating hormone</b>(FSH), 
+  <b style="color:crimson">luteinizing hormone</b>(LH), and 
+  <b style="color:crimson">luteotrophic hormone</b>(LTH). FSH stimulates the ripening of eggs within the follicle of the ovary.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">LH starts ovulation and LTH secretes 
+  <i style="color:blue">progesterone</i>and stimulates the thickening of the uterine wall after fertilization and milk production. FSH and LH are also produced in males but this time, the FSH stimulates production of sperm cells while LH causes the
+  release of androgens from the testes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">FSH and LH are chemically the same whether produced by males or females. However, they have different effects in both males and females. Why? This may be due to the type of cell or tissue on which the tissue is acting, the 
+  <i style="color:blue">target</i>
+  <i style="color:blue">organ</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The hypothalamus stimulates the anterior pituitary to secrete 
+  <b style="color:crimson">thyroid&ndash;stimulating</b>
+  <b style="color:crimson">hormone</b>(TSH) if the thyroxine level falls below normal and vise versa. Another anterior pituitary hormone is called 
+  <b style="color:crimson">human growth hormone</b>(HGH).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The HGH controls the total growth of the body. Lack of enough HGH in children can result in 
+  <i style="color:blue">dwarfism</i>or 
+  <i style="color:blue">retarded</i>
+  <i style="color:blue">growth</i>. On the contrary, too much HGH in childhood causes 
+  <i style="color:blue">giantism</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Posterior pituitary secretes two hormones and they are 
+  <b style="color:crimson">oxytocin</b>and 
+  <b style="color:crimson">anti diuretic hormone</b>(ADH). Note that none of these two hormones controls other endocrine glands. Also both of these hormones are produced and released from the hypothalamus.
+  <br /></p>
+  <p align="justify">
+  <i style="color:blue">Oxytocin</i>stimulates the contraction of uterine muscles and is secreted prior to child birth to make things easier for the mother during that time. Oxytocin also causes labor contractions but is some times injected
+  artificially.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This hormone also stimulates the release of milk from the mother when the baby is nursing. ADH is a hormone which controls the water balance in the kidney and also blood pressure. It enhances water retention by kidney.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A lack of this hormone prevents kidney tubules from reabsorbing water which in turn causes a disease called 
+  <b style="color:crimson">diabetes insipidus</b>(watery urine). This disease makes the victim urinate often and constantly becomes thirsty.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Pancreas</b>The pancreas lies in the abdomen between the kidneys and near the duodenum. It is made up of two types of tissues. The exocrine tissue secretes digestive juice which helps in digestion of food. The endocrine
+  tissue called 
+  <b style="color:crimson">pancreatic islets</b>(islets of Langerhans) produces and secretes the hormones 
+  <b style="color:crimson">insulin</b>and 
+  <b style="color:crimson">glucagon</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/endo4.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <i style="color:blue">Insulin</i>is secreted when there is a high blood sugar (glucose) level. It stimulates the uptake of some of the glucose by cells like the liver and muscle cells. As a result of these, the blood glucose level lowers. 
+  <i style="color:blue">Glucagon</i>is also secreted from the pancreas when there is low blood glucose level.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Glucagon stimulates the liver cells to breakdown glycogen to glucose. It also stimulates the liver to use fat and protein as a source of energy instead of glucose. So after some time the blood sugar level raises.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Thus in effect, insulin and glucagon tend to maintain normal level of sugar in the body. A person with too much glucose in the blood may have 
+  <b style="color:crimson">diabetes mellitus</b>, or sugar diabetes. Persons with diabetes often are thirsty and they urinate frequently.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">So much sugar passes through the kidneys to the extent that it cannot all return to the blood. Diabetics, therefore, excrete a lot of sugar in their urine. If the disease is not controlled, coma and death may result.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Gonads:</b>Sex hormones are produced in large amounts by the 
+  <b style="color:crimson">gonads</b>the 
+  <b style="color:crimson">ovaries</b>and 
+  <b style="color:crimson">testes.</b>The ovaries secrete 
+  <b style="color:crimson">estradiol</b>(an estrogen) and 
+  <b style="color:crimson">progesterone.</b>
+  <i style="color:blue">Progesterone</i>stimulates the growth of mammary glands and prepares the uterus for pregnancy.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Estradiol stimulates the development of female secondary sexual characteristics (e.g., general body shape, patterns of fat deposition and hair growth, growth of breasts) and is involved in monthly preparation for pregnancy.
+  <br /></p>
+  <p align="justify">The beginning of menstruation and the development of these secondary sex traits is called 
+  <b style="color:crimson">puberty</b>. Androgens are secreted by the testes of a male. 
+  <b style="color:crimson">Testosterone</b>and other androgens stimulate the formation of secondary sexual characteristics in males.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">At puberty, the external genitals enlarge and several other changes occur. Voices become deeper, and hair grows around the reproduction organ, in the armpits, and on the face.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">From the introduction, Kofi was just experiencing some of these secondary sexual characteristics brought about during puberty. Note that lack of enough androgens may result in improper development of these secondary
+  characteristics.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

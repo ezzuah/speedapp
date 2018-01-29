@@ -1,0 +1,452 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>RADIOACTIVITY</b></p>
+
+  <p align="justify">We learnt about isotopy in the first chapter, we saw that atoms of
+  some elements may not have the same number of neutrons in their nucleus (isotopes). Not
+  all isotopes are <b style="color:crimson">stable</b>. What do we mean by a stable
+  isotope? A stable isotope is one which will not decay (give off energy or disintegrate)
+  spontaneously (naturally).</p>
+
+  <p><br /></p>
+
+  <p align="justify"><img width="273" height="169" src="http://speedapp.ididev.com/apps/img/rad1.png" alt="" /></p>
+
+  <p align="left"><br />
+  <br /></p>
+
+  <p align="justify">In the other hand, <b style="color:crimson">unstable isotope</b> is
+  one which will decay spontaneously in order to become stable. <i style="color:blue">The
+  process by which an unstable atomic nucleus looses energy to form a stable nucleus by
+  emitting radiations in the form of particles or electromagnetic waves</i> is known as
+  <b style="color:crimson">Radioactivity</b>. The SI unit of radioactivity is the
+  Becquerel (symbol <i style="color:blue">Bq</i>) = number of disintegrations per second.
+  There are two types of radioactivity.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">These are <b style="color:crimson">natural</b> and <b style=
+  "color:crimson">artificial radioactivity</b>. Natural radioactivity is the spontaneous
+  disintegration of an unstable nucleus. And artificial radioactivity is the
+  disintegration of a stable nucleus after it has been bombarded with a sub&ndash;atomic
+  particle (proton or neutron). The rate or speed at which a radioactive material decays
+  is given by its <i style="color:blue">half&ndash;life</i>. The <b style=
+  "color:crimson">half&ndash;life</b> of a radioactive element is the time taken for half
+  the amount of the original element to decay. During radioactive decay, three different
+  kinds of radiations are emitted. They are:</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>
+      <b style="color:crimson">Alpha particles</b>; this is a particle which consist of
+      two protons and two neutrons. They are similar to a helium atom which has lost its
+      two electrons thereby attaining a +2 charge. It is denoted by <b style=
+      "color:crimson">&alpha;</b>. It is deflected by both electrical and magnetic fields
+      because it is charged. It has the least penetrating power among the three
+      radiations. They travel some few millimeters in air and are stopped by a thin paper
+      card.
+
+      <p align="left"><br />
+      <img src="http://speedapp.ididev.com/apps/img/rad2.png" alt="" /></p>
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>
+      <b style="color:crimson">Beta particles</b>; this is a high speed electrons. It is
+      denoted by <b style="color:crimson">&beta;</b>. It has no mass and a single
+      negative charge. It is also deflected by magnetic and electric field as a result of
+      its charge. It has a high penetrating power. It can go through paper card but can
+      be stopped by a thin aluminum foil.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>
+      <b style="color:crimson">Gamma rays</b>; this is a high electromagnetic radiation
+      and it is denoted by <b style="color:crimson">&gamma;</b>. It has neither mass nor
+      charge. It is not deflected by electric or magnetic fields. This goes through both
+      paper card and aluminum foil. It is stopped by a thick lead plate.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><img width="248" height="268" src="http://speedapp.ididev.com/apps/img/rad3.png" alt="" />
+
+  <p align="left"><br />
+  <br /></p>
+
+  <p align="justify"><b>Nuclear Reactions</b><br /></p>
+
+  <p align="justify">Scientists noticed that radioactive decay releases great deal of
+  energy. They induce this kind of decay through two main reactions, the <i style=
+  "color:blue">fission and fusion reactions</i>. <b style="color:crimson">Nuclear
+  fission</b> is the splitting of a large nucleus to form two smaller, more stable,
+  ones.</p>
+
+  <p align="letf"><br /></p>
+
+  <p align="justify">The process involves bombarding a large nucleus with a slow moving
+  neutron. The bombarded nucleus absorbs the neutron and forms a highly unstable nucleus
+  which exists for a very short period. The unstable nucleus formed then disintegrates
+  into two smaller atoms which are more stable the original atom. The two newly formed
+  atoms are the <b style="color:crimson">daughter atoms</b>. In most cases, a number of
+  neutron particles are emitted from fission reaction. If there are other fissionable
+  nuclei (like the original one) around, these emitted neutrons are then absorbed by the
+  fissionable nuclei and disintegrate. The process goes on repeatedly and becomes
+  self&ndash;sustaining. This kind of repeated reaction is termed as <b style=
+  "color:crimson">chain reaction</b>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/rad4.jpg" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Nuclear fusion</b> is a nuclear reaction in
+  which at least one heavier, more stable nucleus is produced from two lighter, less
+  stable nuclei. Nuclear fusion is what makes our sun work. Every second, this process
+  transforms astronomic quantities (600 million tonnes per second) of hydrogen atoms into
+  helium, with the liberation of a phenomenal amount of energy. The object of nuclear
+  fusion is to reproduce this process on Earth on our tiny human scale.</p>
+
+  <p align="justify"><br /></p>
+
+  <p align="justify">The main difficulty associated with nuclear fusion is that before
+  recovering the energy, the hydrogen must be heated to 200 million degrees. That is
+  exceedingly hot! So hot, in fact, no known material resists such temperatures. So, what
+  can be done? Up to date, fusion energy has been produced in a very brief period (the
+  current record is one second). But the energy released from fusion reaction is much
+  higher than that of fission.</p>
+
+  <p align="left"><br />
+  <br /></p>
+
+  <p align="justify">Since the energy released in nuclear reactions is so great and
+  exposure to the fuel (radioactive element) is a potential threat to human health, the
+  reactions are mostly performed in an enclosure, nuclear reactor. In the nuclear
+  reactor, the chain reaction is controlled to avoid explosion. The reactor has a control
+  rod usually made of boron because boron absorbs neutrons.</p>
+
+  <p align="justify"><br /></p>
+
+  <p align="justify">If the reaction is too fast, more rods are then inserted into the
+  reactor to slow it. If it is too slow, the rods are taken out of the reactor to speed
+  up the reaction. The heat generated from fission reaction is used to produce
+  electricity. The picture on the next page shows the expulsion of water vapour from a
+  cooling tower of a radioactive power plant. This should give you a fair idea about the
+  amount of energy produced from fission reaction.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img width="311" height="234" src="http://speedapp.ididev.com/apps/img/rad5.jpg" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Nuclear Equation</b><br /></p>
+
+  <p align="justify">If a <b style="color:crimson">reaction</b> changes the <b style=
+  "color:crimson">number of protons</b> in the <b style="color:crimson">nucleus</b> of an
+  atom and an atom with different atomic number is obtained then the reaction is referred
+  to as <b style="color:crimson">transmutation</b> (nuclear change). <b style=
+  "color:crimson">Nuclear Equation</b> is an equation written to represent transmutation.
+  To write a nuclear equation these two rules must be satisfied.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>
+      <b style="color:crimson">Rule 1.</b> <i style="color:blue">Mass number</i> is
+      conserved in a nuclear change. In other words, the sum of the mass numbers before
+      and after the reaction must be equal.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>
+      <b style="color:crimson">Rule 2</b>. <i style="color:blue">Electric charge</i> is
+      conserved in a nuclear reaction. The total electric charge before and after the
+      nuclear change should be equal.<br />
+
+      <p align="justify"></p>
+    </li>
+  </ol>The conventional representation of a nuclear particle is;<br />
+  <br />
+
+  <table>
+    <tr>
+      <td><small>A</small><br />
+      <small>Z</small></td>
+
+      <td><span style="font-size: 25px">X</span></td>
+    </tr>
+  </table><br />
+  where A = Atomic mass of the isotope (mass of protons and neutrons present), Z = atomic
+  number of isotope (which represents total charge on isotope) and X is the chemical
+  symbol.
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Example 1</b><br /></p>
+
+  <p align="justify">Complete the following nuclear equation (Note that &lsquo;?&rsquo;
+  is used to represent unknown element).</p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td><small>18</small><br />
+      <small>9</small></td>
+
+      <td><span style="font-size: 20px">F</span></td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62" height="10" alt="" /></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e + ?</span></td>
+    </tr>
+  </table><!--
+<br>
+<p align="justify">        <img  width=204 height=50 src="http://speedapp.ididev.com/apps/img/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAAAwCAIAAADBx0IzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANHSURBVHhe7ZoxesIwDEY5AiNjz8EpOEVnjsINOAIba0dGRgYOwkidxHVsx8G2Kiu2IpaWfolk/XqRZKebt3xEASQFNkh2xIwo8BaYBAI0BQQmNCnFkMAkDKApIDChSSmGBCZhAE0BgQlNSixD1+/N8Nmfnlg2aexMYHqe9n4QJjoV4PeVZl1r9aLk1xB1vzUmtwNTv34vgo4kQ5fzZa35Lhn3yJLy0qnd1MNrYNJhdD/sAJzo+viaK74lk49t2+HH0x7bF749v835ML39Z0VYwk+CsejisxRM9liTVTuiMHWBGutjzdIdUY+KrU6MBbkAmV4epiHVOs86ycn1Iw6T1dmsmbB3muwFpOwab1q8zXlTscNWNCExmLy2Z4IVmKLSQi6obQDHh8kqQOuA6XK5QEjAuMc9Gvhc+t1RI2Hfl3/a0MOUYHkIPVSZnBDsureWNvfVf87nMwYeuTZGRD4m0W0Nw02xrOfClHv9CJM/Uo8rs6Z780fWbU6RNGwplkMqguC0YvTpiwyxeXDkbyahr1Oc7SO3zZyBqVakQlQkdKQcmCDn0/+CietuzoOpPqRCj/Lc67zZaz+1xfyqFJqZUjs8Rpt7vV7b7dY9qqr9m+Ls8XikqlTquoQqFHKdXplgb3IWrky32+2nvs9utwtCfTgc7vd7KUIy7AIf5XSYMtZiXbowTLBFl75r2uaqwUiHDqNJYCpNTsC+DVNtGOnl6r23dRgweas6DSwZpryzSuNorjKFjgPs1cEejQXAgLgcYKoII0VBYLPjHebETpkylMCEyZ7lYaNYxsIrvPR4PC4wGymlQzxMa1CFig1LClUml5+E8lltdE0tLACTfqpbSUEaTFwPlKqCbaYyqTW2DJM7p0GOQqtKUiuL4QmTUt+av/f7v39xbyUrLa0z6Sy75crkJkOFK12Ogk+2lcmIB3tJQ6E9Ox/cYZJ5iRDZzzC10B3mDi2H040WIiBMd1lXIZjm/8ms7Fpg1qHv5mDe5C7WCghMrNNLG5zARKs3a28CE+v00gYnMNHqzdqbwMQ6vbTBCUy0erP2JjCxTi9tcAITrd6svQlMrNNLG5zARKs3a28CE+v00gYnMNHqzdqbwMQ6vbTB/QJ7BaVGvc5MdQAAAABJRU5ErkJggg==" /><p align="left">
+-->
+  <br />
+
+  <p align="justify"><u><b>Solution</b></u><br /></p>
+
+  <p align="justify">First of all let us determine the mass of the unknown product and it
+  is done by summing the total mass on the left side and equating to the total mass on
+  the right side.<br />
+  <br /></p>
+
+  <table>
+    <tr>
+      <td>[Mass no. of</td>
+
+      <td></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e]</span></td>
+
+      <td>+</td>
+
+      <td></td>
+
+      <td>[Mass no. of <span style="font-size: 25px">?</span>] = 18</td>
+    </tr>
+  </table>
+
+  <p align="justify">From change of subject, we have:</p>
+
+  <table>
+    <tr>
+      <td></td>
+
+      <td>[Mass no. of <span style="font-size: 25px">?</span>] = 18 &mdash;</td>
+
+      <td>[Mass no. of</td>
+
+      <td></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e]</span></td>
+    </tr>
+  </table><!--
+
+<br>
+<p align="justify"><img  width=340 height=100 src="http://speedapp.ididev.com/apps/img/data:image/png;base64,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" /><p align="left"><br>
+-->
+
+  <p align="justify">Mass no. of ?= 18 &mdash; 0 = 18</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Secondly, we find the charge of the unknown product. Like the mass,
+  total charges on the left must equal total charges on the right.</p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td>[Charge of</td>
+
+      <td></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e]</span></td>
+
+      <td>+</td>
+
+      <td></td>
+
+      <td>[Charge of <span style="font-size: 25px">?</span>] = 9</td>
+    </tr>
+  </table><br />
+  <br />
+  then;<br />
+
+  <table>
+    <tr>
+      <td></td>
+
+      <td>[Charge of <span style="font-size: 25px">?</span>] = 9 &ndash;</td>
+
+      <td>[Charge of</td>
+
+      <td></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e]</span></td>
+
+      <td>+</td>
+    </tr>
+  </table><!--
+<br>
+<p align="justify"><img  width=289 height=100 src="http://speedapp.ididev.com/apps/img/data:image/png;base64,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" /><p align="left"><br>
+-->
+
+  <p align="justify">[Charge of <span style="font-size: 25px">?</span>] = 9 &ndash; 1 =
+  8</p>
+
+  <p align="left"></p>
+
+  <p align="justify">Finally, find the element with a proton number of 8 (oxygen), the
+  equation is then written as,</p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td><small>18</small><br />
+      <small>9</small></td>
+
+      <td><span style="font-size: 20px">F</span></td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62" height="10" alt="" /></td>
+
+      <td><small>0</small><br />
+      <small>+1</small></td>
+
+      <td><span style="font-size: 25px">e +</span></td>
+
+      <td><small>18</small><br />
+      <small>8</small></td>
+
+      <td><span style="font-size: 25px">O</span></td>
+    </tr>
+  </table><br />
+  <!--
+<p align="justify"><img  width=244 height=45 src="http://speedapp.ididev.com/apps/img/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAAAsCAIAAADkR7OwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPFSURBVHhe7Zs9fvIwDMY5AiNjz8EpOEVnjtIbcAS2ru/IyMjQgzDyJnFIbMcfsrFiGR6Wlv4cW3r0jyw56eaBDxRoVoFNs5bDcCjwAL6AoGEFgG/DwYPpwBcMNKwA8G04eDAd+IKBhhUAvg0HD6YDX7kM/H5v1Gf/8yfXyqqW+fH9+9nbsk16dpJ+/1a1++0X7+Qfse1/qye3bAzc+A6KWZr17E48G1/eHqUKDs70dov3atdIF/IxWOI7Ctf/0CUz9BwUxZbGiLVBrKU947Lz1G1g4C0ebHwfdj4AvYwYmcDWwHd0TjgGdHx7f6bid87L4wYzNhnoNcowLRdfDwZPt/X2aIWuMwFfrV7QuonBXmTiMtTOs1QvHnzZVy8bzaZSJTIDBVfxXFQpMr7WLjLJ+2H4ns/novr7JhPRunXGuVogrSWa7zIfB4pgrsYzCV/tzvpUfL+Gz+l04obYPDgLb29mAUdAhX4WF+/gBzRDkHImuCC+hmj6WdnnFg8du6q+54d4hjIIpEkHLdml4RvHILgqzaS8dODA127GZvG0unz6I+e9lecS61UTvmtBHPFmkN/AewhfpBmh4JuCQRgCRkRefmhst5ortJusfEYmt/CtDbGLwyXRC58o+Kao3Di+xU8e7vf7drs1T+Okf+vIvt1uKVF/fawrefhek/COfb2zAr6LUF4ul3/yPrvdznkbHQ6H6/X6Oo+JMxAyrWvG0tlXUu2bpiBjYZNmyDqjl8VDJXCVu5nql8Y3aEfmLUaKZ5nat3jxQLK9xiAd36rgjs7n8VscX//JWZ6B1NACX6pSapzCVwK4o93LB1v2Ua3DwfL4Po9+zTMPVW4TDqLTgjCPjuLrOizTF+O9u3LdYrvueDzWqHGf/nTcOXY664yLAxe97wvMb7eH3NtyGF/90aXxFJ4ND0w8FLQuQthfIPBqrz+xGspcbirJFATxNYklbErkZTEwoIAD3zGP1AmBnsRUu9gqvmLsfmf+Pdm3c7kOvoJf9Q5mX7PCF7VrAN+VFZiqWo7KOtuXWOum1eL7/fOfB7NXw4XB+tL5QETf8CplX/87vrUDGsNXs09SzVNbNtb1pRUP1k0jqYcn42vV76zx+/DJJeLretVbQJiI+KLuXTFWYXwrdM969DmeeORrG8VXnTZW0Czfp9avdOHrf/t2HW9jT6/WsWKxShTfSnZhWShAUAD4EkTCEKkKAF+pkYFdBAWAL0EkDJGqAPCVGhnYRVAA+BJEwhCpCgBfqZGBXQQFgC9BJAyRqgDwlRoZ2EVQ4D/k8+A1yyqAfwAAAABJRU5ErkJggg==" /><p align="left"><br>
+-->
+
+  <p align="justify"><b>Uses of Radioactive Nuclides</b><br /></p>
+
+  <p align="justify"><b style="color:crimson">Radioactive dating</b>: One of the most
+  interesting applications of radioactivity is its use in determining the ages of rocks
+  and dating relics and past events.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Tracers</b>: Radioactive elements are used
+  as <i style="color:blue">tracers</i>. For instance, radioactive&ndash;containing
+  fertilizer can be introduced into an area (ecosystem) to trace the <i style=
+  "color:blue">uptake</i> and <i style="color:blue">movement</i> of nutrients within the
+  area.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Food Irradiation</b>: food gets spoilt for
+  many reasons. These reasons may be as a result of the presence of bacteria, other
+  micro&ndash;organisms and internal enzymes. For that reasons, canned foods are
+  sterilized with gamma radiation to kill all bacteria and micro&ndash;organism before
+  canning.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Power generation</b>: radioactive elements
+  are used as fuel in nuclear reactors for the production of electrical power.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Medical diagnosis and treatment:</b> it is
+  used to diagnose and treat some diseases. For example, iodine is an element which
+  collects in the thyroid glands. Because it does, radioactive iodine is used to diagnose
+  and treat thyroid disorders.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/rad6.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Pest Control</b>: It is used to control
+  reproduction in pests (insects) such as locust by sterilizing the male species. After
+  these males have been sterilized, any mating between them and a fertile female will not
+  result in reproduction leading to the extinction of their species.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Harmful Effect of Radioactivity</b><br /></p>
+
+  <p align="justify">All radiations (particles and electromagnetic waves) have an effect
+  on living organisms. If the radiation has enough energy, it can penetrate living cells
+  and disrupt their functions. This disruption result in skin burns destruction of cells
+  which can even affect unborn babies, leukemia, bone cancer and all other forms of
+  cancer.</p>
+
+  <p align="left"></p>
+</ion-content>

@@ -1,0 +1,186 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>THE PERIODIC TABLE</b></p>
+  
+    <p align="justify">Your school has an academic time table, and you might probably have
+    your personal time table. Supposing the schedules on these time table were written in
+    statement form, do you think reading would have been that easy? Scietists have, so far,
+    discovered 109 elements. Some of the elements show similar behaviour (property).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">For example, sodium reacts vigorously with water. Potassium also
+    reacts vigorously with water. Both elements are soft and have shiny surface. Later
+    experimints revealed that both elements have one outer electron which is responsible
+    for their similar properties. Certain electron arrangements repeat themselve as atomic
+    number increases and this has brought about similarities in elemental properties.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Scientists have therefore arranged all the elements in a table known
+    as the <b style="color:crimson">periodic table</b> such that in a glance one can
+    predict the behaviour of an element base on its electronic structure. The periodic
+    table has (horizontal) rows called <b style="color:crimson">periods</b> and (vertical)
+    columns called <b style="color:crimson">groups</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/periodictable.png" alt="" name="front_image" id=
+    "front_image" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Elements are basically classified as metals, non-metals or
+    semi-metals on the table.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Periods</b><br /></p>
+  
+    <p align="justify">Elements on a particular period have the same number of shells.
+    Example is hydrogen and helium as shown in the picture below. The atomic numbers of
+    adjacent atoms increase by one unit when you move from left to right on a period. For
+    example, nitrogen and oxygen are on the same period and their respective atomic numbers
+    are 7 and 8.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The periods are assigned numbers which is equal to the number of
+    shells within the atoms (of element) that occupy them. For example, you would find
+    hydrogen which has a single shell on period 1, oxygen (see next page for structure)
+    with two shells on period 2 and sulphur with three shells on period 3. There are seven
+    periods in all and as you move down the table, the number of shells increases by one
+    from one period to the next.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/periodictable2.png" alt="" /><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/periodictable3.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Groups</b><br /></p>
+  
+    <p align="justify">There are 8 groups excluding the transition metals. Elements in the
+    same group have the same number of valence electrons. Since valence electrons are
+    responsible for the chemical properties of an element, it implies that elements in the
+    same group will have similar chemical properties because they have the same number of
+    valence electrons. Like the periods, the groups have been assigned numbers. The number
+    assigned to a group is equal to the number of valence electrons atoms (of elements) in
+    that group possesses. The figure below shows fluorine and chlorine respectively; they
+    have the same number of valence electrons (7) so they are placed in the same group
+    (group 7).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="228" height="228" src="http://speedapp.ididev.com/apps/img/F.png" alt="" /></p>
+  
+    <p align="left"><br />
+    <img width="188" height="188" src="http://speedapp.ididev.com/apps/img/Cl.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">At this point, let us consider the properties of groups 1, 2, 7 and
+    8 elements.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Group 1</b> (Lithium, Sodium, Potassium, etc.)<br /></p>
+  
+    <p align="justify">These elements are also known as <b style="color: crimson">alkali
+    metals</b>. They have single electron in their valence shell. They are very reactive.
+    They react by loosing their only valence electron thereby forming a <i style=
+    "color:blue">+1 ion always</i>.<br />
+    <br />
+    * They <i style="color:blue">tarnish in air</i> as results of their reaction with
+    oxygen to form oxides. Therefore, they are mostly kept in paraffin.<br />
+    <br />
+    * They displace <i style="color:blue">(release) hydrogen from its compounds</i> in the
+    form hydrogen gas.<br />
+    <br />
+    * They are <i style="color:blue">good conductors of heat and electricity</i> .<br />
+    <br />
+    * They <i style="color:blue">have low melting point, boiling point and density</i> as
+    compared to other metals.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note that Hydrogen has a valence electron of one, just like the
+    alkali metals; it can react by loosing its valence electron and form a +1 ion. Unlike
+    alkali metals, <i style="color:blue">hydrogen can also accept or share electrons.
+    Because of this unique property, hydrogen is considered as a family on its own.</i></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Group 2</b> (Beryllium, Magnesium, Calcium, etc)<br /></p>
+  
+    <p align="justify">The family name of this group is the <b style=
+    "color:crimson">Alkaline earth metals.</b> These elements are found in group two (next
+    to the alkali metal). They have two valence electrons just like helium. However, they
+    are not placed in the same column with helium. This is so because, the two valence
+    electrons of helium fills the K shell fully (refer from Atomic structure) which is not
+    the case for the alkaline earth metals. They react by loosing the two outer electrons,
+    forming +2 ions always. They have relatively high melting point, boiling point and
+    density.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Group 7</b> (Fluorine, Chlorine, Bromine, Iodine, etc)<br /></p>
+  
+    <p align="justify">The family name of this group is the <b style=
+    "color:crimson">halogens</b>. They are very reactive. They have seven valence electrons
+    so they react by accepting one electron to complete their valence shell and acquire a
+    &ndash;1 charge. Fluorine and chlorine are gases, bromine is a volatile liquid and
+    iodine is a solid that sublimes easily.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Group 8</b> (Helium, Neon, Argon, Krypton, Xenon and
+    Radon)<br /></p>
+  
+    <p align="justify">These elements are called <b style="color:crimson">inert</b> or
+    <b style="color:crimson">noble gases.</b> They all have 8 electrons in their valence
+    shell except helium, which has 2. From the family name, &lsquo;<i style=
+    "color:blue">inert&rsquo;</i> and &lsquo;<i style="color:blue">gases</i>&rsquo;, it
+    means they are inactive or unreactive and exist as gases. Because they already have a
+    stable structure, they exist as monoatomic or single gas particles.</p>
+  
+    <p align="left"><br /></p>
+
+</ion-content>

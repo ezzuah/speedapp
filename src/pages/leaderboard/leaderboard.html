@@ -1,0 +1,33 @@
+
+<ion-header>
+    <ion-navbar color="speedapp">
+      <ion-title></ion-title>
+    </ion-navbar>
+
+  </ion-header>
+  
+  
+  <ion-content>
+      <ion-content>
+          <ion-list>
+              <table width="100%" border="0" align="center" cellpadding="4" cellspacing="4">
+                <tr>
+                  <td width="25%"><div align="center" class="whitetext"><strong>Name</strong></div></td>
+                  <td width="25%"><div align="center" class="whitetext"><strong>School</strong></div></td>
+                  <td width="12%"><div align="center"><strong>Total</strong></div></td>
+                  <td width="13%"><div align="center"><strong>Position</strong></div></td>
+                </tr>
+                <tr *ngFor="let item of posts; let i = index">
+                  <td width="40%"><div align="left" style="text-transform:capitalize">{{item.fname}} {{item.lname}}</div></td>
+                  <td width="40%"><div align="left" style="text-transform:capitalize">{{item.school}}</div></td>
+                  <td width="10%"><div align="left">{{item.score}}</div></td>
+                  <td width="10%"><div align="left">{{i + 1}}</div></td>
+    </tr>
+  </table>
+            </ion-list>
+          <ion-infinite-scroll *ngIf="play" (ionInfinite)="loadData($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+        </ion-content>
+  
+  

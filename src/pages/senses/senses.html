@@ -1,0 +1,397 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>SENSES</b></p>
+  <br />
+  <p align="justify">We perceive the world around us through our sense organs. Our sense organs include the ear, eye, nose, tongue and skin. Without these we would not have felt, let alone enjoyed the world in which we lived. What actually happens
+  when we perceive?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">To be brief, when a receptor within a sense organ is stimulated, it generates nerve impulses that are transmitted to the central nervous system (brain and spinal cord). Sensation occurs after the brain receives the stimuli and
+  becomes aware of it.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The brain interprets the information received and then sends impulses in response to the received information. Let us consider these senses one by one.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>EAR</b>
+    <br />
+  </p>
+  <p align="justify">As shown above, the ear has three divisions: the outer, middle and inner ear. The 
+  <i style="color: blue">outer</i>part consists of the pinna and the auditory canal. The 
+  <b style="color: crimson">pinna</b>is the gateway into the ear. The 
+  <b style="color: crimson">auditory</b>
+  <b style="color: crimson">canal</b>also secretes earwax which helps to guard the middle and inner ear against the entrance of air pollutants.</p>
+  <p align="left">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/sense1.jpg" />
+  </p>
+  <p align="left">
+    <br />
+    <br />
+  </p>
+  <p align="justify">This earwax is what we mostly think is dirt each time we use cotton or tissue to clean that part of the ear. But are they actually dirt?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <i style="color: blue">middle ear</i>begins at the tympanic membrane and ends with the 
+  <b style="color: crimson">oval window</b>and 
+  <b style="color: crimson">round window</b>. Between these ends are the 
+  <b style="color: crimson">ossicles</b>. The ossicles include the 
+  <b style="color: crimson">malleus</b>, 
+  <b style="color: crimson">incus</b>and 
+  <b style="color: crimson">stapes</b>. The 
+  <i style="color: blue">inner ear</i>is made up of the semicircular canals, vestibule and cochlea.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">cochlea</b>is responsible for hearing while the 
+  <b style="color: crimson">semicircular canals</b>and 
+  <b style="color: crimson">vestibule</b>are concerned with the body&rsquo;s equilibrium.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">process of hearing</b>, however, begins when sound waves enter the auditory canal. The malleus amplifies the sound wave at the incus to an extent that by the time it travels from the tympanic membrane to the staples, it
+  had multiplied by about 20 times.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is why the malleus and incus are called 
+  <i style="color: blue">hammer</i>and 
+  <i style="color: blue">anvil</i>respectively. The staples strike the membrane of the oval window, causing it to vibrate. The wave is then passed on to the cochlea. Nerve impulses then begin in the cochlea and travel to the brain stem. They reach
+  the auditory areas of the cerebral cortex and are interpreted as sound.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>EYE</b>
+    <br />
+  </p>
+  <p align="justify">They say the 
+  <i style="color: blue">eye</i>is the light of the body and that assertion is true may be because without the eye we can&rsquo;t see anything. What you see here on the right is the human eye as we all see it from the outside.</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/sense2.jpg" />
+  </p>
+  <p>
+    <br />
+  </p>
+  <p align="justify">What, then, of the inside? Take a good look at the anatomy of the eye below and consider the function of each from the table which follows.</p>
+  <p align="left">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/sense3.jpg" />
+    <br />
+  </p>
+  <p align="justify">
+    <b>PARTS OF THE EYE</b>
+    <br />
+  </p>
+  <table border="1"
+         cellspacing="1"
+         width="100%">
+    <tr>
+      <th style="color: white; background-color: darkred">Eye part</th>
+      <th style="color: white; background-color: darkred">Function</th>
+    </tr>
+    <tr>
+      <td>Humors</td>
+      <td>Transmit light rays and support eyeball</td>
+    </tr>
+    <tr>
+      <td>Pupil</td>
+      <td>Admits light</td>
+    </tr>
+    <tr>
+      <td>Cornea</td>
+      <td>Refracts light rays</td>
+    </tr>
+    <tr>
+      <td>Lens</td>
+      <td>Refracts and focuses light rays</td>
+    </tr>
+    <tr>
+      <td>Ciliary body</td>
+      <td>Holds lens in place, helps in accommodation</td>
+    </tr>
+    <tr>
+      <td>Retina</td>
+      <td>Contains receptors for sight</td>
+    </tr>
+    <tr>
+      <td>Blind spot</td>
+      <td>Any images formed here is unseen</td>
+    </tr>
+    <tr>
+      <td>Optic nerve</td>
+      <td>Transmits impulse to brain</td>
+    </tr>
+    <tr>
+      <td>Fovea centralis</td>
+      <td>Makes acute vision possible</td>
+    </tr>
+    <tr>
+      <td>Sclera</td>
+      <td>Protects and supports eyeball</td>
+    </tr>
+    <tr>
+      <td>Choroid</td>
+      <td>Absorbs stray light</td>
+    </tr>
+    <tr>
+      <td>Rods</td>
+      <td>Make black&ndash;and&ndash;white vision possible</td>
+    </tr>
+    <tr>
+      <td>Cones</td>
+      <td>Make colour vision possible</td>
+    </tr>
+    <tr>
+      <td>Iris</td>
+      <td>Regulates light entrance</td>
+    </tr>
+  </table>
+  <p align="justify">
+    <b>The process involved when our eye views an object</b>
+    <br />
+  </p>
+  <p align="justify">Light rays from the object we view passes through the cornea, aqueous humor, lens and vitreous humor to the retina. As the rays pass through these regions, it is refracted and brought to the fovea centralis on the retina.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">An inverted and smaller image of the object is formed. Impulses are then sent to the brain through the optic nerve for an interpretation of what the object is. When objects are closer or farther from our eyes we can still focus
+  since the eye 
+  <i style="color: blue">accommodates</i>to make such a vision possible.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Accommodation</b>is the ability of the eye to focus on both distant and near objects. Here, the lens in the eye remains 
+  <i style="color: blue">flat</i>when we view distant objects but 
+  <i style="color: blue">rounds</i>
+  <i style="color: blue">up</i>when we view near objects. The shape of the lens at each point in time is controlled by the ciliary muscle within the ciliary body. Note that the lens, assisted by the cornea and humors, focuses images on the
+  retina.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>DEFECTS OF THE EYE</b>
+    <br />
+  </p>
+  <p align="justify">Three types of eye defects are common. They are short sightedness (also 
+  <b style="color: crimson">myopia</b>), long sightedness (also 
+  <b style="color: crimson">hypermetropia</b>) and 
+  <b style="color: crimson">astigmatism</b>. A person with myopia can see near objects clearly but not distant ones.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A person with hypermetropia is the opposite&mdash;he can see distant objects more clearly than closer ones. A person with astigmatism has either an uneven cornea or an uneven lens. The table below shows the three major defects,
+  what they entail and their respective corrective lenses.</p>
+  <p align="left">
+    <br />
+  </p>
+  <br />
+  <table border="1"
+         cellpadding="1"
+         cellspacing="1"
+         width="100%">
+    <tr>
+      <th style="color: white; background-color: darkred">DEFECT</th>
+      <th style="color: white; background-color: darkred">WHAT HAPPENS</th>
+      <th style="color: white; background-color: darkred">CORRECTIVE LENS</th>
+    </tr>
+    <tr>
+      <td>Myopia</td>
+      <td>Long eyeball; rays focus in front of retina when viewing distant objects.</td>
+      <td>
+      <b style="color: crimson">Concave</b>lens allows subject to see distant objects.</td>
+    </tr>
+    <tr>
+      <td>Hypermetropia</td>
+      <td>Short eyeball; rays focus behind retina when viewing close objects.</td>
+      <td>
+      <b style="color: crimson">Convex</b>lens allows subject to see close objects</td>
+    </tr>
+    <tr>
+      <td>Astigmatism</td>
+      <td>Uneven cornea; rays do not focus evenly OR 
+      <p align="left"></p>
+      <p align="justify">Uneven lens; rays do not focus evenly</p></td>
+      <td>
+      <b style="color: crimson">Uneven 
+      <i style="color: blue">lens</i></b>allows subject to see clearly OR 
+      <p align="left"></p>
+      <p align="justify">
+      <b style="color: crimson">Uneven 
+      <i style="color: blue">cornea</i></b>to allow subject to see clearly.</p></td>
+    </tr>
+  </table>
+  <p align="justify">
+  <b style="color: crimson">Glaucoma</b>is another eye defect common mostly in older people. Normally, a small amount of aqueous humor is produced each day and leaves through those tiny ducts located where the iris meets the cornea.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A person with glaucoma has got these drainage ducts blocked and aqueous humor builds up (as they cannot leave). The resulting pressure compresses the arteries that serve the nerve fibers of the retina (where receptors for sight
+  are located).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The nerve fibers begin to die due to lack of nutrients and the person becomes partially blind. Eventually, total blindness can result. Also, as we age, the lens loses its capacity of accommodation. It cannot become more rounded
+  when we try to focus on nearer objects. This defect is called 
+  <b style="color: crimson">presbyopia.</b>
+  <br /></p>
+  <p align="justify">That must explain why older ones mostly read with the item being read held an arm length away. A biconvex lens can correct this defect. 
+  <b style="color: crimson">Cataract</b>, which also affects older people, occurs when the lens becomes cloudy so that light cannot pass through easily making it difficult for the victim to see clearly.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>SKIN</b>
+    <br />
+  </p>
+  <p align="justify">Specialized receptors in the human skin respond to touch, pressure, pain, and temperature. The dermis of the skin contains these receptors (refer from the anatomy of the skin below). Parts of the skin contain more receptors for
+  a particular sensation; example the fingertips have an abundance of touch receptors.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="254"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/sense4.jpg"
+         width="413" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Adaptation</b>occurs when a receptor becomes so accustomed to stimulation that it stops generating impulses, even though the stimulus is still present. To illustrate, the touch receptors adopt soon after we wear a dress,
+  so that we are no longer aware of the feel of the dress on our skin.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>SMELL</b>
+    <br />
+  </p>
+  <p align="justify">We also perceive the world around us through our sense of smell. The olfactory cells located on the roof of the nasal cavity are responsible for our being able to smell. 
+  <b style="color: crimson">Olfactory cells</b>are modified neurons.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="272"
+         src="http://speedapp.ididev.com/apps/img/sense5.jpg"
+         width="313" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">When odors enter the nasal cavity or nose, nerve impulses pass along the 
+  <b style="color: crimson">cilia</b>to the olfactory bulb located in front of the brain. Scientists believe that some processing probably occurs here before the information is sent primarily to the temporal lobe of the cerebrum, which produces the
+  sensation of smell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Olfactory receptors, like touch and temperature receptors, adapt to outside stimuli. This means that after a while, the presence of a particular smell no longer causes the olfactory cells to generate nerve impulses and we are no
+  longer aware of a particular smell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The receptors for taste and smell work together to give a combined effect when interpreted by the cerebrum. That explains why when one has cold he thinks the food he eats has lost its taste but actually, the one has lost the
+  ability to smell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The same happens in the opposite. When we smell something, some of the molecules move from the nose down to the mouth region and stimulate the taste buds there.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>TASTE</b>
+    <br />
+  </p>
+  <p align="justify">Most of the things we happen to taste are made possible through our taste buds which are on the tongue. 
+  <b style="color: crimson">Taste buds</b>(large and small) lie along the small elevations we see on the tongue called 
+  <b style="color: crimson">papillae.</b>
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         height="192"
+         src="http://speedapp.ididev.com/apps/img/sense6.png"
+         width="238" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Taste buds have supporting cells and a number of elongated taste cells. Taste receptor cells themselves do not generate nerve impulses but they make extensive contacts with the ends of sensory nerve fibers that do generate nerve
+  impulses.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="188"
+         src="http://speedapp.ididev.com/apps/img/sense7.jpg"
+         width="143" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are basically four types of tastes 
+  <b style="color: crimson">bitter</b>, 
+  <b style="color: crimson">sour</b>, 
+  <b style="color: crimson">salty</b>and 
+  <b style="color: crimson">sweet</b>. Taste buds for each are concentrated on the tongue in particular regions. The brain appears to survey the overall pattern of incoming sensory impulse. This information goes directly to the cerebrum and also the
+  brain stem for a corresponding reaction to the taste.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

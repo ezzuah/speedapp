@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+  </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-list>
+        <ion-item  *ngIf="bookmarks==''"> 
+            <ion-thumbnail item-start >
+              <img src="assets/imgs/empty_bookmark.png">
+            </ion-thumbnail>
+            <h2>There are no topics in your bookmarks</h2>
+            <p>To bookmark a topic, simply swipe from right to left against a particular topic and tap on Bookmark</p>
+          </ion-item>
+
+
+      <div *ngIf="bookmarks">
+          <ion-item-sliding *ngFor="let item of bookmarks">
+          <ion-item (click)="readNotes(item)" >
+              <ion-thumbnail item-start>
+                <img src="assets/imgs/bookmark.png">
+              </ion-thumbnail>
+              <h2>{{item.topic}}</h2>
+              <p>{{item.subject}}</p>
+            </ion-item>
+            <ion-item-options side="right">
+                <button (click)="deleteBookmark(item)"  ion-button color="speedapp">
+                  <ion-icon name="trash"></ion-icon>
+                  Delete
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+      </div>
+    
+    </ion-list>
+  
+  </ion-content>

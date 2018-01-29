@@ -1,0 +1,480 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>ACIDS</b></p>
+      
+        <p align="justify">It has long been noticed that aqueous (water) solutions of some
+        solid compounds conducts electricity. Ordinary table salt solution is a typical
+        example. A solution that conducts electricity is called an <b style=
+        "color: blue">electrolyte</b>.<br />
+        <br />
+        <img src="http://speedapp.ididev.com/apps/img/acid1.jpg" alt="" width="222" height="180" /><br />
+        <br />
+        Further searches proved that there are three categories of compounds whose aqueous
+        solutions are electrolytes. These compounds are acids, bases and salts.</p>
+      
+        <p align="justify"><b style="color:crimson">WHAT IS AN ACID?</b></p>
+      
+        <p align="justify">In 1887, the Swedish Chemist Svante Arrhenius defined an acid as any
+        substance which forms hydrogen ions when dissolved in water <b style=
+        "color:crimson">OR</b> an acid is a substance that contains hydrogen, which can be
+        replaced partially or wholly by a metal. This hydrogen is called <b style=
+        "color:crimson">replaceable hydrogen</b>. For instance, HNO<sub>3</sub> is said to be
+        an acid because it dissociates (splits) in water to produce H<sup>+</sup> ions which
+        combine with H<sub>3</sub>O to form H<sub>3</sub>O<sup>+</sup> (Acid). The reaction
+        equation is written below.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">HNO<sub>3</sub> + H<sub>2</sub>O <img width="60" height="10" src=
+        "img/arrow.png" alt="" /> H<sub>3</sub>O +
+        NO<sub>3</sub><sup>-</sup><sub>(aq)</sub><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Arrhenius definition was limited in some areas, this lead Bronsted
+        and Lowry to come out with their definition which is broader and better than
+        Arrhenius&rsquo;. They defined acid as <b style="color:crimson">a proton donor</b>. For
+        example, Arrhenius definition fails when it is applied to the reaction between ammonia
+        and water because no H<sub>3</sub>O<sup>+</sup><sub>(aq)</sub> are formed at the end of
+        the reaction. The equation for the reaction is written below.</p>
+      
+        <p align="left"><br />
+        NH<sub>3</sub> + H<sub>2</sub>O <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt=
+        "" /> NH<sub>4</sub>+ + OH<sup>-</sup></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="justify">After an acid had donated a proton, the particle left is known as
+        the <b style="color:crimson">conjugate base</b> whilst the particle which is formed
+        after the base has accepted the proton is known as the <b style=
+        "color:crimson">conjugate acid.</b> For the reaction above, the <b style=
+        "color:crimson">acid</b> and its <b style="color:crimson">conjugate base</b> are
+        <b style="color:crimson">H<sub>2</sub>O</b> and <b style=
+        "color:crimson">OH<sup>-</sup></b> respectively.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Note:<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Arrhenius acid is specifically H<sup>+</sup> or H<sub>3</sub>O<sup>+</sup> and
+          nothing else.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>H<sup>+</sup> is a proton. Reason; hydrogen has an electron and a proton.
+          Therefore loosing the electron leaves only a proton which is the H<sup>+</sup> ion.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>In 1923, the same year Bronsted and Lowry proposed their acid base theory, an
+        American chemist Gilbert Newton Lewis, proposed even a broader definition of acids. He
+        defined an acid as an <b style="color:crimson">electron pair acceptor</b>.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Both Arrhenius and Bronsted-Lowry theories have limitations. For
+        example, they can not be used to identify the acid or base in the reaction between
+        ammonia and boron trifluoride (BF<sub>3</sub>), no H<sup>+</sup> ion is produced
+        neither is a proton donated in that reaction. However, an electron pair was donated by
+        ammonia and boron trifluoride accepted the electrons.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="justify">Acids can then be defined based on the three theories above.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <b style="color:crimson">Arrhenius Theory</b>; an acid is a substance which forms
+            hydrogen ions when dissolved in water <b style="color:crimson">OR</b> an acid is a
+            substance that contains hydrogen, which can be replaced partially or wholly by a
+            metal. This hydrogen is called <b style="color:crimson">replaceable hydrogen</b>.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Bronsted-Lowry Theory</b>; an acid is a proton donor. It
+            provides protons or H<sup>+</sup> ions.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>
+            <b style="color:crimson">Lewis Theory</b>; an acid is electron pair acceptor.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Properties of Acids</b><br />
+      
+        <p align="justify">They;</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>have sour taste
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>have pH less than 7
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>are very corrosive
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>change blue litmus paper to red
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>react with bases to form salt and water
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>react with substances containing Trioxocarbonate (IV) ion
+          (CO<sub>3</sub><sup>2-</sup>) to give effervescence of CO<sub>2</sub>.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>react with fairly reactive metals to form salts and evolve hydrogen gas.
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">Types of acids</b><br />
+      
+        <p align="justify">Acids that are made from mineral substances are known as <b style=
+        "color:crimson">inorganic acids</b> or <b style="color:crimson">mineral acids.</b>
+        Examples are hydrochloric acid, Tetraoxosulphate (IV) acid, Trioxonitrate (V) acid and
+        many more. Acids that occur naturally are known as <b style="color:crimson">organic
+        acids.</b> Examples are citric acid, lactic acid, palmitic acid, ascorbic acid,
+        etc.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Strong and weak acids</b><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Strong acids:</b> these are acids that
+        dissociate (split) or ionize completely in water. Most mineral acids are strong
+        acids.</p>
+      
+        <p align="left"><br /></p>
+      
+        <table cellpadding="1" cellspacing="1" border="1" width="100%">
+          <tr>
+            <th style="background-color: brown; color: azure">Formula</th>
+      
+            <th style="background-color: brown; color: azure">IUPAC name</th>
+          </tr>
+      
+          <tr>
+            <td>HNO<sub>3</sub></td>
+      
+            <td>Trioxonitrate (V) acid</td>
+          </tr>
+      
+          <tr>
+            <td>HCl</td>
+      
+            <td>hydrochloric acid</td>
+          </tr>
+      
+          <tr>
+            <td>H<sub>2</sub>SO<sub>4</sub></td>
+      
+            <td>Tretraoxosulphate (VI) acid</td>
+          </tr>
+      
+          <tr>
+            <td>HBr</td>
+      
+            <td>hydrobromic acid</td>
+          </tr>
+      
+          <tr>
+            <td>HI<br /></td>
+      
+            <td>hydroiodic acid<br /></td>
+          </tr>
+        </table>
+      
+        <p align="justify"></p>
+      
+        <p align="justify"><b style="color:crimson">Weak acids:</b> these are acids that ionize
+        partially in water. All organic acids and some mineral acids are weak acids. Example of
+        a weak mineral acid is Trioxocarbonate (IV) acid
+        (H<sub>2</sub>CO<sub>3</sub>).<br /></p>
+      
+        <p align="justify"><b style="color:crimson">Basicity of an acid</b><br /></p>
+      
+        <p align="justify">This refers to the number of hydrogen atoms that can be produced or
+        released per a molecule of an acid. For example, ethanoic acid (CH<sub>3</sub>COOH)
+        contains four hydrogen atoms, but only one hydrogen atom can be released from a
+        molecule of the acid when it is dissolved in water, therefore its Basicity is 1.</p>
+      
+        <p align="left"><br /></p>
+      
+        <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+          <tr>
+            <th style="background-color: brown; color: azure">Acid</th>
+      
+            <th style="background-color: brown; color: azure">Basicity</th>
+          </tr>
+      
+          <tr>
+            <td>HCl</td>
+      
+            <td>1</td>
+          </tr>
+      
+          <tr>
+            <td>H<sup>2</sup>SO<sub>4</sub></td>
+      
+            <td>2</td>
+          </tr>
+      
+          <tr>
+            <td>H<sub>2</sub>CO<sub>3</sub></td>
+      
+            <td>2</td>
+          </tr>
+      
+          <tr>
+            <td>HNO<sub>3</sub></td>
+      
+            <td>1</td>
+          </tr>
+      
+          <tr>
+            <td>H<sub>3</sub>PO<sub>4</sub></td>
+      
+            <td>3</td>
+          </tr>
+        </table>
+      
+        <p align="justify"><b style="color:crimson">Preparation of H<sub>2</sub>SO<sub>4</sub>
+        by the Contact Process</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Sulphur is burnt in the presence of oxygen to form sulphur (IV)
+        oxide.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">S + O<sub>2</sub> <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png"
+        alt="" /> SO<sub>2(g)</sub></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The sulphur (IV) oxide (SO<sub>2</sub>) is mixed with oxygen and
+        heated over Vanadium (V) oxide (V<sub>2</sub>O<sub>5</sub>) to form sulphur (VI) oxide
+        (SO<sub>3</sub>). The reaction follows the equation below:</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">2SO<sub>2</sub> (g) + O<sub>2(g)</sub> <img width="62" height="10"
+        src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" /> 2SO<sub>3(g)</sub></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The hot sulphur (VI) oxide is dissolved in concentrated
+        H<sub>2</sub>SO<sub>4</sub> to form oleum
+        (H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>):</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">H<sub>2</sub>SO<sub>4</sub> (<i style="color:blue">l</i>) +
+        SO<sub>3(g)</sub> <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" />
+        H<sub>2</sub>S<sub>2</sub>O<sub>7(<i style="color:blue">l</i>)</sub></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Note that directly dissolving SO<sub>3</sub> in water is impractical
+        due to the highly exothermic nature of the reaction. Acidic vapour or mists are formed
+        instead of liquid acid.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Oleum is reacted with water to form concentrated
+        H<sub>2</sub>SO<sub>4</sub>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">H<sub>2</sub>S<sub>2</sub>O<sub>7</sub> (l) + H<sub>2</sub>O (l)
+        <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" /> 2 H<sub>2</sub>SO<sub>4</sub>
+        (l)</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="justify"><b style="color:crimson">Uses of some acids</b></p>
+      
+        <p align="justify"><b style="color:crimson">H<sub>2</sub>SO<sub>4</sub></b>: it is used
+        in the manufacture of fertilizers, explosives, dyestuffs, other acids, parchment paper,
+        detergents and glue. It is also used for purification of petroleum and pickling of
+        metal.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">HCl:</b> it is used in the manufacture of
+        chlorine containing-compounds.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">HNO<sub>3</sub>:</b> it is used to
+        manufacture fertilizers.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">H<sub>2</sub>CO<sub>3</sub>:</b> it is used
+        in the manufacture of fizzy drinks, for example, coca cola.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Ethanoic acid (CH<sub>3</sub>COOH):</b>
+        manufacture of vinegar, flavouring in food, etc.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Sources of acids</b></p>
+      
+        <table cellpadding="1" cellspacing="1" border="1" width="100%">
+          <tr>
+            <th style="background-color: brown; color: azure">Acid</th>
+      
+            <th style="background-color: brown; color: azure">Source</th>
+          </tr>
+      
+          <tr>
+            <td>Citric acid</td>
+      
+            <td>Citrus fruits. Example orange</td>
+          </tr>
+      
+          <tr>
+            <td>Hydrochloric acid</td>
+      
+            <td>In the stomach of mammals</td>
+          </tr>
+      
+          <tr>
+            <td>Methanoic acid</td>
+      
+            <td>Bees, ants</td>
+          </tr>
+      
+          <tr>
+            <td>Butanoic acid</td>
+      
+            <td>Rancid butter</td>
+          </tr>
+      
+          <tr>
+            <td>Ethanoic acid</td>
+      
+            <td>Beer, palm wine</td>
+          </tr>
+      
+          <tr>
+            <td>Ascorbic acid</td>
+      
+            <td>Citrus fruits, tomatoes</td>
+          </tr>
+      
+          <tr>
+            <td>Tartaric acid</td>
+      
+            <td>Grapes</td>
+          </tr>
+      
+          <tr>
+            <td>Lactic acid</td>
+      
+            <td>Sour milk</td>
+          </tr>
+        </table>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br />
+        <br />
+</ion-content>

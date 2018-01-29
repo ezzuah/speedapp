@@ -1,0 +1,268 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+        <p align="center" style="color:black;font-size: 26px">
+        <b>Chemical Formula and IUPAC Naming</b></p>
+      
+        <p>We learnt in the first chapter that, each element has a short hand form of
+        representation known as its chemical symbol. Do you have an idea about the short hand
+        form for compounds? Is there any? Yes there is.</p>
+      
+        <p>There short hand form for compounds is chemical formula. A <b style=
+        "color: crimson">chemical formula</b> is a concise way of expressing information about
+        the atoms that constitute a particular chemical compound.<br />
+        <br />
+        <i style="color: blue;">The formula shows two things; The elements presents in a
+        compound and the relative number of atoms of each element in the compound.</i><br />
+        <br />
+        For example, experiments have revealed that two atoms of hydrogen will combine with one
+        atom of oxygen to form a single water molecule.</p><img src="http://speedapp.ididev.com/apps/img/h2o.jpg" alt=
+        "no image found" name="front_image" width="333" height="269" id="front_image" />
+      
+        <p>Thus, the formula for water is written as H<sub>2</sub>O. The subscript '2' after
+        the 'H' indicates that there are two hydrogen atoms in one molecule of water.</p><br />
+      
+        <p>Note that there is no subscript after the Oxygen (O). If a symbol has no subscript,
+        it is understood that only one atom of that element is present in the molecule.<br />
+        <br />
+        <i style="color: blue;">As chemical symbols represent elements, so do chemical formulas
+        represent compounds.</i></p>
+      
+        <p>Atoms have certain number of electrons they will gain, loose or share when forming
+        molecules or ions. This number is the oxidation number of the atom. Usually, oxidation
+        number is defined for an ion as the charge on it. It can be determined by applying the
+        octet rule.</p><br />
+        In the pictures below, if the beryllium wants to have a stable structure, it will be
+        easier for it to loose its two valence electrons than to accept six electrons.<br />
+        <img src='img/Be.jpg' alt="" width="405" height="406" /><br />
+        Beryllium will then loose its two outer electrons to have the K shell fully filled.
+        After loosing two electrons;<br />
+        <br />
+      
+        <table style="text-align: center">
+          <tr>
+            <td>The proton number = 4 = +4</td>
+          </tr>
+      
+          <tr>
+            <td>The electron number = 2 = -2</td>
+          </tr>
+      
+          <tr>
+            <td>
+              <hr />
+            </td>
+          </tr>
+      
+          <tr>
+            <td>The effective charge = +2.</td>
+          </tr>
+        </table>
+      
+        <p>Beryllium will then have a charge of +2. So the oxidation number of beryllium is
+        +2.</p><br />
+        In a similar vane, the fluorine will accept one electron to have its L shell fully
+        filled and will have oxidation state of -1. After fluorine looses one electron;<br />
+        <br />
+      
+        <table style="text-align: center">
+          <tr>
+            <td>the number of protons = 9</td>
+          </tr>
+      
+          <tr>
+            <td>the number of electrons = 8</td>
+          </tr>
+      
+          <tr>
+            <td>
+              <hr />
+            </td>
+          </tr>
+      
+          <tr>
+            <td>The effective charge = -1..</td>
+          </tr>
+        </table>
+      
+        <p>Now, if beryllium is to bond (combine) with fluorine, a single atom of beryllium
+        will need to donate two electrons to two different fluorine atoms. The chemical formula
+        for beryllium fluoride will then be written as BeF<sub><small>2</small></sub> .<br />
+        <br />
+        Note that the whole BeF<sub><small>2</small></sub> molecule is neutral because the +2
+        charge of beryllium is cancelled by the -1 charge of the two fluorine atoms.</p><br />
+      
+        <h3><b style="color:crimson">Writing Chemical Formulas</b></h3>
+      
+        <h4><i style="color:blue">Binary compounds (two atoms). Example, calcium
+        chloride</i></h4>
+      
+        <p>1. Determine the valences (oxidation numbers) of the given elements (ignore
+        charges).<br />
+        <img src='img/naming1.png' alt="" /></p>
+      
+        <p>2. Write the valences of elements against the chemical symbol as in stage 1
+        above.</p>
+      
+        <p>3. Write the valence of the cation as a subscript for the anion and
+        vice-versa.<br />
+        <img src='img/naming3.png' alt="" /><br />
+        Note that the subscript is ignored if it is '1', as in the case of Ca.</p><br />
+      
+        <h4><i style="color:blue">A cation and a polyatomic anion; example, Aluminum
+        Sulphate</i></h4>
+      
+        <p>The steps in the first example are repeated. However, the anion goes into a
+        bracket.<br />
+        <img src='img/naming4.png' alt="" /><br />
+        The &lsquo;2&rsquo; and &lsquo;3&rsquo; indicates that there are two aluminum atoms and
+        three units of the sulphate.<br />
+        <img src='img/naming5.png' alt="" /><br />
+        This also means that for a complete reaction between aluminum and sulphate, two parts
+        of aluminum will react with three parts of sulphate.</p><br />
+      
+        <h4><u>NAMING OF COMPOUNDS</u></h4>
+      
+        <p><i style="color: blue;">When naming binary (two elements) ionic compounds, the
+        cation is named first and then the anion.</i><br />
+        <br />
+        When an elemental anion is named, the suffix, -ide, is added to the name of the
+        element. For instance, chlorine becomes chloride; sulphur, sulphide and oxygen,
+        oxide.</p><br />
+      
+        <p>There are two common types of cations: Type I and Type II. Type I cations have only
+        one oxidation state and their name is simply listed when the compound is named. Type II
+        cations have more than one oxidation state. When the ionic compound is being named, the
+        cation is named first and a Roman numeral written in parenthesis is used to denote the
+        charge (oxidation state) of the cation, followed by the name of the anion.</p><br />
+      
+        <p>Example, Fe<sub><small>2</small></sub>O<sub><small>3</small></sub> is named as iron
+        (III) oxide. The steps below can be used to calculate the oxidation state of the iron
+        (Fe).</p><i style="color: blue">Step 1</i>: Represent the charge of the iron with a
+        variable, let&rsquo;s say x; Fe = x<br />
+        <br />
+        <i style="color: blue">Step 2</i>: estimate the total charge of the oxygen atoms; 3
+        (-2) = -6<br />
+        <br />
+        <i style="color: blue">Step 3</i>: sum up the variable and the total charges on the
+        oxygen and equate to the total charge on the ionic unit
+        (Fe<sub><small>2</small></sub>O<sub><small>3</small></sub>); 2 (x) + (-6) = 0<br />
+        <br />
+        <i style="color: blue">Step 4</i>: solve for x; x = 6/2 = 3<br />
+        <br />
+        <br />
+      
+        <h4>Oxidation states calculation for oxoanions and naming.</h4><b style=
+        "color: crimson">Oxoanions</b> are anions which contains oxygen atoms that are usually
+        bonded to a central atom.<br />
+        <br />
+        Example is the SO<sub><small>4</small></sub><sup><small>2-</small></sup> ion. The
+        oxidation state of the central atom, which is sulphur (S), can be calculated as
+        follows.<br />
+        <br />
+        <i style="color: blue">Step 1</i>: Represent the charge of the central atom with a
+        variable, let&rsquo;s say x; S = x<br />
+        <br />
+        <i style="color: blue">Step 2</i>: estimate the total charge of the oxygen atoms; 4
+        (-2) = -8<br />
+        <br />
+        <i style="color: blue">Step 3</i>: sum up the variable and the total charges on the
+        oxygen and equate to the total charge on the ion: x + (-8) = -2<br />
+        <br />
+        <i style="color: blue">Step 4</i>: solve for x; x = -2 &ndash; (-8) =6<br />
+      
+        <p>Naming rules for oxoanions (using the
+        SO<sub><small>4</small></sub><sup><small>2-</small></sup> as an example)<br />
+        <br />
+        1. The suffix &lsquo;ate&rsquo; replaces the last two or three letters of the central
+        atom; <b style="color: blue">sulphur</b> will change to <b style=
+        "color: blue">sulphate</b>.<br />
+        <br />
+        2. The oxidation state of the central atom is written in roman numerals and enclosed in
+        parenthesis; (VI)<br />
+        <br />
+        3. The prefixes monooxo, dioxo, trioxo or tetraoxo is used to represent the number of
+        oxygen atoms present in the anion.<br />
+        <br />
+        In this case we have four oxygen atoms therefore Tetraoxo will be used. The name of the
+        anion is Tetraoxosulphate (VI) ion.</p><br />
+      
+        <h4>Names and Valences of some polyatomic ions</h4>
+      
+        <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+          <tbody>
+            <tr>
+              <th style="background-color: brown; color: azure">Compound (polyatomic ions)</th>
+      
+              <th style="background-color: brown; color: azure">Formula and valence</th>
+            </tr>
+      
+            <tr>
+              <td>Tetraoxosulphate (VI) ion (sulphate)</td>
+      
+              <td>SO<sub><small>4</small></sub><sup><small>2-</small></sup></td>
+            </tr>
+      
+            <tr>
+              <td>Trioxosulphate (IV) ion (sulphite)</td>
+      
+              <td>SO<sub><small>3</small></sub><sup><small>2-</small></sup></td>
+            </tr>
+      
+            <tr>
+              <td>Trioxocarbonate (IV) ion (carbonate)</td>
+      
+              <td>CO<sub><small>3</small></sub><sup><small>2-</small></sup></td>
+            </tr>
+      
+            <tr>
+              <td>Trioxonitrate (V) ion (Nitrate)</td>
+      
+              <td>NO<sub><small>3</small></sub><sup><small>-</small></sup></td>
+            </tr>
+      
+            <tr>
+              <td>Dioxonitrate (III) ion (Nitrite)</td>
+      
+              <td>NO<sub><small>2</small></sub><sup><small>-</small></sup></td>
+            </tr>
+      
+            <tr>
+              <td>Hydroxide ion</td>
+      
+              <td>OH<sup><small>-</small></sup></td>
+            </tr>
+          </tbody>
+        </table>
+      
+</ion-content>

@@ -1,0 +1,549 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>MANAGEMENT PRACTICES IN POULTRY</b></p>
+<p align="justify">Poultry keeping is a full time business and for that matter a lot of attention and care should be given to the birds from the time they are hatched to their maturity period. In this section we are going to talk about the processes
+the egg goes through before hatching into a day&ndash;old chick, through to the maturity of the hatched chick. Since the common bird reared under commercial scale in Ghana is fowl, it will be used in all illustrations in this course.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Sources of Day&ndash;Old Chicks</b>
+  <br />
+</p>
+<p align="justify">The day old&ndash;chicks are hatched from eggs. The process of supplying adequate temperature or warmth, humidity, ventilation and turning of fertile egg until it is hatched is known as 
+<b style="color:crimson">incubation.</b>
+<br /></p>
+<p align="justify">The two forms of incubation are the 
+<i style="color:blue">natural</i>and 
+<i style="color:blue">artificial incubation</i>. Under 
+<b style="color:crimson">natural incubation</b>, eggs are given to the broody hen to sit on it and hatch. In 
+<b style="color:crimson">artificial incubation,</b>eggs are put in a special machine known as 
+<b style="color:crimson">incubator.</b>
+<br /></p>
+<p align="justify">The incubator supplies the necessary warmth, humidity, ventilation, turning and finally hatches the eggs. The natural method is not appropriate for commercial poultry farming. The source of day&ndash;old chicks for commercial
+poultry farming is the hatcheries. Some of the prominent hatcheries in Ghana are Akate Farms, Asamoah and Yamoah Farms, Afariwa Farms, etc.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Brooding Day&ndash;Old Chicks</b>
+  <br />
+</p>
+<p align="justify">From the ages of 1 day to 6 weeks in the life of the birds is known as the 
+<b style="color:crimson">brooding</b>
+<b style="color:crimson">stage</b>and it is the most crucial stage in the life of any kind of poultry. At this stage, the birds are weak and susceptible to infections. Even cold weather can cause a lot of fatality at this stage.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Management Practices in the Brooder House</b>
+  <br />
+</p>
+<p align="justify">During the brooding period, the young birds are kept in a special house known as the brooder house. It is usually a permanent concrete building with very good ventilation. Clean feed and water are provided to the birds in little
+quantities but as often as possible.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This is to avoid wastage and contamination of feed and water. The feed is put on flat feed trays to allow easy access and the water in water fountains. The level of feed trays and water fountain should be low enough that birds can
+access with virtually no difficulty.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Apart from the feed and water, heat and light is essential to the life of young birds in the brooder house. The heat is to keep them warm when it is cold whereas the light will help them locate feed and water 24 &ndash; 7 to
+facilitate their growth.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Before the birds arrive, the room must be heated to 32 
+<sup>o</sup>C &ndash; 35 
+<sup>o</sup>C. The heating equipment may be an electrical heater, a gas heater or coal pot and the light source may be electric bulb, gas lamp or lantern (not convenient).</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">When the temperature is too low the birds crowd around the heating source and when it is too high they run away from the heat source. Under optimum temperature, they spread out evenly. The figure on the next page shows the
+behaviour of birds towards heat source.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       src="http://speedapp.ididev.com/apps/img/pprac1.png" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       src="http://speedapp.ididev.com/apps/img/pprac2.png" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Temperature Ranges during Brooding Period</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Age in Weeks</th>
+    <th style="background-color: darkred; color: white">Temperature Range in 
+    <sup>o</sup>C</th>
+  </tr>
+  <tr>
+    <td>Week 1 
+    <br /></td>
+    <td>32 &ndash; 35 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Week 2 
+    <br /></td>
+    <td>29 &ndash; 32 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Week 3 
+    <br /></td>
+    <td>26 &ndash; 29 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Week 4 &ndash; 6 
+    <br /></td>
+    <td>Around 26 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify">After the brooding stage, the birds are transferred to their permanent pen. Between the ages of 7 to 18 weeks the layer bird is known as 
+<b style="color:crimson">grower</b>. At this point heat and light is taken away from the birds. Above 20 weeks, the birds are likely to lay and they are now called 
+<b style="color:crimson">layers.</b></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Stages and Feeding Ration in the Life of a layer Fowl</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Age</th>
+    <th style="background-color: darkred; color: white">Stage</th>
+    <th style="background-color: darkred; color: white">Kind of Mash/Feed</th>
+    <th style="background-color: darkred; color: white">Percent Crude Protein</th>
+  </tr>
+  <tr>
+    <td>Week 1 &ndash; week 6 
+    <br /></td>
+    <td>Chicks 
+    <br /></td>
+    <td>Chick starter mash 
+    <br /></td>
+    <td>22 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Week 7 &ndash; week 19 
+    <br /></td>
+    <td>Grower 
+    <br /></td>
+    <td>Grower mash 
+    <br /></td>
+    <td>16 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Week 20 and above 
+    <br /></td>
+    <td>Layer 
+    <br /></td>
+    <td>Layer mash 
+    <br /></td>
+    <td>17 &ndash; 18 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify">
+  <b style="color:crimson">Nutrients and their Sources</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Nutrient</th>
+    <th style="background-color: darkred; color: white">Source</th>
+  </tr>
+  <tr>
+    <td>Carbohydrates. 
+    <br /></td>
+    <td>Maize, wheat bran and rice bran (not good, because of its texture). 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Protein. 
+    <br /></td>
+    <td>Fish meal, copra cake, soya bean, cotton seed, bone and blood meal and groundnut cake. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Fats and oils. 
+    <br /></td>
+    <td>Copra cake, soya bean, cotton seed and groundnut cake. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Minerals. 
+    <br /></td>
+    <td>Oyster shells, bone meal and salt. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Vitamins. 
+    <br /></td>
+    <td>Vitamin premix, green leaves in some cases. 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify">
+  <b style="color:crimson">Stages and Medication of a Layer fowl</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Stage</th>
+    <th style="background-color: darkred; color: white">Medication and vaccines</th>
+  </tr>
+  <tr>
+    <td>Day&ndash;old 
+    <br /></td>
+    <td>Mareks vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>2 &ndash; 5 days 
+    <br /></td>
+    <td>Antibiotic in water 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>1 week 
+    <br /></td>
+    <td>1st Gumboro vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>2 weeks 
+    <br /></td>
+    <td>1st Newcastle vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>3 weeks 
+    <br /></td>
+    <td>2nd Gumboro vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>4 &ndash;5 weeks 
+    <br /></td>
+    <td>2nd Newcastle vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>8 weeks 
+    <br /></td>
+    <td>1st fowl pox vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>12 weeks 
+    <br /></td>
+    <td>2nd fowl pox vaccination 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>16 &ndash; 18 weeks 
+    <br /></td>
+    <td>3rd Newcastle vaccination 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify">Some antibiotics, vitamins and dewormers can be administered in between the programmed vaccination periods.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Diseases, Causal Organism, Symptoms, Control and Prevention</b>
+  <br />
+</p>
+<br />
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Disease and causal organism</th>
+    <th style="background-color: darkred; color: white">Symptoms</th>
+    <th style="background-color: darkred; color: white">Control and Prevention</th>
+  </tr>
+  <tr>
+    <td>
+      <b>Newcastle disease</b>
+      <br />
+      <p align="justify">(viral disease)</p>
+      <p align="left">
+        <br />
+      </p>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <p align="justify">Neck of affected birds twist.</p>
+        </li>
+        <li>
+          <p align="justify">Loss of appetite.</p>
+        </li>
+        <li>
+          <p align="justify">Sneezing</p>
+        </li>
+        <li>
+          <p align="justify">Swollen face.</p>
+        </li>
+        <li>
+          <p align="justify">Paralysis.</p>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Sick birds must be isolated (culled).</li>
+        <li>
+          <p align="justify">Observe routine vaccination.</p>
+        </li>
+        <li>
+          <p align="justify">Use footbath when entering pen.</p>
+        </li>
+        <li>
+          <p align="justify">Ensure good sanitation</p>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Gumboro</b>
+      <br />
+      <p align="justify">(viral disease)</p>
+      <p align="left">
+        <br />
+      </p>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <p align="justify">Kidney swells.</p>
+        </li>
+        <li>
+          <p align="justify">Birds become restless,</p>
+        </li>
+        <li>
+          <p align="justify">collapse and</p>
+        </li>
+        <li>
+          <p align="justify">die.</p>
+        </li>
+      </ul>
+      <br />
+      <br />
+    </td>
+    <td>
+      <ul>
+        <li>
+          <p align="justify">Observe routine vaccination</p>
+        </li>
+        <li>
+          <p align="justify">Ensure good sanitation</p>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Coccidiosis</b>
+      <br />
+      <p align="justify">(protozoan disease)</p>
+      <p align="left">
+        <br />
+      </p>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <p align="justify">Pass out bloody feaces.</p>
+        </li>
+        <li>
+          <p align="justify">Swelling and inflation of intestines.</p>
+        </li>
+        <li>
+          <p align="justify">Feathers become rough.</p>
+        </li>
+        <li>
+          <p align="justify">Affected birds doze while standing</p>
+        </li>
+      </ul>
+    </td>
+    <td>Administer coccidiostat every week or 2 when birds are between 3 to 12 weeks. 
+    <p align="left">
+      <br />
+    </p></td>
+  </tr>
+</table>
+<br />
+<p align="justify">
+  <img alt=""
+       height="124"
+       src="http://speedapp.ididev.com/apps/img/pprac3.jpg"
+       width="351" />
+</p>
+<p align="justify">
+  <img alt=""
+       height="182"
+       src="http://speedapp.ididev.com/apps/img/pprac4.jpg"
+       width="163" />
+</p>
+<p align="left"></p>
+<p align="justify">
+  <img alt=""
+       src="http://speedapp.ididev.com/apps/img/pprac5.png" />
+</p>
+<p align="left"></p>
+<p align="justify">
+<b style="color:crimson">Avian influenza</b>, commonly known as 
+<b style="color:crimson">Bird flu</b>refers to "influenza caused by viruses adapted to birds". &lsquo; Bird flu&rsquo; is a phrase similar to "Swine flu", "Dog flu", "Horse flu", or "Human flu", in that it refers to an illness caused by any of the
+many different influenza viruses that have adapted to a specific host, like swine, horse or humans.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The Avian Flu claimed the lives of at least 200 humans in Indonesia, Laos, Vietnam, Romania, China, Turkey and Russia in the year 2007.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Epidemiologists (medical scientists who study the transmission and control of epidemic diseases) are afraid that the next time such a virus mutates, it could pass from human to human. If this form of transmission occurs, another
+pandemic could result.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Thus disease&ndash;control centers around the world are making avian flu their top priority. If symptoms of a disease are not clear, you can take about two of the affected birds to the veterinary for diagnosis and drug
+prescription or some control measures.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Pest of Poultry</b>
+  <br />
+</p>
+<p align="justify">Aside diseases, pest or parasites can cause low productivity or death in birds. These organisms suck blood from the birds and this can result in any of the following 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>Anemia (loss of blood) in birds 
+  <br />
+  <p align="justify"></p></li>
+  <li>Low productivity in layers 
+  <br />
+  <p align="justify"></p></li>
+  <li>Weight loss 
+  <br />
+  <p align="justify"></p></li>
+  <li>Stunted growth 
+  <br />
+  <p align="justify"></p></li>
+  <li>Heavy infestation can results in death 
+  <br />
+  <p align="justify"></p></li>
+  <li>Endo&ndash;parasites (worms) can cause diarrhea or gastro enteritis. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>The 
+<i style="color:blue">flea</i>, 
+<i style="color:blue">mite</i>and 
+<i style="color:blue">louse</i>live on the outside of their host (bird) and thus, they are called 
+<b style="color: crimson">ecto&ndash;parasites</b>. The 
+<i style="color:blue">tapeworm</i>and 
+<i style="color:blue">roundworm</i>live inside the bird and they are called 
+<b style="color: crimson">endo&ndash;parasites</b>. 
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Routine Activities in Poultry Keeping</b>
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>The water troughs should be removed, washed and filled with fresh clean water each morning. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Birds must be fed twice everyday. 
+  <br />
+  <p align="justify"></p></li>
+  <li>The litter must be stirred regularly to avoid accumulation of ammonia on top of it. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Records must be kept on production, stock of birds, mortality (death), income and expenses each day. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Sick and unproductive birds must be culled (removed) to a different pen. 
+  <br />
+  <p align="justify"></p></li>
+  <li>When birds start pecking or show any sign of cannibalism, they must be debeaked. 
+  <b style="color:crimson">Debeaking</b>is the removal of the upper portion of the beak 
+  <br />
+  <p align="justify"></p></li>
+  <li>Wash pens, laying nests and feed troughs whenever birds are sold out finally. 
+  <br /></li>
+</ol></ion-content>

@@ -1,0 +1,331 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+    <ion-title>water</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>WATER</b></p>
+
+  <p align="justify">Water is a chemical compound made up of one oxygen and two hydrogen
+  atoms. It has a chemical formula of H<sub>2</sub>O.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Physical Properties of Water</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Pure water is colourless, ordourless and has insipid taste.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It has its maximum density of 1g/cm<sup>3</sup> at 4<sup>o</sup>C.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It is a weak electrolyte.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It is neutral to litmus
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It freeze at 0<sup>o</sup>C and boils at 100<sup>o</sup>C at standard atmospheric
+    pressure.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It has a high surface tension.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><b style="color:crimson">Chemical Properties of Water</b><br />
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>It reacts with most metals to liberate hydrogen gas
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol>2Na(s) + H<sub>2</sub>O (l) <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png" alt=
+  "" /> 2NaOH (aq) + H<sub>2</sub>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Non&ndash;metallic oxides dissolve in water to form acids.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Metallic oxides dissolve in water to form bases.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><b style="color:crimson">TYPES OF WATER</b><br />
+
+  <p align="justify">Water is classified as hard or soft depending on their easiness to
+  lather with soap.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Hard Water</b></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">This is one that does not lather easily with soap. Hardness of water
+  is caused by the presence of dissolved Ca<sup>2+</sup> and Mg<sup>2+</sup> and other
+  polyvalent ions (A polyvalent ion is an ion that has more than a single charge; example
+  is Al<sup>3+</sup>, Mg<sup>2+</sup>, SO<sub>4</sub><sup>2&ndash;</sup>, etc). Calcium
+  usually enters the water as either calcium sulfate (CaSO<sub>4</sub>) or in the form of
+  other mineral deposits. The predominant source of magnesium is dolomite
+  (CaMg(CO<sub>3</sub>)<sub>2</sub>).When these ions are present in water and soap is
+  added to the water, scum is formed instead of lather.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">How Scum is formed</b><br /></p>
+
+  <p align="justify">Soap is a salt formed from the reaction between a long chain fatty
+  acids and a strong base like NaOH or KOH. Example is sodium stearate
+  (CH<sub>3</sub>&ndash;(CH<sub>2</sub>)<sub>16</sub>&ndash;COO&ndash;Na). When soap is
+  introduced into water it dissociates according to the equation below because it is
+  soluble in water.</p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td>CH<sub>3</sub>&ndash;(CH<sub>2</sub>)<sub>16</sub>&ndash;COO&ndash;Na</td>
+
+      <td>&zwj; &zwj; &zwj;water<br />
+      <img src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" width="63" height="10" /><br />
+      <span>.</span></td>
+
+      <td>CH<sub>3</sub>&ndash;(CH<sub>2</sub>)<sub>16</sub>&ndash;COO &ndash; (aq) +
+      Na+(aq)</td>
+    </tr>
+  </table><br />
+
+  <p align="justify">After the dissociation, Ca<sup>2+</sup> or Mg<sup>2+</sup> present
+  in the water will combine with the long chain anion to form an insoluble salt which is
+  scum.</p>
+
+  <p align="left"></p>
+
+  <table>
+    <tr>
+      <td>
+      2[CH<sub>3</sub>&ndash;(CH<sub>2</sub>)<sub>16</sub>&ndash;COO<sup>&ndash;</sup>](aq)Ca<sup>2+</sup></td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62" height="10" alt="" /></td>
+
+      <td>
+      [CH<sub>3</sub>&ndash;(CH<sub>2</sub>)<sub>16</sub>&ndash;COO]<sub>2</sub>Ca</td>
+    </tr>
+
+    <tr>
+      <td></td>
+
+      <td>&zwj; &zwj; &zwj; &zwj; &zwj; &zwj; &zwj;scum</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">TYPES OF HARD WATER</b><br /></p>
+
+  <p align="justify"><b style="color:crimson">Temporary Hardness</b><br /></p>
+
+  <p align="justify">Temporary hardness is caused by a combination of calcium ions and
+  bicarbonate ions in the water. It can be removed by the following methods.<br />
+  <br />
+  * By boiling the water. Boiling promotes the formation of carbonate from the
+  bicarbonate and precipitates calcium carbonate out of solution, leaving water that is
+  softer upon cooling.</p>
+
+  <table>
+    <tr>
+      <td>Ca(HCO<sub>3</sub>)<sub>2</sub>(aq)</td>
+
+      <td>&zwj; &zwj; &zwj;boiling<br />
+      <img src="http://speedapp.ididev.com/apps/img/arrow.png" alt="" width="63" height="10" /><br />
+      <span>.</span></td>
+
+      <td>CaCO<sub>3</sub>(s) + H<sub>2</sub>O(l) + CO<sub>2</sub>(g)</td>
+    </tr>
+  </table>* By the addition of lime (calcium hydroxide)<br />
+
+  <p align="justify">Ca(HCO<sub>3</sub>)<sub>2</sub>(aq) + Ca(OH)<sub>2</sub> <img src=
+  "img/arrow.png" height="10" width="62" alt="" /> 2CaCO<sub>3</sub>(s) +
+  2H<sub>2</sub>O(l)</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Permanent Hardness</b><br />
+  Permanent hardness is hardness (mineral content) that cannot be removed by boiling. It
+  is usually caused by the presence of calcium and magnesium sulphates and/or chlorides
+  in the water, which become more soluble as the temperature rises. Despite the name,
+  permanent hardness can be removed through the following procedures.<br /></p>
+
+  <p align="justify">By adding any soluble carbonate such as Na<sub>2</sub>CO<sub>3</sub>
+  to precipitate the calcium in the form of CaCO<sub>3</sub>.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Na<sub>2</sub>CO<sub>3</sub> + CaSO<sub>4</sub> <img src=
+  "img/arrow.png" width="62" height="10" alt="" /> CaCO<sub>3</sub> +
+  Na<sub>2</sub>SO<sub>4</sub><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>By distillation
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><b style="color:crimson">Advantages and Disadvantages of Hard Water</b><br />
+
+  <table border="1" cellspacing="1" width="100%" cellpadding="1">
+    <tr>
+      <th style="background-color: darkred; color: white">Advantages</th>
+
+      <th style="background-color: darkred; color: white">Disadvantages</th>
+    </tr>
+
+    <tr>
+      <td>The calcium present help the formation of strong teeth</td>
+
+      <td>Waste soap when it is used in the laundry</td>
+    </tr>
+
+    <tr>
+      <td>It has a pleasant taste</td>
+
+      <td>Not suitable for dye and tanning industry</td>
+    </tr>
+
+    <tr>
+      <td>Prevents lead poisoning when lead pipes are used for water supply</td>
+
+      <td>Produces scales in boilers and kettles</td>
+    </tr>
+  </table>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Note that when hard water is used for washing, the Ca<sup>2+</sup>
+  and Mg<sup>2+</sup> present will form scum with the soap until no more of those ions
+  are left to react with the soap before lather will begin to form. However, hard water
+  has no effect on detergents because their salts with detergents are soluble and thus
+  the water can still lather.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Soft Water</b><br /></p>
+
+  <p align="justify">This is water that lathers easily with soap. It may or may not
+  contain dissolved salts. Salts of Na<sup>+</sup>, K<sup>+</sup> and
+  NO<sub>3</sub>&ndash; may be present in water but they do not interfere with the action
+  of soap. This means that soft water may or may not be free of dissolved salts but note
+  that it is free from Ca<sup>2+</sup> and Mg<sup>2+</sup> ions.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Advantages and Disadvantages of Soft
+  Water</b><br /></p>
+
+  <table border="1" cellspacing="1" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Advantages</th>
+
+      <th style="background-color: darkred; color: white">Disadvantages</th>
+    </tr>
+
+    <tr>
+      <td>Saves soap when used for laundering</td>
+
+      <td>Lack of calcium for strong teeth and bones</td>
+    </tr>
+
+    <tr>
+      <td>Suitable for the dyeing and tanning industry</td>
+
+      <td>May cause lead poisoning when lead pipes are used for water supply</td>
+    </tr>
+
+    <tr>
+      <td>Does not form scales in boilers and kettles</td>
+
+      <td>Has unpleasant taste</td>
+    </tr>
+  </table>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Treatment of Water</b><br /></p>
+
+  <p align="justify">Water for municipal consumption is usually from rivers. The water
+  from the river may contain leaves, dead organic material, silt and various kinds of
+  impurities. It is therefore essential to be treated before consumption. At the water
+  supply station, the water is first pumped through a coarse grid to remove large
+  impurities. It is then moved to a settling tank and alum is added to settle all the
+  suspending particles. The water is moved again through a sand filter to remove
+  micro&ndash;organisms. Finally, chlorine is added to it to kill bacteria and other
+  pathogens before it is pumped for supply.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Water Cycle</b><br /></p>
+
+  <p align="justify">Water from the sea, rivers, lakes and ponds evaporates into the
+  atmosphere. The evaporated water rises, cools and condenses in the atmosphere as clouds
+  which are tiny water droplets. These droplets come together to form large bulk of water
+  that falls as rain or snow. This process repeats itself and a cycle is formed known as
+  the water cycle. <i style="color: blue">You can read more on the water cycle from
+  'Hydrological Cycle'</i></p>
+</ion-content>

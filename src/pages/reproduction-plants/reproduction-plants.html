@@ -1,0 +1,466 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+  <p align="center" style="color:black;font-size: 26px">
+    <b>REPRODUCTION AND GROWTH IN PLANTS</b></p>
+  <br>
+  <p align="justify">We&rsquo;ve been seeing our mangoes, oranges,
+  plantains, etc still in existence and of the same characteristics
+  just like we first met them. This means that they also reproduce
+  and have offsprings. But how? Consider first, the reproductive
+  organ of a plant&mdash;the flower.</p>
+  <p align="left"><br></p>
+  <p align="justify"><img width="300" height="300" src=
+  "http://speedapp.ididev.com/apps/img/plantrepro1.jpg" alt=""></p>
+  <p align="left"><br></p>
+  <p align="justify">Some flowers (like the one here) are <i style=
+  "color:blue">bisexual</i>&mdash;having the female and male parts on
+  the same flower. Unisexual flowers are those that have only one of
+  the sexes, either female or male.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Petals</b> are what we
+  mostly see at first glance of a flower. They are the brightly
+  coloured part of a flower. Petals are used to attract insects into
+  the flower; they may also be scented. More than one petal is called
+  <i style="color:blue">corolla.</i></p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Sepals</b> are
+  leaf&ndash;like structures that surround and protect the flower
+  before it blooms. More than one sepal are called <i style=
+  "color:blue">calyx</i>.</p>
+  <p align="left"><br></p>
+  <p align="justify">The <b style="color: crimson">receptacle</b> is
+  the part of the branch on which a flower forms or the flower's
+  attachment to the stalk. In some cases the receptacle becomes part
+  of the fruit after fertilisation. The stigma, style, ovary, and
+  ovule are often known collectively as the <b style=
+  "color: crimson">carpel</b> or female part of the flower (also the
+  <i style="color:blue">gynoecium</i>).</p>
+  <p align="left"><br></p>
+  <p align="justify">The top of the <b style=
+  "color: crimson">stigma</b> is often sticky and is where the pollen
+  grains attaches. The <b style="color: crimson">style</b> is the
+  long tube that attaches the stigma to the ovary. The style raises
+  the stigma away from the ovary to decrease the likelihood of pollen
+  contamination.</p>
+  <p align="left"><br></p>
+  <p align="justify">It varies in length. Sperm from the pollen will
+  travel down this tube to the ovules. The <b style=
+  "color: crimson">ovule</b> is like the egg in animals and once
+  fertilization has taken place will become the <i style=
+  "color:blue">seed</i>. The ovules are stored in the <b style=
+  "color: crimson">ovary</b> until they are fertilized.</p>
+  <p align="left"><br></p>
+  <p align="justify">Plants can only fertilize eggs of the same
+  species. Special chemicals prevent sperm from fertilizing the eggs
+  of flowers that are not the same kind. The ovary protects the ovule
+  and once fertilisation has taken place it will become the <i style=
+  "color:blue">fruit</i>.</p>
+  <p align="left"><br></p>
+  <p align="justify">The <b style="color: crimson">stamen</b>, which
+  consists of anther and filament, is the male part of the flower
+  (also Androecium). An <b style="color: crimson">anther</b> produces
+  pollen grains and a <b style="color: crimson">filament which is
+  the</b> stalk of the Anther supports it. Pollen grains produced by
+  the anther are carried by insects, wind or other animals to the
+  carpel where it may fertilize the eggs.</p>
+  <p align="left"><br></p>
+  <p align="justify">Most flowers hold some sugary solution called
+  <b style="color: crimson">nectar</b> which attracts insects (see
+  picture). A <b style="color: crimson">flower stack</b> gives
+  support to the flower and elevates the flower for insects to see. A
+  <b style="color: crimson"><i style="color:blue">floral
+  formula</i></b> is a way to represent the structure of a flower
+  using specific letters, numbers, and symbols.</p>
+  <p align="left"><br></p>
+  <p align="justify"><img width="232" height="200" src=
+  "http://speedapp.ididev.com/apps/img/plantrepro2.jpg" alt=""></p>
+  <p align="left"><br></p>
+  <p align="justify">The following representations are used:
+  <b style="color: crimson">Ca</b> = calyx (e.g. Ca5 = 5 sepals),
+  <b style="color: crimson">Co</b> = corolla (e.g. Co6 = 6 petals),
+  <b style="color: crimson">A</b> = androecium (stamens; e.g., A2 = 2
+  stamens), <b style="color: crimson">G</b> = gynoecium (carpel or
+  carpels; e.g., G1 = 1 carpel/ monocarpous). A floral formula may
+  look like this: <b style="color: crimson">Ca5 Co6 A2 G1</b>.Note
+  that several additional symbols are sometimes used. For example
+  <i style="color:blue">x</i>: to represent a "variable number",
+  &infin;: to represent "many".</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Pollination</b> is an
+  important step in the reproduction of plants: the transfer of
+  pollen from the anther to the female stigma. The anthers contain
+  pollen sacs. The sacs release pollen on to the outside of the
+  anthers that brush mostly against insects on entering the
+  flowers.</p>
+  <p align="left"><br></p>
+  <p align="justify">When deposited pollen is transferred to the
+  stigma of another flower, then <b style="color: crimson">cross
+  pollination</b> has occurred. But when pollen is transferred onto
+  the stigma of the same flower, it is called <b style=
+  "color: crimson">self pollination</b>. <b style=
+  "color: crimson"><i style="color:blue">Biotic pollination</i>,</b>
+  occurs when pollination is mediated by an organism, called a
+  pollinator.</p>
+  <p align="left"><br>
+  <img width="294" height="240" src="http://speedapp.ididev.com/apps/img/plantrepro3.jpg" alt=""></p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Entomophily</b>,
+  pollination by insects, often occurs on plants that have developed
+  bright petals and a strong scent to attract insects such as, bees,
+  wasps, butterflies, etc. In <b style="color: crimson">Zoophily</b>,
+  pollination is done by vertebrates such as birds and bats.</p>
+  <p align="left"><br></p>
+  <p align="justify">Plants adapted to this strategy tend to develop
+  red petals to attract birds and rarely develop a scent because few
+  birds have a sense of smell. <b style="color: crimson"><i style=
+  "color:blue">Abiotic</i> <i style="color:blue">pollination</i></b>
+  occurs when pollination is mediated without the involvement of
+  other organisms. Only 10% of flowering plants are able to pollinate
+  without animal assistance.</p>
+  <p align="left"><br></p>
+  <p align="justify">For example, <b style=
+  "color: crimson">anemophily</b> is pollination by wind. This form
+  of pollination is very common in grasses and many deciduous trees.
+  <b style="color: crimson">Hydrophily</b> is pollination by water
+  and occurs in aquatic plants which release their seeds directly
+  into the surrounding water.</p>
+  <p align="left"><br></p>
+  <p align="justify">About 80% of all plant pollination is biotic. Of
+  the 20% of abiotically pollinated species, 98% is by wind and 2% by
+  water. It is after pollination that the ovule is able to be
+  fertilized.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style=
+  "color: crimson">Fertilization</b><br></p>
+  <p align="justify">After the pistil is pollinated, the pollen grain
+  germinates. From each pollen grain, a pollen tube grows out
+  attempting to travel into the ovary by creating a path through the
+  female tissue (stigma and style).</p>
+  <p align="left"><br></p>
+  <p align="justify">Enzymes are secreted by the pollen tube to
+  digest the female tissue as the pollen tube grows. The pollen tube
+  does not directly reach the ovary in a straight line. It travels
+  near the skin of the style and curls to the bottom of the
+  ovary.</p>
+  <p align="left"><br></p>
+  <p align="justify">Near the receptacle, the pollen tube breaks
+  through the <b style="color: crimson">micropyle</b> (an opening in
+  the ovule wall) and reaches the ovum (or egg cell) to fertilize it.
+  This is the point when fertilisation actually occurs. After being
+  fertilized, the ovary starts to swell and will develop into a
+  <i style="color:blue">fruit</i> while the ovules becomes the
+  <i style="color:blue">seeds</i>. Note that pollination and
+  fertilisation are two separate processes.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Simple fruits</b>
+  (either <i style="color:blue">dry</i> or <i style=
+  "color:blue">fleshy</i>) results from the ripening of a simple or
+  compound ovary with only one pistil. <b style="color: crimson">Dry
+  fruits</b> may be either <i style="color:blue">dehiscent</i>
+  (opening to discharge seeds), or <i style=
+  "color:blue">indehiscent</i> (not opening to discharge seeds).</p>
+  <p align="left"><br></p>
+  <p align="justify">Examples of simple dry fruits are: wheat, pea,
+  bean, carrot, etc. Fruits in which part or all of the <b style=
+  "color: crimson">pericarp</b> (fruit wall) is fleshy at maturity
+  are <i style="color:blue">simple fleshy fruits</i>. Examples of
+  simple fleshy fruits are: tomato, avocado, banana, apple, pear,
+  etc.</p>
+  <p align="left"><br></p>
+  <p align="justify">An <b style="color: crimson">aggregate fruit</b>
+  develops from a flower with numerous simple pistils. An example is
+  the strawberry, blueberry, raspberry, etc. A <b style=
+  "color: crimson">multiple fruit</b> is one formed from a cluster of
+  flowers (called an <i style="color:blue">inflorescence</i>). Each
+  flower produces a fruit, but these mature into a single mass.
+  Example is the pineapple.<br></p>
+  <p align="justify"><b style="color: crimson">Seed
+  Dispersal</b><br></p>
+  <p align="justify">Flowering plants reproduce themselves by
+  producing seeds. The seeds also provide the plants with a way to
+  spread out and grow in new places, sometimes a long way from the
+  parent. This is important because if the seeds are not dispersed,
+  many germinating seedlings will grow very close to the parent
+  plant.</p>
+  <p align="left"><br></p>
+  <p align="justify">This results in <i style=
+  "color:blue">competition</i> between every one of the seedlings as
+  well as with the parent plant. The competition is for light, space,
+  water and nutrients and all of these are important for plants to be
+  able to grow. Seeds can be dispersed in a number of different ways.
+  They may be carried by wind, water or animals.</p>
+  <p align="left"><br></p>
+  <p align="justify">Some plants even shoot the seeds out
+  explosively. In fact, seed size is an important factor. Some fruits
+  have coats covered with spikes either to prevent themselves from
+  being eaten by animals or to stick to the hairs, feathers or legs
+  of animals, using them as dispersal agents.</p>
+  <p align="left"><br></p>
+  <p align="justify"><img width="173" height="242" src=
+  "http://speedapp.ididev.com/apps/img/plantrepro4.jpg" alt=""></p>
+  <p align="left"><br></p>
+  <p align="justify">The sweet flesh of many fruits is appealing to
+  animals, so that the seeds held within are eaten and carried away
+  and deposited at a distance from the parent.</p>
+  <p align="left"><br></p>
+  <p align="justify">Likewise, the nutritious, oily kernels of nuts
+  are appealing to rodents (such as squirrels) who hoard them in the
+  soil in order to avoid starving, thus giving those seeds that
+  remain uneaten the chance to germinate and grow into a new plant
+  away from their parent.</p>
+  <p align="left"><br></p>
+  <p align="justify">Other fruits are elongated and flattened and so
+  become thin, with wings or tiny <i style=
+  "color:blue">parachutes</i>. This is a mechanism to increase
+  dispersal distance away from the parent via wind. Some other fruits
+  can disperse via water.</p>
+  <p align="left"><br></p>
+  <p align="justify">Fruits like coconut can float thousands of miles
+  in the ocean to spread seeds. Other fruits also do this by
+  explosively casting the seeds out. In all, the seeds of flowering
+  plants vary in size. Some are as small as grains of salt while
+  others may be almost the size of tennis.</p>
+  <p align="left"><br></p>
+  <p align="justify">The difference in size reflects differences in
+  the amount of food reserves stored in the seed for the benefit of
+  the <i style="color:blue">embryo plant</i> inside. Usually, the
+  larger the seed, the more food reserves it contains. This allows
+  the germinating seed and young seedling more time to grow.</p>
+  <p align="left"><br></p>
+  <p align="justify">It can then become well established before it
+  must begin manufacturing its own food. The longer a seedling has
+  before it must become self sufficient, the greater chance it has of
+  becoming successfully established.</p>
+  <p align="left"><br></p>
+  <p align="justify">A <b style="color: crimson">seed</b> is a small
+  embryonic plant enclosed in a covering called the seed coat,
+  usually with some stored food. A typical seed includes three basic
+  parts: an embryo, a supply of nutrients for the embryo, and a seed
+  coat.</p>
+  <p align="left"><br></p>
+  <p align="justify">The <b style="color: crimson">embryo</b> is an
+  immature plant from which a new plant will grow under proper
+  conditions. The embryo has one or two <b style=
+  "color: crimson">cotyledons</b> or seed leaves. The <b style=
+  "color: crimson">radicle</b> is the embryonic root. The <b style=
+  "color: crimson">plumule</b> is the embryonic shoot.</p>
+  <p align="left"><br></p>
+  <p align="justify">The embryonic stem above the point of attachment
+  of the cotyledon(s) is the <b style="color: crimson">epicotyl</b>.
+  The embryonic stem below the point of attachment is the <b style=
+  "color: crimson">hypocotyl</b>. Within the seed, there usually is a
+  store of nutrients for the seedling that will grow from the
+  embryo.</p>
+  <p align="left"><br></p>
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/plantrepro5.jpg" alt="" name=
+  "front_image" id="front_image"></p>
+  <p align="left"><br></p>
+  <p align="justify">The form of the stored nutrition varies
+  depending on the kind of plant. In most plants, the stored food is
+  called the <b style="color: crimson">endosperm</b>. In some
+  species, the embryo is embedded in the endosperm which the seedling
+  will use upon germination. The <b style="color: crimson">seed
+  coat</b> (or <i style="color:blue">testa</i>) develops from the
+  tissue originally surrounding the ovule.</p>
+  <p align="left"><br></p>
+  <p align="justify">The seed coat in the mature seed can be a
+  paper&ndash;thin layer or something more substantial. The seed coat
+  helps protect the embryo from mechanical injury and from drying
+  out. In addition to the three basic seed parts, some seeds have an
+  appendage (external body part that projects from the body) on the
+  seed coat.</p>
+  <p align="left"><br></p>
+  <p align="justify">It can be an <i style="color:blue">aril</i> (as
+  in nutmeg), <i style="color:blue">hairs</i> (as in cotton), etc.
+  There may also be a <i style="color:blue">scar</i> on the seed
+  coat, called the <b style="color: crimson">hilum</b>; it is where
+  the seed was attached to the ovary wall.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Seed
+  Germination</b><br></p>
+  <p align="justify">This is the process of growth of the embryo into
+  a functional plant. It involves the reactivation of the metabolic
+  pathways that lead to growth and the emergence of the radicle or
+  seed root and plumule or shoot.</p>
+  <p align="left"><br></p>
+  <p align="justify">Three fundamental conditions must exist before
+  germination can occur.</p>
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  <ol>
+  <li>The embryo must be alive (called seed viability).
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  <li>Any dormancy of other seeds that prevent germination must be
+  over come.
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  <li>The proper environmental conditions must exist for germination.
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  </ol>
+  Water, oxygen, temperature, light, etc are all environmental
+  conditions necessary for germination. The part of the plant that
+  emerges from the seed first is the <i style="color:blue">embryonic
+  root</i>, termed radicle or primary root.
+  <p align="left"><br></p>
+  <p align="justify">This allows the seedling to become anchored in
+  the ground and start absorbing water. After the root absorbs water,
+  the <i style="color:blue">embryonic shoot</i> emerges from the
+  seed. The shoot comprises three main parts: the cotyledons (seed
+  leaves), the section of shoot below the cotyledons (hypocotyl), and
+  the section of shoot above the cotyledons (epicotyl).</p>
+  <p align="left"><br></p>
+  <p align="justify">The way the shoot emerges differs between plant
+  groups. In <b style="color: crimson">epigeous</b> (or epigeal)
+  germination, the <i style="color:blue">hypocotyl</i> elongates and
+  forms a hook, pulling rather than pushing the cotyledons through
+  the soil. Once it reaches the surface, it straightens and pulls the
+  cotyledons and shoot tip of the growing seedlings into the air.</p>
+  <p align="left"><br></p>
+  <p align="justify">Beans are an example of plants that germinate
+  this way. Another way of germination is <b style=
+  "color: crimson">hypogeous</b> (or hypogeal) where the <i style=
+  "color:blue">epicotyl</i> elongates and forms the hook. In this
+  type of germination, the cotyledons stay underground where they
+  eventually decompose. Peas, for example, germinate this way.</p>
+  <p align="left"><br></p>
+  <p align="justify">The structure of flowering plants differs
+  according to whether they are monocots or dicots. The term monocot
+  and dicot refers to the number of cotyledons there are in a seed.
+  <b style="color: crimson">Monocotyledons</b> or <i style=
+  "color:blue">monocots</i> have one cotyledon while a <b style=
+  "color: crimson">dicotyledon</b> or <i style="color:blue">dicot</i>
+  has two cotyledons. In monocot seeds, the coleorhiza is the first
+  part to grow out of the seed, followed by the radicle. The
+  coleoptile is pushed up through the ground until it reaches the
+  surface. There, it stops elongating and the first</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Vegetative
+  reproduction</b> (also vegetative propagation) is a type of asexual
+  reproduction found in plants. <i style="color:blue">It is a process
+  by which a new plant grows or is obtained without production of
+  seeds by the parent plant</i>.</p>
+  <p align="left"><br></p>
+  <p align="justify">Why choose asexual reproduction? Perhaps the
+  better question is: <b style="color: crimson">Why not?</b> After
+  all, asexual reproduction would seem a more efficient way to
+  reproduce and avoids all sorts of problems. For example problems
+  sometimes resulting from mutation as plants go through <i style=
+  "color:blue">mitosis</i> or <i style="color:blue">meiosis</i>.
+  <i style="color:blue">Another major advantage of asexual
+  propagation is that plants can genetically be duplicated
+  easily</i>.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Stolons</b> (or
+  runners) are horizontal <i style="color:blue">aboveground stems</i>
+  that can produce new plants from their nodes. Example is the
+  strawberry (shown here) or grass grown in our homes and on football
+  parks. <i style="color:blue">Undergroung stems</i> also include:
+  rhizome, corm, bulb and tubers.</p>
+  <p align="left"><br></p>
+  <p align="justify">The <b style="color: crimson">rhizome</b> is a
+  modified underground stem serving as an organ of vegetative
+  reproduction. Example is ginger. The <b style=
+  "color: crimson">corm</b> is a short, solid underground stem which
+  functions in food storage (e.g. cocoyam). <b style=
+  "color: crimson">Bulbs</b> are actually large <i style=
+  "color:blue">buds</i> with a short stem enclosed by many fleshy
+  leaves filled with stored food (e.g. onion).</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Tubers</b> are swollen
+  tips of underground stems (e.g. potato) and root tubers have large
+  and swollen roots (e.g. cassava). The form of vegetative
+  reproduction called</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">suckers</b> is the
+  regeneration of a plant by shoots that arise from an existing root
+  system. Species that characteristically produce suckers include
+  plantains and bananas.</p>
+  <p align="left"><br></p>
+  <p align="justify">Some plants can also be grown by <b style=
+  "color: crimson">cuttings</b>. For cuttings, a portion of a stem is
+  cut from the parent and placed in a suitable soil. After roots have
+  developed from the cut end of the stem, it will continue to grow.
+  An example of this is how cassava is grown.</p>
+  <p align="left"><br></p>
+  <p align="justify">Another type of vegetative propagation is found
+  in the ornamental plant Bryophyllum (also called Kalancho&euml;).
+  Tiny plantlets grow along the leaf margins (when leaf fall on the
+  ground) and later they can take up an independent existence.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Layering</b> also
+  involves a bending of a branch down to the ground and allowing that
+  part of the stem to grow.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color: crimson">Grafting</b> is where
+  the tissues of one plant are encouraged to fuse with those of
+  another. In most cases, one plant is selected for its roots, and
+  this is called the <b style="color: crimson">stock</b> or
+  rootstock. The other plant is selected for its stems, leaves,
+  flowers, or fruits and is called the <b style=
+  "color: crimson">scion</b>.</p>
+  <p align="left"><br></p>
+  <p align="justify"><img width="160" height="167" src=
+  "http://speedapp.ididev.com/apps/img/plantrepro6.jpg" alt=""> <img width="160" height="167" src=
+  "http://speedapp.ididev.com/apps/img/plantrepro7.jpg" alt=""></p>
+  <p align="justify">The scion contains the desired genes to be
+  duplicated in future production by the stock/scion plant. The scion
+  is taken from a mature plant of the desired variety and inserted in
+  a notch of a stump (the <b style="color: crimson">stock</b> of
+  another plant) and tied together.</p>
+  <p align="left"><br></p>
+  <p align="justify">For successful grafting to take place, the
+  cambium tissues of the stock and scion plants must be placed in
+  contact with each other and that is why it is tied. The <i style=
+  "color:blue">cambium</i> is a one&ndash;cell&ndash;thick layer of
+  tissue between xylem and phloem in most vascular plants that is
+  responsible for secondary growth.</p>
+  <p align="left"><br></p>
+  <p align="justify">After sometime, the <b style=
+  "color: crimson">cambiums</b> of scion and stock are united and
+  precautions are taken to prevent infection and drying out so that
+  the scion will grow. It will get all its water and minerals from
+  the root system of the stock.</p>
+  <p align="left"><br></p>
+  <p align="justify">Another common <i style="color:blue">form of
+  grafting</i> is <b style="color: crimson">budding</b>. A dormant
+  side bud is cut and grafted on the stem of another stock plant, and
+  when it has fused successfully, it is encouraged to grow.</p>
+  <p align="left"><br></p>
+</ion-content>

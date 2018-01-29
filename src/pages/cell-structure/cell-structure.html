@@ -1,0 +1,520 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>CELL STRUCTURE</b></p>
+  <br />
+  <p align="justify">All organisms are composed of self&ndash;reproducing units called 
+  <i style="color:blue">cells</i>. Consider for a while humans. You have got a head, hands, legs, buttocks, a stomach, etc. These altogether, though many, make you up as one person. You started as a cell, then the cells self&ndash;reproduced to form
+  a tissue, then an organ, a system, and all these systems came together to form the complete you. That is why it is said that the 
+  <b style="color:crimson">cell</b>is the basic (simplest) unit of life. Microscopes revealed the presence of cells and even today are making known their detailed structure. The plant and animal cells are different but still share some few
+  similarities. Below is the picture of the plant cell. Examine also the picture of the animal cell on the next page.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="464"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/cell1.jpg"
+         width="465" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="488"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/cell2.jpg"
+         width="495" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A cell that has a nucleus and cellular organelles like we are about to consider below is called a 
+  <b style="color:crimson">Eukaryotic</b>
+  <b style="color:crimson">cell</b>. A 
+  <b style="color:crimson">nucleus</b>is a large structure that controls the workings of the cell because it contains 
+  <i style="color:blue">genes</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is to say, the genes in the nucleus contains chromatin which in turn contains DNA specifying how things should be done by the cell. All cells are surrounded by a 
+  <b style="color:crimson">plasma</b>(cell) 
+  <b style="color:crimson">membrane</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The plasma membrane separates the contents of the cell from the surrounding environment. The plasma membrane regulates the entrance and exit of molecules into and out of the cytoplasm.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This 
+  <b style="color:crimson">cytoplasm</b>is the semi&ndash;fluid medium that contains the organelles and also surrounds the nucleus. The 
+  <b style="color:crimson">cell wall</b>can 
+  <i style="color:blue">only</i>be found in a plant cell. This cell wall freely allows molecules to enter and exit the cytoplasm.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The cell wall also serves as a protection for the cell in addition to the plasma membrane. Eukaryotic cells contain 
+  <b style="color:crimson">organelles</b>, small bodies that have a specific structure and function. The nucleus and the organelles are kept separate from one another or they 
+  <i style="color:blue">work individually</i>but toward a common goal.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Animal cells and some plant cells contain a pair of 
+  <b style="color:crimson">centrioles</b>which play a vital role during 
+  <i style="color:blue">cell division</i>. Centrioles are 
+  <i style="color:blue">two bundles</i>of 
+  <b style="color:crimson">rods</b>. Centrioles are 
+  <i style="color:blue">nine</i>sets of tubules with three tubules in each set. During cell division, centrioles 
+  <i style="color:blue">move</i>around. Tiny, spherical organelles called 
+  <b style="color:crimson">ribosomes</b>are either located on the surface of most endoplasmic reticulum or free in the cytoplasm.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These bodies are the sites of 
+  <i style="color:blue">protein synthesis</i>(production). Protein may pass from the surface of the ribosomes into the endoplasmic reticulum for transport within the cell. The 
+  <b style="color:crimson">endoplasmic reticulum</b>
+  <b style="color:crimson">(ER),</b>found in almost all cells, is a network of tube&ndash;like structures.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Simply put, the endoplasmic reticulum acts as a cellular &lsquo;subway&rsquo; that transports materials within the cell. If ribosomes are attached to the ER, it is called 
+  <b style="color:crimson">rough ER</b>; if ribosomes are not present, it is called 
+  <b style="color:crimson">smooth ER</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Also scattered through most cells are the 
+  <b style="color:crimson">Golgi apparatus</b>or Golgi bodies. Except that their tubes do not appear to be connected to each other, Golgi apparatus 
+  <i style="color:blue">resemble</i>the endoplasmic reticulum. Golgi apparatus are involved in the 
+  <i style="color:blue">storage and secretion</i>(pouring out) of chemicals or proteins from the cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The picture below shows ribosomes, rough and smooth ERs and how the Golgi apparatus works. These chemicals the Golgi bodies pour out of the cell may affect either some parts of the organism or other organisms.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/cell3.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Example digestive juices are cell secretions used by an organism. A snake&rsquo;s venom is a secretion that affects other organisms. Clear, fluid&ndash;filled sacs in both plant and animal cells are called 
+  <b style="color:crimson">vacuoles</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Animal cells have got vacuoles but they are much more prominent in plant cells. Note, however, that a 
+  <i style="color:blue">vesicle</i>is a small vacuole. Many vacuoles or vesicles are used for the storage of food, water and minerals. In some plant cells, the vacuole may be the prominent structure.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Small round organelles called 
+  <b style="color:crimson">lysosomes</b>are vesicles formed by the Golgi apparatus. Lysosomes contain hydrolytic enzymes and so when large molecules are brought into the cell by vesicles, the lysosomes fuse with the vesicle and digest its contents
+  into simpler molecules, before they enter the cytoplasm.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">energy&ndash;related organelles</b>which are chloroplast and mitochondria, transform one form of energy into another. While chloroplasts are unique to plant cells, mitochondria are found in both plant and animal cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Mitochondria</b>are often called the 
+  <i style="color:blue">power houses</i>of the cell because they transform the chemical energy of glucose products into the chemical energy of 
+  <b style="color:crimson">ATP molecules</b>. Mitochondria produce ATP (adenosine triphosphate) which is the common carrier of energy in the cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="110"
+         src="http://speedapp.ididev.com/apps/img/cell4.png"
+         width="207" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, muscle cells use ATP for muscle contraction, ensuring movement, and the nerve cell uses it for the conduction of nerve impulses, which makes us aware of our environment. The matrix of a mitochondrion contains
+  enzymes for breaking down glucose products.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Chloroplasts</b>, found only in plant cells, belong to a group of plant organelles called 
+  <i style="color:blue">plastids</i>. The chloroplasts contain chlorophyll needed for photosynthesis. 
+  <b style="color:crimson">Chlorophyll</b>is the 
+  <i style="color:blue">green</i>pigment found in chloroplasts.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="196"
+         src="http://speedapp.ididev.com/apps/img/cell5.png"
+         width="204" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Chlorophyll makes chloroplasts, and for that matter leaves, green. Chloroplasts carry on photosynthesis during which light energy is used to produce glucose. Chloroplasts take in carbon oxide, water and light (often solar
+  energy) in order to produce glucose. The products after the reaction are carbohydrates (glucose) and oxygen.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Inside the chloroplasts are organized flattened sacs called thylakoids. These thylakoids are piled up like sacs of coins and each stack is called granum (pl., grana).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Types of cells</b>
+    <br />
+  </p>
+  <p align="justify">Depending on the purpose which they serve, there are so many types of cells. Examples of plant cells are leaf palisade cells, leaf epidermal cells, root tip cells, xylem cells, etc. Examples of animal cells are nerve cells,
+  muscle cells, the 
+  <i style="color:blue">blood</i>cells, sperm cells, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/spem.png" />
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nerve.png" />
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/bloodcell.png" />
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/musclecell.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Levels of Organization of cells</b>
+    <br />
+  </p>
+  <p align="justify">From the introduction, we can recall it was established that the 
+  <b style="color:crimson">cell</b>is the basic unit of life and when so many cells come together, they form a tissue. A 
+  <b style="color:crimson">tissue</b>is a similar group of cells which are specialized to perform similar functions.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Examples of tissues are mesophyll, epidermis, skeletal tissue, muscle tissue, etc. In turn, so many tissues form an 
+  <b style="color:crimson">organ,</b>which is a group of tissues that collaborate to perform a specific function. Examples of organs are leaves, branches, flowers, stomach, heart, nose, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A 
+  <b style="color:crimson">system</b>is a group of several organs whose functions are co ordinate to produce effective actions in a living organism. E.g. shoot system, root system, nervous system, digestive system, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The circulatory system, for example, is made up of the heart, veins, arteries and capillaries. When different systems work together, they form an 
+  <b style="color:crimson">organism</b>in which case, as illustrated in the introduction, makes a complete human being (organism).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These stages also come together to form the animals, trees, in fact, all multi&ndash;cellular organisms. The five basic levels of the organization of multi&ndash;cellular (more than one cell) organism are depicted below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Cells &rArr; Tissues &rArr; Organs &rArr; Systems &rArr; Organism</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Cell Division</b>
+    <br />
+  </p>
+  <p align="justify">During the mid 1850s, scientists discovered that all cells are reproduced from other cells. These facts led biologists to believe that the cell is the basis of heredity.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">They correctly assumed that a study of cell reproduction would lead them to a better understanding of reproduction in general. Soon, it became evident that the nucleus plays a major role in cell reproduction.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The chromosomes in each nucleus carry the genetic message. Each time a cell divides, the 
+  <i style="color:blue">chromosomes</i>must be 
+  <b style="color:crimson">replicated</b>accurately and these copies must be 
+  <b style="color:crimson">distributed</b>to each new cell for proper cell functioning.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This process is called 
+  <b style="color:crimson">mitosis</b>. Note that mitosis refers 
+  <i style="color:blue">only</i>to the replication of the nucleus. Mitosis is a process which guarantees 
+  <i style="color:blue">genetic continuity</i>when it occurs properly. 
+  <b style="color:crimson">Genetic continuity</b>results in the reproduction of offspring with the same set of features as the parent.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The part of a cell&rsquo;s life when it appears to be in a state of 
+  <i style="color:blue">little activity</i>is called 
+  <b style="color:crimson">interphase</b>. Although the cell at this stage is said to be inactive, it makes substances needed for cell division. Interphase is the state 
+  <i style="color:blue">before and after</i>mitosis. There are 
+  <b style="color:crimson">four</b>main phases of mitosis: prophase, metaphase, anaphase and telophase.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Prophase</b>This stage is divided into three for easy understanding. 
+  <b style="color:crimson">Early prophase</b>is the first. During this time, the nucleolus begins to disintegrate. Chromatin begins to thicken and becomes shorter.</p>
+  <p align="left">
+    <img alt=""
+         height="376"
+         src="http://speedapp.ididev.com/apps/img/cell6.jpg"
+         width="231" />
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">By 
+  <b style="color:crimson">middle prophase</b>, the nucleolus has disappeared completely making chromosomes clearly visible as separate bodies. In animal cells, divided 
+  <i style="color:blue">centrioles</i>begin to separate and migrate toward opposite poles of the cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">By 
+  <b style="color:crimson">late prophase</b>, the nuclear membrane is completely absent and 
+  <i style="color:blue">chromosomes</i>can be seen to be 
+  <b style="color:crimson">replicated</b>. The replicated chromosomes appear as 
+  <i style="color:blue">double&ndash;stranded</i>structures held together by a round body of DNA called 
+  <b style="color:crimson">centromere</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Each strand is called 
+  <b style="color:crimson">chromatid.</b>The fibers between the centrioles are clearly visible and extend from each centriole as an oval&ndash;shaped structure called 
+  <b style="color:crimson">spindle</b>. Radiating from each centriole in most animal cells are fibers known as 
+  <b style="color:crimson">aster</b>. 
+  <br /></p>
+  <p align="justify">
+  <b style="color:crimson">Metaphase</b>Chromosomes move toward the center of the cell. The centromeres are joined to separate spindle fibers. The chromosomes then align along an imaginary line marking the &lsquo;equator&rsquo; or middle of the
+  cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Anaphase</b>At this stage, duplicated chromosomes (called 
+  <i style="color:blue">chromatids</i>) are separated. One chromatid of each chromosome is pulled to each pole of the cell. At the end of anaphase, there is one set of single&ndash;stranded chromosomes at the end of the cell.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">After anaphase, the cell membrane of animal cells begins to form at the center of the cell. 
+  <b style="color:crimson">Telophase</b>This stage ends mitosis with events opposite to the events of prophase.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The nucleolus reappears, and a nuclear membrane forms around each set of chromosomes. Meanwhile, chromosomes lose their distinct form so they once again appear as a mass of chromatin.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">When cell division is completed in animal cells, the cell membrane 
+  <i style="color:blue">pinches</i>or constricts completely together so that the single cell is separated into two 
+  <b style="color:crimson">daughter cells.</b>In plants, the cell plate is completed to form the daughter cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Eventually, cell walls will form between the plant cells. Each daughter cell has the same number and kinds of chromosomes as the parent cell which produced it. After mitosis, the daughter cells enter interphase and as they
+  mature and grow, their single&ndash;stranded chromosomes eventually will be replicated. Then, mitosis can begin again.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Meiosis</b>(sex cell division) is the 
+  <i style="color:blue">two step</i>division process by which sperm and eggs are produced. But why doesn&rsquo;t the process use mitosis?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">To begin, humans have 
+  <b style="color:crimson">46</b>chromosomes in each 
+  <i style="color:blue">somatic cell</i>&nbsp;(a cell that does not participate in the production of gametes like the skin cell). However, since humans have 
+  <b style="color:crimson">
+    <i style="color:blue">two</i>
+  </b>of every type of chromosome, it means that we really have 
+  <i style="color:blue">two sets of 23 chromosomes</i>.&nbsp;</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">One set came from your mother and the other from your father. For every chromosome originating from the mother, there is a corresponding similar one from the father.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The two chromosomes of each pair are 
+  <i style="color:blue">homologous</i>, and they are referred to as 
+  <b style="color:crimson">homologs</b>. Each homolog carries information for the same hereditary trait as its partner, but the specific instructions may differ.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, each homolog of a pair may carry a coded message for eye color. One chromosome&rsquo;s message may be for brown eyes, and the other chromosome&rsquo;s message may be for blue eyes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The combination of the two determines the result in the offspring. But a single pair of homologs may carry information for several thousand hereditary traits. This means each parent is contributing only 23 chromosomes, which is
+  half of the total in somatic cells.&nbsp;</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Therefore, meiosis has to produce specialized reproductive cells, sperm and eggs, which have 
+  <b style="color:crimson">
+    <i style="color:blue">one</i>
+  </b>of every type of chromosome (instead of two).&nbsp;In this case after fertilization, the number of chromosomes in the developing zygote would be 46. &nbsp;</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Cells with 
+  <i style="color:blue">two</i>of every type of chromosomes are called 
+  <b style="color:crimson">diploids</b>. Cells with 
+  <i style="color:blue">one</i>of every type of chromosomes are called 
+  <b style="color:crimson">haploids</b>.&nbsp; Human somatic cells are diploids while the gametes are haploids.&nbsp; Meiosis then is a process by which haploid cells are produced.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Meiosis I&nbsp;</b>
+    <br />
+  </p>
+  <p align="justify">The same four phases seen in mitosis&mdash;prophase, metaphase, anaphase and telophase&mdash;occur during both mitosis I and mitosis II. During prophase I, the homologous (like chromosomes) pairs as they move close together to
+  form 
+  <i style="color:blue">bivalents</i>or two strand chromosomes.</p>
+  <p align="left">
+    <img alt=""
+         height="319"
+         src="http://speedapp.ididev.com/apps/img/cell7.jpg"
+         width="181" />
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Later, the bivalents pair up making each member of a pair four, called 
+  <b style="color:crimson">tetrads</b>. In metaphase I, each 
+  <i style="color:blue">tetrad</i>attaches to a separate spindle fiber and they all line up at the middle of the cell. The spindle fibers contract and a pair of chromatid of each tetrad starts to move toward each pole during anaphase I. Cell then
+  begins to pinch (constrict) to form daughter cells which have one chromosome from each homologous pair.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">However, the chromosomes consist of two chromatids just like the parent cell. Right after this, meiosis II follows.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Meiosis II</b>
+    <br />
+  </p>
+  <p align="justify">During prophase, the chromatids try to separate. At metaphase, chromosomes align at the middle of the cell. The chromatids have separated and chromatids approach their respective poles during anaphase.</p>
+  <p align="left">
+    <img alt=""
+         height="303"
+         src="http://speedapp.ididev.com/apps/img/cell8.jpg"
+         width="313" />
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">At telophase, the nuclei form and then four haploid daughter cells result with each having half the number of chromosomes from their parent. A pictorial summary of meiosis II is shown here on the right.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Classification of Cells</b>
+    <br />
+  </p>
+  <p align="justify">
+  <i style="color:blue">Cells</i>are classified based on whether or not they have a 
+  <i style="color:blue">nucleus</i>. Those that have nucleus are also classified based on whether or not their nuclei are bound by a 
+  <i style="color:blue">membranes</i>. There are basically three types of cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">An 
+  <b style="color:crimson">akaryotic</b>cell (or 
+  <i style="color:blue">virus</i>) 
+  <b style="color:crimson">does not have</b>a nucleus and other cell organelles. 
+  <b style="color:crimson">Viruses</b>are non&ndash;living particles that reproduce only inside specific host cells. They always get into contact with living cells (host) and then use the 
+  <i style="color:blue">DNA</i>of the living cell to replicate (make an exact copy of) their own.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">When in humans and no specific medical procedure is directed at fighting them, they stay and never get extinct. This is why diseases in humans caused by viruses are difficult to cure and some almost incurable. Consider diseases
+  like cold, poliomyelitis, mumps, influenza, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Prokaryotic</b>cells ( 
+  <i style="color:blue">bacteria</i>) 
+  <b style="color:crimson">lack</b>a nucleus and most of the other organelles found in 
+  <i style="color:blue">eukaryotic</i>cells. The chromosome of the bacteria is contained in a nucleoid, which has no nuclear envelope and that is why bacteria are said to lack nucleus. Some bacteria move by means of 
+  <b style="color:crimson">flagella</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">A flagellum is a long extension, like a tail 
+  <b style="color:crimson">,</b>that propels a cell through a fluid medium. For example, the sperm cell moves by means of a flagellum. Common diseases caused by bacteria in humans are leprosy, meningitis, cholera, tuberculosis, etc.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Eukaryotic cells</b>(see notes on 
+  <i style="color:blue">The Cell</i>) are those that have a nucleus, organelles and undergo normal life processes. Note that it is the presence of a 
+  <b style="color:crimson">
+    <i style="color:blue">nucleus</i>
+  </b>which differentiates a eukaryotic from a prokaryotic cell.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

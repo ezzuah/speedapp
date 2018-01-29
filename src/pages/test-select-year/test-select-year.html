@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-navbar color="speedapp">
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item text-wrap (click)="randomTest();">
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/random.png">
+          </ion-thumbnail>
+          <h2>Random Test</h2>
+          <p>Try your hands on 40 Integrated Science questions selected randomly</p>
+        </ion-item>
+
+        <ion-item *ngIf="years=='false'" text-wrap>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/error.png">
+          </ion-thumbnail>
+          <h2>Past Questions</h2>
+          <p>Past Questions is currently not available. It will be available anytime soon</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list *ngIf="years!='false'">
+        <ion-item text-wrap class="container" *ngFor="let item of years" (click)="writeTest($event,item)" >
+          {{item.Quest_Year}}
+        </ion-item>
+      </ion-list>
+
+</ion-content>

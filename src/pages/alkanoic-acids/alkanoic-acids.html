@@ -1,0 +1,126 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>ALKANOIC ACID (CARBOXYLIC ACIDS)</b><br /></p>
+
+  <p align="justify">Although there are other types of organic acids, the most common
+  organic acids belong to a group called the carboxylic acids. Many fruits and vegetables
+  contain carboxylic acids. One such acid is the familiar citric acid found in lemons,
+  oranges and other citrus fruits. Tartaric acid is found in grapes. The functional group
+  of carboxylic acid is the carboxyl group and is represented as.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img alt="" width="54" height="46" src=
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHUAAABYCAYAAADLNrhUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADnQAAA50AWsks9YAAAT5SURBVHhe7Z0PceswDMbLoBAKoRAGYRAGYRAGoRAGYRAGoRAGYRC6fX2nPi11HDmRU8X+fNd7uz7/q36WEsuWvbswVZfA+Xy+fH5+Xj/f39/V29tVb6HTBgDw+fn5stvt7j7H4/FyOp2yknl7e7uVs4hQ2rmWsxRgnjIJvL6+/gF5OBwuT09P14+GDLjQ4lQi1DKZV8398vJyAwdNTUGDlu73+2s+/JvKQ6hVMdkr//j4uAEF3FwCSAELjR0mQrXLvWpOmFloH8ysJelB8P7+/qcIoVokWDkPNE+el4BlTTIQYKp1IlSrBCvmK4UgXdEvVYRaEdCcqmX6kno+5urTJli/MOlBgr+nPpzSzKE2UUamK9bnqVSH+awAwd+SNNTUXHfsO85THeHWhDqlpUOtpvPBCayY31JNtZhfSxdpfi1SKswz90VprFxpfYRaCMySfe6UBi9WAMIpjUXKD8hD58MDhF67Sf0mSzdhbWmvWL92JsCkfn193bUOlyAd+itC8WhqOMccW3rD91x685D4SnUAFkywaORwHXXowB92i2+/K4Ga2wy3s8yV3IrloHWRU+zeBZOcmNBg3brrDqEaCG0FpvwUQs1A3RpMQm0QJqEmoG5VM4c/heb3VyKtwKSmNgiza6itaWbX5rd1mF1pai8wu4DaG8ymofYKs0movcNsDmr0lRODi9ktC50PbqKMUxGhxmHh1pOwULHdAxu39HYQ7JHFxq7UZi43iTRQUTio2GYp+2dzgUHYw8OUlkAoqNBODRIbtxBrIsfVQEu15hJscKgwqfoMhDETi3OIJFQBA2Bsi2XPWhxGUyUUEGCnnpk6bmVqJ3yPcENABUQdtWUBgZcoaCyh3ksrBFScKyRQp7TUArz3PCGgyoFSML1MyyUQAurc0PrlP7/NGgi1Qa6/j7L7Uy5rfpeSITXVd2SF0FSJ6eQz1QduCKhz3n7hhIBHaa2DkX3EvU4tIaDqeepU3KaIRbsUrWXWEenjWwkBFWKQ5yqc+ZYjybUHypL/8aJerwdhoA4PwciB0gcl06kf1KMk3dKwoLEwq9rDhBUbfWQ53ITU0uBQ0T0NNje1ItBxcx7G/Oou5m6KgAZP3RSx3tMrZkshoQ4ByyI5nf22QRQequ1n/M/FraK/oZmlQttC/t43dTcJVQZer3Cbhtor3C6g9gZ3k1CXmtWl5aO/V2wSqpfmtQp301AJN20zmoBKuH/hNgWVcP9JoEmovcNtGuqj4GKJEKtNOnoP+68QVbDGLo0uoHrCzU1nEOOjg7fGlg4Bu+Q6ztIpVFdQveCmhKxvLgZMuUxeVpgkiFqDrqW1XUL1hovdF/pKkpwWAr42y/omxlKNHMvfNVQvuHq3hiVeVsfiArB3IlQl0TkeJmiplCsJq9RbXL2fr4SaUJMSuBqORUt1c2KySwaDRasJ1SKlTJ7SS4F0VbIzsvTK66kuE+qUhCb+f0lw15IBkesWoRLqQgk0WJya2iBUmc7MmZosKUvzW3EwzQnDlO6IE2J4dfXS7vKZulCCc44LQpM6IMzbXUioC6GiODQNc1vLwV7SnDj+UcY7yItQHaAOj+DLOSEAUAYBBkKNuCBCdYCKKrRnCdqHOaiGC/DIo5353p4k+SmE6gQV1cCHm7quOrWuisNLaiVCdZasHDCSOrMYwKGdtaP3CNUZqq4O8GSRvNTZv6RbP9tY2mVdqgH/AAAAAElFTkSuQmCC" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Carboxylic acids have the general formula
+  C<sub>n</sub>H<sub>(2n+1)</sub>COOH. Carboxylic acids react with alcohols to produce
+  esters (alkylalkanoate). It also reacts with sodium hydrogen trioxocarbonate (IV)
+  NaHCO<sub>3</sub> to liberate carbon dioxide (CO<sub>2</sub>).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">NOMENCLATURE</b><br /></p>
+
+  <p align="justify">Select the longest continuous carbon chain bearing the &ndash;COOH
+  group.<br /></p>
+
+  <p align="justify">Replace the &lsquo;e&rsquo; in the corresponding alkane by
+  &lsquo;oic acid&rsquo;.<br /></p>
+
+  <p align="justify">Begin the numbering from the carboxylic group as first
+  carbon.<br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Methanoic acid or CHOOH<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Ethanoic acid or CH<sub>3</sub>COOH<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>3&ndash; Methylbutanic acid or
+    CH<sub>3</sub>CHCH<sub>3</sub>CH<sub>2</sub>COOH<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>2, 3&ndash; Dimethylpentanoic acid or
+    CH<sub>3</sub>CH<sub>2</sub>CHCH<sub>3</sub>CHCH<sub>3</sub>COOH
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><b style="color:crimson">Uses of Methanoic Acid</b><br />
+
+  <p align="justify">It is used as a drying agent when making textiles.<br /></p>
+
+  <p align="justify">It is used to remove calcium trioxocarbonate (IV), chalk, deposits
+  in kettle.<br /></p>
+
+  <p align="justify">It is also used as a starting chemical to produce other
+  chemicals.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Uses of Ethanoic Acis</b><br /></p>
+
+  <p align="justify">It is used in laundries for brightening colours.<br /></p>
+
+  <p align="justify">Used as a solvent to dissolve other carbon compounds.<br /></p>
+
+  <p align="justify">It is used as vinegar for food flavouring.<br /></p>
+
+  <p align="justify">Used for cleaning dirty metal surfaces in homes.<br /></p>
+
+  <p align="justify">It is also used for the production of drugs and other
+  chemicals.<br /></p>
+
+  <p align="justify">Cellulose ethanoate which is used for the manufacturing of liquors,
+  varnishes, cinema films and rayon are made from ethanoic acid.</p>
+
+  <p align="left"><br />
+  <br /></p>
+</ion-content>

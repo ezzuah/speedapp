@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>EXCRETION</b></p>
+  <br />
+  <p align="justify">The body takes the essential materials it will need from the food and water we take in. After this, what happens to those that are not needed? They are considered waste and as such are collected and disposed off through a
+  process called excretion. 
+  <b style="color:crimson">Excretion</b>is the release and removal of harmful metabolic by&ndash;products (waste) from the body.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The kidneys are the primary excretory organs but other organs also function in excretion. Before the kidneys are considered, let us first learn about how some other organs also function in excretion. Your 
+  <b style="color:crimson">skin</b>has sweat glands in it.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These sweat glands excrete 
+  <i style="color:blue">perspiration</i>which is a solution of water, salt, and some urea. Although perspiration is a form of excretion, we perspire to cool our bodies and not necessarily to rid the body of waste.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The body cools when we sweat because heat is lost as perspiration evaporates and thereby keeping the body temperature within normal range. The 
+  <b style="color:crimson">liver</b>excretes bile pigments, which are derived from the breakdown of 
+  <i style="color:blue">haemoglobin</i>. Bile pigments are changed into bile which is stored in the gall bladder before it passes into the small intestine.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The liver also excretes cholestrol and excess fat&ndash;soluble vitamins. The 
+  <b style="color:crimson">lungs</b>remove carbon dioxide from the body and this process of breathing out the CO
+  <sub>2</sub>is called 
+  <i style="color:blue">expiration</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">kidneys</b>remove nitrogenous wastes and unnecessary materials such as salts from the blood and maintain the proper water balance in the body. The picture below shows the female human urinary system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="462"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/excre1.jpg"
+         width="442" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Each kidney is shaped like a bean and there is one on each side of the body. The outer part of a kidney is called the 
+  <b style="color:crimson">cortex</b>, the inside is the 
+  <b style="color:crimson">medulla</b>and the central, hollow cavity is called the 
+  <b style="color:crimson">pelvis</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Each kidney is composed of a million tiny units called 
+  <b style="color:crimson">nephrons</b>. Each nephron is made up of 
+  <b style="color:crimson">Bowman&rsquo;s capsule</b>which has the shape of a cup. The Bowman&rsquo;s capsule also narrows into a long, coiled 
+  <b style="color:crimson">tubule</b>. In the center of each Bowman&rsquo;s capsule is a bulk of blood capillaries called 
+  <b style="color:crimson">glomerulus</b>. Other capillaries of the glomerulus surround the tubule. The glomerulus, in effect,</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">brings blood into the kidney through 
+  <b style="color:crimson">renal arteries</b>. The capillaries which surround the tubule merge to form small veins. These small veins merge to form the 
+  <b style="color:crimson">renal veins</b>, which returns purified blood to the general circulation.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="329"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/excre2.jpg"
+         width="625" />
+    <br />
+  </p>
+  <p align="justify">This is how the kidney&ndash;excretion process begins. As blood travels through the body, it picks up 
+  <b style="color:crimson">urea</b>(a nitrogenoous waste produced in the liver).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Also excess salts and irons which build up in the body are also picked up. Blood passing through the renal arteries is channeled into smaller and smaller arteries of the kidneys which lead to each glomerulus.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <i style="color:blue">Pressure forces</i>most of the water and other contents of blood into the Bowman&rsquo;s capsules. The continuous flow of blood into the kidneys forces the liquid from the Bowman&rsquo;s capsules into the tubules which filter
+  it(
+  <b style="color:crimson">Ultrafiltration</b>). Cells lining the tubule transport needed materials such as food molecules, hormones, and irons from the liquid passing through.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These materials then pass on from the tubule cells to the surrounding capillaries (
+  <b style="color:crimson">Selective reabsorption</b>). Almost all the water is returned to the blood. The cleansed blood travels to the renal veins and back to the general circulation.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The urea, excess salts and sometimes other substances along with a small amount of water are not reabsorbed but remains in the tubules. The combination of these materials is what we call 
+  <b style="color:crimson">urine</b>. Urine passes from the tubules into the 
+  <b style="color:crimson">collecting ducts</b>in the medulla and then to the kidney pelvis.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Leading from the kidney pelvis of each kidney is a tube called 
+  <b style="color:crimson">ureter</b>. The ureter transports to a hollow storage area called the 
+  <b style="color:crimson">urinary bladder</b>. When the bladder becomes filled, urine is forced through the 
+  <b style="color:crimson">urethra</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

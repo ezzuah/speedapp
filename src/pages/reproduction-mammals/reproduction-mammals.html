@@ -1,0 +1,385 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>REPRODUCTION IN MAMMALS</b></p>
+  <br />
+  <p align="justify">&lsquo;How did I come into the world?&rsquo; Mostly we seem not to get answers to this and many other mind puzzling questions like this one. This topic of 
+  <i style="color: blue">reproduction</i>will, at least, clear the air.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Humans are mammals and the study of human reproduction shows the basic pattern found in mammals in general. Below are the pictures of the (human) male and female reproductive systems as they are from the inside.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/repro1.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Female Reproductive System</b>
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">On each side of a female&rsquo;s abdominal cavity is one 
+  <b style="color: crimson">ovary</b>(egg). The ovaries produce sex hormones. Very close, but not attached to each ovary, the 
+  <b style="color: crimson">oviduct</b>or 
+  <b style="color: crimson">fallopian</b>
+  <b style="color: crimson">tube</b>. These two oviducts join into a thick&ndash; walled, muscular organ called the 
+  <b style="color: crimson">womb</b>or 
+  <b style="color: crimson">uterus</b>where 
+  <i style="color: blue">implantation</i>occurs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In effect, the womb houses the developing 
+  <i style="color: blue">fetus</i>(the unborn baby). The hollow womb narrows to a small opening called the 
+  <b style="color: crimson">cervix</b>which leads to the vagina. The 
+  <b style="color: crimson">vagina</b>is a canal which has an external opening. Note that the urinary and reproductive systems in the female are entirely separate.</p>
+  <p>
+    <img alt=""
+         height="217"
+         src="http://speedapp.ididev.com/apps/img/repro2.jpg"
+         width="317" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, the urethra carries only urine, and the vagina receives penis during sexual intercourse, serves as birth canal and as an exit for menstrual flow.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">External genitals</b>in females, including the vagina, like 
+  <i style="color: blue">clitoris, labia</i>(sing. labium) 
+  <i style="color: blue">majora</i>and 
+  <i style="color: blue">labia minora</i>together add up to their sexual excitement during intercourse. The external genital organs of the female are known collectively as 
+  <b style="color: crimson">vulva</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The clitoris is homologous to the penis. Although quite small, the clitoris has sense receptors and allows it to function as a sexually sensitive organ which does erect when aroused.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Male Reproductive System</b>
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are two oval structures within an external sac, 
+  <b style="color: crimson">scrotum</b>, called the 
+  <b style="color: crimson">testes</b>(sing. testis). In many mammals it is within the abdomen but in humans and some other mammals, the testes are external because the 
+  <i style="color: blue">sperms</i>produced in them require a temperature slightly lower than body temperature.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="361"
+         src="http://speedapp.ididev.com/apps/img/repro3.jpg"
+         width="361" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">So testes are suspended within the 
+  <i style="color: blue">scrotal sacs</i>of the scrotum. The sperm mature within the 
+  <b style="color: crimson">epididymis,</b>a tightly coiled tubule lying just outside each testis. Without their maturation, sperms cannot swim to the 
+  <i style="color: blue">egg</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color: crimson">vas deferens</b>(sperm duct, picture above) connects the epididymis to the urethra. Sperms are stored in both the epididymis and the vasa deferentia (plural). This means that in the male human, the urethra forms a passage
+  for both urine and sperms. During ejaculation, sperms are forcefully ejected from the male&rsquo;s urethra into the female&rsquo;s vagina.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">At this time sperms swim in a fluid called seminal fluid (semen). The pair of 
+  <b style="color: crimson">seminal vesicles</b>, 
+  <b style="color: crimson">Cowper&rsquo;s</b>and 
+  <b style="color: crimson">prostate</b>glands, add secretions to the semen. The 
+  <b style="color: crimson">penis</b>is an erectile organ which is placed in the vagina during sexual intercourse (mating). Note that it is also through this same opening that males pass urine.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">As noted above the female and male reproductive organs produce eggs and sperms respectively. These eggs and sperms are the 
+  <b style="color: crimson">sex cells</b>. Also because the egg and sperm join together (fuse) during 
+  <i style="color: blue">fertilization</i>, they are known to biologists as 
+  <b style="color: crimson">gametes</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The female gamete (egg) is 
+  <i style="color: blue">spherical</i>in shape like a dot (approx. 50 times the diameter of sperm) and contains some essential nutrients the developing embryo may need in the 
+  <b style="color: crimson">yolk</b>(of the egg
+  <b style="color: crimson">)</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Even in humans where most of the nutrients needed for the developing baby are taken from the mother, there is still some yolk content in the egg cell. The egg is produced 
+  <i style="color: blue">once a month</i>. The egg also carries one set of 
+  <i style="color: blue">genetic information</i>in the nucleus.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The male gamete (sperm) on the other hand initially has two but loses one during the process of meiosis. So it also carries one set of genetic information.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Sperms need their long tail to 
+  <i style="color: blue">swim</i>so that they can get to the egg since the latter cannot move by itself. Their 
+  <b style="color: crimson">acrosomes</b>contain enzymes which they use to dissolve any part of the egg membrane where they reach so as to penetrate.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Unlike the egg which is produced once every month, sperms are produced all the time and it is estimated that approximately 300 million sperm cells are ejected during each ejaculation. After both the egg and sperm are fully
+  matured is when fertilization can take place.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">During 
+  <b style="color: crimson">sexual intercourse</b>(mating), semen is forcefully ejected from the male&rsquo;s urethra into the female&rsquo;s vagina. Although millions of sperms may enter the vagina, only a few thousand of them pass through the
+  cervix into the uterus (womb).</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Still fewer enter the oviduct where fertilization usually occurs and 
+  <i style="color: blue">only one</i>fertilizes the egg. After intercourse and fertilization, a couple may expect that 
+  <i style="color: blue">development</i>has begun. Sometimes a 
+  <i style="color: blue">single</i>fertilized egg divides into two 
+  <i style="color: blue">completely</i>, producing children who look very alike.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">They are then called 
+  <b style="color: crimson">Identical twins</b>. When this single egg fails to divide completely, the children look alike though but are 
+  <i style="color: blue">not separate from each other</i>. In this case, they are called 
+  <b style="color: crimson">Siamese twins</b>. At other times the ovary releases two different ova at the same time. This time two different sperm cells fertilize each of them resulting in children who do not look alike called 
+  <b style="color: crimson">Non&ndash; Identical</b>or 
+  <i style="color: blue">Fraternal twins</i>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In cases where the ovary releases about three, four or more eggs at a time which also get fertilized by different sperm cells then 
+  <i style="color: blue">triplets</i>, 
+  <i style="color: blue">quadriplets</i>or more may result.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">However, when fertilization fails to occur, menstration takes place. 
+  <b style="color: crimson">Menstration</b>is the loss of blood and tissue from the uterus at the end of a uterine cycle.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color: crimson">Control of Reproduction</b>
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Species reproduce mainly because they want to get young ones of their kind so that they don&rsquo;t become extinct. It is established that humans and dolphines are the 
+  <i style="color: blue">only</i>living creatures who have sex for pleasure apart from the intention of procreating.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">As a result, humans have devised diverse means of controlling the rate at which they reproduce. 
+  <i style="color: blue">Abstainance</i>is the most effective birth control method without risk. 
+  <b style="color: crimson">Contraceptives</b>, on the other hand, are medications and devices that 
+  <i style="color: blue">reduce</i>the chance of pregnancy.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The table on the next page and pictures which follow show various birth&ndash; control methods.</p>
+  <p align="left">
+    <br />
+  </p>
+  <table border="1"
+         cellpadding="1"
+         cellspacing="1"
+         width="100%">
+    <tr>
+      <th style="color: white; background-color: darkred">Name</th>
+      <th style="color: white; background-color: darkred">Procedure</th>
+      <th style="color: white; background-color: darkred">Effectiveness</th>
+      <th style="color: white; background-color: darkred">Risk</th>
+    </tr>
+    <tr>
+      <td>Vasectomy</td>
+      <td>Vas deferens are cut and tied</td>
+      <td>Almost 100%</td>
+      <td>Irreversible sterility</td>
+    </tr>
+    <tr>
+      <td>Tubal ligation</td>
+      <td>Oviducts are cut and tied</td>
+      <td>Almost 100%</td>
+      <td>Irreversible sterility</td>
+    </tr>
+    <tr>
+      <td>Oral contraception</td>
+      <td>Hormone medication is taken daily</td>
+      <td>Almost 100%</td>
+      <td>Thromboembolism, especially in smokers</td>
+    </tr>
+    <tr>
+      <td>Intrauterine device (IUD)</td>
+      <td>Plastic coil is inserted into uterus</td>
+      <td>More than 90%</td>
+      <td>Infections</td>
+    </tr>
+    <tr>
+      <td>Diaphragm</td>
+      <td>Latex cup is inserted into vagina to cover cervix before intercourse</td>
+      <td>With jelly, about 90%</td>
+      <td>Presently none known</td>
+    </tr>
+    <tr>
+      <td>Male condom</td>
+      <td>Latex sheath is fitted over erect penis</td>
+      <td>About 85%</td>
+      <td>Presently none known</td>
+    </tr>
+    <tr>
+      <td>Female condom</td>
+      <td>Polyurethane tubing is fitted inside vagina</td>
+      <td>About 85%</td>
+      <td>Presently none known</td>
+    </tr>
+    <tr>
+      <td>Coitus interruptus</td>
+      <td>Male withdraws penis before ejaculation</td>
+      <td>75%</td>
+      <td>Presently none known</td>
+    </tr>
+    <tr>
+      <td>Rhythm</td>
+      <td>Intercourse only during &lsquo;safe&rsquo; days</td>
+      <td>About 70%</td>
+      <td>Presently none known</td>
+    </tr>
+    <tr>
+      <td>Douche</td>
+      <td>Vagina is cleansed after intercourse</td>
+      <td>Less than 70%</td>
+      <td>Presently none known</td>
+    </tr>
+  </table>
+  <p align="justify">
+    <img alt=""
+         height="280"
+         src="http://speedapp.ididev.com/apps/img/repro4.jpg"
+         width="280" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="280"
+         src="http://speedapp.ididev.com/apps/img/repro5.jpg"
+         width="280" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>Sexually Transmitted Diseases (STDs)</b>
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These are diseases that are mainly contracted through sexual intercourse. Some of these are Hepatitis B, Acquired Immunodeficiency Syndrome (AIDS), Genital herpes, Genital warts, Gonorrhea and Syphilis.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">It is said that 
+  <b style="color: crimson">Hepatitis B</b>is more likely to be spread through sexual contact than the HIV. It can also spread by blood transfusion and contaminated needles. About half of persons infected with the disease have flu&ndash;like
+  symptoms, including fatigue, fever, headache, nausea, vomiting, etc. This disease, also like HIV, can be passed on from mother to child through the placenta.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In the picture below, the bald&ndash;headed man has been infected with 
+  <b style="color: crimson">AIDS</b>. The disease is caused by a group of viruses known as Human Immunodeficiency viruses (HIV) that affect specific blood cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The mode of transmission is the same as that of Hepatitis B. Both diseases can be prevented by avoiding sexual intercourse with infected persons, avoiding blood transfusion from the infected person, abhorring the use of an
+  already used blade, razor or any sharp&ndash;edged device.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Genital herpes</b>is a viral disease causing 
+  <i style="color: blue">eruptions</i>and painful 
+  <i style="color: blue">blisters</i>on the genital. 
+  <b style="color: crimson">Genital warts</b>are also a viral diseases causing firm genital 
+  <i style="color: blue">elevated blemish</i>on the skin of the genital.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Gonorrhea</b>is transmitted sexually from the infected person but is caused by a bacterium called 
+  <i style="color: blue">neisseria gonorrhoeae.</i>Affected person goes through pain when passing urine and a 
+  <b style="color: crimson">thick whitish</b>urethral discharge 3&ndash;5 days after contact with affected person.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Gonorrhea can spread to other parts of the body causing heart damage. Avoiding intercourse with infected persons can be preventive. New born infants receive eyedrops of 
+  <i style="color: blue">tetracycline</i>or 
+  <i style="color: blue">penicillin</i>as protective against infection leading to blindness since they came through the canal of parent who may be at risk.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color: crimson">Syphilis</b>is also caused by the bacterium 
+  <i style="color: blue">treponema pallidum</i>. It starts with 
+  <i style="color: blue">ulcerated sore</i>with hard edges which usually heal leaving little scars. Then 
+  <i style="color: blue">skin</i>
+  <i style="color: blue">rash</i>which does not itch spreads all over the body, even in palms and feet.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The above shows similar skin rashes. It then affects the cardiovascular system, and even sometimes the nervous system. Paralysis, anaemia, loss of weight, etc are all symptoms. In fact, the best preventive measure against these
+  STDs is to 
+  <b style="color: crimson">abstain</b>or stay with one 
+  <b style="color: crimson">partner who is STD free</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

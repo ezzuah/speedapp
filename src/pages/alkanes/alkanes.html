@@ -1,0 +1,558 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px">
+  <b>ALKANES</b></p>
+
+  <p align="justify">You have once had or perhaps seen someone been given a drink in a
+  plastic cup. Do you have a dress made of nylon, polyester or rayon? You may have ridden
+  to school in a car that probably has synthetic rubber tires. Even the body of your
+  ballpoint pen is plastic.</p>
+
+  <p align="justify"><br /></p>
+
+  <p align="justify">These are things that are common to us in our everyday routines but
+  interestingly, these materials&#8213;synthetic fibers, synthetic rubber,
+  plastics&#8213;are produced from petroleum. Petroleum is almost entirely composed of
+  hydrocarbons. The study of organic chemistry is best started by examining these
+  compounds. <b style="color:crimson">Organic Chemistry</b> is the study of organic
+  compounds. It is concerned with matter obtained from natural or living sources.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Organic compounds</b> are compounds
+  containing carbon. Examples of organic compounds are ethane
+  (C<sub>2</sub>H<sub>6</sub>), propane (C<sub>3</sub>H<sub>6</sub>), propyne
+  (C<sub>3</sub>H<sub>4</sub>), etc. Note that other compounds such as cyanide
+  (CN<sup>-</sup>), carbon (II) oxide (CO), carbon (IV) oxide (CO<sub>2</sub>) and
+  carbonates (CO<sub>3</sub><sup>2-</sup>) have carbon but are not organic compounds.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Sources of Organic Compounds</b> Organic
+  compounds are obtained from<br /></p>
+
+  <p align="justify">1. Coal<br /></p>
+
+  <p align="justify">2. Crude oil (Petroleum)<br /></p>
+
+  <p align="justify">3. Plant and animal remains.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">The unique characteristics of carbon that
+  makes it form various stable compounds</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Since carbon has four valence electrons, it forms four covalent bonds around
+    itself. This is known as <b style="color:crimson">tetravalency.</b> The bonds can be
+    in the form of;<br />
+      <br />
+      four&ndash;single bonds (Single bonds in methane below);<br />
+      <br />
+      <img src="http://speedapp.ididev.com/apps/img/alka1a.png" alt="" /><br />
+      <br />
+      two&ndash;double bonds (Double bonds in CO<sub>2</sub> below);<br />
+      <br />
+      <img src="http://speedapp.ididev.com/apps/img/alka1b.png" alt="" /><br />
+      <br />
+      or a single and a triple bond (Triple bonds in ethyne below).<br />
+      <img src="http://speedapp.ididev.com/apps/img/alka1c.png" alt="" /><br />
+
+      <p align="justify"></p>
+    </li>
+  </ol>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b>Note</b>: In all the three examples, the number of bonds
+  surrounding any carbon atom is four.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"></p>
+
+  <ol start="2">
+    <li>Carbon atoms can join together to form <i style="color: blue">straight, branched
+    chains and rings.</i></li>
+  </ol>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka2.png" alt="" /><br />
+  <br />
+  <br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka2b.png" alt="" /><br />
+  <br />
+  <br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka2c.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Differences between Organic and Inorganic
+  compounds</b><br /></p>
+
+  <table border="1" cellspacing="0" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Organic compounds</th>
+
+      <th style="background-color: darkred; color: white">Inorganic compounds</th>
+    </tr>
+
+    <tr>
+      <td>They contain covalent bonds and hence have a slow rate of reaction.</td>
+
+      <td>Mostly ionic bonds and hence undergoes very fast rate of reaction.</td>
+    </tr>
+
+    <tr>
+      <td>They generally have low boiling and melting points.</td>
+
+      <td>They generally have high boiling and melting points.</td>
+    </tr>
+
+    <tr>
+      <td>Most of them are inflammable.</td>
+
+      <td>They are not inflammable.</td>
+    </tr>
+
+    <tr>
+      <td>They are highly volatile.</td>
+
+      <td>They are less volatile.</td>
+    </tr>
+
+    <tr>
+      <td>They are soluble in organic or non&ndash;polar solvents.<br /></td>
+
+      <td>They are soluble in inorganic or polar solvents, especially water.</td>
+    </tr>
+
+    <tr>
+      <td>Carbon is always present.</td>
+
+      <td>Carbon may or may not be present.</td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">Hydrocarbons</b><br /></p>
+
+  <p align="justify">These are organic compounds that contain carbon and hydrogen only.
+  Hydrocarbons are classified into families of compounds based on their <b style=
+  "color:crimson">functional groups</b>. Functional group is an atom or group of bonded
+  atoms which give an organic compound its characteristics chemical properties.
+  Hydrocarbons are grouped as <b style="color:crimson">aliphatic</b> (without ordour) or
+  <b style="color:crimson">aromatic</b> (those with ordour) <b style=
+  "color:crimson">hydrocarbons</b>. In this lesson we will consider only aliphatic
+  hydrocarbons. These are;<br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Alkanes: they contain only single bonds<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Alkenes: they contain at least a <b style="color:crimson">single
+    carbon&ndash;to&ndash;carbon double bond</b>.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Alkynes: they contain at least a <b style="color:crimson">single
+    carbon&ndash;to&ndash;carbon triple bond</b>.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol>These three hydrocarbons are known as <b style="color:crimson">aliphatic
+  hydrocarbon,</b> because they have no scent(smell).
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Alkanes</b> <b style=
+  "color:crimson">(C<sub>n</sub>H<sub>2n+2</sub>)</b><br /></p>
+
+  <p align="justify">Alkanes also known as paraffins are hydrocarbon having only single
+  bonds through out their molecule. They are said to be <b style=
+  "color:crimson">saturated</b>; that is, each carbon atom is bonded to the maximum
+  number of hydrogen atoms with no double or triple bonds between the carbon atoms.</p>
+
+  <p align="justify"><br /></p>
+
+  <p align="justify">The first four members of the alkane series are methane
+  (CH<sub>4</sub>), ethane (C<sub>2</sub>H<sub>6</sub>), propane
+  (C<sub>3</sub>H<sub>8</sub>) and butane (C<sub>4</sub>H<sub>10</sub>). After butane,
+  the members are named using the Latin prefix for the number of carbon atoms present in
+  the molecule and the ending of the family name is &ndash;ane. Pentane contains five
+  carbon atoms; hexane, six carbon atoms; heptane, seven carbon atoms and so
+  on.<br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka3a.png" alt="" /><br />
+  <br />
+  <br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka3b.png" alt="" /><br />
+  <br />
+  <br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka3c.png" alt="" /><br />
+  <br />
+  <br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka3d.png" alt="" /><br /></p>
+
+  <p align="justify">Note: Each carbon atom is singly bonded to another carbon or
+  hydrogen atom.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Any hydrocarbon (compound) with <b style=
+  "color:crimson">C&mdash;C</b> single bond throughout is said to be a <i style=
+  "color:blue">saturated hydrocarbon and saturated hydrocarbons are very unreactive</i>.
+  Alkanes, are very unreactive due to their saturated nature and therefore do not undergo
+  addition reaction but undergo substitution reaction. This means that, we cannot add any
+  more atoms, say Br or Cl to an alkane unless the H bonding to the C is taken off and
+  replaced or substituted with another atom.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Example</b><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka4.png" alt="" /></p>
+
+  <p align="justify">The above shows an addition reaction in alkanes. In addition
+  reaction, different atoms are added to a hydrocarbon. This is not possible with
+  alkanes, because after the addition of the Cl atoms, the number of bonds that would
+  surround each carbon atom would be five instead of four which makes it
+  impossible.<br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka5.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The above reaction shows a substitution reaction in alkanes. The
+  circled H atom is replaced or substituted by one of the Cl atoms. Note that at the end
+  of the reaction, the number of bonds surrounding each carbon atom is four.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Addition reaction</b> is a reaction in
+  which either a hydrogen atom of a hydrocarbon is <b style="color:crimson">replaced</b>
+  by a functional group or a halogen; or a functional group is replaced by another
+  functional group or halogen.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Substituents</b><br /></p>
+
+  <p align="justify">If a halogen (Fluorine, Chlorine, Bromine or Iodine) occurs as
+  substituent, they are named as follows;<br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Fluorine, F is called Fluoro<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Chlorine, Cl is called Chloro<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Bromine, Br is called Bromo<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Iodine, I is called Iodo
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol><img src="http://speedapp.ididev.com/apps/img/alka6.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/alka7.png" alt="" />
+
+  <p align="left"><br /></p>
+
+  <p align="justify">If an alkyl group occurs as substituent, they are named as
+  follows<br /></p>
+
+  <p align="justify"></p>
+
+  <ul>
+    <li>CH<sub>3</sub> &ndash; methyl<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>CH<sub>2</sub>CH<sub>3</sub> &ndash; ethyl<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>CH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub> &ndash; propyl and so on.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ul><img src="http://speedapp.ididev.com/apps/img/alka8.png" alt="" />
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Note: An alkyl group lacks one of the hydrogen atoms of an alkane.
+  Methyl CH<sub>3</sub>&ndash;) is an alkyl group derived from methane (CH4).</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Naming Alkanes with IUPAC
+  Rules</b><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka9.png" alt="" /><br />
+  <br />
+  <img src="http://speedapp.ididev.com/apps/img/alka10.png" alt="" /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Pick out the longest continuous carbon chain and find the IUPAC name. It is
+    hexane and heptane for examples a) and b) respectively. This is the parent alkane
+    from which the whole IUPAC name is to be derived.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Identify the substituent(s) attached to the parent chain. In the examples, the
+    hexane chain bears a methyl (CH<sub>3</sub>) group whereas the heptane bears two
+    bromine atoms and an ethyl group.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Number the carbon atoms (in the longest continuous chain) so as the atom bearing
+    the first substituent will have the lowest number. Consider example a), if the
+    pattern of the red numbers is followed, the atom bearing the methyl group will have a
+    number of four. Whereas that of the black numbering will give that same atom a number
+    of 3. This rule will expect us to number in the black pattern because that gives the
+    lowest number to the atom bearing the first substituent. Therefore the name of the
+    first compound is <b style="color:crimson">3&ndash;methylhexane</b>.<br />
+    <br />
+    This rule must be applies to the second compound. However it is not enough to name
+    it, so we apply the fourth and fifth rules as well.</li>
+  </ol>
+
+  <p align="justify"></p>
+
+  <ol start="4">
+    <li>If the same substituents occur more than once, indicate this by using the prefix
+    di, tri, tetra etc. to show how many of the substituents are present and indicate the
+    positions of each substituent with numbers 2, 3, 4, etc. Applying this rule to the
+    bromo atoms gives: &lsquo;2, 5&ndash;dibromo&hellip;&rsquo; because the positions of
+    the bromine atoms are on the second and the fifth carbon atoms.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>If there are several different groups attached to the parent chain, name them in
+    alphabetical order. In this case, we have an ethyl group on the fourth carbon
+    (4&ndash;ethyl) aside the bromine atoms. Adding this rule gives the complete name of
+    the second compound as: <b style="color:crimson">2,
+    5&ndash;dibromo&ndash;4&ndash;ethylheptane</b>.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+  </ol>
+
+  <p align="justify"><b style="color:crimson">Isomers and Isomerism</b><br /></p>
+
+  <p align="justify">Compounds that have the same molecular formulae or composition but
+  different structural formulae are called <b style="color:crimson">Isomers</b>.
+  <b style="color:crimson">Isomerism</b> is the occurrence of two or more compounds with
+  the same molecular formula but different structural formulae. Butane and methylpropane
+  are isomers because they all have a molecular composition of four Carbon and ten
+  hydrogen atoms. But each one has its own unique properties and structural
+  formula.<br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka11.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/alka12.png" alt=
+  "" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The number of isomers a compound can have increases greatly as the
+  number of carbon atoms increases.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Structural Formulas of Organic
+  Compounds</b><br /></p>
+
+  <p align="justify">Organic chemists have over the years devised several shortcuts to
+  speed up the writing of structural formulas. Structural formula shows the arrangement
+  of atoms in molecule.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka13.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/alka14.png" alt=
+  "" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The figure on the above is the structural formulae of bromomethane
+  and chloroehtane. Compared with molecular formula, structural formula has the advantage
+  of showing the detail structure of a compound. However it takes more space. In order to
+  minimise the space used in writing structural formula, molecular formula are written in
+  a way that shows the arrangements of atom in the molecule. The figure below, a
+  structural formula is compressed to obtain molecular formula.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/alka15.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Functional Groups</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>It is an atom or group of bonded atoms which give an organic compound its
+    characteristics chemical properties. OR<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>It is an atom or a group of bonded atom on which the reactivity of organic
+    compound depends.<br />
+
+      <p align="justify"></p>
+    </li>
+  </ol>Some organic compounds and their functional groups
+
+  <p align="left"><br /></p>
+
+  <table border="1" cellspacing="0" cellpadding="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Compound</th>
+
+      <th style="background-color: darkred; color: white">Functional Group</th>
+    </tr>
+
+    <tr>
+      <td>Alkenes</td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/alka16a.png" alt="" /></td>
+    </tr>
+
+    <tr>
+      <td>Alkynes</td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/alka16b.png" alt="" /></td>
+    </tr>
+
+    <tr>
+      <td>Alcohols</td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/alka16c.png" alt="" /></td>
+    </tr>
+
+    <tr>
+      <td>Carboxylic acids</td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/alka16d.png" alt="" /></td>
+    </tr>
+
+    <tr>
+      <td>Esters/Alkyl alkanoates</td>
+
+      <td><img src="http://speedapp.ididev.com/apps/img/alka16e.png" alt="" /></td>
+    </tr>
+  </table><br />
+
+  <p align="justify"><b style="color:crimson">Homologous Series</b><br /></p>
+
+  <p align="justify">This refers to a class of compounds which have the same general
+  formula and exhibit similar chemical properties. Examples are the alkane, alkene and
+  alkyne compounds. All the other mentioned functional groups form a homologous
+  series.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Characteristics or Properties of homologous
+  series</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ul>
+    <li>All members of the group have the same general formula. For example, the alkane
+    series is represented by the formula <i style="color: blue">C<sub>n</sub>H<sub>2n +
+    2</sub></i>, Alkenes by <i style="color: blue">C<sub>n</sub>H<sub>2n</sub></i> and
+    Alkynes, <i style="color: blue">C<sub>n</sub>H<sub>2n &ndash; 2</sub></i>.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>All members have the same functional group<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>Each member differs in molecular formula from the next by CH<sub>2</sub><br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>All members have similar chemical properties or react in a similar way but they
+    differ in physical properties. For example, as the molecular mass of the compounds in
+    a series increases, the boiling point increases as well.<br />
+
+      <p align="justify"></p>
+    </li>
+
+    <li>All members have similar method of preparation.
+
+      <p align="left"><br /></p>
+    </li>
+  </ul>
+</ion-content>

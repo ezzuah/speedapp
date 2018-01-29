@@ -1,0 +1,194 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+  <p align="center" style=
+  "color:white; background-color: darkred; font-size: 22px">
+  <b>BASES</b></p>
+  <p align="justify"><br></p>
+  <p align="justify">The three theories that define an acid (as
+  stated in the previous chapter) also apply to bases.</p>
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  <ol>
+  <li>Arrhenius theory: A <b style="color:crimson">base</b> is any
+  substance that dissolves in water to produce OH<sup>-</sup> ions.
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  <li>Bronsted-Lowry theory: A base is a proton acceptor
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  <li>Lewis theory: A base is an electron pair donor.
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  </ol>
+  Bases can be thought of as chemically opposite to acids, because as
+  acids are donating more protons to make a solution acidic, bases
+  will be accepting these protons, reducing the acidity of the
+  solution. The reaction between an <b style="color:crimson">acid</b>
+  and a <b style="color:crimson">base</b> is called <b style=
+  "color:crimson">neutralization reaction.</b>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">Strong and weak
+  bases</b><br></p>
+  <p align="justify">A base that ionizes completely in water when it
+  is dissolved is known as <b style="color:crimson">strong base,</b>
+  example, NaOH, Ca(OH)<sub>2</sub>, KOH, etc; whereas a <b style=
+  "color:crimson">weak base</b> is a base that ionizes partially when
+  dissolved in water. Examples are Ammonium hydroxide, Urea, etc.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">Properties of
+  bases</b></p>
+  <p align="justify">They;</p>
+  <p align="left"></p>
+  <p align="justify"></p>
+  <ol>
+  <li>Have bitter taste.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  <li>Have a ph greater than 7.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  <li>Are very caustic if concentrated.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  <li>Turns red litmus paper blue.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  <li>Has a soapy feel.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  <li>Reacts with acids to form salt and water.
+  <p align="left"></p>
+  <p align="justify"></p>
+  </li>
+  </ol>
+  HNO<sub>3</sub> + NaOH <img width="62" height="10" src=
+  "img/arrow.png" alt=""> NaNO<sub>3</sub> + H<sub>2</sub>O<br>
+  <p align="justify"></p>
+  <ol>
+  <li>Reacts with ammonium salt to form ammonia
+  <p align="left"><br></p>
+  <p align="justify"></p>
+  </li>
+  </ol>
+  NH<sub>4</sub>Cl + NaOH <img width="62" height="10" src=
+  "img/arrow.png" alt=""> NaCl + NH<sub>3</sub> + H<sub>2</sub>O
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">Sources of
+  bases</b><br></p>
+  <table cellpadding="1" cellspacing="1" border="1" width="100%">
+  <tbody>
+  <tr>
+  <th style="background-color: brown; color: azure">Bases</th>
+  <th style="background-color: brown; color: azure">Sources</th>
+  </tr>
+  <tr>
+  <td>Calcium oxide</td>
+  <td>Heating limestone.</td>
+  </tr>
+  <tr>
+  <td>Potassium hydroxide.</td>
+  <td>Plantain peel, cocoa pod.</td>
+  </tr>
+  <tr>
+  <td>Iron (III) oxide.</td>
+  <td>Iron ore.</td>
+  </tr>
+  <tr>
+  <td>Ammonia.</td>
+  <td>Decomposition of organic matter.</td>
+  </tr>
+  </tbody>
+  </table>
+  <p align="justify"></p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">NaOH
+  Manufacturing</b><br></p>
+  <p align="justify"><b style="color:crimson">Diaphragm cell
+  process</b> &ndash; is an electrolytic (electrolysis) process which
+  uses a steel cathode, titanium anode and concentrated sodium
+  chloride solution (brine). The products of the electrolysis are
+  NaOH, Cl<sub>2</sub>, O<sub>2</sub> and H<sub>2</sub>. NaOH reacts
+  readily with Cl<sub>2</sub>. This reaction is not needed; hence it
+  is prevented by separating the anode area from the cathode area by
+  a porous diaphragm or membrane often made of <i style=
+  "color:blue">asbestos fiber</i> and <i style=
+  "color:blue">polymers</i>. The brine is introduced into the anode
+  compartment and flows through the diaphragm into the cathode
+  compartment.</p>
+  <p align="left"><img src="http://speedapp.ididev.com/apps/img/bases1.png" alt="" name="front_image"
+  id="front_image"><br></p>
+  <p align="justify"></p>
+  <p align="left"><br></p>
+  <p align="justify">The solution level in the anode compartment must
+  always be higher than that of the cathode compartment to ensure
+  that the electrolyte (brine) flows from the anode compartment to
+  the cathode compartment. The NaOH is usually concentrated to 50%
+  and the salt removed. This is done using an evaporative process.
+  The salt separated from the caustic brine can be used to saturate
+  diluted brine. The chlorine contains oxygen and is purified by
+  liquefaction and evaporation.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">Uses of some
+  bases</b><br></p>
+  <p align="justify"><b style="color:crimson">NaOH:</b> Sodium
+  hydroxide is used in the refining of alumina containing ore
+  (bauxite), soap production, paper making, production of biodiesel,
+  manufacture of synthetic fabrics, etc.</p>
+  <p align="left"><br></p>
+  <p align="justify"><b style="color:crimson">KOH:</b> is use for the
+  manufacturing of soap, removal of grease and oils.<br></p>
+  <p align="justify"><b style="color:crimson">Ammonia:</b> it is used
+  for the preparation of fertilizers.<br></p>
+  <p align="justify"><b style="color:crimson">Calcium hydroxide;
+  Ca(OH)<sub>2</sub>:</b> it is used as an additive in the production
+  of cement. Calcium hydroxide can be used to raise the pH of acidic
+  soils.<br></p>
+  <p align="justify"><b style="color:crimson">Calcium oxide (CaO)</b>
+  is a key ingredient for the process of making cement.<br></p>
+  <p align="justify"><b style="color:crimson">Safety</b><br></p>
+  <p align="justify">Solid bases or solutions containing high
+  concentrations of strong bases may cause chemical burns, permanent
+  injury or scarring, and blindness.</p>
+  <p align="left"><br>
+  <br></p>
+</ion-content>

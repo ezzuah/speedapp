@@ -1,0 +1,266 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="">
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+  <p align="center"
+     style="color:black;font-size: 26px">
+    <b>SOIL NUTRIENTS</b>
+  </p>
+  <p align="justify">We ended the previous chapter with &lsquo;soil fertility&rsquo; &ndash; the ability of a soil to provide enough water, air and nutrients to ensure normal plants growth, development and production. Soil water or air is a single
+  entity.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">They may be provided through good aeration and irrigation practices. Unlike soil water or air, soil nutrients vary widely and some are essential than others &ndash; meaning that the absence of a given mineral element will cause
+  the plant to 
+  <i style="color:blue">fail</i>to complete its life cycle. Certain nutrients are directly involved in plant metabolism, growth and in some cases reproduction.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The absence of a nutrient cannot be replaced by the presence of another. Hence, a good knowledge into 
+  <i style="color:blue">plant nutrition</i>is an important area in soil science. 
+  <b style="color:crimson">Plant nutrition</b>
+  <i style="color:blue">is the study of the chemical elements that are necessary for plant growth</i>. Plant nutrients are grouped as 
+  <i style="color:blue">macro or minor</i>nutrients depending on their requirement by plants.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Macro or Major Nutrients</b>
+    <br />
+  </p>
+  <p align="justify">These are elements that plants require in large quantities. Their functions and deficiencies are listed below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Phosphorus:</b>it is important in plant 
+  <i style="color:blue">bioenergetics</i>&ndash; biological energy source. As a component of ATP, phosphorus is needed for the conversion of light energy to chemical energy (ATP) during photosynthesis.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut1.png" />
+  </p>
+  <p align="justify">Phosphorus can also be used to modify the activity of various enzymes. Since ATP is involved in the 
+  <i style="color:blue">biosynthesis</i>of many plant molecules, phosphorus is important for 
+  <i style="color:blue">plant growth</i>, 
+  <i style="color:blue">flowering</i>and 
+  <i style="color:blue">seed</i>
+  <i style="color:blue">formation</i>. The picture on the right shows phosphorous deficiency. Plants have poor growth and develop reddish colour in leaves and stem. 
+  <br /></p>
+  <p align="justify">
+  <b style="color:crimson">Potassium:</b>Potassium regulates the opening and closing of the 
+  <i style="color:blue">stoma</i>(a minute, epidermal, pore in a leaf or stem through which gases and water vapour can pass). 
+  <br /></p>
+  <p align="justify">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut2.png" />
+  </p>
+  <p align="justify">Since stomata are important in water regulation, potassium reduces water loss from the leaves and increases 
+  <i style="color:blue">drought</i>tolerance. Potassium deficiency may cause poor growth and discolouration of leaves as shown in the picture on the right.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Nitrogen:</b>Nitrogen is an essential component of all proteins and as a part of DNA. It is essential for growth and reproduction as well.</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut3.png" />
+  </p>
+  <p align="justify">The picture above shows the deficiency symptoms of nitrogen. It most often results in very stunted growth and mottling (coloured patches) of leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Sulphur:</b>Sulfur produces energy in plants, which is important to growth. It promotes the activity and development of enzymes and vitamins as well.</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut4.png" />
+  </p>
+  <p align="justify">It also helps in chlorophyll formation hence its absence may cause stunting. Sulphur deficiency is shown in the picture on the right. It results in slender stem and discolouration of leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Calcium:</b>it is an essential part of plant cell wall structure. As part of cell wall, it strengthens the plant. It is also thought to counteract the effect of alkali salts and organic acids within a plant. It supports
+  the transport of other elements.&nbsp;</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut5.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Deficiency of calcium results in weak stunted growth and young leaves die at the tip as in the picture on the right.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Magnesium:</b>it is an important part of 
+  <i style="color:blue">chlorophyll</i>, a critical plant pigment important for photosynthesis. It is important in the production of ATP through its role as a coenzyme. There are many other biological roles for magnesium.</p>
+  <p align="left">
+    <img alt=""
+         src="http://speedapp.ididev.com/apps/img/nut6.png" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Magnesium deficiency can result in leave discolouration and poor growth as in the picture on the right.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Iron:</b>this is necessary for photosynthesis and is present as a coenzyme in plants. Iron has similar deficiency like magnesium.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Micro or Minor Nutrients</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">These are nutrients plants require in small quantities.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Molybdenum:</b>Molybdenum is a cofactor to enzymes important in building amino acids.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Boron:</b>Boron is important in sugar transport, cell division and synthesizing certain enzymes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Manganese:</b>Manganese is necessary for building the chloroplasts. Manganese deficiency may result in coloration abnormalities, such as discolored spots on leaves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Zinc:</b>Zinc is required in a large number of enzymes and plays an essential role in DNA transcription. A typical symptom of zinc deficiency is the stunted growth of leaves, commonly known as "little leaf".</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Fertilizer</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Fertilizers</b>are organic or inorganic materials added to soil to increase its fertility by enriching it with nutrients. Fertilizers are grouped as 
+  <i style="color:blue">organic</i>and 
+  <i style="color:blue">inorganic</i>based on their source. Like the name suggests, 
+  <b style="color:crimson">organic fertilizers</b>are biological materials applied to the soil to enrich it.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Examples of organic fertilizer are cow dung, poultry litter, pig droppings, compost, etc. 
+  <b style="color:crimson">Inorganic fertilizers</b>are minerals and elements applied to the soil to enrich it. There are two types of inorganic fertilizers. These are listed below.</p>
+  <p align="left">
+    <br />
+  </p>
+  <ol>
+    <li>Single or Simple Fertilizers: these are fertilizers that contain 
+    <i style="color:blue">only one</i>of these three major elements, nitrogen, phosphorus or potassium (N. P. K). Simple fertilizers are in three forms depending on the nutrient it contains. They are Nitrogenous, phosphate and potash fertilizers.
+    Examples of simple fertilizers are ammonium sulphate, supper phosphates, potassium chloride, etc. 
+    <p align="left">
+      <br />
+    </p></li>
+    <li>Compound or Mixed fertilizers: these are organic fertilizers containing two or three of the major nutrients, N.P.K. A compound fertilizer which contains two of the major nutrients is known as 
+    <i style="color:blue">incomplete mixed fertilizer</i>. However, if the fertilizer contains all the three major elements, then it is known as 
+    <i style="color:blue">complete mixed fertilizers</i>. 
+    <p align="left">
+      <br />
+    </p></li>
+  </ol>
+  <table border="1"
+         cellpadding="1"
+         cellspacing="0"
+         width="100%">
+    <tr>
+      <th style="color: white; background-color: darkred">Organic Fertilizers</th>
+      <th style="color: white; background-color: darkred">Inorganic Fertilizers</th>
+    </tr>
+    <tr>
+      <td>Improves soil texture and structure.</td>
+      <td>Does not improve soil texture and structure.</td>
+    </tr>
+    <tr>
+      <td>Nutrients are available after decomposition.</td>
+      <td>Nutrients are readily available. 
+      <br /></td>
+    </tr>
+    <tr>
+      <td>Nutrients do not leach easily. 
+      <br /></td>
+      <td>Nutrients leach easily. 
+      <br /></td>
+    </tr>
+    <tr>
+      <td>Improves water retention of soil. 
+      <br /></td>
+      <td>Does not improve water retention of soil. 
+      <br /></td>
+    </tr>
+    <tr>
+      <td>Can be use as mulch. 
+      <br /></td>
+      <td>Cannot be used as mulch. 
+      <br /></td>
+    </tr>
+    <tr>
+      <td>Has unknown and variable nutrient composition and this makes quantity control impossible. 
+      <br /></td>
+      <td>Has fixed and known compositions and thus quantity control is easy. 
+      <br /></td>
+    </tr>
+  </table>
+  <br />
+  <b style="color:crimson">Methods of Fertilizer Applications</b>
+  <br />
+  <ol>
+    <li>
+    <b style="color:crimson">Broadcasting:</b>the fertilizer is spread uniformly over the field by hand or machine. 
+    <br /></li>
+    <li>
+    <b style="color:crimson">Band placement:</b>this method is effective in farms where the crops are planted in rows. The fertilizer is placed in bands (like lines) on one or both sides of the rows at a reasonable distance from the plants. 
+    <br /></li>
+    <li>
+    <b style="color:crimson">Drilling</b>: here, the fertilizer is applied with a drill together with the seed during sowing. 
+    <br /></li>
+    <li>
+    <b style="color:crimson">Ring Placement</b>: in this mode of application, small ring is dug around each plant and the fertilizer is placed in the ring and covered. 
+    <br /></li>
+    <li>
+    <b style="color:crimson">Foliar Application</b>: under this mode of application, liquid fertilizer is supplied to the plants through their leaves. 
+    <br /></li>
+  </ol>
+</ion-content>

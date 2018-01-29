@@ -1,0 +1,186 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>LIGHT</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Until the early part of the 19th century, the nature of light was
+        explained by two conflicting theories. Sir Isaac Newton believed that light is made up
+        of tiny particles emitted from a source and travels in a straight line. Another Dutch
+        scientist, Christian Huygens, proposed that light is a wave.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Each scientist was able to defend his theory and that both theories
+        were accepted. However, each theory has its own unique practical applications. In
+        general, <b style="color:crimson">light</b> is a form of energy which enables vision
+        (seeing). The properties of light (as a particle) is summarised below.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">1. Rectilinear propagation within a uniform medium.<br /></p>
+      
+        <p align="justify">2. Reflection.<br /></p>
+      
+        <p align="justify">3. Refraction.<br /></p>
+      
+        <p align="justify">4. Diffraction.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Each of the above property will be considered except diffraction (it
+        is above this level).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Rectilinear Propagation Of Light</b></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This is a property that shows that light travels in a straight line.
+        When a small ball (particle) is rolled on a smooth surface it is expected that it moves
+        in a straight line. Likewise, light made of particles will also travel in a straight
+        line. This can be demonstrated by setting up three screens as shown in &lsquo;A&rsquo;
+        below.</p>
+      
+        <p align="left"><img src="http://speedapp.ididev.com/apps/img/lit1.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/lit2.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Make three holes of equal radius, one in the centre of each of the
+        three screens. Align the screens and pass a thread through them to ensure their centers
+        are on a straight line. Remove the thread, place a source of light at one end and view
+        through the holes from the other end (Observation 1: The light source can be seen, this
+        means that light travels in a straight line). Shift of the screens to displace its
+        centre from the straight line and view through the hole again (Observation 2: The light
+        source cannot be seen). This confirms that light travel s in a straight line.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The straight path along which light travels is called a ray. A
+        <b style="color:crimson">ray</b> is represented with a straight line and an arrow
+        pointing to the direction along which the light is traveling. A set of rays travelling
+        together is called a <b style="color:crimson">light beam</b>. The three types of beams
+        are parallel, convergent and divergent beams (See picture below).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Sources of light</b><br /></p>
+      
+        <p align="justify">Bodies that give of light are known as <b style=
+        "color:crimson">luminous bodies</b>. They are both natural and artificial luminous
+        bodies. Example of a natural luminous body is the sun, stars, fireflies, etc. And that
+        of artificial is electric bulbs.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Non luminous bodies</b> do not give off
+        light but rather, they reflect the light that falls on them into our eyes and then
+        become visible. A body that is seen because of the light reflected from it is said to
+        be <b style="color:crimson">illuminated body</b>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Shadows</b>: When a ray of light falls on a
+        body, at least one of these two phenomena might occur. Either the light goes through
+        the body or not. If a body does not allow light to travel through it, it is referred to
+        as an <b style="color:crimson">opaque body</b>. There is another group of bodies which
+        allow light to go through and one can see through them as well. Such bodies are said to
+        be <b style="color:crimson">transparent</b>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Translucent bodies</b> allow light to
+        travel through but one can not see through them. A shadow is a dark image formed on a
+        screen when an opaque object is placed between a light source and a screen. The two
+        types of shadows are <b style="color:crimson">umbra</b> (total darkness) or <b style=
+        "color:crimson">penumbra</b> (partial darkness). The pictures in &lsquo;A&rsquo; and
+        &lsquo;B&rsquo; below are shadows formed from a point and extended (larger) light
+        sources respectively. Point light sources have only umbra and extended light sources
+        have both umbra and penumbra.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img src="http://speedapp.ididev.com/apps/img/lit3a.png" alt="" /> <img src="http://speedapp.ididev.com/apps/img/lit3.png" alt=
+        "" /></p>
+      
+        <p align="left"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Eclipses</b> We know from our study of the
+        Solar System that the earth revolves around the sun, and the moon also revolves around
+        the earth. When light from the sun is blocked from reaching the earth or the moon we
+        say an eclipse has occurred. The two types of eclipse are eclipse of the sun and
+        eclipse of the moon. <b style="color:crimson">Eclipse of the sun</b>, also known as
+        solar eclipse, occurs when the moon comes between the sun and the earth, and a shadow
+        of the moon is cast on the earth.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="386" height="163" src="http://speedapp.ididev.com/apps/img/lit4.jpg" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">This shadow has both umbra and penumbra (see picture above). The
+        region of the umbra is said to be experiencing <b style="color:crimson">total
+        eclipse</b> (total darkness) and that of the penumbra is <b style=
+        "color:crimson">partial eclipse</b> (partial darkness).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">People in the umbra do not see any part of the sun, but, those in
+        the umbra do (see picture above). <b style="color:crimson">Eclipse of the moon</b>
+        (lunar eclipse), on the other hand, occurs when the earth comes between the sun and the
+        moon and blocks the sun rays from reaching the moon (See the picture below).</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img width="280" height="280" src="http://speedapp.ididev.com/apps/img/lit5.png" alt="" /></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+</ion-content>

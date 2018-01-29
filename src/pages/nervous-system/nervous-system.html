@@ -1,0 +1,283 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>THE HUMAN NERVOUS SYSTEM</b></p>
+  <br />
+  <p align="justify">The picture you see here is a human brain and the spinal cord. Believe it or not you are a proud owner of one. This you see makes up what biologists call the 
+  <b style="color:crimson">central</b>
+  <b style="color:crimson">nervous</b>
+  <b style="color:crimson">system</b>(CNS).</p>
+  <p align="left">
+    <img alt=""
+         height="299"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo1.jpg"
+         width="387" />
+    <br />
+  </p>
+  <p align="justify">The central nervous system is a part of the human nervous system which includes the 
+  <b style="color:crimson">peripheral</b>
+  <b style="color:crimson">nervous</b>
+  <b style="color:crimson">system</b>(cranial and spinal nerves). At the CNS is where nerve impulses are received, coordinated and interpreted.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The nervous system is made up of nerve cells called 
+  <b style="color:crimson">neurons</b>, which are specialized to carry nerve impulses. This is to say, the neuron is the basic functional unit of the nervous system. All neurons have three main parts: dendrite(s), cell body and axon. The cell body
+  is the part of the neuron that contains the nucleus. A dendrite carries signals toward the cell body. An axon, however, carries nerve impulses away from the cell body. Below is a labelled picture of a neuron.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="290"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo2.jpg"
+         width="409" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are three types of neurons. The 
+  <b style="color:crimson">sensory</b>neuron takes messages from a sense organ to the CNS. A 
+  <b style="color:crimson">motor</b>neuron takes messages away from the CNS to an effector, that is, a muscle or a gland. The i
+  <b style="color:crimson">nterneuron</b>(also association or relay) conveys messages between parts of the CNS. The picture below shows the three types of neurons.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="303"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo3.jpg"
+         width="505" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">BRAIN and SPINAL CORD</b>
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">The Brain</b>
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">
+      <img alt=""
+           height="307"
+           id="front_image"
+           name="front_image"
+           src="http://speedapp.ididev.com/apps/img/nervo4.jpg"
+           width="512" />
+    </b>
+    <br />
+  </p>
+  <p align="justify">The human brain has three main domains. They are the fore brain, mid brain and hind brain. The 
+  <b style="color:crimson">fore brain</b>of humans includes the 
+  <b style="color:crimson">cerebrum</b>, which is the largest portion.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The cerebrum is divided into two halves (
+  <b style="color:crimson">cerebral hemispheres</b>) and they are connected by a bridge of nerve fibers called 
+  <b style="color:crimson">corpus callosum</b>. Each of the hemispheres contains four surface lobes: 
+  <b style="color:crimson">frontal</b>, 
+  <b style="color:crimson">parietal</b>, 
+  <b style="color:crimson">temporal</b>and 
+  <b style="color:crimson">occipital</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Many of the unique abilities of humans are related to the cerebrum. Speech, reasoning, emotions and personality are all functions of this area of the brain. Interpretation of sensory and motor impulses also occurs here.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Also in the forebrain are the hypothalamus and the thalamus. The 
+  <b style="color:crimson">thalamus</b>is involved with sensory information and 
+  <b style="color:crimson">hypothalamus</b>has many functions such as controlling hunger, body temperature, and aggression.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">In less complex vertebrates the midbrain is prominent but in humans and other mammals, the 
+  <b style="color:crimson">midbrain</b>mainly functions as a message station between the forebrain and hind brain. It is also involved in some visual and auditory responses.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are two distinct areas of the 
+  <b style="color:crimson">hind brain</b>&ndash; the cerebellum and the medulla oblongata. The 
+  <b style="color:crimson">cerebellum</b>is the region lying at the back of the cerebrum and coordinates impulses sent out of the cerebrum.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The cerebellum also controls posture and balance and maintains muscle tone. Extending down from the center of the brain is the 
+  <b style="color:crimson">medulla oblongata</b>which controls many involuntary impulses of the internal organs. For example the breathing and heart beat rates and some gland secretions are controlled by this part of the brain.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">The spinal cord</b>
+    <br />
+  </p>
+  <p align="justify">Extending down from the medulla oblongata is the 
+  <i style="color:blue">spinal cord</i>. The spinal cord is protected by a series of vertebrae. In humans, the spinal cord is the major connection center between the brain and the peripheral system.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="307"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo5.jpg"
+         width="361" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Certain responses are made without the involvement of the brain. In these cases, the spinal cord acts as the control centre. A 
+  <b style="color:crimson">reflex act</b>is a simple response which involves no conscious control.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, consider the response made when you step on a needle while walking bare foot. Before you are aware of what happened, certain leg muscles have contracted and your leg had been lifted. How possible?</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Receptors</b>in the skin of the foot are activated by the pressure of the needle and the pain it causes. Each receptor stimulates a 
+  <b style="color:crimson">sensory neuron</b>and causes an impulse to travel to the spinal cord through a spinal nerve.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The sensory neuron enters a 
+  <b style="color:crimson">posterior nerve root</b>of the spinal cord. The impulse then crosses a synapse through an 
+  <b style="color:crimson">association neuron</b>to a 
+  <b style="color:crimson">motor neuron</b>. The motor neuron leaves the spinal cord through an 
+  <b style="color:crimson">anterior nerve root</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The motor neuron branches to form synapses with several muscle cells. The muscle then contracts. The path of the impulse in a reflex action is called a 
+  <b style="color:crimson">reflex arc</b>. A reflex arc includes five parts&ndash; 
+  <b style="color:crimson">receptor</b>, 
+  <b style="color:crimson">sensory neuron</b>, 
+  <b style="color:crimson">association neuron</b>, 
+  <b style="color:crimson">motor neuron</b>and 
+  <b style="color:crimson">effector</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Note that this reflex act takes place within a fraction of a second.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="277"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo6.jpg"
+         width="601" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">PERIPHERAL NERVOUS SYSTEM</b>
+    <br />
+  </p>
+  <p align="justify">The peripheral nervous system 
+  <i style="color:blue">feeds information</i>to the CNS. It then transmits impulses from the brain or spinal cord through the cranial and spinal nerves to the various effectors.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The peripheral nervous system can be divided into two distinct parts: the 
+  <i style="color:blue">sensory&ndash;somatic</i>system and the 
+  <i style="color:blue">autonomic system</i>. The exchange of information between receptors, the CNS and the skeletal muscles is controlled by the 
+  <b style="color:crimson">sensory&ndash;somatic system</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">For example, a reflex act is one kind of activity controlled by this system. This subdivision also controls all voluntary responses. Involuntary responses of the internal body organs are controlled by the 
+  <b style="color:crimson">autonomic system</b>.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The autonomic nervous system is further divided into two other systems. They are the 
+  <i style="color:blue">sympathetic</i>and 
+  <i style="color:blue">parasympathetic</i>systems. The 
+  <b style="color:crimson">sympathetic system</b>often begins responses which prepare the body for &lsquo;emergencies&rsquo;.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">That is they speed up or strengthen the body to be ready for a &lsquo;fight or flight&rsquo;. The heart starts to beat faster, pupils dilate, glycogen changes to glucose. Then the body gets ready, for example, in the case of
+  approaching danger or even a fight.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The 
+  <b style="color:crimson">parasympathetic system</b>, on the other hand, balances the responses made by the sympathetic system. The impulses made by the parasympathetic system counteract the effects of the sympathetic nerves.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">This is important because the body must return to normal after the &lsquo;emergency&rsquo;. The balancing effects of the sympathetic and parasympathetic nerves are important in maintaining homeostasis (equilibrium) in the
+  body.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Guess what might have happened if these systems had not been balanced! The picture below shows how the autonomic system (parasympathetic and sympathetic systems) works.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="385"
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/nervo7.jpg"
+         width="602" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

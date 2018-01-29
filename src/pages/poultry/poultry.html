@@ -1,0 +1,523 @@
+<!--
+  Generated template for the PoultryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>POULTRY</b></p>
+<p align="justify">There are different kinds of animals that are seen in the house. Animal production in Agricultural aspects of Integrated Science in Ghana is limited to farm animal (sheep, goat, fowl, turkey, cattle, etc.) and not animals like
+dog, cat, horse, etc. In this section we are going to talk about poultry.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Poultry refers to any domestic bird such as the fowl, guinea fowl, turkey, etc. the various kinds of poultry are listed below. 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>Fowl/chicken 
+  <br />
+  <p align="justify"></p></li>
+  <li>Turkey 
+  <br />
+  <p align="justify"></p></li>
+  <li>Duck 
+  <br />
+  <p align="justify"></p></li>
+  <li>Guinea fowl 
+  <br />
+  <p align="justify"></p></li>
+  <li>Ostrich 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>Poultry can be grouped into various types depending on what they are reared for. These groups are: 
+<br />
+<p align="justify"></p>
+<ol>
+  <li>Layers; they are female birds reared purposely for their eggs (table eggs). 
+  <br />
+  <p align="justify"></p></li>
+  <li>Broilers; they are birds reared purposely for their meat. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Dual purpose; they are birds reared purposely for their meat and eggs. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Cockerels; they are male fowls reared for meat and treading hen. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Breeders; they are male and female birds reared to produce fertile eggs for hatching. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Breeds of Fowl and their Characteristics</b>
+<br />
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">Local breed</b>; the only local breed is the West African dwarf fowl. 
+  <br />
+  <p align="justify">
+    <b style="color:crimson">Characteristics of the local breed</b>
+  </p>
+  <ol type="a">
+    <li>
+      <p align="justify">They are hardier and resistant to diseases and infections. 
+      <br /></p>
+      <p align="justify"></p>
+    </li>
+    <li>They are small in size (body). 
+    <br />
+    <p align="justify"></p></li>
+    <li>They get broody easily. 
+    <br />
+    <p align="justify"></p></li>
+    <li>They lay few numbers of eggs and their eggs sizes are small. 
+    <br />
+    <p align="justify"></p></li>
+    <li>Their growth rate is very slow. 
+    <p align="left">
+      <br />
+    </p>
+    <p align="justify"></p></li>
+  </ol>The characteristics of the local fowl do not make them good bird for commercial scale. 
+  <br />
+  <p align="justify"></p></li>
+  <li>
+  <b style="color:crimson">Exotic breed</b>; there are a lot of exotic breeds and they can be grouped as layers, broilers or dual purpose birds. Note that any of the exotic breeds can be reared as breeders to produce fertile eggs for hatching their
+  kind. Examples of the exotic breeds are: 
+  <p align="left"></p>
+  <ol type="a">
+    <li>
+      <p align="justify">Rhode Island Red (Layer)</p>
+    </li>
+    <li>
+      <p align="justify">Silver Laced</p>
+    </li>
+    <li>
+      <p align="justify">Wyandotte (Layer)</p>
+    </li>
+    <li>
+      <p align="justify">Barred Plymouth Rock</p>
+    </li>
+    <li>
+      <p align="justify">Jersey Black Giant (dual)</p>
+    </li>
+    <li>
+      <p align="justify">White Leghorn (Layer)</p>
+    </li>
+    <li>
+      <p align="justify">Nera sex link (dual)</p>
+    </li>
+  </ol></li>
+</ol>
+<br />
+<p align="justify">
+  <b style="color:crimson">Characteristics of the exotic breeds</b>
+  <br />
+</p>
+<p align="justify">The characteristics of the exotic breeds are directly opposite to that of the local breed. 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>They are large in size (body). 
+  <br />
+  <p align="justify"></p></li>
+  <li>They produce more and large size eggs. 
+  <br />
+  <p align="justify"></p></li>
+  <li>They are good for commercial production. 
+  <br />
+  <p align="justify"></p></li>
+  <li>They are soft and prone to diseases and infections. 
+  <br />
+  <p align="justify"></p></li>
+  <li>They lack the tendency to broodiness. 
+  <br />
+  <p align="justify"></p></li>
+  <li>They are fast growers. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Breeds of Duck</b>
+<ol type="a">
+  <li>
+    <p align="justify">Khaki Campbell (eggs)</p>
+  </li>
+  <li>
+    <p align="justify">White crested</p>
+  </li>
+  <li>
+    <p align="justify">Cayuga (meat)</p>
+  </li>
+  <li>
+    <p align="justify">Muscovy (dual purpose)</p>
+  </li>
+  <li>
+    <p align="justify">Pekins (meat producers)</p>
+  </li>
+  <li>
+    <p align="justify">Indian runners (egg)</p>
+  </li>
+</ol>
+<br />
+<p align="justify">
+  <b style="color:crimson">Breeds of Turkey</b>
+</p>
+<ol type="a">
+  <li>
+    <p align="justify">Norfolk Black (Layers)</p>
+  </li>
+  <li>
+    <p align="justify">Large Bronze (meat)</p>
+  </li>
+  <li>
+    <p align="justify">Large White (meat)</p>
+  </li>
+</ol>
+<br />
+<p align="justify">
+  <b style="color:crimson">Benefits in keeping Poultry</b>
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>The major benefit in keeping poultry is the employment and income it gives farmers. 
+  <br />
+  <p align="justify"></p></li>
+  <li>The colourful feathers are used for decorating dresses and hats. It is also used to fill pillows as well. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Their droppings are used as manure. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Management Systems of Poultry</b>
+<p align="justify">
+<b style="color:crimson">Extensive System</b>; it is a system of farm management where the birds are not kept in a confined area, but rather, they are provided with shelter at night. The birds are allowed to move and search for their own food in a
+large area of land. There are two types of extensive system namely free running and free range systems. 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <i style="color:blue">Free running</i>; under this system the birds are allowed unlimited feeding area such as a whole village and its surrounding bush. 
+  <br />
+  <p align="justify"></p></li>
+  <li>
+  <i style="color:blue">Free Range</i>; under this system the birds are to search for food and water over a limited (fenced) area of land. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Advantages and Disadvantages of Extensive System</b>
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <td style="background-color: darkred; color: white">Advantages</td>
+    <td style="background-color: darkred; color: white">Disadvantages</td>
+  </tr>
+  <tr>
+    <td>The system is very cheap to operate. 
+    <br /></td>
+    <td>It is not productive. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>It makes birds have access to green leaves which is a source of vitamins and minerals. 
+    <br /></td>
+    <td>It exposes birds to bad weather, predators and theft. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Birds reared under this system have free body exercise. 
+    <br /></td>
+    <td>Birds may lay eggs in bush which is a loss to the farmer. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Pecking and cannibalism is controlled here. 
+    <br /></td>
+    <td>Birds may be knocked down by vehicles. 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify">
+<b style="color:crimson">Semi&ndash;Intensive System</b>; under this system of poultry keeping, the birds are kept partly indoors and partly out doors. Feed is given to the birds by the farmer when they are indoors and they search when they are
+released from their pens. The two types of semi&ndash;intensive systems are the 
+<i style="color:blue">run</i>and 
+<i style="color:blue">movable fold unit systems</i>. 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">The Run System:</b>It is a semi&ndash;intensive system whereby a permanent pen is provided for the birds and a fenced grass land known as 
+  <b style="color:crimson">run</b>is attached to the pen. The birds are fed by the farmer when they are in the pen. They are released onto the run at certain time within the day where they roam in search of food in the form of grass, grit, worms and
+  insects. The farmer puts water troughs at vantage points in the run to supply the birds with water when they are on the run. The run is mostly divided into two so as when one section is in use, the other will undergo fallowing. In the evening, the
+  birds are sent back into their pen. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<img alt=""
+     src="http://speedapp.ididev.com/apps/img/poul1.png" />
+<p align="left">
+  <br />
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Advantages and Disadvantages of Run System</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <td style="background-color: darkred; color: white">Advantages</td>
+    <td style="background-color: darkred; color: white">Disadvantages</td>
+  </tr>
+  <tr>
+    <td>The capital input is relatively low. 
+    <br /></td>
+    <td>The run may get dirty and muddy. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Birds have free body exercise. 
+    <br /></td>
+    <td>Performance records on individual birds cannot be taken. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Birds have access to green vegetables. 
+    <br /></td>
+    <td>It is difficult to identify unproductive bird. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Birds are protected from predators and bad weather. 
+    <br /></td>
+    <td>Incidence of parasite and disease build&ndash;up is high since birds remain on a single run for a long time. 
+    <br /></td>
+  </tr>
+</table>
+<br />
+<p align="justify"></p>
+<ol start="2">
+  <li>
+  <b style="color:crimson">Movable Fold Unit System:</b>this is the system of poultry keeping whereby a portable pen with a run attached is used. The base of the unit is open, this allows birds to have access to the grass (run) during the day and
+  they make use of the pen at night. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<img alt=""
+     src="http://speedapp.ididev.com/apps/img/poul2.png" />
+<p align="left">
+  <br />
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Advantages and Disadvantages of Movable Fold Unit</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <td style="background-color: darkred; color: white">Advantages</td>
+    <td style="background-color: darkred; color: white">Disadvantages</td>
+  </tr>
+  <tr>
+    <td>The birds are protected from predators. 
+    <br /></td>
+    <td>A large area is needed for successful operation 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>The danger of parasite build&ndash;up is reduced. 
+    <br /></td>
+    <td>Cannibalism, pecking and egg eating is high. 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>The birds have access to green leaves. 
+    <br /></td>
+    <td>Performance records on individual birds cannot be taken. 
+    <br /></td>
+  </tr>
+</table>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Intensive System</b>; this is a system of poultry management where the birds are kept and fed indoors (both feed and water) throughout their lifetime. The two types of intensive system are the 
+<i style="color:blue">deep litter</i>and 
+<i style="color:blue">battery cage systems</i>. 
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">Deep Litter System</b>; it is an intensive system of poultry keeping, whereby the birds are kept in a well ventilated pen. The floor of the pen is covered with straw or wood shavings which serve as a litter to absorb the
+  droppings of the birds. The picture on the right is an example of a deep litter system. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<img alt=""
+     height="135"
+     src="http://speedapp.ididev.com/apps/img/poul3.jpg"
+     width="219" />
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>
+  <b style="color:crimson">Battery Cage System</b>; this is a management system in which the birds are kept in small cages placed in a pen. Usually, each bird has a cage to itself. Some farmers adopt a relative large cage to accommodate about 2 to 4
+  birds in a cage. However, this system is not encouraged since it increases cannibalism and pecking. Generally, the cage size allows little movement. The picture on the right is an example of a battery cage system. 
+  <p align="left">
+    <img alt=""
+         height="184"
+         src="http://speedapp.ididev.com/apps/img/poul4.jpg"
+         width="206" />
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Advantages of Battery Cage over Deep Litter System</b>
+  <br />
+</p>
+<p align="justify"></p>
+<ol>
+  <li>Performance records on individual birds can be taken 
+  <br />
+  <p align="justify"></p></li>
+  <li>Sick and poor laying birds easily be culled 
+  <br />
+  <p align="justify"></p></li>
+  <li>Egg eating is controlled since birds do not have access to eggs. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Disadvantages of Battery Cage as compared Deep Litter</b>
+<br />
+<p align="justify"></p>
+<ol>
+  <li>It involves high capital cost since the cages are expensive. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Birds do not have free body exercise which makes them soft. 
+  <br />
+  <p align="justify"></p></li>
+  <li>Battery cage cannot be used in brooding and breeding birds. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">Advantages and Disadvantages of Intensive System</b>
+<br />
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <td style="background-color: darkred; color: white">Advantages</td>
+    <td style="background-color: darkred; color: white">Disadvantages</td>
+  </tr>
+  <tr>
+    <td>The system is highly productive 
+    <br /></td>
+    <td>It id very expensive to operate 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Birds are protected against predators and bad weather conditions 
+    <br /></td>
+    <td>Birds under this system do not have access to green leaves 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>Sick birds are easily detected and culled 
+    <br /></td>
+    <td>Cannibalism, pecking and egg eating may be high 
+    <br /></td>
+  </tr>
+  <tr>
+    <td>It conserves land 
+    <br /></td>
+    <td>It is not easy to take performance record on individual birds 
+    <br /></td>
+  </tr>
+</table>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">POULTRY HOUSING</b>
+  <br />
+</p>
+<p align="justify">There are three houses that can be provided for poultry depending on the climate. These are houses built with slats, temporary wooden house and permanent cement house. The permanent cement house is usually used for commercial
+purposes.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">They are built with blocks or bricks and the floor is cemented with mortar. The walls are about 10 to 30cm high and wire netting is used to cover the house from the wall level to the roof. In the temperate regions, the wall height
+can run to roof level. This is to protect the birds against cold weather. The roof is made of roofing sheets. Laying nest or coops are provided in the house.</p>
+<p align="left">
+  <br />
+</p></ion-content>

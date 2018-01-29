@@ -1,0 +1,428 @@
+<ion-header>
+    <ion-navbar color="speedapp">
+          <ion-title></ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="toggleSearchbar()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar">
+      <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+      [showCancelButton]="shouldShowCancel"
+      (ionCancel)="onCancel($event)"
+      placeholder="Word Definitions">
+    </ion-searchbar>
+    </ion-toolbar>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <p align="center" style="color:black;font-size: 26px"><b>UNITS AND MEASUREMENTS</b></p>
+
+    
+      <p style="word-wrap : break-word;"></p>
+    
+      <p align="justify"><b style="color:crimson">Fundamental (Base) Units And Derived
+      Units</b><br /></p>
+    
+      <p align="justify">In physics and engineering, measurement is the activity of comparing
+      <b style="color:crimson">physical quantities</b> of real&ndash;world objects (weight,
+      height, length, etc) and events (time). Established standard objects and events are
+      used as <i style="color:blue">references</i> and these references are called <b style=
+      "color:crimson">units.</b><br /></p>
+    
+      <p align="justify">The standard units of measurement in science are a part of a
+      measuring system called the <b style="color:crimson">International System</b> of units
+      (SI). The letters are reversed in the symbol because they were taken from the French
+      word <i style="color:blue">Le Syst&egrave;m International
+      d&rsquo;Unit&eacute;s</i>.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">Only SI units will be used through out the lessons although there
+      are other units that can be used to measure base units. Example, length can be measured
+      by foot, mass by pound and etc. There are two forms of units, they are <b style=
+      "color:crimson">fundamental</b> or <b style="color:crimson">base</b> units and
+      <b style="color:crimson">derived</b> units.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Fundamental units</b> are basic units that
+      do not depend on any other unit. The table below lists the physical quantities which
+      have base units, their SI units and symbols.<br /></p>
+    
+      <table border="1" cellspacing="1" cellpadding="1" width="100%">
+        <tr>
+          <th style="color: white; background-color: darkred">Physical quantity</th>
+    
+          <th style="color: white; background-color: darkred">SI Unit</th>
+    
+          <th style="color: white; background-color: darkred">Symbol</th>
+        </tr>
+    
+        <tr>
+          <td>Length</td>
+    
+          <td>Meter</td>
+    
+          <td>m</td>
+        </tr>
+    
+        <tr>
+          <td>Mass</td>
+    
+          <td>Kilogram</td>
+    
+          <td>Kg</td>
+        </tr>
+    
+        <tr>
+          <td>Time</td>
+    
+          <td>Second</td>
+    
+          <td>S</td>
+        </tr>
+    
+        <tr>
+          <td>Electric current</td>
+    
+          <td>Ampere</td>
+    
+          <td>A</td>
+        </tr>
+    
+        <tr>
+          <td>Temperature</td>
+    
+          <td>Kelvin</td>
+    
+          <td>K</td>
+        </tr>
+    
+        <tr>
+          <td>Amount of substance</td>
+    
+          <td>Mole</td>
+    
+          <td>Mol</td>
+        </tr>
+    
+        <tr>
+          <td>Luminous intensity</td>
+    
+          <td>Candela</td>
+    
+          <td>cd</td>
+        </tr>
+      </table>
+    
+      <p align="justify">In SI, prefixes can be added to the base units to obtain different
+      units of a convenient size for measuring larger or smaller quantities. For example, a
+      kilometer is one thousand meters while a millimeter is one thousandth of a meter.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">A kilometer is convenient for measuring the distance between cities.
+      Millimeter is useful when measuring the thickness of a board. The commonly used SI
+      prefixes and their equivalents are listed in the table below.</p>
+    
+      <p align="left"><br /></p>
+    
+      <table border="1" cellspacing="1" cellpadding="1" width="100%">
+        <tr>
+          <th style="color: white; background-color: darkred">Prefix</th>
+    
+          <th style="color: white; background-color: darkred">Symbol</th>
+    
+          <th style="color: white; background-color: darkred">Meaning</th>
+    
+          <th style="color: white; background-color: darkred">Numerical Multiplier</th>
+    
+          <th style="color: white; background-color: darkred">Exponential multiplier</th>
+        </tr>
+    
+        <tr>
+          <td>mega</td>
+    
+          <td>M</td>
+    
+          <td>million</td>
+    
+          <td>1,000,000</td>
+    
+          <td>1 X 10<sup>6</sup></td>
+        </tr>
+    
+        <tr>
+          <td>kilo</td>
+    
+          <td>K</td>
+    
+          <td>thousand</td>
+    
+          <td>1,000</td>
+    
+          <td>1 X 10<sup>3</sup></td>
+        </tr>
+    
+        <tr>
+          <td>deci</td>
+    
+          <td>d</td>
+    
+          <td>tenth</td>
+    
+          <td>0.1</td>
+    
+          <td>1 X 10<sup>-1</sup></td>
+        </tr>
+    
+        <tr>
+          <td>centi</td>
+    
+          <td>c</td>
+    
+          <td>Hundredth</td>
+    
+          <td>0.01</td>
+    
+          <td>1 X 10<sup>-2</sup></td>
+        </tr>
+    
+        <tr>
+          <td>milli</td>
+    
+          <td>m</td>
+    
+          <td>Thousandth</td>
+    
+          <td>0.001</td>
+    
+          <td>1 X 10<sup>-3</sup></td>
+        </tr>
+    
+        <tr>
+          <td>micro</td>
+    
+          <td>&micro;</td>
+    
+          <td>Millionth</td>
+    
+          <td>0.000 001</td>
+    
+          <td>1 X 10<sup>-6</sup></td>
+        </tr>
+      </table>
+    
+      <p align="justify"><b style="color:crimson">Derived Units</b><br /></p>
+    
+      <p align="justify">Other measuring units can be obtained by combining some (not any) of
+      the base units. For example, if a boy runs a distance of 100m in 50s, then his speed
+      can be expressed as the time he took to cover the distance which is 100m per 50s
+      (100m/50s).</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">This speed can be scaled down or expressed in the simplest form as
+      the distance he covers in a second which is 2m per a second (2m/s).</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">Therefore, <b style="color:crimson">derived unit</b> is a unit which
+      is a combination of other units. The table below is a list of physical quantities whose
+      units are derived (units) and their symbols.</p>
+    
+      <p align="left"><br /></p>
+    
+      <table border="1" cellspacing="1" cellpadding="1" width="100%">
+        <tr>
+          <th style="color: white; background-color: darkred">Quantity</th>
+    
+          <th style="color: white; background-color: darkred">Derivation</th>
+    
+          <th style="color: white; background-color: darkred">SI Unit</th>
+    
+          <th style="color: white; background-color: darkred">Symbol</th>
+        </tr>
+    
+        <tr>
+          <td>Area</td>
+    
+          <td>Length x Breath</td>
+    
+          <td>Square meter</td>
+    
+          <td>m<sup>2</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Volume</td>
+    
+          <td>Length x Breath x height</td>
+    
+          <td>Cubic meter</td>
+    
+          <td>m<sup>3</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Density</td>
+    
+          <td>Mass/volume</td>
+    
+          <td>Kilogram/cubic meter</td>
+    
+          <td>Kg/ m<sup>3</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Speed/velocity</td>
+    
+          <td>Distant/time</td>
+    
+          <td>Meter/second</td>
+    
+          <td>m/s</td>
+        </tr>
+    
+        <tr>
+          <td>Acceleration</td>
+    
+          <td>Distant/(time x time)</td>
+    
+          <td>Meter/second square</td>
+    
+          <td>m/s<sup>2</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Weight</td>
+    
+          <td>Mass x acceleration due to gravity</td>
+    
+          <td>Newton</td>
+    
+          <td>N = kgm/s<sup>2</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Force</td>
+    
+          <td>Mass x acceleration</td>
+    
+          <td>Newton</td>
+    
+          <td>N = kgm/s<sup>2</sup></td>
+        </tr>
+    
+        <tr>
+          <td>Work and energy</td>
+    
+          <td>Force x distance</td>
+    
+          <td>Joule</td>
+    
+          <td>J = Nm</td>
+        </tr>
+    
+        <tr>
+          <td>Power</td>
+    
+          <td>Work done/ time</td>
+    
+          <td>Watts</td>
+    
+          <td>W = J/s</td>
+        </tr>
+    
+        <tr>
+          <td>Pressure</td>
+    
+          <td>Force/area</td>
+    
+          <td>Pascal</td>
+    
+          <td>Pa = N/m<sup>2</sup></td>
+        </tr>
+      </table><br />
+    
+      <p align="justify"><b style="color:crimson">MEASUREMENTS</b><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Mass</b><br /></p>
+    
+      <p align="justify"><i style="color:blue">This is the amount of substance a body
+      contains</i> and it is measured by a beam balance. The measurement is usually done by
+      comparing it with standard mass as shown in the first picture below. The electronic
+      balance works on the same principle.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Length</b><br /></p>
+    
+      <p align="justify">This is the distance between two points connected by a straight line
+      segment. Some of the instruments used for measuring distances are rule, tape measure,
+      calipers, etc. Radius of spherical surfaces is measured by a spherometer.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">And small length such as the diameter of a rod is measured with
+      vernier calipers. Vernier caliper is shown in the picture below. Note that the vernier
+      caliper is graduated in centimeters.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><img src="http://speedapp.ididev.com/apps/img/unit1.png" alt="" /></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">The micrometer screw gauge is used to measure very little lengths
+      such as the thickness of a paper, diameter of a wire, etc. The picture below shows a
+      labeled micrometer screw gauge.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><img src="http://speedapp.ididev.com/apps/img/unit2.jpg" alt="" width="450" height="194" /></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><b style="color:crimson">Volume</b><br /></p>
+    
+      <p align="justify">This is the space occupied by an object. One of the instruments that
+      can be use to determine the volume of an object in the lab is the measuring cylinder.
+      The picture on the right shows how to determine the volume of an irregular object using
+      the measuring cylinder. First a measuring cylinder is filled with water to a reasonable
+      level and the water level is noted V<sub><small>1</small></sub> (60ml).</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify"><img src="http://speedapp.ididev.com/apps/img/unit3.png" alt="" /></p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">A suitable length of thread is tied to the irregular solid and it is
+      gently lowered into the water till it is submerged. The new level of the water
+      V<sub><small>2</small></sub> is noted (95ml). Now, subtract the initial volume from the
+      final one to give the volume of the solid.</p>
+    
+      <p align="left"><br /></p>
+    
+      <p align="justify">That is volume of solid = (V<sub><small>2</small></sub> &ndash;
+      V<sub><small>1</small></sub>) = (95ml &ndash; 60ml) = 35ml. Note that volumetric
+      readings should be taken at the meniscus.</p>
+    
+      <p align="left"></p>
+
+</ion-content>

@@ -1,0 +1,208 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>PHOTOSYNTHESIS</b></p>
+    <br>
+    <p align="justify">Do plants have alimentary canal like humans? How
+    do they get food? Do they have organs that will break down complex
+    food molecules into small absorbable ones? Plants do not have
+    alimentary canal, neither do they have organs to breakdown complex
+    food molecules and for that reason they manufacture their own
+    food.</p>
+    <p align="left"><br></p>
+    <p align="justify">The food produced has simple molecular structure
+    which can be used directly in cellular or internal respiration. The
+    picture below summarizes the processes by which plants manufacture
+    their food. This process is known as <i style=
+    "color:blue">photosynthesis</i>.</p>
+    <p align="left"><br></p>
+    <p align="justify"><img width="293" height="307" src=
+    "http://speedapp.ididev.com/apps/img//photo1.jpg" alt=""></p>
+    <p align="left"><br></p>
+    <p align="justify"><b style="color: crimson">Photosynthesis</b> is
+    defined as the process by which green plants use <i style=
+    "color:blue">light energy</i> to convert <i style=
+    "color:blue">carbon</i> <i style="color:blue">dioxide</i> and
+    <i style="color:blue">water</i> into <i style=
+    "color:blue">carbohydrates</i>. Photosynthesis starts with the
+    trapping of sunlight by the chloroplast in the leaf. Water that has
+    been absorbed by the root into the plant goes up the stem and into
+    the leaf.</p>
+    <p align="left"><br></p>
+    <p align="justify">Carbon dioxide enters the leaf, and into the
+    chloroplast through small openings at the back of the leaf known as
+    stomata. At this point, the light energy is used to break and
+    rearrange the water and carbon dioxide molecules to form a simple
+    sugar (carbohydrate) through a series of chemical reactions.</p>
+    <p align="left"><br></p>
+    <p align="justify">These reactions are controlled by chlorophyll
+    and enzymes. A summarised chemical equation for photosynthesis is
+    written below.</p>
+    <p align="left"><br></p>
+    <p align="justify">6CO<sub>2</sub> + 6H<sub>2</sub>O <img width=
+    "62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.jpg" alt="">
+    C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></p>
+    <p align="left"><br></p>
+    <p align="justify">After the carbohydrates have been produced, it
+    is transported from the leaf to various parts of the plant for
+    respiration and to be stored as food in some cases. Some plants
+    have special organs that store excess carbohydrates for future
+    use.</p>
+    <p align="left"><br></p>
+    <p align="justify">For instance, cassava stores carbohydrates in
+    the root, maize in the cob, melon in the fruit, etc. Part of the
+    oxygen which is produced during photosynthesis is used for cellular
+    respiration and the excess leaves the leaf through the stomata.</p>
+    <p align="left"><br></p>
+    <p align="justify">Photosynthesis is a very important process and
+    it comes with the following advantages listed below.<br></p>
+    <p align="justify"></p>
+    <ol>
+    <li>All forms of live depend directly or indirectly on
+    photosynthesis. This statement is true because if you consider the
+    goat which does not undergo photosynthesis, it depends (feeds) on
+    green plants which undergo photosynthesis. And a carnivore like the
+    lion feeds on the goat which also feeds on the green plant.<br>
+    <p align="justify"></p>
+    </li>
+    <li>It reduces the carbon concentration in the atmosphere, thereby
+    reducing green house effect.<br>
+    <p align="justify"></p>
+    </li>
+    <li>It helps to maintain water, carbon dioxide and oxygen balance
+    in nature. In other words, it helps to regulate carbon dioxide,
+    oxygen and water quantities in the world.<br>
+    <p align="justify"></p>
+    </li>
+    <li>It produces oxygen which is needed for respiration.
+    <p align="left"><br></p>
+    <table width="100%" border="0" cellspacing="4" cellpadding="4">
+    <tr>
+    <td colspan="3"><b style="color:crimson">Comparism of
+    Photosynthesis and Internal Respiration</b></td>
+    </tr>
+    <tr>
+    <td>Reactants</td>
+    <td>Products</td>
+    <td>Equation</td>
+    </tr>
+    <tr>
+    <td>CO<sub>2</sub> + H<sub>2</sub>O</td>
+    <td>C<sub>6</sub>H<sub>12</sub>06 + O<sub>2</sub></td>
+    <td>CO<sub>2</sub> + H<sub>2</sub>O <img width="62" height="10"
+    src="http://speedapp.ididev.com/apps/img/arrow.jpg" alt="">
+    C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub></td>
+    </tr>
+    <tr>
+    <td>C<sub>6</sub>H<sub>12</sub>06 + O<sub>2</sub></td>
+    <td>CO<sub>2</sub> + H<sub>2</sub>O</td>
+    <td>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + O<sub>2</sub>
+    <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.jpg" alt="">
+    CO<sub>2</sub> + H<sub>2</sub>O</td>
+    </tr>
+    </table>
+    <p align="justify"></p>
+    </li>
+    </ol>
+    <br>
+    <br>
+    <p align="justify">From the table above, it is obvious that
+    photosynthesis and respiration are reverse processes. The products
+    of one process are the reactants of the other and vice versa.</p>
+    <p align="left"><br></p>
+    <p align="justify">We said earlier on that plants require water,
+    carbon dioxide, light and chlorophyll for photosynthesis. Let us
+    consider some few experiments to show if all the three named
+    substances are basic requirements for photosynthesis. We shall
+    consider the absence of carbon dioxide first, followed by the
+    absence of light and finally chlorophyll.</p>
+    <p align="left"><br></p>
+    <p align="justify"><b style="color:crimson">Experiment to show that
+    carbon dioxide is necessary for photosynthesis</b><br></p>
+    <p align="justify">Place a potted plant in a dark room for not less
+    than 24 hours. This is to deplete all starch in the leaves of the
+    plant. Enclose one leaf in polythene bag containing sodium
+    hydroxide as shown in the picture on the right. The role of the
+    sodium hydroxide is to absorb the carbon dioxide in the air within
+    the polythene bag.</p>
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/photo2.jpg" alt=""><br></p>
+    <p align="justify">This ensures that no carbon dioxide is available
+    for the leaf enclosed in the polythene bag. Expose the plant to
+    light, either the sun or any strong electric bulb, for some hours.
+    Test the enclosed leaf and any other for starch.</p>
+    <p align="left"><br></p>
+    <p align="justify">Observation: the enclosed leaf will remain brown
+    indicating the absence of starch, which in turn means no
+    photosynthesis took place due to the absence of carbon dioxide. The
+    other leaf will show a blue&ndash;black colour with iodine
+    indicating the presence of starch. This shows that photosynthesis
+    does not take place in the absence of carbon dioxide.</p>
+    <p align="left"><br></p>
+    <p align="justify"><b style="color:crimson">Experiment to show that
+    light is necessary for photosynthesis</b><br></p>
+    <p align="justify">Place a potted plant in a dark room for not less
+    than 24 hours. This is to deplete all starch in the leaves of the
+    plant. Enclose one leaf in black polythene bag as shown in the
+    picture on the right. This is to prevent the leaf from receiving
+    light. Expose the plant to light, either the sun or any strong
+    electric bulb, for some hours. Test the enclosed leaf and any other
+    for starch.</p>
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/photo3.jpg" alt=""><br></p>
+    <p align="justify">Observation: the enclosed leaf will remain brown
+    indicating the absence of starch, which in turn means no
+    photosynthesis took place due to the absence of carbon dioxide. The
+    other leaf will show a blue&ndash;black colour with iodine
+    indicating the presence of starch. Meaning photosynthesis does not
+    take place in the absence of light.</p>
+    <p align="left"><br></p>
+    <p align="justify"></p>
+    <p align="left"><br></p>
+    <p align="justify"><b style="color:crimson">Experiment to show that
+    chlorophyll is necessary for photosynthesis</b><br></p>
+    <p align="justify">Make a sketch of a variegated leaf like the one
+    shown in the picture on the right. The plant from which the leaf
+    was plucked should be supplied with water, carbon dioxide and light
+    before plucking the leaf. Note the areas of green and yellow
+    colours well. Test the leaf for starch.</p>
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/photo4.jpg" alt="" width="188"
+    height="170"><br></p>
+    <p align="justify">Observation: it will be observed that the
+    blue&ndash;black colour indicating the presence of starch is formed
+    in the areas where the original colour of the leaf was green. This
+    shows that photosynthesis does not take place in the absence of
+    chloroplast. Note that chlorophyll give green plants their green
+    colour.</p>
+    <p align="left"><br></p>
+</ion-content>

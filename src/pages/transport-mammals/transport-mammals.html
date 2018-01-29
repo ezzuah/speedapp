@@ -1,0 +1,528 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>TRANSPORT IN MAMMALS</b></p>
+<br />
+<p align="justify">
+  <b style="color:crimson">Blood Circulatory System</b>
+  <br />
+</p>
+<p align="justify">Many organisms have systems which transport materials throughout their bodies. These systems enable cells to exchange materials with the environment. Water, for example, is transported through plants in a tissue called 
+<i style="color:blue">xylem</i>(see 
+<i style="color:blue">Transport in Plants</i>).</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       height="305"
+       src="http://speedapp.ididev.com/apps/img/circ1.jpg"
+       width="173" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">But how are blood and other materials transported through the body? They are transported by the 
+<i style="color:blue">heart</i>and 
+<i style="color:blue">blood vessels</i>in non&ndash;stop system which biologists call the 
+<b style="color:crimson">circulatory system</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">As stated, this system involves the 
+<b style="color:crimson">heart</b>a cone&ndash;shaped, muscular organ about the size of a fist and the 
+<b style="color:crimson">blood vessels</b>(arteries, veins and capillaries). We humans have got a 
+<i style="color:blue">four&ndash;chambered</i>heart (two atria and two ventricles) which prevents deoxygenated blood from entering the body cells.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The right and left sides of the heart are separated by an internal wall called 
+<i style="color:blue">septum</i>. 
+<b style="color:crimson">Arteries</b>carry blood (high in O
+<sub>2</sub>; also called 
+<b style="color:crimson">oxygenated</b>
+<b style="color:crimson">blood</b>) away from the heart toward the capillaries.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The 
+<b style="color:crimson">capillaries</b>serve as a bridge between the arteries and veins because exchange of substances (like oxygen and carbon dioxide) takes place across their thin walls. 
+<b style="color:crimson">Veins</b>return blood (low in O
+<sub>2</sub>; also called 
+<b style="color:crimson">de&ndash;oxygenated</b>
+<b style="color:crimson">blood</b>) from the capillaries to the heart.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Walls of the arteries are thicker and with smaller diameters than those of the veins because they carry blood to the entire parts of the body under high pressure.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Parts and Functions of the Human Heart</b>
+  <br />
+</p>
+<p align="justify">The picture below shows labelled parts of the heart. Their respective functions follow in a table.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       id="front_image"
+       name="front_image"
+       src="http://speedapp.ididev.com/apps/img/circ2.png" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <th style="color: white; background-color: darkred">PART OF HEART</th>
+    <th style="color: white; background-color: darkred">FUNCTION</th>
+  </tr>
+  <tr>
+    <td>Aorta</td>
+    <td>The 
+    <i style="color:blue">largest artery</i>that carries blood (oxygenated) from heart to all parts of the body</td>
+  </tr>
+  <tr>
+    <td>Vena cava (Superior and Inferior)</td>
+    <td>
+    <i style="color:blue">Largest vein</i>which conveys blood (deoxygenated) from the lungs to the heart.</td>
+  </tr>
+  <tr>
+    <td>Pulmonary vein</td>
+    <td>Transports oxygenated blood from the lungs to the heart</td>
+  </tr>
+  <tr>
+    <td>Pulmonary artery</td>
+    <td>Transports deoxygenated blood from heart to the lungs</td>
+  </tr>
+  <tr>
+    <td>Right atrium</td>
+    <td>Receives blood from the vena cava and pumps blood into right ventricle</td>
+  </tr>
+  <tr>
+    <td>Left atrium</td>
+    <td>Receives oxygenated blood from the lungs through the pulmonary vein</td>
+  </tr>
+  <tr>
+    <td>Right ventricle</td>
+    <td>Receives blood from the left atrium and pumps blood into lungs</td>
+  </tr>
+  <tr>
+    <td>Left ventricle</td>
+    <td>Receives blood from the left atrium and pumps blood to all parts of the body</td>
+  </tr>
+  <tr>
+    <td>Tricuspid valve</td>
+    <td>Prevents back flow of blood from right ventricle to right auricle (atrium)</td>
+  </tr>
+  <tr>
+    <td>Bicuspid (mitral) valve</td>
+    <td>Prevents back flow of blood from left ventricle to left auricle (atrium)</td>
+  </tr>
+  <tr>
+    <td>Septum</td>
+    <td>Prevents oxygenated blood from mixing with deoxygenated blood and separates the right from left side of the heart</td>
+  </tr>
+</table>
+<br />
+<p align="justify">
+  <b style="color:crimson">Passage of Blood through the Heart</b>
+  <br />
+</p>
+<p align="justify">Blood from the body enters the 
+<i style="color:blue">heart</i>through the 
+<b style="color:crimson">vena cava</b>(both superior and interior) to the 
+<b style="color:crimson">right atrium</b>which contracts and forces the blood into the 
+<b style="color:crimson">right ventricle</b>. Contraction of the right ventricle forces the blood into 
+<b style="color:crimson">pulmonary arteries</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       id="front_image"
+       name="front_image"
+       src="http://speedapp.ididev.com/apps/img/circ3.png" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">A branch of this artery goes to each 
+<b style="color:crimson">lung</b>. In the lungs, oxygen is picked up and carbon dioxide is removed from the blood.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">It is the blood from the lungs which travels through the 
+<b style="color:crimson">pulmonary veins</b>to the 
+<b style="color:crimson">left atrium</b>. As the left atrium contracts, blood is forced into the 
+<b style="color:crimson">left ventricle</b>. A powerful contraction of the left ventricle forces blood into the 
+<b style="color:crimson">aorta</b>, the large artery from the heart.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<i style="color:blue">Smaller arteries</i>which branch from the aorta direct blood to 
+<i style="color:blue">all parts of the body</i>. The arteries further divide into 
+<i style="color:blue">capillaries</i>which merge to form 
+<i style="color:blue">small veins</i>. These veins merge to form the large veins which bring blood to the right atrium.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This cardiovascular system has 
+<i style="color:blue">two</i>circuits. They are the pulmonary and systematic circuits. In the 
+<b style="color:crimson">pulmonary circuit</b>, pulmonary arteries take de&ndash;oxygenated blood to the lungs while the pulmonary veins return oxygenated blood to the heart.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The 
+<b style="color:crimson">systematic circuit</b>takes blood from the left ventricle of the heart (to all parts of the body) and then back to the right atrium of the heart. All this while, mention has been made of 
+<i style="color:blue">blood</i>. What is our blood composed of?</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Blood</b>
+  <br />
+</p>
+<p align="justify">The picture below is a sectioned blood vessel revealing that blood is composed of 
+<i style="color:blue">four</i>major components. They are red blood cells, white blood cells, platelets and plasma.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       id="front_image"
+       name="front_image"
+       src="http://speedapp.ididev.com/apps/img/bloodcell.png" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Red blood cells</b>as the name denotes are 
+<i style="color:blue">red</i>and shaped 
+<i style="color:blue">like discs</i>. They are produced in the marrow of our bones. They contain 
+<i style="color:blue">haemoglobin</i>which is red in colour and therefore giving them their red colour.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">They are also disc&ndash; shaped because a large surface area is needed to be able to absorb enough oxygen when the blood gets into the lungs. 
+<i style="color:blue">Oxyhaemoglobin</i>is the term used when the haemoglobin absorbs oxygen.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">It later discharges the oxygen to the cells in the body. In effect, red blood cells (also called 
+<b style="color:crimson">erythrocytes</b>) transport oxygen from the lungs to the cells in the body.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">White blood cells (leukocytes)</b>differ from red blood cells. They are usually larger, have a nucleus and lack haemoglobin.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">They are also not as many as the red blood cells. White blood cells basically fight infection thereby playing a major role in our ability to resist diseases. Unlike the red blood cells, the leukocytes do not have definite
+shapes.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Some types of white blood cells (called 
+<i style="color:blue">phagocytes</i>) attack bacteria in the body by engulfing it and, as it were, feed on the bacteria. Others like the 
+<i style="color:blue">lymphocytes</i>produce antibodies which attack and kill the bacteria. When white blood cells increase beyond normal, a cancerous disease called 
+<b style="color:crimson">leukemia</b>results.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Platelets (thrombocytes)</b>are involved in the process of blood 
+<b style="color:crimson">clotting</b>or 
+<i style="color:blue">coagulation</i>so that when one has a cut, the person does not lose all his blood.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">A blood clot also does not allow bacteria to enter the body via the cut. This is what happens. When there is a cut, platelets form a 
+<b style="color:crimson">compact mass</b>at the cut spot and partially seal the leak of blood.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       height="290"
+       src="http://speedapp.ididev.com/apps/img/circ4.png"
+       width="209" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The platelets and the injured tissues release a clotting factor called 
+<b style="color:crimson">prothrombin activator</b>which changes prothrombin into 
+<b style="color:crimson">thrombin</b>with the help of 
+<b style="color:crimson">calcium ions</b>(Ca2+). Thrombin forms long threads of amino acid chains called 
+<b style="color:crimson">fibrin</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The fibrin threads wind around the cut area and provide a 
+<i style="color:blue">framework</i>for the cut. Red blood cells are the 
+<b style="color:crimson">trapped</b>in the fibrin threads (picture on the right). This makes a clot appear red.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Plasma</b>is the liquid which accounts for about 55% of the total volume of blood with substances either dissolved or suspended in it.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Substances like 
+<i style="color:blue">water</i>, 
+<i style="color:blue">plasma proteins</i>, 
+<i style="color:blue">salts</i>, 
+<i style="color:blue">gases</i>, 
+<i style="color:blue">nutrients</i>, etc. The plasma transports food materials needed by the body, nitrogenous wastes and hormones, the red and white blood cells and platelets.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Blood Types</b>
+  <br />
+</p>
+<p align="justify">Years ago, the transfusion of blood made most of its recipients die and leaving some too ill. Research was made into this and it was discovered that 
+<i style="color:blue">not all</i>types of blood are compatible because of the 
+<i style="color:blue">antigens</i>the red blood cells tend to produce when in the recipient&rsquo;s system.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">As a result the 
+<b style="color:crimson">ABO System</b>of typing blood came to be used. The four major blood types are A, B, AB, and O. Differences in blood type involve antigens on the surface of red blood cells.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The table below shows blood types (
+<i style="color:blue">ABO System</i>) and their transfusion possibilities.
+<br /></p>&gt; 
+<table border="1"
+       cellpadding="1"
+       cellspacing="1"
+       width="100%">
+  <tr>
+    <th style="color: white; background-color: darkred">Type</th>
+    <th style="color: white; background-color: darkred">Antigens</th>
+    <th style="color: white; background-color: darkred">Antibodies</th>
+    <th style="color: white; background-color: darkred">Can Receive</th>
+    <th style="color: white; background-color: darkred">Can Donate</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>A</td>
+    <td>anti&ndash;B</td>
+    <td>O,A</td>
+    <td>A,AB</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>B</td>
+    <td>anti&ndash;A</td>
+    <td>O,B</td>
+    <td>B,AB</td>
+  </tr>
+  <tr>
+    <td>AB</td>
+    <td>A,B</td>
+    <td>none</td>
+    <td>All</td>
+    <td>AB</td>
+  </tr>
+  <tr>
+    <td>O</td>
+    <td>None</td>
+    <td>anti&ndash;A, anti&ndash;B</td>
+    <td>O</td>
+    <td>All</td>
+  </tr>
+</table>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Antigens</b>are enzymes that stimulate the production of 
+<i style="color:blue">antibodies</i>and that blood type is genetically determined. Note that &lsquo;anti&rsquo; means 
+<i style="color:blue">against.</i>Therefore anti&ndash;B (antibodies) will attack all B antigens but not A.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">As an illustration, Doreen is a young woman with type A blood which contains an antibody called 
+<b style="color:crimson">anti&ndash;B agglutinin</b>(
+<i style="color:blue">anti&ndash;B</i>for short). As stated, this antibody will attack type B antigens but since Doreen has a type A blood (and therefore has no type B antigens) she is healthy.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">If she goes for blood transfusion and is mistakenly given type B blood, the anti&ndash;B agglutinin (antibodies in her blood) will attack the B antigens, thus the transfused blood.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">A reaction will occur making her red blood cells 
+<i style="color:blue">clump</i>together. This process is called agglutination. 
+<b style="color:crimson">Agglutination</b>
+<i style="color:blue">causes blood to stop circulating and the red blood cells to burst</i>. In the same way, a person with type B blood will experience agglutination if blood type A is injected into his system.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">People with type AB blood could receive any blood type because no clumping will occur. For this reason a person with type AB blood is called a 
+<b style="color:crimson">universal recipient</b>. A person with type O blood is called a 
+<b style="color:crimson">universal donor</b>because the red cells have no antigens. Type O blood cells will not be attacked by agglutinins.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Rh factors</b>(Rh blood factors were first discovered in the 
+<i style="color:blue">rhesus monkey</i>) are other proteins which are present on the red blood cells. Those who have the Rh factor are positive and those without it are Rh negative.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Suppose an Rh positive blood is given to a person with Rh negative blood, antibodies will be formed against the foreign blood and agglutination will result. Rh factors can harm a developing embryo if the child Rh positive and the
+mother is Rh negative. The mother&rsquo;s blood will produce antibodies which will be foreign to the baby&rsquo;s blood. This could result in anemia or death in the child. It is therefore advised that a rhesus negative woman should not marry a
+rhesus positive man.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Cardiovascular Disorder</b>
+  <br />
+</p>
+<p align="justify">Cardiovascular (involving the heart) disease is a leading cause of untimely death of most people. A few of these are discussed in this part of the topic.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Hypertension</b>
+  <br />
+</p>
+<p align="justify">
+<i style="color:blue">Hypertension</i>, referred to as 
+<b style="color:crimson">high blood pressure</b>, is a medical condition in which the blood pressure is 
+<i style="color:blue">chronically</i>(slowly developing and long lastingly) elevated. In its current usage, the word 
+<i style="color:blue">hypertension</i>refers to high blood pressure of the arteries.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Hypertension can be classified as either 
+<b style="color:crimson">essential</b>(psychologically caused) or 
+<b style="color:crimson">secondary</b>(physiologically caused). Persistent hypertension is one of the 
+<b style="color:crimson">risk factors</b>for strokes heart attacks and heart failure .</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+<b style="color:crimson">Stroke</b>often results when a small cranial artery bursts or is blocked. A lack of oxygen causes that portion of the brain to die. 
+<b style="color:crimson">Paralysis</b>(loss of the ability to move a body part) or even death may result. 
+<b style="color:crimson">Heart attack</b>occurs when a portion of the heart muscle dies due to lack of oxygen.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Atherosclerosis</b>
+  <br />
+</p>
+<p align="justify">This is the accumulation of 
+<i style="color:blue">cholesterol</i>(fat) in the arteries and it mostly begins in early adulthood. Symptoms may not appear until the individual is about 50. To prevent this it is mostly advised to eat low&ndash;fat diets, fruits and vegetables
+because atherosclerosis may lead to hypertension.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Lymphatic System</b>
+  <br />
+</p>
+<p align="justify">As noted earlier, it is at the capillaries where exchange of substances takes place. But then, not all materials are exchanged directly between body cells and the blood in the capillaries. Pressure exerted on the walls of the
+capillaries force some water and dissolved particles to the tissues.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This water and dissolved particles is called 
+<b style="color:crimson">tissue fluid</b>. Later some tissue fluid returns to the capillaries by osmosis. Again, not all of the tissue fluid returns. Some of the tissue fluid (that do not return) enters a 
+<i style="color:blue">special network</i>of 
+<b style="color:crimson">lymphatic vessels</b>throughout the body.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Fluid which enters the lymphatic system is called 
+<b style="color:crimson">lymph.</b>The lymphatic system consists of 
+<b style="color:crimson">lymphatic vessels</b>and 
+<b style="color:crimson">lymphoid organs</b>. The lymphatic circulation is 
+<b style="color:crimson">one&ndash;way</b>and so the lymphatic vessels have valves which prevent backflow of lymph.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This system does not use a special &ldquo;pumping action&rdquo; like the blood circulation uses the heart. It only uses random body movements which forces the lymph through the vessels to a major collecting tube, 
+<b style="color:crimson">thoracic</b>
+<b style="color:crimson">duct</b>.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The thoracic duct empties lymph into large veins called 
+<b style="color:crimson">subclavian veins</b>(right and left). In this way, the liquid portion of the blood lost at the capillaries is restored. 
+<b style="color:crimson">Lymph nodes</b>are special structures that are scattered through the lymphatic system.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The 
+<b style="color:crimson">lymphatic capillaries</b>take up excess tissue fluid and return it to the blood stream. They also absorb fat at the villi (small intestines) and transport them to the blood stream. This system also helps to defend the body
+against diseases. The picture below shows the lymphatic system.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       height="452"
+       src="http://speedapp.ididev.com/apps/img/circ5.png"
+       width="266" />
+</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify"></p>
+<p align="left">
+  <br />
+</p></ion-content>

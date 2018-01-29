@@ -1,0 +1,385 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>FORCE AND MOTION</b></p>
+  
+    <p align="justify"><b style="color:crimson">Newton&rsquo;s Laws of Motion</b><br /></p>
+  
+    <p align="justify">We discussed Force and Motion in the last two chapters. In this
+    chapter we shall consider the relationship between force and motion. Sir Isaac Newton
+    (1642&ndash;1772) formulated three physical laws that tell us why objects move, by
+    describing the relationship between force and motion. These laws are known as <i style=
+    "color:blue">Newton&rsquo;s laws of motion</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Newton&rsquo;s first law of motion (law of
+    inertia)</b>: States that <i style="color:blue">a particle will stay at <b style=
+    "color:crimson">rest</b> or continue at a <b style="color:crimson">constant
+    velocity</b> unless acted upon by an external unbalanced force.</i> The first point
+    seems relatively obvious to most people, but the second may require some thinking,
+    because we have no experience in every&ndash;day life of things that keep moving
+    forever (except celestial bodies).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">If one slides a book along a table, it doesn't move forever, it
+    slows and eventually comes to a stop. This is so, because frictional force acts on the
+    body and in a direction opposite the motion. It is this force which causes the object
+    to slow to a stop.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The first law also explains the phenomenon of <i style=
+    "color:blue">inertia</i> indirectly. <b style="color:crimson">Inertia</b> is the
+    tendency of a particle to resist a change in its state of motion. For instance, if you
+    are standing in a crowded bus and the driver makes a sudden stop, your body continues
+    to move forward because of inertia.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+  
+    <p align="justify">A body of mass 2.0kg moves from rest and accelerates to a speed of
+    8ms<sup>&ndash;1</sup> after 4.0 seconds on a level ground. Find the force required to
+    bring this body to rest.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b>Solution</b></u></p>
+  
+    <p align="justify">Mass of body = 2.0kg<br />
+    <br />
+    Initial velocity = 0</p>
+  
+    <p align="left"></p>
+  
+    <p align="justify">Final velocity = 8ms<sup>&ndash;1</sup><br />
+    <br />
+    Time elapsed =4. 0</p>
+  
+    <p align="left"></p>
+  
+    <p align="justify"><b style="color:crimson">F = ma</b></p>
+  
+    <p align="justify">We have been given v, u and t, so we can calculate for the
+    acceleration so as to find F.</p>
+  
+    <p align="left"></p>
+  
+    <p align="justify"><b>v = u + at</b>,<br /></p>
+  
+    <p align="justify"></p>
+  
+    <table>
+      <tr>
+        <td>&rArr; a =</td>
+  
+        <td>
+          v &ndash; u<br />
+          <hr />
+          &zwnj; &zwnj; &zwnj; &zwnj;t
+        </td>
+      </tr>
+  
+      <tr>
+        <td>.</td>
+  
+        <td></td>
+      </tr>
+  
+      <tr>
+        <td>&rArr; a =</td>
+  
+        <td>
+          8 &ndash; 0<br />
+          <hr />
+          &zwnj; &zwnj; &zwnj; &zwnj;4
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">Therefore a = 2.0ms<sup>-2</sup><br /></p>
+  
+    <p align="justify"><b>F = ma</b><br />
+    <br />
+    F = 2.0 x 2.0<br /></p>
+  
+    <p align="justify"><u>F = 4.0N</u></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Newton&rsquo;s second law of motion</b>
+    states that <i style="color:blue">the rate of change of linear momentum is directly
+    proportional to the applied force and it (change in momentum) takes in the direction of
+    the force.</i> <b style="color:crimson">Momentum</b> is the product of mass and
+    velocity of a body (<b style="color:crimson"><i style="color:blue">mv</i></b>).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="308" height="189" src="http://speedapp.ididev.com/apps/img/force1.jpg" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Analyse the above. The final velocity of each stone will depend on
+    its <i style="color:blue">mass</i> assuming equal magnitude of force is applied (by the
+    two boys). Let us substantiate this law mathematically. From the previous lessons,</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Force is defined as <b style="color:crimson">F = ma</b>;<br />
+    <br />
+    where <b>F</b> = applied force, <b>m</b> = mass of body and <b>a</b> =
+    acceleration.<br />
+    <br />
+    Acceleration is also given as;</p>
+  
+    <table>
+      <tr>
+        <td><b>a =</b></td>
+  
+        <td>
+          v &ndash; u<br />
+          <hr />
+          &zwnj; &zwnj; &zwnj; &zwnj;t
+        </td>
+      </tr>
+    </table><br />
+    <br />
+    where <i style="color:blue">v</i> = final velocity,<br />
+    <br />
+    <i style="color:blue">u</i> = initial velocity and<br />
+    <br />
+    <i style="color:blue">t</i> = time.<br />
+  
+    <p align="justify">Substituting the expression for '<b>a</b>' into</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>F = ma</b> yields</p>
+  
+    <table>
+      <tr>
+        <td><b>F = m(</b></td>
+  
+        <td>
+          <b>v &ndash; u</b><br />
+          <hr />
+          <b>&zwnj; &zwnj; &zwnj; &zwnj;t</b>
+        </td>
+  
+        <td><b>)</b></td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">which can be rearranged to have</p>
+  
+    <p align="left"></p>
+  
+    <table>
+      <tr>
+        <td><b>F =</b></td>
+  
+        <td>
+          <b>mv &ndash; mu</b><br />
+          <hr />
+          <b>&zwnj; &zwnj; &zwnj; &zwnj;t</b>
+        </td>
+      </tr>
+    </table><br />
+  
+    <p align="justify">the expression on the right side of the equation, is the <i style=
+    "color:blue">rate of change in momentum</i> and it is directly proportional to the
+    applied force. <b style="color:crimson"><i style="color:blue">mv</i></b> is the final
+    momentum, <b style="color:crimson"><i style="color:blue">mu</i></b> is the initial
+    momentum and <b style="color:crimson">t</b> is the time period during which the change
+    took place.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note that the mass of a body is constant and hence, it is a change
+    in velocity (acceleration) which matches a change in momentum.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Newton&rsquo;s third law of motion (law of
+    interactions)</b> <i style="color:blue">states that to every action there is an equal
+    and opposite reaction</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">From the picture below, the air travels downward and the balloon in
+    the opposite direction.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img width="138" height="222" src="http://speedapp.ididev.com/apps/img/force2.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Newton made it clear from his third law that if two bodies come into
+    contact or collide, they exert equal but opposite forces on each other. This means that
+    the sum of the momentums of the colliding bodies <i style="color:blue">before</i> and
+    <i style="color:blue">after</i> the collision is equal.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Since the sum of momentum before and after the collision is equal we
+    say their momentum is <i style="color:blue">conserved</i> and t his led to another
+    principle in physics known as the law of <b style="color:crimson">conservation of
+    linear momentum</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">The principle is properly stated as; <i style="color:blue">the sum
+    of linear momentums of colliding bodies before and after collision are equal if no
+    external force is applied</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Mathematically, conservation of momentum is expressed as: <i style=
+    "font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">u</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">u</i><small>2</small> = <i style=
+    "font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">v</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">v</i><small>2</small><br /></p>
+  
+    <p align="justify">Note that this equation is a general formula, because the equation
+    might change slightly depending on the direction of the velocities of the colliding
+    bodies.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+  
+    <p align="justify">Two (elastic) bodies with masses 2Kg and 4kg travel in opposite
+    directions with velocities of 3ms<sup>&ndash;1</sup> and 2ms<sup>&ndash;1</sup>
+    respectively. Find:</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">their common velocities if they stick together after
+    collision.<br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b style="color:crimson">Solution</b><br /></u></p>
+  
+    <p align="justify">If the direction of the fist body is considered positive, then that
+    of the second will be negative. The momentums before the collision will then be written
+    as:</p>
+  
+    <p align="left"><i style="font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">u</i><small>1</small> &#8213; <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">u</i><small>2</small><br /></p>
+  
+    <p align="justify">Since they stack together after the collision, they will then have a
+    common velocity, v. Hence their common momentum is given as:</p>
+  
+    <p align="left">(<i style="font-size: 25px">m</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small>)<i style="font-size: 20;">v</i><br /></p>
+  
+    <p align="justify">Equating the two expressions:</p>
+  
+    <p align="left"><i style="font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">u</i><small>1</small> &#8213; <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">u</i><small>2</small> = (<i style=
+    "font-size: 25px">m</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small>)<i style="font-size: 20;">v</i><br /></p>
+  
+    <p align="justify">2 x 3 &#8213; 4 x 2 = (2 + 4)v</p>
+  
+    <p align="left">&rArr; 6 &#8213; 8 = 6v</p>
+  
+    <p align="left">&rArr; &#8213; 2 = 6v</p>
+  
+    <p align="left">&rArr; v = &#8213; 0.5ms<sup>-1</sup><br /></p>
+  
+    <p align="justify">Since the velocity is negative, it implies they travel in the
+    direction of the second body.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 3</b><br /></p>
+  
+    <p align="justify">A body of mass 4Kg moving with a velocity of 2ms<sup>&ndash;1</sup>
+    collides with a stationary body of mass 1Kg. Find the velocity of the second body if
+    they travel separately and the first moves with a velocity of
+    1ms<sup>&ndash;1</sup>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u><b>Solution</b><br /></u></p>
+  
+    <p align="justify">the momentum of the bodies before collision is given as:<br />
+    <br />
+    the momentum of the bodies before collision is given as:<br />
+    <br />
+    <i style="font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">u</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">u</i><small>2</small> = 4 x 2 + 1 x 0.</p>
+  
+    <p align="left">after the collision, they will move in the same direction:<br />
+    <br />
+    <i style="font-size: 25px">m</i><small>1</small> <i style=
+    "font-size: 25px">v</i><small>1</small> + <i style=
+    "font-size: 25px">m</i><small>2</small> <i style=
+    "font-size: 25px">v</i><small>2</small> = 4 x 1 + 1 x <i style=
+    "font-size: 25px">v</i><small>2</small><br />
+    <br />
+    Now equating the two expressions:<br />
+    <br />
+    4 x 2 + 1 x 0. = 4 x 1 + 1 x <i style="font-size: 25px">v</i><small>2</small><br />
+    <br />
+    8 = 4 + <i style="font-size: 25px">v</i><small>2</small><br />
+    <br />
+    8 &ndash; 4 = <i style="font-size: 25px">v</i><small>2</small><br />
+    <br />
+    <i style="font-size: 25px">v</i><small>2</small> = 4ms<sup>-1</sup><br /></p>
+  
+    <p align="justify">Since v2 is positive it implies the bodies are travelling in the
+    same directions.</p>
+  
+    <p align="left"></p>
+</ion-content>

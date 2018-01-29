@@ -1,0 +1,409 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>REFLECTION</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">One of these three phenomena is likely to happen when light rays hit
+        a surface. Either the rays are <i style="color:blue">absorbed</i>, <i style=
+        "color:blue">transmitted</i> or <i style="color:blue">reflected</i>. <b style=
+        "color:crimson">Reflection</b> <i style="color:blue">is the turning back of light rays
+        from the boundary of a medium</i>. Reflection is in two forms depending on the surface
+        reflecting the rays.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>REGULAR REFLECTION: this is the reflection of a parallel beam of light in the
+          same direction by a smooth surface.<br />
+            <img src="http://speedapp.ididev.com/apps/img/refl1.png" alt="" />
+      
+            <p align="justify"></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>IRREGULAR REFLECTION: this is the reflection of a parallel beam of light in
+          different direction by a rough surface.<br />
+      
+            <p align="justify"><img src="http://speedapp.ididev.com/apps/img/refl2.png" alt="" /></p>
+          </li>
+        </ol>
+      
+        <p align="justify"><b style="color:crimson">LAWS OF REFLECTION</b><br /></p>
+      
+        <p align="justify">There are two laws governing reflection of light.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>
+            <i style="color:blue">The incident ray, reflected ray and the normal to the
+            reflecting surface lie in the same plane</i>. The <b style=
+            "color:crimson">normal</b> as shown in the picture below is an imaginary line drawn
+            perpendicularly to the reflecting surface.<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The angle of incidence (i) is equal to the angle of reflection (r).<br />
+            <img src="http://speedapp.ididev.com/apps/img/refl3.png" alt="" />
+      
+            <p align="left"><br /></p>
+          </li>
+        </ol>
+      
+        <p align="justify"><b style="color:crimson">Reflection in Mirrors</b><br /></p>
+      
+        <p align="justify">There are three types of mirror. They are:<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Plane mirro<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Converging mirror<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Diverging mirror
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="justify"><b style="color:crimson">Plane mirror</b><br /></p>
+      
+        <p align="justify">The figure below shows how images are formed in a plane mirror. The
+        image formed by a plane mirror has the following characteristics.</p>
+      
+        <p align="left"><img src="http://speedapp.ididev.com/apps/img/refl4.png" alt="" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Virtual (that is; not real)<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Upright or erect<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The same size as image<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The same distance from mirror just like the object<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Laterally inverted (left part becomes right and right becomes left).<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>Plane mirrors are usually used as dressing mirrors. They are also used in
+        periscopes.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Curved Mirrors</b><br /></p>
+      
+        <p align="justify">These are mirrors that are taken from a hollow spherical object (not
+        a circle). The two types of curved mirrors are concave or converging mirror and convex
+        or diverging mirror. If the inner surface of the sphere is the reflecting surface then
+        the mirror is known as the <b style="color:crimson">converging mirror</b> and if the
+        outer surface is the reflecting surface then it is known as <b style=
+        "color:crimson">diverging mirror.</b><br />
+        <img alt="" src="http://speedapp.ididev.com/apps/img/refl5.png" /> <img alt="" src="http://speedapp.ididev.com/apps/img/refl6.png" /></p>
+      
+        <p><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Terminologies Associated with Curved
+        Mirrors</b><br /></p>
+      
+        <p align="justify"><i style="color:blue">Center of Curvature</i><b style=
+        "color:crimson">;</b> this is the center of the sphere of which the mirror forms a
+        part. The figure on the right shows the centre of curvature c.<br />
+        <img src="http://speedapp.ididev.com/apps/img/refl7.png" alt="" /><br /></p>
+      
+        <p align="justify"><i style="color:blue">Radius of Curvature</i><b style=
+        "color:crimson">;</b> this is the distance from the center of the mirror to the center
+        of curvature.<br /></p>
+      
+        <p align="justify"><i style="color:blue">Principal Axis</i><b style=
+        "color:crimson">;</b> this is an imaginary line that runs through the centre of
+        curvature and the centre of the mirror (point v).<br /></p>
+      
+        <p align="justify"><i style="color:blue">Principal Focus</i><b style=
+        "color:crimson">;</b> this is the point on the principal axis where rays parallel to
+        the principal axis converge (or tend to diverge). The principal focuses (f) of the
+        converging and diverging mirrors are shown under the pictures on curved
+        mirrors.<br /></p>
+      
+        <p align="justify"><i style="color:blue">Focal Length</i><b style="color:crimson">;</b>
+        this is the distance from the centre (point v) of the reflecting surface to the
+        principal focus. For curved mirrors with small angular surface, the focal length is
+        one&ndash;half the radius of curvature<br />
+        <br />
+        <b>2f = c or f = c/2</b>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Property of image formed in a diverging
+        mirror</b><br /></p>
+      
+        <p align="justify">Images formed by a convex mirror have the following
+        properties.<br />
+        <img alt="" src="http://speedapp.ididev.com/apps/img/refl8.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>The image is virtual<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>It is formed behind the mirror<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Erect or upright<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Reduced or diminished<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>Since they give a wider field of view and their image is always uptight, they are
+        used as driving mirrors. It is also used in supermarkets to check shoplifting.
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Property of image formed a converging
+        mirror</b><br /></p>
+      
+        <p align="justify">The properties of the image formed by a concave mirror depend on the
+        position of the image in front of the mirror. In the lens diagrams that follow, o,
+        represents the object and, i, represents the image.<br /></p>
+      
+        <p align="justify"><i style="color:blue">When object is placed between the principal
+        focus and the mirror:</i></p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl9.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>It is virtual<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Erect<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Magnified (enlarged)<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Located behind the mirror<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><i style="color:blue">When object is placed at the principal
+        focus</i></p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl10.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>image is formed at infinity<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><i style="color:blue">When object is placed between the centre of
+        curvature and the principal focus</i></p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl11.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>the image is real<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>formed beyond the centre of curvature<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>it is inverted<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>enlarged
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="justify"><i style="color:blue">When object is placed at the centre of
+        curvature</i></p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl12.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>image is real<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>same size as object<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>located at the centre of curvature<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>inverted<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><i style="color:blue">When object is placed beyond the centre of
+        curvature</i></p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl13.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>image is real<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>it is inverted<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>it is reduced<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>located between the centre of curvature and the principal focus
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><i style="color:blue">When object is placed at infinity</i>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/refl14.png" /><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>image is real<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>inverted<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>image is diminished<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>located at the principal focus<br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol><br />
+      
+        <p align="justify">Converging mirrors are used as shaving mirrors.</p>
+      
+        <p align="left"></p>
+</ion-content>

@@ -1,5 +1,5 @@
 <ion-menu [content]="content">
-  <ion-header>
+  <ion-header >
     <ion-toolbar>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
@@ -7,9 +7,13 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+      <button icon-left (click)="goToBookmarks();" menuClose ion-item><ion-icon color="primary" name="bookmark"></ion-icon>Bookmarks </button>
+      <button icon-left (click)="goToPastQuestions();"menuClose ion-item><ion-icon color="primary" name="paper"></ion-icon>Past Questions </button>
+      <button icon-left (click)="goToLeaderBoard();"menuClose ion-item><ion-icon color="primary" name="podium"></ion-icon>Leaderboard </button>
+      <button icon-left (click)="goToShare();" menuClose ion-item><ion-icon color="primary" name="share"></ion-icon>Share SpeedApp Int.Science </button>
+      <button icon-left (click)="goToAbout();" menuClose ion-item><ion-icon color="primary" name="information-circle"></ion-icon>About SpeedApp</button>
+      <button *ngIf="global.menu_status" icon-left (click)="goToLogOut();" menuClose ion-item><ion-icon color="speedapp" name="information-circle"></ion-icon>Logout</button>
+
     </ion-list>
   </ion-content>
 

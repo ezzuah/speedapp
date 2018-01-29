@@ -1,0 +1,208 @@
+<!--
+  Generated template for the BiologicalProcessesRuminantsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>BIOLOGICAL PROCESSES IN RUMINANTS</b></p>
+<p align="justify">Female farm animals have sexual cycle similar to the menstrual cycle of a female human being. They allow themselves to be mounted by the males around some specific periods within their cycle.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The time or period within their cycle when they are prepared to receive the male is called the 
+<b style="color:crimson">heat</b>or 
+<b style="color:crimson">oestrus period</b>. The period between two heat periods is the 
+<b style="color:crimson">oestrus cycle</b>. The female shows the following signs when they are on heat:
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>The animal becomes restless.
+  <br />
+  <p align="justify"></p></li>
+  <li>The vulva swells and turns reddish.
+  <br />
+  <p align="justify"></p></li>
+  <li>There is a whitish slimy discharge (mucus) from the vulva.
+  <br />
+  <p align="justify"></p></li>
+  <li>The animal makes unusual grunting noise.
+  <br />
+  <p align="justify"></p></li>
+  <li>It sniffs at other animals. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>At this point, proven males are attracted to the heated female. If mating becomes successful, the animal goes through the 
+<b style="color:crimson">gestation period</b>. 
+<p align="left">
+  <br />
+</p>
+<p align="justify">This is the period when the foetus develops in the womb. The gestation period depends on the type of farm animal. Cattle has a gestation period of 282 days, sheep has 150 days and goat 149 days.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">If mating is unsuccessful, the farmer has to wait for another cycle. And even with that, he may not have the guarantee of successful mating on the next heat period. Farmers may avoid unsuccessful mating through 
+<i style="color:blue">artificial insemination</i>
+<b style="color:crimson">.</b>
+<br /></p>
+<p align="justify">
+<b style="color:crimson">Artificial insemination</b>is a technology in breeding 
+<i style="color:blue">where live sperm cell or spermatozoa is collected from a proven male animal and is deposited in the womb of a heated female using a syringe</i>. To collect the semen (sperm), a toy cow is used as a teaser for the male cow to
+mount.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       src="http://speedapp.ididev.com/apps/img/bior1.jpg" />
+</p>
+<p align="justify">After the male has discharged, the semen is collected and injected through the vulva to the womb of a female with a syringe. The picture on the right shows the process of artificial insemination. The collected semen can be stored
+at very low temperature for subsequent use.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">Advantages and Disadvantages of Artificial Insemination</b>
+  <br />
+</p>
+<table border="1"
+       cellpadding="1"
+       cellspacing="0"
+       width="100%">
+  <tr>
+    <th style="background-color: darkred; color: white">Advantages</th>
+    <th style="background-color: darkred; color: white">Disadvantages</th>
+  </tr>
+  <tr>
+    <td>Diluted semen can be used for several females.
+    <br /></td>
+    <td>It requires high technical knowledge.
+    <br /></td>
+  </tr>
+  <tr>
+    <td>It helps to control breeding programme.
+    <br /></td>
+    <td>It can be dangerous if carried out wrongly.
+    <br /></td>
+  </tr>
+  <tr>
+    <td>It eliminates the pressure that male animals exert on females during mating.
+    <br /></td>
+    <td>It can result in secondary infections if insemination equipments are not cleaned.
+    <br /></td>
+  </tr>
+  <tr>
+    <td>The cost of keeping a male animal is eliminated.
+    <br /></td>
+    <td>It is difficult, since heat period for animals. must be timed for a successful insemination
+    <br /></td>
+  </tr>
+</table>
+<p align="justify">
+<b style="color:crimson">Parturition</b>(delivering or giving birth), this is the expulsion (forcing out) of the young animal from the womb through the vulva by rhythmic contraction and relaxation of the abdominal muscles.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <b style="color:crimson">BREEDING</b>
+  <br />
+</p>
+<p align="justify">Each breed of animal has its own characteristic feature. Some are more resistant to diseases, others produce more milk and some others are larger in size. In this light, a farmer may want to have a breed that will be both
+resistant to diseases and produce more milk.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">This can be achieved through 
+<i style="color:blue">breeding</i>. 
+<b style="color:crimson">Breeding</b>
+<i style="color:blue">is the mating between selective male and female animals to produce young ones with certain characteristic features</i>. Some of the methods or breeding as discussed below.
+<br /></p>
+<p align="justify"></p>
+<ol>
+  <li>Cross&ndash;breeding: this is the mating of animals from two different breeds. Offspring produced under cross&ndash;breeding are known as 
+  <i style="color:blue">hybrid</i>. Hybrids mostly have traits of both parents. This mostly results in better features and thus makes better animals.
+  <br />
+  <p align="justify"></p></li>
+  <li>In&ndash;breeding: this is the mating between animals that are closely related, like a family. For example, mating between a son and mother, brother and sister, etc.
+  <br />
+  <p align="justify"></p></li>
+  <li>Line&ndash;breeding: this is the mating between animals that are less closely. Example, half brother and half sister.
+  <br />
+  <p align="justify"></p></li>
+  <li>Out&ndash;breeding: this is the mating between animals of the same breed that are not closely related. It is the opposite of in&ndash;breeding. 
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p></li>
+</ol>
+<b style="color:crimson">DIGESTION IN RUMINANTS</b>
+<br />
+<p align="justify">Ruminants are farm animals with four chambered stomach and chew the cud. The chambers are 
+<i style="color:blue">rumen, reticulum, omasum and abomasum</i>
+<b style="color:crimson">.</b>When the animal takes in fresh feed (food) it goes into the 
+<b style="color:crimson">rumen</b>where it is stored for sometime.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The rumen contains micro organisms such as bacteria and protozoa which are responsible for the digestion of cellulose and other substances that cannot be broken down by the true stomach&#8213;abomasum.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">The microbes also synthesize vitamins like K and B complex in the rumen. Absorption of the synthesized vitamin, ammonia and fatty acids starts in the rumen. The 
+<b style="color:crimson">reticulum</b>serves the same purpose like the rumen. It stores and digests the food further.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">Absorption takes place in this chamber also. The food is regurgitated (brought back) to the mouth for further chewing. This act is called 
+<b style="color:crimson">chewing the cud.</b></p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">After further chewing, the food is swallowed once again. This time it goes to the 
+<b style="color:crimson">omasun</b>where excess water is absorbed and the food is digested into finer particles. It then passes into the 
+<b style="color:crimson">abomasums</b>(true stomach) where enzymes and digestive juices are secreted on the food for complete digestion.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">From this point onwards, the process follows the normal digestive pattern of humans. You can refer from digestion in humans in the biology section. The path of the food is summarised in the picture below.</p>
+<p align="left">
+  <br />
+</p>
+<p align="justify">
+  <img alt=""
+       id="front_image"
+       name="front_image"
+       src="http://speedapp.ididev.com/apps/img/bior2.jpg" />
+  <br />
+</p></ion-content>

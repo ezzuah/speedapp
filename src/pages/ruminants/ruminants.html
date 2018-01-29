@@ -1,0 +1,220 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>RUMINANTS</b></p>
+  <p align="justify">The goat, sheep and cattle are another group of farm animals known as 
+  <i style="color:blue">ruminants</i>. 
+  <b style="color:crimson">Ruminants</b>are animals with four&ndash;chamber stomach.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Types of Cattle</b>
+    <br />
+  </p>
+  <p align="justify">Cattle are grouped based on the services they provide to man. 
+  <br /></p>
+  <p align="justify"></p>
+  <ol>
+    <li>
+    <b style="color:crimson">Beef Cattle</b>; these are cattle reared purposely for their meat. They are fast growing and puts on a lot of weight. 
+    <br />
+    <p align="justify"></p></li>
+    <li>
+    <b style="color:crimson">Diary Cattle</b>; these are reared purposely for milk production. 
+    <br />
+    <p align="justify"></p></li>
+    <li>
+    <b style="color:crimson">Dual purpose</b>; these breeds are good producers of both meat and milk. 
+    <br />
+    <p align="justify"></p></li>
+    <li>
+    <b style="color:crimson">Work Type</b>; these are bulls and bullocks used on farm land to plough and cart farm goods. 
+    <p align="left">
+      <br />
+    </p>
+    <p align="justify"></p></li>
+  </ol>
+  <b style="color:crimson">Breeds of Cattle</b>
+  <p align="justify"></p>
+  <ol>
+    <li>Guernsey 
+    <br /></li>
+    <li>
+      <p align="justify">Hereford</p>
+    </li>
+    <li>
+      <p align="justify">Beefmaster 
+      <br /></p>
+    </li>
+    <li>
+      <p align="justify">Santa Gertrudis</p>
+    </li>
+    <li>
+      <p align="justify">Sokoto Gudali</p>
+    </li>
+    <li>
+      <p align="justify">Aberdeen Angus</p>
+    </li>
+    <li>
+      <p align="justify">Brown Swiss</p>
+    </li>
+    <li>
+      <p align="justify">Ayrshire</p>
+    </li>
+    <li>
+      <p align="justify">White Fulani</p>
+    </li>
+  </ol>
+  <br />
+  <p align="justify">
+    <b style="color:crimson">Types of Sheep</b>
+    <br />
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>Meat type 
+    <br />
+    <p align="justify"></p></li>
+    <li>Milk type 
+    <br />
+    <p align="justify"></p></li>
+    <li>Wool type 
+    <br />
+    <p align="justify"></p></li>
+  </ol>
+  <p align="left">
+    <br />
+    <b style="color:crimson">Breeds of Sheep</b>
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>Fellata 
+    <p align="left"></p></li>
+    <li>
+      <p align="justify">Finnish Landrace</p>
+    </li>
+    <li>
+      <p align="justify">Australian Merino</p>
+    </li>
+    <li>
+      <p align="justify">Afrino</p>
+    </li>
+    <li>
+      <p align="justify">Altay</p>
+    </li>
+    <li>
+      <p align="justify">American black belly</p>
+    </li>
+    <li>
+      <p align="justify">Lohi</p>
+    </li>
+    <li>
+      <p align="justify">West African Dwarf</p>
+    </li>
+  </ol>
+  <p align="justify">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Types of Goat</b>
+    <br />
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>Meat type 
+    <br />
+    <p align="justify"></p></li>
+    <li>Milk type 
+    <br />
+    <p align="justify"></p></li>
+    <li>Skin type (skin and hide production). 
+    <p align="left">
+      <br />
+    </p>
+    <p align="justify"></p></li>
+  </ol>
+  <b style="color:crimson">Breeds of Goat</b>
+  <p align="justify"></p>
+  <ol>
+    <li>Angora 
+    <p align="left"></p></li>
+    <li>
+      <p align="justify">LaManchas</p>
+    </li>
+    <li>
+      <p align="justify">South African meat goat</p>
+    </li>
+    <li>
+      <p align="justify">Oberhaslis</p>
+    </li>
+    <li>
+      <p align="justify">West African Dwarf</p>
+    </li>
+    <li>
+      <p align="justify">Toggenburgs</p>
+    </li>
+    <li>
+      <p align="justify">British Saanen</p>
+    </li>
+    <li>
+      <p align="justify">Moxoto</p>
+    </li>
+    <li>
+      <p align="justify">Mubende</p>
+      <p align="justify">
+        <br />
+      </p>
+    </li>
+  </ol>
+  <p align="justify">
+    <b style="color:crimson">Systems of Management in Livestock</b>
+    <br />
+  </p>
+  <p align="justify">Like poultry, ruminants have three management systems, they are</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <ol>
+    <li>
+    <b style="color:crimson">Extensive System</b>; this is the system of management where the animals are sometimes provided with a house. They are left to graze over a wide area under the supervision of herdsmen. 
+    <br />
+    <p align="justify"></p></li>
+    <li>
+    <b style="color:crimson">Semi&ndash;intensive</b>; under this system, the animals are provided with permanent houses. The farmer provides part of their food and they top it up with grazing. 
+    <br />
+    <p align="justify"></p></li>
+    <li>
+    <b style="color:crimson">Intensive</b>; under this system, the animals are kept in a permanent house 24&ndash;7 and the farmer provides their entire food requirement. 
+    <br /></li>
+  </ol>
+  <br />
+</ion-content>

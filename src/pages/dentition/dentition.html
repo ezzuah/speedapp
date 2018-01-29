@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+  <P style="word-wrap : break-word;">
+    <p align="center" style="color:black;font-size: 26px"><b>DENTITION</b></p>
+  <br />
+  <p align="justify"></p>
+  <p align="justify">Each of us has got some set of teeth. At your age, I know you are aware that these teeth help us to break most of the food we take in down. The number and the arrangement of teeth in our mouth are called 
+  <b style="color:crimson">dentition</b>. Most animals have teeth and they vary in sizes and shapes. We will briefly consider the dentition of some few mammals especially, that of humans. The picture on the below shows a labeled cross section of the
+  mammalian tooth.</p>
+  <p align="left">
+    <u>
+      <br />
+    </u>
+  </p>
+  <p align="justify">
+    <u>
+      <img alt=""
+           height="280"
+           src="http://speedapp.ididev.com/apps/img/dent1.jpg"
+           width="300" />
+    </u>
+  </p>
+  <p align="justify">A tooth comprises, mainly of two parts: the crown and the root. The 
+  <b style="color:crimson">enamel</b>is that white outermost layer of the 
+  <b style="color:crimson">crown</b>that we see each time we look at our teeth in the mirror. In fact, it is the hardest material in every mammal. It is this portion called crown that is sometimes replaced by the dentist when we get tooth problems.
+  The 
+  <b style="color:crimson">root</b>, on the other hand, is buried in the jawbone. 
+  <b style="color:crimson">Dentin</b>(also dentine), which is below the enamel, has within it the 
+  <b style="color:crimson">pulp</b>which contains all the nerve fibers and blood capillaries in the tooth. Unless the 
+  <b style="color:crimson">periodontal membrane</b>is inflamed, the tooth cannot get loose. This periodontal membrane together with the 
+  <b style="color:crimson">cement</b>holds the tooth firm at its position.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">There are four types of teeth in most mammals. They are the incisors, canines, molars and premolars. The 
+  <b style="color:crimson">incisors</b>are broad, flat with cutting edges and are shaped as a chisel. For this reason, the incisor cuts the food we eat into pieces. 
+  <b style="color:crimson">Canines</b>are pointed and conical. They are used for tearing meat and flesh. 
+  <b style="color:crimson">Premolars and molars</b>are flat and located a little from front deep into the mouth. They are used for grinding.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Tooth decay</b>(dental caries) commonly known as 
+  <b style="color:crimson">cavity</b>occurs when materials within the mouth metabolize sugar and give off acids which erode the teeth. Gum diseases are more likely to occur with aging. A cavity can be controlled by eating limited amount of sweets
+  and brushing the teeth preferably always after eating. Inflammation of the gums can spread to the periodontal membrane which, as noted earlier, lines the tooth socket. Someone with 
+  <b style="color:crimson">periodontitis</b>experiences a loss of bone and loosening of the teeth so that extensive dental work may be required.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b>DENTITION OF A CARNIVORE</b>
+    <br />
+  </p>
+  <p align="justify">Carnivores feed mostly on the flesh of other animals. Examples are lions, tigers, hyenas, dogs, etc. Carnivores have small close&ndash; fitting incisors which are used for cutting pieces of meat. Their canine tooth is shaped
+  like a dagger and makes it easy to pierce and tear their prey. Carnivores also possess huge 
+  <i style="color:blue">carnassials</i>(which consist of the upper premolar and the first lower molar) and they use this to shear flesh from their bone since those teeth are sharp. The picture on the right shows the dentition of a canine.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="288"
+         src="http://speedapp.ididev.com/apps/img/dent2.jpg"
+         width="288" />
+  </p>
+  <p align="justify">
+    <b>DENTITION OF AN HERBIVORE</b>
+    <br />
+  </p>
+  <p align="justify">These ones feed on green plants. Examples are cows, sheep, etc. Herbivores have no incisors in the upper jaw but there is an almost flat surface there and that is where the lower incisors press against and facilitates biting.
+  There are no canine teeth. The premolars and molars are used basically for chewing and grinding. Herbivores also possess a 
+  <b style="color:crimson">diastema</b>(a wide gap between the lower incisors and the premolars) where bitten grass linger and caressed by the tongue before taken into the premolars and molars for chewing. The picture here on the right shows the
+  dentition of an herbivore.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         height="300"
+         src="http://speedapp.ididev.com/apps/img/dent3.jpg"
+         width="300" />
+  </p>
+  <p align="justify">All mammals possess a milk and permanent dentition at one time in our lives. 
+  <b style="color:crimson">Milk dentition</b>or teeth are smaller and short&ndash;lived. They are also fewer in numbers. As its name implies, the 
+  <b style="color:crimson">permanent dentition</b>are stronger and lives with us till our death unless, of course, we lose them by accident or any of the teeth diseases discussed above. We do need our teeth so we have to take good care of them.</p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>

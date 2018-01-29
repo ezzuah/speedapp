@@ -1,0 +1,269 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+    <ion-title>chemical-bond</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>CHEMICAL BOND</b></p><br />
+  
+    <p align="justify">In the previous topic, we discussed the atomic structure, and closed
+    the chapter with electron configuration. It was clear at the end (of the chapter) that
+    the duplet (two valence electrons) and octet (eight valence electrons) structures are
+    the stable electronic configurations.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">All atoms want to have that form of stability, with the exception of
+    helium (which already has duplet), and neon, argon, krypton, xenon and radon (which
+    also have octets). Since the named atoms have stable electronic structures they are
+    unreactive (that is, they hardly go into bonding).</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Atoms (without stable structures) attain stability through <i style=
+    "color: blue">interatomic bonding</i> only. <b style="color: crimson">Interatomic
+    bonds</b> are forces that hold two or more atoms together to form a single particle.
+    The three types of interatomic bonds are <i>covalent, ionic and metallic bonds</i>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Ionic or Electrovalent Bond</b></p>
+  
+    <p align="justify">Some atoms (of elements) have strong affinity (attraction) for
+    electrons and are called <b style="color: crimson">electronegative atoms</b>. Others
+    also have very little affinity for electrons and they are called <b style=
+    "color: crimson">electropositive atoms</b>. When an electronegative atom bonds with an
+    electropositive atom, an electron(s) is pulled out of the electropositive atom by the
+    electronegative atom. The loss of electron leaves a positive charge(s) on the
+    electropositive atom and the electronegative attains a negative charge.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Note: When an atom loose or gain electron, it becomes an ion. A
+    positively charged ion is called a <b style="color: crimson">cation</b> and a
+    negatively charged ion is an <b style="color: crimson">anion</b>.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">These charges (positive and negative) then attract each other. The
+    attraction constitutes the <i>ionic bond</i>. <b style="color: crimson">Ionic bond</b>
+    is an <i>electrostatic force of attraction between a cation and an anion</i>. The first
+    picture below is the transfer of electron in ionic bond formation and the second is the
+    ionic crystal. Note that the number of valence electrons in both sodium and chlorine
+    after the electron transfer is eight (octet structure). Ionic bond exists in compounds
+    only and compound whose building blocks are <i style="color: crimson">ionic unit</i>
+    are called <b style="color: crimson">ionic compounds</b>. Example is sodium chloride,
+    magnesium oxide, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/bond1.png" alt="" /></p>
+  
+    <p align="left"><img src="http://speedapp.ididev.com/apps/img/bond2.png" alt="" /><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Covalent bond</b></p>
+  
+    <p align="justify">This is a bond formed as a result of sharing of valence electrons
+    between two atoms. The electronegativity difference between the bonding atoms must be
+    small or negligible. Particles held together by covalent bonds are called
+    <b>molecules</b>. Covalent bonds exist in both elements (hydrogen, nitrogen, bromine,
+    etc.) and compounds (water, glucose, candle wax, etc.). Compounds that have molecules
+    as their building blocks are called <b>molecular compounds</b>. Examples are the water
+    and hydrogen molecules as shown below. Hydrogen molecules will aggregate to form
+    hydrogen element and water molecules will form water (as a compound).</p>
+  
+    <p align="left">The pictures below are water and hydrogen molecules
+    respectively.<br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/bond3.png" alt="" /></p>
+  
+    <p align="left"></p><br />
+    <i style="color: blue">Note the number of electrons surrounding each atom, hydrogen is
+    two and oxygen is eight.</i>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><i style="color: crimson">Co-ordinate Covalent or Dative Bond</i>;
+    in this kind of bond, the pair of electrons to be shared among the bonding atoms is
+    donated by a single atom, as in the ammonium ion. The atom that donates the pair of
+    electrons is called the <b>DONOR</b> and the one that accepts the electrons is called
+    the <b>ACCEPTOR</b>. &mdash;&mdash;</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/bond4.png" alt="" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">[ need link to bonding explanations]<br />
+    <i style="color: blue">You should know that each single bond is made up of two
+    electrons.</i></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Metallic bond</b></p>
+  
+    <p align="justify">Electrons are kept in their orbitals as a result of attraction
+    between them and protons in the nucleus of an atom. Most metals have 1, 2 or 3 valence
+    electrons and they easily loose them because of the weak attraction of the protons on
+    these electrons. This weak attraction of metals on their valence electrons helps in the
+    formation of metallic bonds. Since the valence electrons are weakly held in the metal
+    atom, they fall out of the atom into spaces within the metallic crystal.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/bond5.jpg" alt="" width="479" height="204" /></p>
+  
+    <p align="justify">The valence electrons are then said to be <b style=
+    "color: crimson">delocalised</b>, because they are not held in one <i>locality</i> or
+    as part of a specific ion or bond. Delocalization transforms the metal atoms into
+    cations. A force of attraction is then built between the delocalised electrons and the
+    cations. This force of attraction constitutes the <i>metallic bond</i>. <b style=
+    "color: crimson">Metallic bond</b> is therefore defined as the attractive force between
+    the <i>positively charged ions and the delocalized electrons</i> of a metal. The free
+    movement of free or delocalized electrons makes metals good conductors of heat and
+    electricity.</p>
+  
+    <p align="left"><br />
+    <b>Physical properties of ionic and molecular (covalent) compounds</b>:<br /></p>
+  
+    <table cellpadding="1" cellspacing="1" align="" border="1" width="100%">
+      <tr style="background-color: brown; color: azure">
+        <td><b>Ionic compounds<br /></b></td>
+  
+        <td>Molecular compounds</td>
+      </tr>
+  
+      <tr>
+        <td>They conduct electricity when melted or in solutions.</td>
+  
+        <td>They do not conduct electricity.<br /></td>
+      </tr>
+  
+      <tr>
+        <td>They have high melting and boiling points.<br /></td>
+  
+        <td>They usually have low melting and boiling points.<br /></td>
+      </tr>
+  
+      <tr>
+        <td>They are often soluble in water.<br /></td>
+  
+        <td>Their solubility varies, but usually it is lower than that of ionic
+        compounds.<br /></td>
+      </tr>
+    </table>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Molecular Mass and Formula Mass</b><br /></p>
+  
+    <p align="justify">Atoms have masses and it is known as <i>atomic mass</i>. When atoms
+    combine to form a molecule, the molecule will have a mass which will be equal to the
+    sum of the masses of the individual atoms making up the molecule. Such a mass is called
+    the <b style="color: crimson">molecular mass</b>. This name is incorrect when applied
+    to an ionic substance. Sodium chloride, NaCl, is an ionic substance and does not exist
+    in molecular form. A better name for the <i>mass</i> of an ionic substance is <b style=
+    "color: crimson">formula mass</b>. For example, the atomic mass of one hydrogen atom is
+    1u and that of oxygen is 16u. Therefore, water molecule which is made up of two
+    hydrogen atoms and one oxygen atom will have a mass of</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H<sub>2</sub>O</p>
+  
+    <p align="left"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">2(H) + O = H<sub>2</sub>O.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">2(1) + 16 = 18u.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color: crimson">Chemical bond</b> is a force that holds
+    two or more atoms together as a result of a shift or transfer of valence electrons
+    between the atoms. There are two types of chemical bonds. They are <i style=
+    "color: crimson">interatomic</i> (between atoms or hold atoms) and <i style=
+    "color: crimson">intermolecular</i> (between molecules or hold molecules) bonds.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>INTERMOLECULAR BONDS</b><br /></p>
+  
+    <p align="justify">After the various building blocks (that is, ions or molecules) of
+    matter have been formed, they are held together by other forces. In ionic compounds,
+    the ionic bonds exist throughout the entire compound; as a result, all ionic compounds
+    are solids at room temperature. This is not so for molecular compounds. After the
+    molecules have been formed through interatomic bonding, another force (intermolecular
+    bonds) holds the molecules together to form the entire material. <b style=
+    "color: crimson">Intermolecular bonds</b> are forces that hold molecules together. The
+    strength of intermolecular bonds gives rise to three different physical properties
+    known as the <b style="color: crimson">states of matter</b>. The three states of matter
+    are solids, liquids and gases.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Solids</b> are objects that have definite volume and shape as a
+    result of strong intermolecular bonds holding the building blocks together. The
+    particles of a solid vibrate at their fixed positions and this is the only movement
+    they undergo. Examples of solid are wood, stone, cup, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Liquids</b> are substances which have definite volume but no
+    definite shape. The particles are loosely packed due to relatively weak intermolecular
+    forces. Unlike solids, the particles of a liquid can slide over each other and this
+    makes liquids flow. Examples are water, petrol, kerosene, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b>Gases</b> are substances with no definite volume or shape. Their
+    building blocks are far apart. The intermolecular forces holding particles of a gas
+    together are negligible. Examples are air, chlorine gas, water vapour, etc.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Any substance can exist in any of the three states of matter
+    depending on the physical conditions (temprature and pressure) it is subjecred to. As
+    the temperature of a substance increases, the strength of the intermiolecular forces
+    holding its particles together decreases. For instance, water at a temperature of
+    0<sup>o</sup>C and a pressure of 1 atmosphere exist as solid(ice, strong intermolecular
+    forces), at 25<sup>o</sup>C and a pressure of 1 atmosphre, it exist as a liquid(liquid
+    water, relatively loose intermolecular forces)and at 100<sup>o</sup>C and 1 atmosphere
+    pressure it exist as a gas(water vapour, strength of intermolecular forces is
+    neglegible).</p>
+  
+    <p align="left"></p>
+</ion-content>

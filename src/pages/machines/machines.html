@@ -1,0 +1,820 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+    <p align="center" style="color:black;font-size: 26px">
+        <b>MACHINES</b></p>
+      
+        <p style="word-wrap : break-word;"></p>
+      
+        <p align="justify">How easy do you think it will be if you are to uncork a mineral or
+        nail a wood with your bare hands? <i style="color:blue">Machines</i> make it easier
+        when carrying out some of these tasks. By definition, <b style=
+        "color:crimson">machine</b> is a device that helps us to do work more easily.</p>
+      
+        <p align="left"><!--
+      
+          lngLen = Len("Visual Basic")    ' lngLen = 12
+      
+      
+          Dim X As Integer
+         Dim Y As Integer
+         Dim cnt As Integer 'Our counter.
+         
+         cnt = 1
+         Do While cnt < 8
+            Debug.Print X
+            X = Y + X
+            Y = X - Y
+         
+            cnt = cnt + 1
+         Loop
+      
+      
+          For number As Double = 2 To 0 Step -0.25
+              Debug.Write(number.ToString & " ")
+          Next
+      
+      ========================================================================================
+          Baseline Survey
+      
+          Market Survey/Field Survey
+      
+          Business and Community Development Plans
+      
+          Data Entry and Analysis
+      
+      
+          Project Proposal Writing
+      
+      
+          Academic Research Works / Thesis 
+      
+      
+          Project Proposal Writing
+      
+          Training
+      -->
+        <br /></p>
+      
+        <p align="justify">The energy put into a machine for it to do work is called <b style=
+        "color:crimson">work input</b> and the work done by the machine is called <b style=
+        "color:crimson">work output</b>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Work output is always less than the work input because some amount
+        of the input will be used to overcome friction which will generate heat, at times sound
+        and/or light (fire). It therefore follows that, the <i style=
+        "color:blue">efficiency</i> of a machine is always less than hundred percent (100%).
+        <b style="color:crimson">Efficiency</b> is a measure of how effective a machine, system
+        or a process is.</p>
+      
+        <p align="left">Efficiency (&#414;) is defined as:<br /></p>
+      
+        <table>
+          <tr>
+            <td><b style="font-size: 18px">&#414; =</b></td>
+      
+            <td>
+              <b>work output</b><br />
+              <hr />
+              <b>work input</b>
+            </td>
+      
+            <td><b>x 100</b></td>
+          </tr>
+        </table><br />
+      
+        <p align="justify"><br /></p>
+      
+        <p align="justify">There are two other parameters that can be used to measure the
+        performance of a machine and they are:</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Mechanical advantage (MA);<br />
+            <br />
+      
+            <table>
+              <tr>
+                <td><b style="font-size: 18px">MA =</b></td>
+      
+                <td>
+                  <b>load</b><br />
+                  <hr />
+                  <b>effort</b>
+                </td>
+      
+                <td></td>
+              </tr>
+            </table>
+      
+            <p align="left">To remember: MALE = where<br />
+            <br />
+            <b style="color:crimson">M</b> = mechanical,<br />
+            <br />
+            <b style="color:crimson">A</b> = advantage,<br />
+            <br />
+            <b style="color:crimson">L</b> = load and the<br />
+            <br />
+            <b style="color:crimson">E</b> = effort.</p>
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Velocity ratio (VR);<br />
+            <br />
+      
+            <table>
+              <tr>
+                <td><b style="font-size: 18px">VR =</b></td>
+      
+                <td>
+                  <b>distance travelled by effort</b><br />
+                  <hr />
+                  <b>distance travelled by load</b>
+                </td>
+      
+                <td></td>
+              </tr>
+            </table><br />
+      
+            <p align="justify"></p>
+          </li>
+        </ol>Efficiency can also be defined based on the two parameters above as:
+      
+        <p align="left"></p>
+      
+        <table>
+          <tr>
+            <td><b style="font-size: 18px">&#414; =</b></td>
+      
+            <td>
+              <b>MA</b><br />
+              <hr />
+              <b>VR</b>
+            </td>
+      
+            <td><b>x 100</b></td>
+          </tr>
+        </table><br />
+      
+        <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+      
+        <p align="justify">A machine requires an effort (input force) of 300N to raise a load
+        of 15,000N through a height of 10m. Calculate its mechanical advantage.<br /></p>
+      
+        <p align="justify"><u>Solution<br /></u></p>
+      
+        <table>
+          <tr>
+            <td>MA =</td>
+      
+            <td>
+              load<br />
+              <hr />
+              effort
+            </td>
+          </tr>
+      
+          <tr>
+            <td>.</td>
+      
+            <td>
+              <br />
+              <hr />
+            </td>
+          </tr>
+      
+          <tr>
+            <td>MA =</td>
+      
+            <td>
+              15000<br />
+              <hr />
+              300
+            </td>
+          </tr>
+        </table><br />
+        <u>MA = 30</u><br />
+        <br />
+      
+        <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+      
+        <p align="justify">From the figure below what is the;<br />
+        <br />
+        <img width="301" height="153" src="http://speedapp.ididev.com/apps/img/mach1.png" alt="" /></p>
+      
+        <p align="left"></p>
+      
+        <ol type="a">
+          <li>Maximum weight of the ball beyond which the 2N force cannot lift or support?
+      
+            <p align="left"></p>
+          </li>
+      
+          <li>Mechanical advantage if the weight of the ball is 4N.
+      
+            <p align="left"></p>
+          </li>
+      
+          <li>Velocity ratio
+      
+            <p align="left"></p>
+          </li>
+      
+          <li>Efficiency of the machine based on question &lsquo;b&rsquo; and &lsquo;c&rsquo;
+          above
+      
+            <p align="left"></p>
+          </li>
+        </ol><br />
+      
+        <p align="justify"><u>Solution</u></p>
+      
+        <p align="left"><u><br /></u></p>
+      
+        <p align="justify"></p>
+      
+        <ol type="a">
+          <li>Note: <b>Force x Force distance &le; weight x weight distance;</b><br />
+            <br />
+            Work done = force x distance;<br />
+            <br />
+            Work done = 2 x 12 = 24J<br />
+      
+            <p align="justify">24J &le; (weight of ball x 4m),</p>
+      
+            <p align="left"></p>
+      
+            <table>
+              <tr>
+                <td>&rArr; weight of ball</td>
+      
+                <td>=</td>
+      
+                <td>
+                  24J<br />
+                  <hr />
+                  4m
+                </td>
+              </tr>
+            </table><br />
+            <u>weight of ball = 6 N</u>
+      
+            <p align="left"><br /></p>
+          </li>
+      
+          <li>The mechanical advantage:<br />
+      
+            <table>
+              <tr>
+                <td>Mechanical advantage, M. A =</td>
+      
+                <td>
+                  load<br />
+                  <hr />
+                  effort
+                </td>
+              </tr>
+      
+              <tr>
+                <td>.</td>
+              </tr>
+      
+              <tr>
+                <td>Mechanical advantage, M. A =</td>
+      
+                <td>
+                  4<br />
+                  <hr />
+                  2
+                </td>
+              </tr>
+            </table><br />
+            <u>Mechanical advantage, M. A= 2</u>
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>The velocity ratio:
+      
+            <p align="left"></p>
+      
+            <table>
+              <tr>
+                <td>Velocity ratio, VR =</td>
+      
+                <td>
+                  effort distance<br />
+                  <hr />
+                  load distance
+                </td>
+              </tr>
+            </table>
+      
+            <table>
+              <tr>
+                <td>.</td>
+              </tr>
+      
+              <tr>
+                <td>Velocity ratio, VR =</td>
+      
+                <td>
+                  12<br />
+                  <hr />
+                  4
+                </td>
+              </tr>
+            </table><br />
+            <u>VR = 3</u>
+      
+            <p align="left"><br /></p>
+          </li>
+      
+          <li>The efficiency of the machine (&#414;):<br />
+      
+            <p align="justify">, = x 100 = x 100 = 66.7%</p>
+      
+            <p align="left"></p>
+      
+            <table>
+              <tr>
+                <td>.</td>
+              </tr>
+      
+              <tr>
+                <td>Efficiency, &#414; =</td>
+      
+                <td>
+                  MA<br />
+                  <hr />
+                  VR
+                </td>
+              </tr>
+      
+              <tr>
+                <td>.</td>
+              </tr>
+      
+              <tr>
+                <td>Efficiency, &#414; =</td>
+      
+                <td>
+                  2<br />
+                  <hr />
+                  3
+                </td>
+              </tr>
+            </table><br />
+            <u>&#414; = 66.67%</u>
+          </li>
+        </ol><br />
+      
+        <p align="justify"><b style="color:crimson">Example 3</b><br /></p>
+      
+        <p align="justify">A machine has a velocity ratio of 8 and an efficiency of 92%.
+        Calculate its M. A.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><u>Solution<br /></u></p>
+      
+        <p align="justify">Efficiency, = x 100 M. A = x VR</p>
+      
+        <p align="left"></p>
+      
+        <table>
+          <tr>
+            <td>.</td>
+          </tr>
+      
+          <tr>
+            <td>Efficiency, &#414; =</td>
+      
+            <td>
+              MA<br />
+              <hr />
+              VR
+            </td>
+      
+            <td>x 100</td>
+          </tr>
+      
+          <tr>
+            <td>.</td>
+          </tr>
+        </table>
+      
+        <table>
+          <tr>
+            <td>&rArr; MA =</td>
+      
+            <td>
+              &#414;<br />
+              <hr />
+              100
+            </td>
+      
+            <td>x VR</td>
+          </tr>
+      
+          <tr>
+            <td>.</td>
+          </tr>
+      
+          <tr>
+            <td>&rArr; MA =</td>
+      
+            <td>
+              92<br />
+              <hr />
+              100
+            </td>
+      
+            <td>x 8</td>
+          </tr>
+        </table><br />
+      
+        <p align="justify"><u>MA = 7.36</u></p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Classification of Machines</b><br /></p>
+      
+        <p align="justify">Machines can be grouped into 6 categories. They are<br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>Lever<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Pulleys<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Screw<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Wheel and axle<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Inclined plane and wedge<br />
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Hydraulic press
+      
+            <p align="left"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol><b style="color:crimson">The lever</b><br />
+      
+        <p align="justify">The lever is a rigid bar which turns freely around a fixed point
+        known as <b style="color:crimson">pivot</b> or <b style=
+        "color:crimson">fulcrum.</b><br /></p>
+      
+        <p align="justify">There are three classes of lever</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"></p>
+      
+        <ol>
+          <li>First class levers; this has the pivot between the load and the effort (See
+          picture below).
+      
+            <p align="left"><img src="http://speedapp.ididev.com/apps/img/mach2a.jpg" alt="" width="187" height=
+            "413" /><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Second class levers; this has the load between the pivot and the effort. (See
+          picture below).
+      
+            <p align="left"><img src="http://speedapp.ididev.com/apps/img/mach2b.jpg" alt="" width="191" height=
+            "413" /><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+      
+          <li>Third class levers; this has the effort between the load and the pivot. (See
+          picture below).
+      
+            <p align="left"><img src="http://speedapp.ididev.com/apps/img/mach2c.jpg" alt="" width="183" height="413" /></p>
+      
+            <p align="justify"><br /></p>
+      
+            <p align="justify"></p>
+          </li>
+        </ol>
+      
+        <p align="justify"><b style="color:crimson">PULLEY</b><br /></p>
+      
+        <p align="justify">The <b style="color:crimson">pulley</b> is a wheel that turns on an
+        <i style="color:blue">axle</i>, which in turn is mounted on a <i style=
+        "color:blue">frame</i>. The picture below shows a pulley system. The top pulley is
+        fixed whereas the one below is movable. If a force of 50N is applied it generates a
+        tension (force) of 50N in each of the (other) two strands (ropes) that are supporting
+        the load (100N).</p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/mach3.png" /></p>
+      
+        <table>
+          <tr>
+            <td>M.A</td>
+      
+            <td>=</td>
+      
+            <td>
+              100<br />
+              <hr />
+              50
+            </td>
+          </tr>
+        </table><br />
+        <u>M. A. = 2</u><br />
+      
+        <p align="justify">It is also seen from the diagram above that if the applied force
+        (effort) moves through a distance of 20cm, the load will move through 10cm.</p>
+      
+        <p align="left"></p>
+      
+        <table>
+          <tr>
+            <td>V.R</td>
+      
+            <td>=</td>
+      
+            <td>
+              20<br />
+              <hr />
+              10
+            </td>
+          </tr>
+        </table><u>V.R. = 2</u>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">Practically, the M.A. will be less than 2 because part of the force
+        will be used to overcome friction and support the weight of the <i style=
+        "color:blue">movable pulley</i>.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><img alt="" src="http://speedapp.ididev.com/apps/img/mach4a.png" /><br />
+        <br />
+        The diagrams &lsquo;a&rsquo; shown in the figure above is a <i style=
+        "color:blue">single&ndash;fixed pulley</i>. If the applied force moves through a
+        distance 's', the load will also move through a distance s. The applied force equals
+        the load.</p>
+      
+        <p align="left"></p>
+      
+        <table>
+          <tr>
+            <td>M.A</td>
+      
+            <td>=</td>
+      
+            <td>
+              F<br />
+              <hr />
+              F
+            </td>
+      
+            <td>= 1</td>
+          </tr>
+      
+          <tr>
+            <td>.</td>
+      
+            <td>
+              <br />
+              <hr />
+            </td>
+      
+            <td></td>
+          </tr>
+      
+          <tr>
+            <td>V.R</td>
+      
+            <td>=</td>
+      
+            <td>
+              s<br />
+              <hr />
+              s
+            </td>
+      
+            <td>= 1</td>
+          </tr>
+        </table><br />
+        <br />
+        <br />
+      
+        <p align="justify">Applying the same rule of thought to the diagram below, if the
+        effort moves through a distance 2S, the load will move S. and the weight of the load is
+        twice the effort. Therefore</p>
+      
+        <p align="left"><img alt="" src="http://speedapp.ididev.com/apps/img/mach4b.png" /></p>
+      
+        <table>
+          <tr>
+            <td>M.A</td>
+      
+            <td>=</td>
+      
+            <td>
+              2F<br />
+              <hr />
+              F
+            </td>
+      
+            <td>= 2</td>
+          </tr>
+      
+          <tr>
+            <td>.</td>
+      
+            <td>
+              <br />
+              <hr />
+            </td>
+      
+            <td></td>
+          </tr>
+      
+          <tr>
+            <td>V.R</td>
+      
+            <td>=</td>
+      
+            <td>
+              2s<br />
+              <hr />
+              s
+            </td>
+      
+            <td>= 2</td>
+          </tr>
+        </table><br />
+        <br />
+      
+        <p align="justify">A force of 25N is applied and that generates a tension (force) of
+        25N in the other four strands that is supporting the load (100N).</p>
+      
+        <p align="left"><img alt="" height="360" width="260" src="http://speedapp.ididev.com/apps/img/mach5.png" /><br /></p>
+      
+        <table>
+          <tr>
+            <td>M.A</td>
+      
+            <td>=</td>
+      
+            <td>
+              100<br />
+              <hr />
+              25
+            </td>
+      
+            <td>= 4</td>
+          </tr>
+        </table><br />
+        <br />
+        <u>M.A. = 4</u><br />
+      
+        <p align="justify">Also the effort moved through a distance of 40cm whilst the load
+        moved through a distance of 10cm.</p>
+      
+        <p align="left"></p>
+      
+        <table>
+          <tr>
+            <td>V.R</td>
+      
+            <td>=</td>
+      
+            <td>
+              40<br />
+              <hr />
+              10
+            </td>
+      
+            <td>= 4</td>
+          </tr>
+        </table><br />
+        <br />
+        <u>V.R = 4</u><br />
+        <br />
+        <b>Note:</b> <i style="color:blue">that the M. A. of any pulley system is always equal
+        to the number of strands supporting the load. Go through all the previous diagrams to
+        confirm this.</i>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify"><b style="color:crimson">Inclined Plane</b><br /></p>
+      
+        <p align="justify">The mechanical advantage and velocity ratio of an inclined plane
+        under <i style="color:blue">ideal situation</i> (no friction) are equal.</p>
+      
+        <p align="left"><br /></p>
+      
+        <p align="justify">The V.R. of the plane shown on the left is given by,</p>
+      
+        <p align="left"><br /></p>
+      
+        <table>
+          <tr>
+            <td>V.R</td>
+      
+            <td>=</td>
+      
+            <td>
+              distance moved by effort<br />
+              <hr />
+              distance moved by load
+            </td>
+      
+            <td></td>
+      
+            <td>=</td>
+      
+            <td>
+              r<br />
+              <hr />
+              h
+            </td>
+          </tr>
+        </table><br />
+      
+        <table>
+          <tr>
+            <td>Hence M.A.</td>
+      
+            <td>=</td>
+      
+            <td>
+              r<br />
+              <hr />
+              h
+            </td>
+          </tr>
+        </table><br />
+      
+        <p align="justify"></p>
+      
+        <p align="left"><br /></p>
+</ion-content>

@@ -1,0 +1,429 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+
+    <p style="word-wrap : break-word;"></p>
+
+    <p align="center" style="color:black;font-size: 26px">
+    <b>CHEMICAL REACTIONS AND EQUATIONS</b></p><br />
+  
+    <p align="justify">What happens to the gas in a gas cylinder when a gas stove is
+    lighted? Chemist analysed the process and realized that the gas contains a substance
+    called methane (CH<sub>4</sub>). This substance combines with oxygen (O<sub>2</sub>) in
+    the air to form carbon dioxide (CO<sub>2</sub>) and water
+    (H<sub>2</sub>O)&ndash;vapour. In the picture below, the chemical formulas of the named
+    compounds have been combined in a certain pattern to represent the chemical change that
+    occurs.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><img src="http://speedapp.ididev.com/apps/img/eqn1.png" alt="" name="front_image" id=
+    "front_image" /></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Chemical reaction</b> is the process by
+    which one or more substances are changed into one or more other substances. The
+    equation written to represent the chemical change that occurred in a chemical reaction
+    is called a <b style="color:crimson">chemical equation.</b> To write an equation that
+    will accurately represent a chemical reaction, you perform these three things</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Determine the reactants and the products. Taking the figure above for instace,
+      the reactants are CH<sub>4</sub> and O<sub>2</sub> whilst the products are
+      CO<sub>2</sub> and H<sub>2</sub>O.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Group the reactants on one side (mostly left) and the products on another side
+      (right) after which you link them with an arrow pointing to the products.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Balance the equation. This means show the same number of atoms of each element on
+      both the reactants and products sides. The equation under the picture above is an
+      example of a balanced chemical eqaution. The numbers of the various atoms on each
+      side of the equation are equal.
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Note that the alphabet &lsquo;g&rsquo; in parenthesis indicates that the
+    substances are gases. Solid state is represented by &lsquo;s&rsquo;, liquid stated by
+    &lsquo;l&rsquo; and &lsquo;aq&rsquo; for aqueous state. Aqueous simply means in
+    solution. For example, NaCl disolved in water will be represented as NaCl(aq).
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Balancing chemical equation</b><br /></p>
+  
+    <p align="justify">There is no rule to follow in balacing chemical equations. However,
+    keeping either single or even coefficients makes the balancing relatively easy in most
+    problems.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 1</b><br /></p>
+  
+    <p align="justify">Sodium reacts with water to form sodium hydroxide and hydrogen gas.
+    Write and balance a chemical equations for this reaction.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><u>Solution</u></p>
+  
+    <p align="left"><u><br /></u></p>
+  
+    <p align="justify">Sodium = Na</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Water = H<sub>2</sub>O</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Sodium hydroxide = NaOH(refer to lesson 5 for better
+    understanding)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Hydrogen gas = H<sub>2</sub></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Grouping reactants and products:</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na + H<sub>2</sub>O <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png"
+    alt="" /> NaOH + H<sub>2</sub></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Na = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 3 (1 atom in NaOH and 2 in Hydrogen gas)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Putting 2 in front of NaOH to get an even number for the H atoms
+    yields 4 H atoms and 2 O atoms on the left.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na + H<sub>2</sub>O <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png"
+    alt="" /> 2NaOH + H<sub>2</sub></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Na = 2</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 4</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O =2</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Now, balancing the O by putting 2 before H2O</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na + 2H<sub>2</sub>O <img width="62" height="10" src="http://speedapp.ididev.com/apps/img/arrow.png"
+    alt="" /> 2NaOH + H<sub>2</sub></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Na = 2; not balanced.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 4
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 4 (2 in NaOH and 2 in H2 meaning it is balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O =2 (O is also balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Putting 2 before Na balances the equation</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">2Na + 2H<sub>2</sub>O <img width="62" height="10" src=
+    "img/arrow.png" alt="" /> 2NaOH + H<sub>2</sub></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Na = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Na = 2 (balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 4
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 4 (balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O =2 (O balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Example 2</b><br /></p>
+  
+    <p align="justify">Balance the equation below.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">CaO + NH<sub>4</sub>Cl <img width="62" height="10" src=
+    "img/arrow.png" alt="" /> CaCl + NH<sub>3</sub> + H<sub>2</sub>O</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Ca = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Ca = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">N = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    N = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 4
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 5 (3 in NH3 and 2 in H2O)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Cl = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Cl = 2</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Putting 2 before NH<sub>3</sub> to make the coefficient of H even
+    yields</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">CaO + NH<sub>4</sub>Cl <img width="62" height="10" src=
+    "img/arrow.png" alt="" /> CaCl<sub>2</sub> + 2NH<sub>3</sub> + H<sub>2</sub>O</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Ca = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Ca = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">N = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    N = 2 (in NH3)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 4
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 8 (6 in NH3 and 2 in H2O)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Cl = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Cl = 2</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Now, balancing the N by putting 2 before NH<sub>4</sub>Cl</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">CaO + 2NH<sub>4</sub>Cl <img src="http://speedapp.ididev.com/apps/img/arrow.png" width="62" height=
+    "10" alt="" /> CaCl<sub>2</sub> + 2NH<sub>3</sub> + H<sub>2</sub>O</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Ca = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Ca = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">O = 1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    O = 1</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">N = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    N = 2 (balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">H = 8 (in NH<sub>4</sub>Cl)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    H = 8 (balanced)</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify">Cl = 2
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Cl = 2 (balanced)</p>
+  
+    <p align="justify">The equation is now balanced.</p>
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"><b style="color:crimson">Types of chemical reactions</b><br /></p>
+  
+    <p align="justify"></p>
+  
+    <ol>
+      <li>Direct combination; element + element Compound
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Decomposition; compounds 2 or more elements or compounds
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Single replacement; element + compound element + compound
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+  
+      <li>Double replacement; compound + compound compound + compound
+  
+        <p align="left"><br /></p>
+  
+        <p align="justify"></p>
+      </li>
+    </ol>Chemical reaction can be classified as <b style="color:crimson">homogeneous
+    (</b>when all the reactants are in the same physical state) and <b style=
+    "color:crimson">heterogeneous</b> (when the reactants are NOT in the same physical
+    state)
+  
+    <p align="left"><br /></p>
+  
+    <p align="justify"></p>
+  
+    <p align="left"><br /></p>
+
+</ion-content>

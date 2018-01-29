@@ -1,18 +1,48 @@
-<ion-header>
-  <ion-navbar>
+<ion-header >
+  <ion-navbar color="speedapp">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title></ion-title>
+    <ion-buttons end>
+      <button (click)="goTouserAccount()" style="font-size:25px" ion-button large><ion-icon name="person"></ion-icon></button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="bgimg">
+    <img src="assets/imgs/banner.jpg">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+<div style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);" class="subject" (click)="agriculture()">
+  <div align="center" style="position:relative;top:17%">
+      <img class="front_img" src="assets/imgs/agriculture.png">
+      <br>
+      Agriculture
+  </div>
+</div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<div style="background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);" class="subject" (click)="biology()">
+    <div align="center" style="position:relative;top:17%">
+        <img class="front_img" src="assets/imgs/biology.png">
+        <br>
+        Biology
+    </div>
+  </div>
+
+  <div style="background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);" class="subject" (click)="chemistry()">
+      <div align="center" style="position:relative;top:17%">
+          <img class="front_img" src="assets/imgs/chemistry.png">
+          <br>
+          Chemistry
+      </div>
+    </div>
+
+    <div style="background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);" class="subject" (click)="physics()">
+        <div align="center" style="position:relative;top:17%">
+            <img class="front_img" src="assets/imgs/physics.png">
+            <br>
+            Physics
+        </div>
+      </div>
+
 </ion-content>

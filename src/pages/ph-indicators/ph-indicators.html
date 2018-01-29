@@ -1,0 +1,150 @@
+
+<ion-header>
+
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+  <div *ngFor="let item of results" (click)="goToDefinition($event,item);" >
+    <span style="margin:5px;font-size:16px" *ngIf="search">{{item.term}}
+    <hr>
+  </span>
+  </div>
+  <p style="word-wrap : break-word;"></p>
+
+  <p align="center" style="color:black;font-size: 26px"><b>pH
+  AND INDICATORS</b></p>
+
+  <p align="justify">pH is a measure of the acidity or alkalinity (Basicity) of a
+  solution. Note that, acidity of a solution depends on the concentration of
+  H<sup>+</sup> ions in the solution. Therefore pH can also be defined with respect to
+  the concentration of this ion as the measure of H<sub>3</sub>O<sup>+</sup> ion
+  concentration in a solution. Scientist have defined a scale on which pH is measured. It
+  ranges from 0 to 14. On the pH scale, a pH value less than 7 means acidity, 7 is
+  neutral and above 7 is alkalinity. The lower the pH value, the more acidic a solution
+  is and the greater the pH value the more basic a solution is. For example a solution
+  with a pH of 3 is more acidic than a solution with a pH of 4.2.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><img src="http://speedapp.ididev.com/apps/img/indi1.png" alt="" name="front_image" id=
+  "front_image" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">The pH scale</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">To determine the pH of a solution
+  using</b><br /></p>
+
+  <p align="justify"></p>
+
+  <ol>
+    <li>Universal indicator; put about 5cm3 of the solution whose pH is to be determined
+    in a beaker. Add two to three drops of the indicator solution to the solution in the
+    beaker and shake well for a colour change to appear. Compare the colour that appears
+    with a standard pH colour chart to find a good match. The pH range of that colour is
+    the pH of the solution.
+
+      <p align="left"><br /></p>
+
+      <p align="justify"></p>
+    </li>
+
+    <li>The pH meter; Dip the electrode of the meter in the solution and the pH is
+    displayed on the scale as shown on the right.
+
+      <p align="left"></p>
+    </li>
+  </ol><br />
+
+  <p align="justify"><img width="166" height="223" src="http://speedapp.ididev.com/apps/img/indi2.png" alt="" /></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Indicators</b><br /></p>
+
+  <p align="justify">These are substances that give a particular colour depending on the
+  pH of the solution in which they are put.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Colours of Indicators in Acid &ndash; Base
+  medium</b><br /></p>
+
+  <table cellspacing="1" border="1" width="100%">
+    <tr>
+      <th style="background-color: darkred; color: white">Indicator</th>
+
+      <th style="background-color: darkred; color: white">Colour in acidic medium</th>
+
+      <th style="background-color: darkred; color: white">Colour in basic medium</th>
+    </tr>
+
+    <tr>
+      <td>Phenolphthalein</td>
+
+      <td>Colourless</td>
+
+      <td>Red</td>
+    </tr>
+
+    <tr>
+      <td>Methyl orange</td>
+
+      <td>Red</td>
+
+      <td>Yellow</td>
+    </tr>
+
+    <tr>
+      <td>Litmus</td>
+
+      <td>Red</td>
+
+      <td>Blue</td>
+    </tr>
+  </table>
+
+  <p align="justify"></p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify">Note that acidic solution turns blue litmus red but it has no effect
+  on red litmus. Similarly, basic solutions turn red litmus blue, but they have no effect
+  on blue litmus.</p>
+
+  <p align="left"><br /></p>
+
+  <p align="justify"><b style="color:crimson">Buffer Solution</b><br /></p>
+
+  <p align="justify">This is a solution whose pH does not change appreciably when small
+  amount of acid or base is added to it. A buffer can be made from a weak acid and its
+  salt. Example is a solution containing acetic acid and sodium acetate. Blood is also
+  known to be buffer a solution.</p>
+
+  <p align="left"><br /></p>
+</ion-content>

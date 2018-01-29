@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-navbar color="speedapp">
+        <ion-title></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toggleSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  <ion-toolbar *ngIf="showSearchbar">
+    <ion-searchbar [(ngModel)]="search" (ionChange)="searchDefinition();"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)"
+    placeholder="Word Definitions">
+  </ion-searchbar>
+  </ion-toolbar>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <div *ngIf="loader" align="center">
+        <img src="assets/imgs/loader.gif" width="24">
+      </div>
+<br>
+
+<ion-content padding="">
+    <p style="word-wrap : break-word;"></p>
+    <p align="center"
+       style="color:black;font-size: 26px">
+      <b>BIO TECHNOLOGY</b>
+    </p>
+ 
+  <p align="justify">Biotechnology is technology based on biology, especially when used in agriculture, food science, and medicine. 
+  <b style="color:crimson">Biotechnology</b>is defines as any technological application that uses biological systems, living organisms, or derivatives thereof, to make or modify products or processes for specific use.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Biogas</b>
+    <br />
+  </p>
+  <p align="justify">Biogas typically refers to a gas produced from the biological breakdown of organic matter in the absence of oxygen. Biogas originates from biogenic material and is a type of biofuel.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Biogas is commonly produced by anaerobic digestion or fermentation of biodegradable materials such as biomass, manure or sewage, municipal waste, and energy crops (such as maize). This type of biogas comprises primarily of
+  methane and carbon dioxide.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Biogas can be utilized for electricity production, cooking, space heating and process heating in industries. If compressed, it can replace compressed natural gas for use in vehicles, where it can fuel an internal combustion
+  engine or fuel cells.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Gober gas</b>(also spelt as &lsquo;Gobar gas&rsquo;) is biogas generated out of cow dung. The Government of Pakistan provides 50% funds for the construction of moveable gas chamber biogas plants. The gober gas plant is an
+  airtight circular pit made of concrete with a pipe connection.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <img alt=""
+         id="front_image"
+         name="front_image"
+         src="http://speedapp.ididev.com/apps/img/biotech1.jpg" />
+  </p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The manure is directed to the pit, usually directly from the cattle shed. The pit is then filled with a required quantity of water or wastewater.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">The gas pipe is connected to the kitchen through control valves. The flammable methane gas generated out of this is largely odourless and smokeless. The residue left after the extraction of the gas is used as fertilizer.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Owing to its simplicity in implementation and use of cheap raw materials, it is often quoted as one of the most environmentally sound energy source for the rural needs.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Genetic Engineering</b>
+    <br />
+  </p>
+  <p align="justify">
+  <i style="color:blue">Genetic engineering, recombinant DNA technology, genetic modification/manipulation (GM)</i>and 
+  <i style="color:blue">gene splicing</i>are terms that apply to the direct manipulation of an organism's genes.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Genetic Engineering is different from traditional breeding, where the organism's genes are manipulated indirectly through crossing. Genetic engineering uses the techniques of molecular cloning (make many typical identical
+  copies) and transformation to alter the structure and characteristics of genes directly.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Genetic engineering techniques have found some successes in numerous applications. Some examples are in improving crop technology, the manufacture of synthetic human insulin through the use of modified bacteria, and the
+  production of new types of experimental mice such as the oncomouse (cancer mouse) for research.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Since a protein sequence is specified by a segment of DNA called a gene, different versions of that protein can be produced by changing the DNA sequence of the gene.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+    <b style="color:crimson">Micro Organisms</b>
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">History</b>: A 
+  <b style="color:crimson">microorganism</b>(also spelt 
+  <b style="color:crimson">micro organism</b>or 
+  <b style="color:crimson">micro&ndash;organism</b>and also called a 
+  <b style="color:crimson">microbe</b>) is an organism that is microscopic (usually too small to be seen by the naked human eye). The study of microorganisms is called microbiology, a subject that began with Anton van Leeuwenhoek's discovery of
+  microorganisms in 1675, using a microscope of his own design.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Types</b>: Microorganisms are incredibly diverse and include bacteria, fungi, archaea, and protists, as well as some microscopic plants and animals such as plankton, and popularly known animals such as the planarian and
+  the amoeba.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">Viruses and prions (an infectious protein particle lacking nucleic acid), which are often classified as non&ndash;living are excluded. Most microorganisms are single&ndash;celled or 
+  <b style="color:crimson">unicellular</b>. But there are some multicellular organisms that are microscopic, while some unicellular protists, and bacteria are visible to the naked eye.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Habitat and activities</b>: Microorganisms live in all parts of the biosphere where there is liquid water, including hot springs, on the ocean floor, high in the atmosphere and deep inside rocks within the Earth's crust.
+  Microorganisms are critical to nutrient recycling in ecosystems as they act as decomposers. As some microorganisms can fix nitrogen, they are a vital part of the nitrogen cycle. Recent studies indicate that airborne microbes may play a role in
+  precipitation and weather.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify">
+  <b style="color:crimson">Application</b>: Microbes are also exploited by humans both in food and beverage preparation, and in modern technologies based on genetic engineering. However, pathogenic microbes are harmful, since they invade and grow
+  within other organisms, causing diseases that kill millions of animals and plants.</p>
+  <p align="left">
+    <br />
+  </p>
+  <p align="justify"></p>
+  <p align="left">
+    <br />
+  </p>
+</ion-content>
