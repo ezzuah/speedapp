@@ -86,7 +86,7 @@ export class TestSelectYearPage {
               let bannerConfig: AdMobFreeBannerConfig = {
                 isTesting: false, // Remove in production
                 autoShow: true,
-                id: 'ca-app-pub-3806419127795788/1677735378'
+                id: 'ca-app-pub-3806419127795788/8606303861'
             };
             this.admob.rewardVideo.config(bannerConfig);
             this.admob.rewardVideo.prepare().then(() => {

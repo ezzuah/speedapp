@@ -12,10 +12,6 @@ import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@
 import { GlobalAPI} from '../pages/global'
 import { Network } from '@ionic-native/network';
 
-
-
-
-
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SharePage } from '../pages/share/share';
@@ -40,10 +36,12 @@ export class MyApp {
               public global: GlobalAPI,
               public alertCtrl: AlertController,
               public toastCtrl: ToastController,
-              public network: Network) {
+              public network: Network
+              ) {
 
      this.global.menu_status;
     this.initializeApp();
+    this.initPushNotification();
 
   }
 
@@ -63,23 +61,18 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.initPushNotification();
-
-
       let bannerConfig: AdMobFreeBannerConfig = {
-        isTesting: true, // Remove in production
+        isTesting: false, // Remove in production
         autoShow: true,
         id: 'ca-app-pub-3806419127795788/4447088073'
     };
 
     this.admob.banner.config(bannerConfig);
-
     this.admob.banner.prepare().then(() => {
-        // success
+       // success
     }).catch(e => console.log(e));
-
+    
       localStorage.setItem('app_version','1.0.4');
-
       let disconnectSub = this.network.onDisconnect().subscribe(() => {
         console.log('you are offline');
         //localStorage.setItem('internet','available');
@@ -96,8 +89,6 @@ export class MyApp {
       toast.present();
       });
     });
-
-
   }
 
   initPushNotification() {
@@ -196,7 +187,6 @@ export class MyApp {
             this.global.menu_status= false;
             this.nav.push(HomePage);
             this.nav.setRoot(HomePage);
-            
           }
         }
       ]

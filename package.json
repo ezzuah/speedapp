@@ -63,6 +63,7 @@
     "ionic-angular": "3.9.2",
     "ionic-plugin-keyboard": "^2.2.1",
     "ionicons": "3.0.0",
+    "lycwed-cordova-plugin-admob-free": "git+https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free.git",
     "phonegap-plugin-push": "^2.1.2",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
@@ -97,8 +98,8 @@
       "cordova-plugin-badge": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
